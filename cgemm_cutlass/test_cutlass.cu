@@ -4,9 +4,9 @@
 #include "cutlass/gemm/device/gemm.h"
 #include "cutlass/util/device_memory.h"
 #include "helper.h"
-using DataT = float;
+using DataT = float2;
 
-bool CutlassSgemmNN(int M, int N, int K, DataT alpha, DataT const *A, int lda, DataT const *B, int ldb, DataT beta, DataT *C,int ldc) {
+bool CutlassCgemmNN(int M, int N, int K, DataT alpha, DataT const *A, int lda, DataT const *B, int ldb, DataT beta, DataT *C,int ldc) {
   using ElementAccumulator = DataT;
   using ElementComputeEpilogue = ElementAccumulator;
   using ElementInputA = DataT;
@@ -17,13 +17,13 @@ bool CutlassSgemmNN(int M, int N, int K, DataT alpha, DataT const *A, int lda, D
   using LayoutInputB = cutlass::layout::ColumnMajor;
   using LayoutOutput = cutlass::layout::ColumnMajor;
 
-  using MMAOp = cutlass::arch::OpClassTensorOp;
+  using MMAOp = cutlass::arch::OpClassSimt;
 
   using SmArch = cutlass::arch::Sm80;
 
-  using ShapeMMAThreadBlock = cutlass::gemm::GemmShape<256, 128, 16>;
-  using ShapeMMAWarp = cutlass::gemm::GemmShape<128, 32, 16>;
-  using ShapeMMAOp = cutlass::gemm::GemmShape<16, 8, 8>;
+  using ShapeMMAThreadBlock = cutlass::gemm::GemmShape<64, 64, 8>;
+  using ShapeMMAWarp = cutlass::gemm::GemmShape<32, 16, 8>;
+  using ShapeMMAOp = cutlass::gemm::GemmShape<4, 4, 8>;
 
   using SwizzleThreadBlock = cutlass::gemm::threadblock::GemmIdentityThreadblockSwizzle<>;
 
@@ -33,7 +33,7 @@ bool CutlassSgemmNN(int M, int N, int K, DataT alpha, DataT const *A, int lda, D
       ElementAccumulator,
       ElementComputeEpilogue>; 
 
-  constexpr int NumStages = 3;
+  constexpr int NumStages = 2;
 
   using Gemm = cutlass::gemm::device::Gemm<ElementInputA,
                                            LayoutInputA,
@@ -50,7 +50,47 @@ bool CutlassSgemmNN(int M, int N, int K, DataT alpha, DataT const *A, int lda, D
                                            EpilogueOp,
                                            SwizzleThreadBlock,
                                            NumStages>;
+  using precision = cutlass::complex<float>;
+    using ThreadblockShape = cutlass::gemm::GemmShape<64, 64, 8>;
+    using WarpShape = cutlass::gemm::GemmShape<16, 32, 8>;
 
+    static int const kEpilogueElementsPerAccess = 1;
+    using InstructionShape = cutlass::gemm::GemmShape<1, 1, 1>;
+    using EpilogueOutputOp = cutlass::epilogue::thread::LinearCombination<
+        precision, kEpilogueElementsPerAccess, precision, precision>;
+
+    using Gemm = cutlass::gemm::device::Gemm<
+        precision, cutlass::layout::ColumnMajor,
+        precision, cutlass::layout::ColumnMajor,
+        precision, cutlass::layout::RowMajor,
+        precision,
+        cutlass::arch::OpClassSimt,
+        cutlass::arch::Sm50,
+        ThreadblockShape, WarpShape, InstructionShape,
+        EpilogueOutputOp,
+        cutlass::gemm::threadblock::GemmIdentityThreadblockSwizzle<>,
+        2 // Stages
+    >;using precision = cutlass::complex<float>;
+    using ThreadblockShape = cutlass::gemm::GemmShape<64, 64, 8>;
+    using WarpShape = cutlass::gemm::GemmShape<16, 32, 8>;
+
+    static int const kEpilogueElementsPerAccess = 1;
+    using InstructionShape = cutlass::gemm::GemmShape<1, 1, 1>;
+    using EpilogueOutputOp = cutlass::epilogue::thread::LinearCombination<
+        precision, kEpilogueElementsPerAccess, precision, precision>;
+
+    using Gemm = cutlass::gemm::device::Gemm<
+        precision, cutlass::layout::ColumnMajor,
+        precision, cutlass::layout::ColumnMajor,
+        precision, cutlass::layout::RowMajor,
+        precision,
+        cutlass::arch::OpClassSimt,
+        cutlass::arch::Sm50,
+        ThreadblockShape, WarpShape, InstructionShape,
+        EpilogueOutputOp,
+        cutlass::gemm::threadblock::GemmIdentityThreadblockSwizzle<>,
+        2 // Stages
+    >;
   Gemm gemm_op;
 
   Gemm::Arguments arguments({M, N, K},
@@ -82,12 +122,12 @@ void test_cutlass(int m, int n, int k, int num_tests, DataT alpha, DataT beta, D
     cudaEventCreate(&beg);
     cudaEventCreate(&end);
     float elapsed;
-    bool ret = CutlassSgemmNN(m, n, k, alpha, dA, m, dB, k, beta, dC, m);
+    bool ret = CutlassCgemmNN(m, n, k, alpha, dA, m, dB, k, beta, dC, m);
     if (ret == 0) return;
     cudaDeviceSynchronize();
     cudaEventRecord(beg);
     for(int i = 0; i < num_tests; ++i){
-        CutlassSgemmNN(m, n, k, alpha, dA, m, dB, k, beta, dC, m);
+        CutlassCgemmNN(m, n, k, alpha, dA, m, dB, k, beta, dC, m);
         cudaDeviceSynchronize();
     }
     cudaEventRecord(end);
@@ -114,15 +154,24 @@ int main(int argc, char** argv){
     cudaMalloc((void**)&dB, sizeof(DataT) * B_size);
     cudaMalloc((void**)&dC, sizeof(DataT) * C_size);
 
-    for(long long int i = 0; i < A_size; ++i) A[i] = DataT(rand() % 5) + (rand() % 5) * 0.01;
-    for(long long int i = 0; i < B_size; ++i) B[i] = DataT(rand() % 5) + (rand() % 5) * 0.01;
-    for(long long int i = 0; i < C_size; ++i) C[i] = DataT(rand() % 5) + (rand() % 5) * 0.01;
+    for(long long int i = 0; i < A_size; ++i) {
+      A[i].x = float(rand() % 5) + (rand() % 5) * 0.01;
+      A[i].y = float(rand() % 5) + (rand() % 5) * 0.01;
+    }
+    for(long long int i = 0; i < B_size; ++i){
+      B[i].x = float(rand() % 5) + (rand() % 5) * 0.01;
+      B[i].y = float(rand() % 5) + (rand() % 5) * 0.01;
+    }
+    for(long long int i = 0; i < C_size; ++i){
+      C[i].x = float(rand() % 5) + (rand() % 5) * 0.01;
+      C[i].y = float(rand() % 5) + (rand() % 5) * 0.01;
+    }
 
     cudaMemcpy(dA, A, sizeof(DataT) * A_size, cudaMemcpyHostToDevice);
     cudaMemcpy(dB, B, sizeof(DataT) * B_size, cudaMemcpyHostToDevice);
     cudaMemcpy(dC, C, sizeof(DataT) * C_size, cudaMemcpyHostToDevice);
 
-    DataT alpha = 0.0001, beta = -0.0001; 
+    DataT alpha = {0.1,0.1} , beta = {0.1,0.1}; 
 
     int num_tests = 1;
 

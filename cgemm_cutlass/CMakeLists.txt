@@ -10,7 +10,7 @@ set(FT "0" CACHE STRING "Description of FT")
 
 # Include directories
 include_directories(${CMAKE_SOURCE_DIR}/include)
-include_directories(/opt/nvidia/hpc_sdk/Linux_x86_64/23.9/cuda/include)
+include_directories(/opt/nvidia/hpc_sdk/Linux_x86_64/24.5/cuda/include)
 include_directories(${CMAKE_SOURCE_DIR}/cuda-samples/Common)
 include_directories(${CMAKE_SOURCE_DIR})
 

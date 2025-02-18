@@ -4,26 +4,26 @@ using namespace nvcuda;
 #define warp_col_tiles 4
 #define warp_row_tiles 4
 #define SKEW_KERNEL_2 0
-extern __shared__ float shared_mem[];
-__global__ void zgemm_20(int M, int N, int K, float *A, float *B, float *C, float2 alpha, float2 beta){
+extern __shared__ double shared_mem[];
+__global__ void zgemm_20(int M, int N, int K, double *A, double *B, double *C, double2 alpha, double2 beta){
     int threadblock_tile_M = 64, threadblock_tile_N = 128;
     int tid = threadIdx.x;
     int bid_x = blockIdx.x, bid_y = blockIdx.y;
     int wid = tid / 32;
-    float tmp_r, tmp_c, tmp_a, tmp_b;
+    double tmp_r, tmp_c, tmp_a, tmp_b;
     
-    // __shared__ float shared_mem[((64 + SKEW_KERNEL_2) * 16 * 2) * 2];
-    float2 *shared_mem_float2 = (float2*)shared_mem;
-    float2 * gC = (((float2*)C));
+    // __shared__ double shared_mem[((64 + SKEW_KERNEL_2) * 16 * 2) * 2];
+    double2 *shared_mem_double2 = (double2*)shared_mem;
+    double2 * gC = (((double2*)C));
 
-    float2* sA = (shared_mem_float2 + (64 + SKEW_KERNEL_2) * 8 * 0);
-    float2* sB = (shared_mem_float2 + (128 + SKEW_KERNEL_2) * 8 * 0 + (64 + SKEW_KERNEL_2) * 8 * 1);
+    double2* sA = (shared_mem_double2 + (64 + SKEW_KERNEL_2) * 8 * 0);
+    double2* sB = (shared_mem_double2 + (128 + SKEW_KERNEL_2) * 8 * 0 + (64 + SKEW_KERNEL_2) * 8 * 1);
     
-    float2 mem_temp[8];
+    double2 mem_temp[8];
     
-    float2 c[warp_col_tiles][warp_row_tiles][2];
-    float2 a[2][4];
-    float2 b[2][4];
+    double2 c[warp_col_tiles][warp_row_tiles][2];
+    double2 a[2][4];
+    double2 b[2][4];
     
     #pragma unroll
     for(int i = 0; i < warp_col_tiles; i++){
@@ -39,23 +39,23 @@ __global__ void zgemm_20(int M, int N, int K, float *A, float *B, float *C, floa
     int offset = 0, offset_k = 0;
     int k = 0;
     asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-            : "l"(__cvta_generic_to_shared(sA) + (0 + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+            : "l"(__cvta_generic_to_shared(sA) + (0 + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
                 "l"(&A[((bid_x * 64 + tid / 4) + (0 + tid % 4 + 0) * M) * 2 + 0]));
     asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-        : "l"(__cvta_generic_to_shared(sA) + (0 + (tid % 4) + (tid / 4 + 64) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+        : "l"(__cvta_generic_to_shared(sA) + (0 + (tid % 4) + (tid / 4 + 64) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
             "l"(&A[((bid_x * 64 + tid / 4) + (0 + tid % 4 + 4) * M) * 2 + 0]));
 
     asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-        : "l"(__cvta_generic_to_shared(sB) + (0 + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+        : "l"(__cvta_generic_to_shared(sB) + (0 + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
             "l"(&B[((0 + tid % 4) + (bid_y * 128 + tid / 4) * K) * 2 + 0]));
     asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-        : "l"(__cvta_generic_to_shared(sB) + (0 + (tid % 4) + (tid / 4 + 128) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+        : "l"(__cvta_generic_to_shared(sB) + (0 + (tid % 4) + (tid / 4 + 128) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
             "l"(&B[((0 + tid % 4 + 4) + (bid_y * 128 + tid / 4) * K) * 2 + 0]));
     asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-        : "l"(__cvta_generic_to_shared(sB) + (0 + (tid % 4) + (tid / 4 +  64) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+        : "l"(__cvta_generic_to_shared(sB) + (0 + (tid % 4) + (tid / 4 +  64) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
             "l"(&B[((0 + tid % 4) + (bid_y * 128 + tid / 4 + 64) * K) * 2 + 0]));
     asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-        : "l"(__cvta_generic_to_shared(sB) + (0 + (tid % 4) + (tid / 4 + 192) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+        : "l"(__cvta_generic_to_shared(sB) + (0 + (tid % 4) + (tid / 4 + 192) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
             "l"(&B[((0 + tid % 4 + 4) + (bid_y * 128 + tid / 4 + 64) * K) * 2 + 0]));
 
     asm volatile("cp.async.commit_group;\n" ::);
@@ -63,37 +63,37 @@ __global__ void zgemm_20(int M, int N, int K, float *A, float *B, float *C, floa
     offset = (offset_k *  ((64 + SKEW_KERNEL_2 + 128 + SKEW_KERNEL_2) * 8));
 
     // asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-    //         : "l"(__cvta_generic_to_shared(sA) + (offset + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+    //         : "l"(__cvta_generic_to_shared(sA) + (offset + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
     //             "l"(&A[((bid_x * 64 + tid / 4) + (8 + tid % 4 + 0) * M) * 2 + 0]));
     // asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-    //     : "l"(__cvta_generic_to_shared(sA) + (offset + (tid % 4) + (tid / 4 + 64) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+    //     : "l"(__cvta_generic_to_shared(sA) + (offset + (tid % 4) + (tid / 4 + 64) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
     //         "l"(&A[((bid_x * 64 + tid / 4) + (8 + tid % 4 + 4) * M) * 2 + 0]));
 
     // asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-    //     : "l"(__cvta_generic_to_shared(sB) + (offset + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+    //     : "l"(__cvta_generic_to_shared(sB) + (offset + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
     //         "l"(&B[((8 + tid % 4) + (bid_y * 64 + tid / 4) * K) * 2 + 0]));
     // asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-    //     : "l"(__cvta_generic_to_shared(sB) + (offset + (tid % 4) + (tid / 4 + 64) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+    //     : "l"(__cvta_generic_to_shared(sB) + (offset + (tid % 4) + (tid / 4 + 64) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
     //         "l"(&B[((8 + tid % 4 + 4) + (bid_y * 64 + tid / 4) * K) * 2 + 0]));
 
     asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-            : "l"(__cvta_generic_to_shared(sA) + (offset + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+            : "l"(__cvta_generic_to_shared(sA) + (offset + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
                 "l"(&A[((bid_x * 64 + tid / 4) + (8 + tid % 4 + 0) * M) * 2 + 0]));
     asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-        : "l"(__cvta_generic_to_shared(sA) + (offset + (tid % 4) + (tid / 4 + 64) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+        : "l"(__cvta_generic_to_shared(sA) + (offset + (tid % 4) + (tid / 4 + 64) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
             "l"(&A[((bid_x * 64 + tid / 4) + (8 + tid % 4 + 4) * M) * 2 + 0]));
 
     asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-        : "l"(__cvta_generic_to_shared(sB) + (offset + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+        : "l"(__cvta_generic_to_shared(sB) + (offset + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
             "l"(&B[((8 + tid % 4) + (bid_y * 128 + tid / 4) * K) * 2 + 0]));
     asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-        : "l"(__cvta_generic_to_shared(sB) + (offset + (tid % 4) + (tid / 4 + 128) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+        : "l"(__cvta_generic_to_shared(sB) + (offset + (tid % 4) + (tid / 4 + 128) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
             "l"(&B[((8 + tid % 4 + 4) + (bid_y * 128 + tid / 4) * K) * 2 + 0]));
     asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-        : "l"(__cvta_generic_to_shared(sB) + (offset + (tid % 4) + (tid / 4 +  64) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+        : "l"(__cvta_generic_to_shared(sB) + (offset + (tid % 4) + (tid / 4 +  64) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
             "l"(&B[((8 + tid % 4) + (bid_y * 128 + tid / 4 + 64) * K) * 2 + 0]));
     asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-        : "l"(__cvta_generic_to_shared(sB) + (offset + (tid % 4) + (tid / 4 + 192) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+        : "l"(__cvta_generic_to_shared(sB) + (offset + (tid % 4) + (tid / 4 + 192) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
             "l"(&B[((8 + tid % 4 + 4) + (bid_y * 128 + tid / 4 + 64) * K) * 2 + 0]));
 
 
@@ -122,36 +122,36 @@ __global__ void zgemm_20(int M, int N, int K, float *A, float *B, float *C, floa
         int offset_next_k = (offset_k + 1) % 3;
         int offset_next = (offset_next_k *  ((64 + SKEW_KERNEL_2 + 128 + SKEW_KERNEL_2) * 8));
         // asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-        //     : "l"(__cvta_generic_to_shared(sA) + (offset_next + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+        //     : "l"(__cvta_generic_to_shared(sA) + (offset_next + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
         //         "l"(&A[((bid_x * 64 + tid / 4) + ((k + 16) + tid % 4 + 0) * M) * 2 + 0]));
         // asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-        //     : "l"(__cvta_generic_to_shared(sA) + (offset_next + (tid % 4) + (tid / 4 + 64) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+        //     : "l"(__cvta_generic_to_shared(sA) + (offset_next + (tid % 4) + (tid / 4 + 64) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
         //         "l"(&A[((bid_x * 64 + tid / 4) + ((k + 16) + tid % 4 + 4) * M) * 2 + 0]));
 
         // asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-        //     : "l"(__cvta_generic_to_shared(sB) + (offset_next + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+        //     : "l"(__cvta_generic_to_shared(sB) + (offset_next + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
         //         "l"(&B[(((k + 16) + tid % 4) + (bid_y * 64 + tid / 4) * K) * 2 + 0]));
         // asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-        //     : "l"(__cvta_generic_to_shared(sB) + (offset_next + (tid % 4) + (tid / 4 + 64) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+        //     : "l"(__cvta_generic_to_shared(sB) + (offset_next + (tid % 4) + (tid / 4 + 64) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
         //         "l"(&B[(((k + 16) + tid % 4 + 4) + (bid_y * 64 + tid / 4) * K) * 2 + 0]));
         asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-            : "l"(__cvta_generic_to_shared(sA) + (offset_next + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+            : "l"(__cvta_generic_to_shared(sA) + (offset_next + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
             "l"(&A[((bid_x * 64 + tid / 4) + ((k + 16) + tid % 4 + 0) * M) * 2 + 0]));
         asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-            : "l"(__cvta_generic_to_shared(sA) + (offset_next + (tid % 4) + (tid / 4 + 64) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+            : "l"(__cvta_generic_to_shared(sA) + (offset_next + (tid % 4) + (tid / 4 + 64) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
                 "l"(&A[((bid_x * 64 + tid / 4) + ((k + 16) + tid % 4 + 4) * M) * 2 + 0]));
 
         asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-            : "l"(__cvta_generic_to_shared(sB) + (offset_next + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+            : "l"(__cvta_generic_to_shared(sB) + (offset_next + (tid % 4) + (tid / 4 +  0) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
                 "l"(&B[(((k + 16) + tid % 4) + (bid_y * 128 + tid / 4) * K) * 2 + 0]));
         asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-            : "l"(__cvta_generic_to_shared(sB) + (offset_next + (tid % 4) + (tid / 4 + 128) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+            : "l"(__cvta_generic_to_shared(sB) + (offset_next + (tid % 4) + (tid / 4 + 128) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
                 "l"(&B[(((k + 16) + tid % 4 + 4) + (bid_y * 128 + tid / 4) * K) * 2 + 0]));
         asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-            : "l"(__cvta_generic_to_shared(sB) + (offset_next + (tid % 4) + (tid / 4 +  64) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+            : "l"(__cvta_generic_to_shared(sB) + (offset_next + (tid % 4) + (tid / 4 +  64) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
                 "l"(&B[(((k + 16) + tid % 4) + (bid_y * 128 + tid / 4 + 64) * K) * 2 + 0]));
         asm ("cp.async.ca.shared.global [%0], [%1], 16;\n" :
-            : "l"(__cvta_generic_to_shared(sB) + (offset_next + (tid % 4) + (tid / 4 + 192) * (4 + SKEW_KERNEL_2)) * sizeof(float) * 2), 
+            : "l"(__cvta_generic_to_shared(sB) + (offset_next + (tid % 4) + (tid / 4 + 192) * (4 + SKEW_KERNEL_2)) * sizeof(double) * 2), 
                 "l"(&B[(((k + 16) + tid % 4 + 4) + (bid_y * 128 + tid / 4 + 64) * K) * 2 + 0]));
 
         int offset_cur = ((offset_k + 2) % 3) * ((64 + SKEW_KERNEL_2 + 128 + SKEW_KERNEL_2) * 8);
