@@ -1,5 +1,5 @@
 /***************************************************************************************************
- * Copyright (c) 2017 - 2022 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+ * Copyright (c) 2017 - 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
  * SPDX-License-Identifier: BSD-3-Clause
  *
  * Redistribution and use in source and binary forms, with or without
@@ -353,7 +353,6 @@ public:
     TransformedFragmentA const &A, 
     TransformedFragmentB const &B, 
     FragmentC const &C
-    // Array<ElementC, ArchMmaOperator::Shape::kMN / 32 * 3> &CC_1
   ) const {
 
     AccessTypeFragmentA const *ptr_A = reinterpret_cast<AccessTypeFragmentA const*>(&A);
@@ -363,15 +362,7 @@ public:
     // Accumulate in place
     //
     D = C;
-    // if(threadIdx.x == 0 && blockIdx.x == 0)printf("3xtf32\n");
-    // mma_operator(D, ptr_A[kSmallIndex], ptr_B[kBigIndex], D, CC_1);
-
-    // mma_operator(D, ptr_A[kBigIndex], ptr_B[kSmallIndex], D, CC_1);
-
-    // mma_operator(D, ptr_A[kBigIndex], ptr_B[kBigIndex], D, CC_1);
-
-    // if (MmaFastF32::kPrecision == TensorFloat32Op::k4xTF32)
-    //   mma_operator(D, ptr_A[kSmallIndex], ptr_B[kSmallIndex], D, CC_1);
+    
     mma_operator(D, ptr_A[kSmallIndex], ptr_B[kBigIndex], D);
 
     mma_operator(D, ptr_A[kBigIndex], ptr_B[kSmallIndex], D);
@@ -389,7 +380,6 @@ public:
     AccessTypeFragmentA const &A, 
     AccessTypeFragmentB const &B, 
     FragmentC const &C
-    // Array<ElementC, ArchMmaOperator::Shape::kMN / 32 * 3> &CC
   ) const {
 
     #if defined(__CUDA_ARCH__) && (__CUDA_ARCH__ >= 800)
@@ -402,29 +392,16 @@ public:
       MmaOperandB const *ptr_B = reinterpret_cast<MmaOperandB const *>(&B);
       MmaOperandC *ptr_D = reinterpret_cast<MmaOperandC *>(&D);
 
-      // Array<ElementA, ArchMmaOperator::Shape::kMK / 32> FragmentA_checksum_ref;
-      Array<typename ArchMmaOperator::ElementB, ArchMmaOperator::Shape::kKN / 32> FragmentI;
-      Array<typename ArchMmaOperator::ElementA, ArchMmaOperator::Shape::kMK / 32> tmp;
-      Array<typename ArchMmaOperator::ElementC, ArchMmaOperator::Shape::kMN / 32> FragmentA_checksum;
-      Array<typename ArchMmaOperator::ElementC, ArchMmaOperator::Shape::kMN / 32> FragmentB_checksum;
-      FragmentI.clear();
-      tmp.clear();
-      FragmentA_checksum.clear();
-      FragmentB_checksum.clear();
-
-      // CC = *CC_;
-      
-
       // Serpentine visitation order maximizing reuse of Ra
       CUTLASS_PRAGMA_UNROLL
       for (int m = 0; m < MmaIterations::kRow; ++m) {
 
         CUTLASS_PRAGMA_UNROLL
         for (int n = 0; n < MmaIterations::kColumn; ++n) {
-          // if(threadIdx.x == 0 && blockIdx.x == 0) printf("tensor_op_fast_f32  arch>=80  m=%d n=%d\n", m, n);
+
           // This allows to reuse of Rb when at serpentine turns
           int n_serpentine = ((m % 2) ? (MmaIterations::kColumn - 1 - n) : n);
-          
+
           if (AccumulatorsInRowMajor) {  // matrix B is reordered
             mma(
               ptr_D[n_serpentine + m * MmaIterations::kColumn],
@@ -440,136 +417,6 @@ public:
           }
         } // end n loop
       } // end m loop
-
-      // CUTLASS_PRAGMA_UNROLL
-      // for (int m = 0; m < MmaIterations::kRow; ++m) {
-      //   int n = 0;
-      //    int n_serpentine = ((m % 2) ? (MmaIterations::kColumn - 1 - n) : n);
-      //   // tfloat32_t a((int)(((threadIdx.x % 4) == (threadIdx.x / 8)) * (1 + ((threadIdx.x / 4) % 2) * m)));
-      //   // tfloat32_t a((int)0);
-      //   // FragmentI[0] = a;
-      //   FragmentA_checksum[0] += ptr_A[m][0]; 
-      //   FragmentA_checksum[2] += ptr_A[m][1]; 
-      //   FragmentA_checksum[1] += ptr_A[m][0] * m; 
-      //   FragmentA_checksum[3] += ptr_A[m][1] * m; 
-      //     // mma(
-      //     //   FragmentA_checksum,
-      //     //   // ptr_D[m + n_serpentine * MmaIterations::kRow],
-      //     //     ptr_A[m],
-      //     //     FragmentI,
-      //     //     FragmentA_checksum
-      //     //     // ptr_D[m + n_serpentine * MmaIterations::kRow]
-      //     //     );
-      //         // if(threadIdx.x == 0 && blockIdx.x == 0) printf("mma_tensor_op  not AccumulatorsInRowMajor  m=%d n=%d\n", m, n);
-      // }
-
-      // CUTLASS_PRAGMA_UNROLL
-      // for (int n = 0; n < MmaIterations::kColumn; ++n) {
-
-      //   int m = 0;
-        
-      //   // B_[1] += ptr_B[n][1]; 
-      //   // B_[0] += B_[1]; 
-      //   // B_[1] += B_[0]; 
-      //   // ptr_A[]
-      //   int n_serpentine = ((m % 2) ? (MmaIterations::kColumn - 1 - n) : n);
-        
-      //   // tfloat32_t a((int)(((threadIdx.x % 4) == (threadIdx.x / 8)) * (1 + ((threadIdx.x / 4) % 2) * n_serpentine)));
-      //   tfloat32_t a((int)0);
-      //   // FragmentI[0] = a;
-      //     // tmp[0] = ptr_B[n_serpentine][0];
-      //   FragmentB_checksum[0] += ptr_B[n_serpentine][0]; 
-      //   FragmentB_checksum[1] += ptr_B[n_serpentine][0] * n_serpentine; 
-      //   //  FragmentB_checksum[0] +=  FragmentB_checksum[1];
-      //     // mma(
-      //     //   FragmentB_checksum,
-      //     //   //  ptr_D[m + n_serpentine * MmaIterations::kRow],
-      //     //     tmp,
-      //     //     FragmentI,
-      //     //     FragmentB_checksum
-      //     //     //  ptr_D[m + n_serpentine * MmaIterations::kRow]
-      //     //     );
-      //         // if(threadIdx.x == 0 && blockIdx.x == 0) printf("mma_tensor_op  not AccumulatorsInRowMajor  m=%d n=%d\n", m, n);
-      // }
-
-      // {
-      //   int m = 0, n_serpentine = 0;
-      // uint32_t const *A = reinterpret_cast<uint32_t const *> (&(FragmentA_checksum[0]));
-      // uint32_t const *B = reinterpret_cast<uint32_t const *> (&(FragmentB_checksum[0]));
-      // asm volatile(
-      // "mma.sync.aligned.m16n8k4.row.col.f32.tf32.tf32.f32 {%0,%1,%2,%3}, {%4,%5}, {%6}, {%7,%8,%9,%10};\n"
-      // : "=f"(CC[0]), "=f"(CC[1]), "=f"(CC[2]), "=f"(CC[3])
-      // : 
-      //   "r"(A[0]), 
-      //   "r"(A[2]), 
-      //   "r"(B[0]), 
-      //   "f"(CC[0]), "f"(CC[1]), "f"(CC[2]), "f"(CC[3])
-      // );
-
-      // //   asm volatile(
-      // // "mma.sync.aligned.m16n8k4.row.col.f32.tf32.tf32.f32 {%0,%1,%2,%3}, {%4,%5}, {%6}, {%7,%8,%9,%10};\n"
-      // // : "=f"(CC[4]), "=f"(CC[5]), "=f"(CC[6]), "=f"(CC[7])
-      // // : 
-      // //   "r"(A[1]), 
-      // //   "r"(A[3]), 
-      // //   "r"(B[0]), 
-      // //   "f"(CC[4]), "f"(CC[5]), "f"(CC[6]), "f"(CC[7])
-      // // );
-
-      // // asm volatile(
-      // // "mma.sync.aligned.m16n8k4.row.col.f32.tf32.tf32.f32 {%0,%1,%2,%3}, {%4,%5}, {%6}, {%7,%8,%9,%10};\n"
-      // // : "=f"(CC[8]), "=f"(CC[9]), "=f"(CC[10]), "=f"(CC[11])
-      // // : 
-      // //   "r"(A[0]), 
-      // //   "r"(A[2]), 
-      // //   "r"(B[1]), 
-      // //   "f"(CC[8]), "f"(CC[9]), "f"(CC[10]), "f"(CC[11])
-      // // );
-      // }
-
-    #else
-      assert(0);
-    #endif
-  }
-
-  CUTLASS_DEVICE
-  void error_detector_operator(
-    FragmentC &D, 
-    Array<ElementC, ArchMmaOperator::Shape::kMN / 32 * 3> &CC
-  ) const {
-
-    #if defined(__CUDA_ARCH__) && (__CUDA_ARCH__ >= 800)
-
-      using MmaOperandA = typename ArchMmaOperator::FragmentA;
-      using MmaOperandB = typename ArchMmaOperator::FragmentB;
-      using MmaOperandC = typename ArchMmaOperator::FragmentC;
-      
-      MmaOperandC *ptr_D = reinterpret_cast<MmaOperandC *>(&D);
-
-      {
-        int m = 0, n_serpentine = 0;
-      float delta_error = CC[0];
-      float D_sum = 0;
-      CUTLASS_PRAGMA_UNROLL
-      for (int m = 0; m < MmaIterations::kRow; ++m) {
-
-        CUTLASS_PRAGMA_UNROLL
-        for (int n = 0; n < MmaIterations::kColumn; ++n) {
-          
-          // This allows to reuse of Rb when at serpentine turns
-          int n_serpentine = ((m % 2) ? (MmaIterations::kColumn - 1 - n) : n);
-          
-           CC[0] -= ptr_D[m + n_serpentine * MmaIterations::kRow][0];
-          //  D_sum += ptr_D[m + n_serpentine * MmaIterations::kRow][0];
-          //  CC[0] -= ptr_D[m + n_serpentine * MmaIterations::kRow][1];
-          //  CC[0] -= ptr_D[m + n_serpentine * MmaIterations::kRow][2];
-          //  CC[0] -= ptr_D[m + n_serpentine * MmaIterations::kRow][3];
-        } // end n loop
-      } // end m loop     
-      // if(threadIdx.x == 0 && blockIdx.x == 0 && blockIdx.y == 0  && blockIdx.x == 0) printf("CC[0]_initial  %f CC[0]=%f D_sum=%f\n", delta_error, CC[0], D_sum);
-      ptr_D[0][0] += (CC[0] + CC[4] + CC[8]) * 0.00001;
-      }
-
     #else
       assert(0);
     #endif
@@ -584,7 +431,7 @@ public:
     // Define conversions from source type to instruction type
     //
     #if defined(__CUDA_ARCH__) && (__CUDA_ARCH__ >= 800)
-      // if(threadIdx.x == 0 && blockIdx.x == 0) printf("tensor_op_fast_f32  arch>=80  transform\n");
+      
       detail::ConvertAndPackAccurateF32<
         FragmentA::kElements / 2,
         MmaFastF32::kRoundBigA,

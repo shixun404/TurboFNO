@@ -9,9 +9,10 @@ set(FT "0" CACHE STRING "Description of FT")
 # set(FT $ENV{FT} CACHE STRING "Compile-time parameter FT")
 
 # Include directories
-include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(/global/homes/s/swu264/TurboFNO/cgemm_cutlass/include)
 include_directories(/opt/nvidia/hpc_sdk/Linux_x86_64/24.5/cuda/include)
-include_directories(${CMAKE_SOURCE_DIR}/cuda-samples/Common)
+include_directories(/global/homes/s/swu264/TurboFNO/cgemm/Common)
+include_directories(/global/homes/s/swu264/TurboFNO/cgemm_cutlass/utils)
 include_directories(${CMAKE_SOURCE_DIR})
 
 # CUDA paths
@@ -22,7 +23,7 @@ set(MATH_LIB "/opt/nvidia/hpc_sdk/Linux_x86_64/24.5/math_libs/12.4")
 link_directories(${MATH_LIB}/lib64)
 
 
-add_executable(test_cutlass test_cutlass.cu)
+add_executable(test_cutlass test_cutlass.cu utils/utils.cu)
 target_compile_options(test_cutlass PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:--expt-relaxed-constexpr>)
 target_link_libraries(test_cutlass PRIVATE cublas)
 

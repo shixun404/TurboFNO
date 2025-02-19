@@ -1,5 +1,5 @@
 /***************************************************************************************************
- * Copyright (c) 2017 - 2022 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+ * Copyright (c) 2017 - 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
  * SPDX-License-Identifier: BSD-3-Clause
  *
  * Redistribution and use in source and binary forms, with or without
@@ -197,48 +197,34 @@ public:
     // Data members
     //
 
-    GemmUniversalMode mode;
-    GemmCoord *problem_sizes;
-    int problem_count;
-    int threadblock_count;
+    GemmUniversalMode mode = GemmUniversalMode::kGemm;
+    GemmCoord *problem_sizes = nullptr;
+    int problem_count{0};
+    int threadblock_count{0};
 
     typename EpilogueOutputOp::Params epilogue;
 
-    ElementA ** ptr_A;
-    ElementB ** ptr_B;
-    ElementC ** ptr_C;
-    ElementC ** ptr_D;
+    ElementA ** ptr_A = nullptr;
+    ElementB ** ptr_B = nullptr;
+    ElementC ** ptr_C = nullptr;
+    ElementC ** ptr_D = nullptr;
 
-    typename LayoutA::Stride::LongIndex *lda;
-    typename LayoutB::Stride::LongIndex *ldb;
-    typename LayoutC::Stride::LongIndex *ldc;
-    typename LayoutC::Stride::LongIndex *ldd;
+    typename LayoutA::Stride::LongIndex *lda = nullptr;
+    typename LayoutB::Stride::LongIndex *ldb = nullptr;
+    typename LayoutC::Stride::LongIndex *ldc = nullptr;
+    typename LayoutC::Stride::LongIndex *ldd = nullptr;
 
     // Only used by device-level operator
-    GemmCoord *host_problem_sizes;
+    GemmCoord *host_problem_sizes = nullptr;
+
+    bool allow_early_exit = false;
 
     //
     // Methods
     //
 
     /// Default ctor
-    CUTLASS_HOST_DEVICE
-    Arguments():
-      mode(GemmUniversalMode::kGemm),
-      problem_count(0),
-      threadblock_count(0),
-      ptr_A(nullptr),
-      ptr_B(nullptr),
-      ptr_C(nullptr),
-      ptr_D(nullptr),
-      lda(nullptr),
-      ldb(nullptr),
-      ldc(nullptr),
-      ldd(nullptr),
-      host_problem_sizes(nullptr)
-    {
-
-    }
+    Arguments() = default;
 
     /// Ctor
     CUTLASS_HOST_DEVICE
@@ -256,7 +242,8 @@ public:
       typename LayoutB::Stride::LongIndex *ldb,
       typename LayoutC::Stride::LongIndex *ldc,
       typename LayoutC::Stride::LongIndex *ldd,
-      GemmCoord *host_problem_sizes=nullptr
+      GemmCoord *host_problem_sizes=nullptr,
+      bool allow_early_exit=false
     ):
       mode(mode),
       problem_sizes(problem_sizes),
@@ -271,7 +258,8 @@ public:
       ldb(ldb),
       ldc(ldc),
       ldd(ldd),
-      host_problem_sizes(host_problem_sizes)
+      host_problem_sizes(host_problem_sizes),
+      allow_early_exit(allow_early_exit)
     {
 
     }
@@ -285,41 +273,31 @@ public:
   /// Parameters structure
   struct Params {
 
-    typename ProblemVisitor::Params problem_visitor;
-    int threadblock_count;
+    typename ProblemVisitor::Params problem_visitor{};
+    int threadblock_count = 0;
 
-    typename EpilogueOutputOp::Params output_op;
+    typename EpilogueOutputOp::Params output_op{};
 
-    GemmUniversalMode mode;
-    int batch_count;
+    GemmUniversalMode mode = cutlass::gemm::GemmUniversalMode::kGemm;
+    int batch_count = 0;
 
-    ElementA ** ptr_A;
-    ElementB ** ptr_B;
-    ElementC ** ptr_C;
-    ElementC ** ptr_D;
+    ElementA** ptr_A = nullptr;
+    ElementB** ptr_B = nullptr;
+    ElementC** ptr_C = nullptr;
+    ElementC** ptr_D = nullptr;
 
-    typename LayoutA::Stride::LongIndex *lda;
-    typename LayoutB::Stride::LongIndex *ldb;
-    typename LayoutC::Stride::LongIndex *ldc;
-    typename LayoutC::Stride::LongIndex *ldd;
+    typename LayoutA::Stride::LongIndex* lda = nullptr;
+    typename LayoutB::Stride::LongIndex* ldb = nullptr;
+    typename LayoutC::Stride::LongIndex* ldc = nullptr;
+    typename LayoutC::Stride::LongIndex* ldd = nullptr;
 
+    bool allow_early_exit = false;
 
     //
     // Methods
     //
 
-    CUTLASS_HOST_DEVICE
-    Params():
-      mode(cutlass::gemm::GemmUniversalMode::kGemm),
-      ptr_A(nullptr),
-      ptr_B(nullptr),
-      ptr_C(nullptr),
-      ptr_D(nullptr),
-      lda(nullptr),
-      ldb(nullptr),
-      ldc(nullptr),
-      ldd(nullptr)
-    { }
+    Params() = default;
 
     CUTLASS_HOST_DEVICE
     Params(Arguments const &args, void *workspace = nullptr, int tile_count = 0):
@@ -333,7 +311,8 @@ public:
       lda(args.lda),
       ldb(args.ldb),
       ldc(args.ldc),
-      ldd(args.ldd)
+      ldd(args.ldd),
+      allow_early_exit(args.allow_early_exit)
     {
 
     }
@@ -372,8 +351,7 @@ public:
   // Methods
   //
 
-  CUTLASS_DEVICE
-  Rank2KGrouped() { }
+  Rank2KGrouped() = default;
 
   /// Determines whether kernel satisfies alignment
   static Status can_implement(cutlass::gemm::GemmCoord const & problem_size) {
@@ -384,16 +362,15 @@ public:
     return Status::kSuccess;
   }
 
-  static size_t get_extra_workspace_size(
-    Arguments const &args,
-    cutlass::gemm::GemmCoord const &grid_tiled_shape) {
-
-    return 0;
-  }
-
   /// Executes one GEMM
   CUTLASS_DEVICE
   void operator()(Params const &params, SharedStorage &shared_storage) {
+
+    // Early exit following LAPACK's definition
+    if (params.allow_early_exit &&
+        (params.output_op.alpha == ElementC(0)) && (params.output_op.beta == ElementC(1))) {
+      return;
+    }
 
     //
     // Problem visitor.
@@ -502,14 +479,14 @@ public:
 
       // Construct iterators to A and B operands for Mma1
       typename Mma1::IteratorA iterator_A(
-        Mma1::IteratorA::Params(ldm_A),
+        typename Mma1::IteratorA::Params(ldm_A),
         ptr_A,
         {problem_size.m(), problem_size_k},
         thread_idx,
         tb_offset_MxK);
 
       typename Mma1::IteratorB iterator_BT(
-        Mma1::IteratorB::Params(ldm_B),
+        typename Mma1::IteratorB::Params(ldm_B),
         ptr_B,
         {problem_size_k, problem_size.n()},
         thread_idx,
@@ -517,14 +494,14 @@ public:
 
       // Construct iterators to A and B operands for Mma2
       typename Mma2::IteratorA iterator_B(
-        Mma2::IteratorA::Params(ldm_B),
+        typename Mma2::IteratorA::Params(ldm_B),
         ptr_B,
         {problem_size.m(), problem_size_k},
         thread_idx,
         tb_offset_MxK);
 
       typename Mma2::IteratorB iterator_AT(
-        Mma2::IteratorB::Params(ldm_A),
+        typename Mma2::IteratorB::Params(ldm_A),
         ptr_A,
         {problem_size_k, problem_size.n()},
         thread_idx,
@@ -532,7 +509,7 @@ public:
 
       // Broadcast the warp_id computed by lane 0 to ensure dependent code
       // is compiled as warp-uniform.
-      int warp_idx = __shfl_sync(0xffffffff, threadIdx.x / 32, 0);
+      int warp_idx = canonical_warp_idx_sync();
 
       int lane_idx = threadIdx.x % 32;
 
@@ -583,7 +560,7 @@ public:
 
         // Tile iterator loading from source tensor.
         typename Epilogue::OutputTileIterator iterator_C(
-          Epilogue::OutputTileIterator::Params(params.ldc[problem_idx]),
+          typename Epilogue::OutputTileIterator::Params(params.ldc[problem_idx]),
           ptr_C,
           problem_size.mn(),
           thread_idx,
@@ -593,7 +570,7 @@ public:
 
         // Tile iterator writing to destination tensor.
         typename Epilogue::OutputTileIterator iterator_D(
-          Epilogue::OutputTileIterator::Params(params.ldd[problem_idx]),
+          typename Epilogue::OutputTileIterator::Params(params.ldd[problem_idx]),
           ptr_D,
           problem_size.mn(),
           thread_idx,
@@ -657,7 +634,7 @@ public:
 
       // Tile iterator loading from source tensor.
       typename Epilogue::OutputTileIterator iterator_C(
-        Epilogue::OutputTileIterator::Params(params.ldc[problem_idx]),
+        typename Epilogue::OutputTileIterator::Params(params.ldc[problem_idx]),
         ptr_C,
         problem_size.mn(),
         thread_idx,
@@ -667,7 +644,7 @@ public:
 
       // Tile iterator writing to destination tensor.
       typename Epilogue::OutputTileIterator iterator_D(
-        Epilogue::OutputTileIterator::Params(params.ldd[problem_idx]),
+        typename Epilogue::OutputTileIterator::Params(params.ldd[problem_idx]),
         ptr_D,
         problem_size.mn(),
         thread_idx,

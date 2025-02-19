@@ -1,5 +1,5 @@
 /***************************************************************************************************
- * Copyright (c) 2017 - 2022 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+ * Copyright (c) 2017 - 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
  * SPDX-License-Identifier: BSD-3-Clause
  *
  * Redistribution and use in source and binary forms, with or without
@@ -36,6 +36,7 @@
 #pragma once
 
 #include "cutlass/cutlass.h"
+#include "cutlass/complex.h"
 #include "cutlass/arch/memory.h"
 #include "cutlass/arch/memory_sm75.h"
 #include "cutlass/arch/cache_operation.h"
@@ -53,7 +54,7 @@ namespace arch {
 
 /// Initiates an asynchronous copy from global memory to shared memory.
 ///
-/// LDGSTS
+/// cp.async
 ///
 template <
     /// Size of the access in bytes
@@ -65,7 +66,7 @@ struct cp_async;
 /// Initiates an asynchronous copy from global memory to shared memory. Rather than predicate
 /// the entire transfer, zeros are written to SMEM if the guard predicate is false.
 ///
-/// LDGSTS
+/// cp.async
 ///
 template <
     /// Size of the access in bytes
@@ -77,7 +78,7 @@ struct cp_async_zfill;
 /// Initiates an asynchronous copy from global memory to shared memory. Rather than predicate
 /// the entire transfer, nans (0x7eff) are written to SMEM if the guard predicate is false.
 ///
-/// LDGSTS
+/// cp.async
 ///
 template <
     /// Size of the access in bytes
@@ -89,7 +90,7 @@ struct cp_async_nan;
 /// Either 0 or 1 are written to SMEM based on input element type
 /// Used for diagonal elements of triangular matrix of BLAS3 functions
 ///
-/// STS
+/// st.shared
 ///
 template <
    /// Type of Element
@@ -325,6 +326,7 @@ struct cp_async<SizeInBytes, CacheOperation::Global> {
         "cp.async only supports CacheOperation::Global when access size is 16B.");
 
       unsigned smem_int_ptr = cutlass_get_smem_pointer(smem_ptr);
+      cutlass::arch::synclog_emit_cp_async(__LINE__, smem_int_ptr, global_ptr, pred_guard, SizeInBytes);
 
       asm volatile(
           "{\n"
@@ -364,6 +366,7 @@ struct cp_async_zfill<SizeInBytes, CacheOperation::Global> {
 
       unsigned smem_int_ptr = cutlass_get_smem_pointer(smem_ptr);
       int src_in_bytes = (pred_guard ? SizeInBytes : 0);
+      cutlass::arch::synclog_emit_cp_async_zfill(__LINE__, smem_int_ptr, global_ptr, pred_guard, SizeInBytes);
 
       asm volatile(
 #if CUTLASS_ENABLE_L2_PREFETCH
@@ -402,6 +405,7 @@ struct cp_async_nan<16, CacheOperation::Global> {
                                                  OOB_NAN_F16x2, OOB_NAN_F16x2};
 
       unsigned smem_int_ptr = cutlass_get_smem_pointer(smem_ptr);
+      cutlass::arch::synclog_emit_cp_async_nan(__LINE__, smem_int_ptr, global_ptr, pred_guard);
 
       asm volatile(
           "{\n"
@@ -436,6 +440,7 @@ CUTLASS_DEVICE
 void cp_async_fence() {
   #if CUDA_CP_ASYNC_ACTIVATED
   asm volatile("cp.async.commit_group;\n" ::);
+  cutlass::arch::synclog_emit_cp_async_fence(__LINE__);
   #endif
 }
 
@@ -446,6 +451,7 @@ template <int N>
 CUTLASS_DEVICE void cp_async_wait() {
   #if CUDA_CP_ASYNC_ACTIVATED
   asm volatile("cp.async.wait_group %0;\n" ::"n"(N));
+  cutlass::arch::synclog_emit_cp_async_wait(__LINE__, N);
   #endif
 }
 
@@ -454,6 +460,7 @@ template <>
 CUTLASS_DEVICE void cp_async_wait<0>() {
   #if CUDA_CP_ASYNC_ACTIVATED
   asm volatile("cp.async.wait_all;\n" ::);
+  cutlass::arch::synclog_emit_cp_async_wait_all(__LINE__);
   #endif
 }
 

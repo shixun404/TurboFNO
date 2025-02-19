@@ -1,5 +1,5 @@
 /***************************************************************************************************
- * Copyright (c) 2017 - 2022 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+ * Copyright (c) 2017 - 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
  * SPDX-License-Identifier: BSD-3-Clause
  *
  * Redistribution and use in source and binary forms, with or without
@@ -319,6 +319,7 @@ public:
 
     int smem_size = int(sizeof(typename Rank2Kkernel::SharedStorage));
 
+    cutlass::arch::synclog_setup();
     cutlass::Kernel<Rank2Kkernel><<<grid, block, smem_size, stream>>>(params_);
 
     cudaError_t result = cudaGetLastError();
@@ -348,7 +349,7 @@ public:
 };
 ////////////////////////////////////////////////////////////////////////////////
 
-/// Parital specialization for column-major output exchange operand.
+/// Partial specialization for column-major output exchange operand.
 template <
     /// Element type for A matrix operand
     typename ElementA_,

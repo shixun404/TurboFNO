@@ -1,5 +1,5 @@
 /***************************************************************************************************
- * Copyright (c) 2017 - 2022 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+ * Copyright (c) 2017 - 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
  * SPDX-License-Identifier: BSD-3-Clause
  *
  * Redistribution and use in source and binary forms, with or without
@@ -37,7 +37,7 @@
 #if defined(__CUDACC_RTC__)
 #include <cuda/std/cstdint>
 #else
-#include <stdint.h>
+#include <cstdint>
 #endif
 
 #include "cutlass/cutlass.h"
@@ -100,12 +100,21 @@ public:
     }
   }
 
+  /// Constructs from some other Coord
+  template <int R, typename I, typename L>
+  CUTLASS_HOST_DEVICE
+  Coord(Coord<R, I, L> other) {
+    for (int i = 0; i < kRank; ++i) {
+      idx[i] = other[i];
+    }
+  }
+
   /// Returns a slice of the Coord which may be larger or smaller in rank
   /// than this.
   template <int Slice>
   CUTLASS_HOST_DEVICE
-  Coord<Slice> slice(int start = 0, Index identity = 0) const {
-    Coord<Slice> result;
+  Coord<Slice, Index, LongIndex> slice(int start = 0, Index identity = 0) const {
+    Coord<Slice, Index, LongIndex> result;
     for (int i = 0; i < Slice; ++i) {
       if (i + start < kRank) {
         result[i] = idx[i + start];

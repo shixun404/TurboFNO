@@ -1,5 +1,5 @@
 /***************************************************************************************************
- * Copyright (c) 2017 - 2022 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+ * Copyright (c) 2017 - 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
  * SPDX-License-Identifier: BSD-3-Clause
  *
  * Redistribution and use in source and binary forms, with or without
@@ -243,7 +243,7 @@ public:
       conjugate<FragmentB> conj_b;
       b = conj_b(b);
     }
-    // if(threadIdx.x == 0 && blockIdx.x == 0) printf("simt  arch<80 \n");
+
     mma(d, a, b, c);
   }
 
@@ -251,7 +251,6 @@ public:
   CUTLASS_DEVICE
   void transform(TransformedFragmentA &dst_A, TransformedFragmentB &dst_B,
                  FragmentA const &A, FragmentB const &B) const {
-    //TODO: Implement this
     dst_A = A;
     dst_B = B;
   }
