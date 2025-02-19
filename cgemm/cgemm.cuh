@@ -81,20 +81,35 @@ __global__ void cgemm(int M, int N, int K, float2 *A, float2 *B, float2 *C, floa
     for(int i = 0; i < THREAD_N; i++){
         b[0][i] = sB[(WID / warp_num_M) * WARP_N + ((TID % 32) /  THREAD_NUM_ROW) * THREAD_N + i];
     }
-    thread_prefetch = 0;
+    int thread_prefetch = 0;
+    int warp_prefetch = 1;
+    // Main Loop along K
     #pragma unroll
-    for(int k = 0; k < K; k += THREADBLOCK_K){
+    for(int k = 0; k < K - THREADBLOCK_K; k += THREADBLOCK_K){
 
+        // Prefetech from global memory
+        #pragma unroll
+        for(int i = 0; i < LOAD_PER_THREAD_A; i++){
+            tmp_A[i] = gA[BID_X * THREADBLOCK_M + (TID * LOAD_PER_THREAD_A + i) % THREADBLOCK_M
+            + (TID * LOAD_PER_THREAD_A + i) / THREADBLOCK_M * M + (k + THREADBLOCK_K) * M];
+        }
+    
+        #pragma unroll
+        for(int i = 0; i < LOAD_PER_THREAD_B; i++){
+            tmp_B[i] = gB[(TID * LOAD_PER_THREAD_B + i) / THREADBLOCK_K + (k + THREADBLOCK_K)
+            + (BID_Y * THREADBLOCK_N + (TID * LOAD_PER_THREAD_B + i) % THREADBLOCK_K) * K];
+        }
 
+        // Thread-level GEMM
         #pragma unroll
         for(int thread_k = 0; thread_k < THREADBLOCK_K - 1; ++thread_k){
             #pragma unroll
             for(int i = 0; i < THREAD_M; i++){
-                a[thread_prefetch][i] = sA[thread_k * THREADBLOCK_M + (WID % warp_num_M) * WARP_M + ((TID % 32) %  THREAD_NUM_ROW) * THREAD_M + i];
+                a[(thread_prefetch + 1) % 2][i] = sA[(thread_k + 1) * THREADBLOCK_M + (WID % warp_num_M) * WARP_M + ((TID % 32) %  THREAD_NUM_ROW) * THREAD_M + i];
             }   
             #pragma unroll
             for(int i = 0; i < THREAD_N; i++){
-                b[thread_prefetch][i] = sB[thread_k * THREADBLOCK_N + (WID / warp_num_M) * WARP_N + ((TID % 32) /  THREAD_NUM_ROW) * THREAD_N + i];
+                b[(thread_prefetch + 1) % 2][i] = sB[(thread_k + 1) * THREADBLOCK_N + (WID / warp_num_M) * WARP_N + ((TID % 32) /  THREAD_NUM_ROW) * THREAD_N + i];
             }
             #pragma unroll
             for(int i = 0; i < THREAD_M; i++){
@@ -104,8 +119,84 @@ __global__ void cgemm(int M, int N, int K, float2 *A, float2 *B, float2 *C, floa
                     c[i][j].y += a[thread_prefetch][i].x * b[thread_prefetch][j].y + a[thread_prefetch][i].y * b[thread_prefetch][j].x;
                 }
             }
+            thread_prefetch = (thread_prefetch + 1) % 2;
+        }
+        #pragma unroll
+        for(int i = 0; i < THREAD_M; i++){
+            #pragma unroll
+            for(int j = 0; j < THREAD_N; j++){
+                c[i][j].x += a[thread_prefetch][i].x * b[thread_prefetch][j].x - a[thread_prefetch][i].y * b[thread_prefetch][j].y;
+                c[i][j].y += a[thread_prefetch][i].x * b[thread_prefetch][j].y + a[thread_prefetch][i].y * b[thread_prefetch][j].x;
+            }
         }
 
+        // Store prefeteched global data to shared
+        #pragma unroll
+        for(int i = 0; i < LOAD_PER_THREAD_A; i++){
+            shared_mem_float2[warp_prefetch * (THREADBLOCK_M + THREADBLOCK_N) * THREADBLOCK_K + TID * LOAD_PER_THREAD_A + i] = tmp_A[i];
+        }
+    
+        #pragma unroll
+        for(int i = 0; i < LOAD_PER_THREAD_B; i++){
+            shared_mem_float2[THREADBLOCK_M * THREADBLOCK_K + warp_prefetch * (THREADBLOCK_M + THREADBLOCK_N) * THREADBLOCK_K
+                                 + TID * LOAD_PER_THREAD_B + i] = tmp_B[i];
+        }
+        
+        __syncthreads();
+        
+        // Prefetech from shared memory
+        sA = shared_mem_float2 + warp_prefetch * (THREADBLOCK_M + THREADBLOCK_N) * THREADBLOCK_K;
+        sB = shared_mem_float2 + THREADBLOCK_M * THREADBLOCK_K + warp_prefetch * (THREADBLOCK_M + THREADBLOCK_N) * THREADBLOCK_K;
+        thread_prefetch = 0;
+        #pragma unroll
+        for(int i = 0; i < THREAD_M; i++){
+            a[thread_prefetch][i] = sA[(WID % warp_num_M) * WARP_M + ((TID % 32) %  THREAD_NUM_ROW) * THREAD_M + i];
+        }   
+        #pragma unroll
+        for(int i = 0; i < THREAD_N; i++){
+            b[thread_prefetch][i] = sB[(WID / warp_num_M) * WARP_N + ((TID % 32) /  THREAD_NUM_ROW) * THREAD_N + i];
+        }
+        warp_prefetch = (warp_prefetch + 1) % 2;
+    }
+    // Thread-level GEMM
+    #pragma unroll
+    for(int thread_k = 0; thread_k < THREADBLOCK_K - 1; ++thread_k){
+        #pragma unroll
+        for(int i = 0; i < THREAD_M; i++){
+            a[(thread_prefetch + 1) % 2][i] = sA[(thread_k + 1) * THREADBLOCK_M + (WID % warp_num_M) * WARP_M + ((TID % 32) %  THREAD_NUM_ROW) * THREAD_M + i];
+        }   
+        #pragma unroll
+        for(int i = 0; i < THREAD_N; i++){
+            b[(thread_prefetch + 1) % 2][i] = sB[(thread_k + 1) * THREADBLOCK_N + (WID / warp_num_M) * WARP_N + ((TID % 32) /  THREAD_NUM_ROW) * THREAD_N + i];
+        }
+        #pragma unroll
+        for(int i = 0; i < THREAD_M; i++){
+            #pragma unroll
+            for(int j = 0; j < THREAD_N; j++){
+                c[i][j].x += a[thread_prefetch][i].x * b[thread_prefetch][j].x - a[thread_prefetch][i].y * b[thread_prefetch][j].y;
+                c[i][j].y += a[thread_prefetch][i].x * b[thread_prefetch][j].y + a[thread_prefetch][i].y * b[thread_prefetch][j].x;
+            }
+        }
+        thread_prefetch = (thread_prefetch + 1) % 2;
+    }
+    #pragma unroll
+    for(int i = 0; i < THREAD_M; i++){
+        #pragma unroll
+        for(int j = 0; j < THREAD_N; j++){
+            c[i][j].x += a[thread_prefetch][i].x * b[thread_prefetch][j].x - a[thread_prefetch][i].y * b[thread_prefetch][j].y;
+            c[i][j].y += a[thread_prefetch][i].x * b[thread_prefetch][j].y + a[thread_prefetch][i].y * b[thread_prefetch][j].x;
+        }
+    }
+
+
+
+    #pragma unroll
+    for(int j = 0; j < THREAD_N; j++){
+        #pragma unroll
+        for(int i = 0; i < THREAD_M; i++){
+            gC[BID_X * THREADBLOCK_M + (WID % warp_num_M) * WARP_M + ((TID % 32) %  THREAD_NUM_ROW) * THREAD_M + i
+            + (BID_Y * THREADBLOCK_N + (WID / warp_num_M) * WARP_N + ((TID % 32) /  THREAD_NUM_ROW) * THREAD_N + j) * M] = c[i][j];
+        }
     }
 
 
