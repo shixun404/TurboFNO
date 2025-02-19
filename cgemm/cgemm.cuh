@@ -7,8 +7,11 @@
 #define warp_N 16
 #define thread_M 4
 #define thread_N 4
+#define warp_num_row thredblock_M / warp_M
+#define thread_num_row warp_M / thread_M
 #define thread_num blockDim.x
 #define tid threadIdx.x
+#define wid threadIdx.x / 32
 #define bid_x blockIdx.x
 #define bid_y blockIdx.y
 #define load_per_thread_A threadblock_M * threadblock_K / thread_num
@@ -67,4 +70,33 @@ __global__ void cgemm(int M, int N, int K, float2 *A, float2 *B, float2 *C, floa
     for(int i = 0; i < load_per_thread_B; i++){
         sB[tid * load_per_thread_B + i] = tmp_B[i];
     }
+
+    __syncthreads();
+
+    #pragma unroll
+    for(int i = 0; i < thread_M; i++){
+        a[0][i] = sA[(wid % warp_num_M) * warp_M + ((tid % 32) %  thread_num_row) * thread_M + i];
+    }   
+    #pragma unroll
+    for(int i = 0; i < thread_N; i++){
+        b[0][i] = sB[(wid / warp_num_M) * warp_N + ((tid % 32) /  thread_num_row) * thread_N + i];
+    }
+
+    #pragma unroll
+    for(int k = 0; k < K; k += threadblock_K){
+
+        #pragma unroll
+        for(int i = 0; i < thread_M; i++){
+            
+            #pragma unroll
+            for(int j = 0; j < thread_N; j++){
+                c[i][j].x += a[thread_prefetch][i].x * b[thread_prefetch][j].x - a[thread_prefetch][i].y * b[thread_prefetch][j].y;
+                c[i][j].y += a[thread_prefetch][i].x * b[thread_prefetch][j].y + a[thread_prefetch][i].y * b[thread_prefetch][j].x;
+            }
+
+        }
+
+    }
+
+
 }
