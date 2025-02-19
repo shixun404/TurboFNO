@@ -14,7 +14,8 @@
 #define load_per_thread_A threadblock_M * threadblock_K / thread_num
 #define load_per_thread_B threadblock_N * threadblock_K / thread_num
 extern __shared__ float shared_mem[];
-__global__ void cgemm(int M, int N, int K, float2 *A, float2 *B, float2 *C, float2 alpha, float2 beta){
+__global__ void cgemm(int M, int N, int K, float *A, float *B, float *C, float2 alpha, float2 beta){
+    float tmp_r, tmp_c, tmp_a, tmp_b;
     float2 *shared_mem_float2 = (float2*)shared_mem;
     float2 * gC = (float2*)C;
     float2 * gA = (float2*)A;
@@ -30,7 +31,7 @@ __global__ void cgemm(int M, int N, int K, float2 *A, float2 *B, float2 *C, floa
     float2 b[2][thread_N];
 
     float2 tmp_A[load_per_thread_A];
-    float2 tmp_B[load_per_thread_B];
+    float2 tmp_b[load_per_thread_b];
     
     #pragma unroll
     for(int i = 0; i < thread_M; i++){
