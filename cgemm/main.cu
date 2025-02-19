@@ -45,9 +45,31 @@ int main(int argc, char** argv){
     DataT alpha = {0.1,0.1} , beta = {0.1,0.1}; 
 
     int num_tests = 1;
-
-    cgemm(M, N, K, dA, dB, dC, alpha, beta);
+    dim3 gridDim((M + THREADBLOCK_M - 1) / THREADBLOCK_M, (N + THREADBLOCK_N - 1) / THREADBLOCK_N, 1);
+    dim3 blockDim(256, 1, 1); 
+    int shmem_size = sizeof(DataT) * (THREADBLOCK_M * THREADBLOCK_K + THREADBLOCK_N * THREADBLOCK_K) * 2;  
     
+    {
+        cgemm<<<gridDim, blockDim, shmem_size>>>(M, N, K, dA, dB, dC, alpha, beta);
+        cudaEvent_t beg, end;
+        cudaEventCreate(&beg);
+        cudaEventCreate(&end);
+        float elapsed;
+        cudaDeviceSynchronize();
+        cudaEventRecord(beg);
+        cudaDeviceSynchronize();
+        for(int i = 0; i < 10; ++i){
+        cgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, M, N, K, (cuFloatComplex*)&alpha, (cuFloatComplex*)dA, M, (cuFloatComplex*)dB, K, (cuFloatComplex*)&beta, (cuFloatComplex*)dC_ref, M);
+        cudaDeviceSynchronize();
+        }  
+        cudaEventRecord(end);
+        cudaEventSynchronize(beg);
+        cudaEventSynchronize(end);
+        cudaEventElapsedTime(&elapsed, beg, end);
+        double gflops = (double(2 * 10 * double(M) * double(N) * double(K)) / (1e9)) / (elapsed / 1e3);
+        printf("%d, %d, %d, %f, %f\n", M, N, K, elapsed, gflops);
+    }
+
     cublasHandle_t handle;   
     cublasCreate(&handle);
     cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, M, N, K, (cuFloatComplex*)&alpha, (cuFloatComplex*)dA, M, (cuFloatComplex*)dB, K, (cuFloatComplex*)&beta, (cuFloatComplex*)dC, M);     
