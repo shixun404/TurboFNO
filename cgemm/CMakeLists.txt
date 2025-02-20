@@ -23,9 +23,9 @@ set(MATH_LIB "/opt/nvidia/hpc_sdk/Linux_x86_64/24.5/math_libs/12.4")
 link_directories(${MATH_LIB}/lib64)
 
 
-add_executable(test_cutlass main.cu /global/homes/s/swu264/TurboFNO/utils/utils.cu cgemm.cuh)
-target_compile_options(test_cutlass PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:--expt-relaxed-constexpr>)
-target_link_libraries(test_cutlass PRIVATE cublas)
+add_executable(cgemm main.cu /global/homes/s/swu264/TurboFNO/utils/utils.cu cgemm.cuh)
+target_compile_options(cgemm PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:--expt-relaxed-constexpr>)
+target_link_libraries(cgemm PRIVATE cublas)
 
 # Clean the build
 add_custom_target(clean-all

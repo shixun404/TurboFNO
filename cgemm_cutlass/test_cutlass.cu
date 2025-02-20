@@ -1,7 +1,7 @@
 #include <cublas_v2.h>
 #include <cuda_runtime.h>
 #include <stdio.h>
-#include "utils/utils.cuh"
+#include "utils.cuh"
 #include "cutlass/gemm/device/gemm.h"
 #include "cutlass/util/device_memory.h"
 #include "helper.h"
@@ -49,7 +49,7 @@ struct Result {
   Result() {}
 };
 
-bool CutlassCgemmNN(int M, int N, int K, DataT alpha, DataT const *A, int lda, DataT const *B, int ldb, DataT beta, DataT *C,int ldc) {
+bool CutlassCgemmNN(int num_tests, int M, int N, int K, DataT alpha, DataT const *A, int lda, DataT const *B, int ldb, DataT beta, DataT *C,int ldc) {
   // using ElementAccumulator = DataT;
   // using ElementComputeEpilogue = ElementAccumulator;
   // using ElementInputA = DataT;
@@ -176,7 +176,7 @@ bool CutlassCgemmNN(int M, int N, int K, DataT alpha, DataT const *A, int lda, D
   // Run profiling loop
   //
   gemm_op();
-  for (int iter = 0; iter < 10; ++iter) {
+  for (int iter = 0; iter < num_tests; ++iter) {
     // Launch initialized CUTLASS kernel
     status = gemm_op();
     cudaDeviceSynchronize();
@@ -213,9 +213,9 @@ bool CutlassCgemmNN(int M, int N, int K, DataT alpha, DataT const *A, int lda, D
   result.m = problem_size.m();
   result.n = problem_size.n();
   result.k = problem_size.k();
-  result.runtime_ms = double(runtime_ms) / double(10);
-  result.gflops =  (2.0 * double(problem_size.product()) / double(1.0e9)) / (result.runtime_ms / 1000.0);
-  printf("%d, %d, %d, %f, %f\n", result.m, result.n, result.k, result.runtime_ms, result.gflops);
+  result.runtime_ms = double(runtime_ms) / double(num_tests);
+  result.gflops =  (2.0 *  double(problem_size.product()) / double(1.0e9)) / (result.runtime_ms / 1000.0);
+  printf("cutlass: %d, %d, %d, %f, %f\n", result.m, result.n, result.k, result.runtime_ms, result.gflops);
   // Cleanup
   for (auto event : events) {
     (void)cudaEventDestroy(event);
@@ -231,7 +231,7 @@ void test_cutlass(int m, int n, int k, int num_tests, DataT alpha, DataT beta, D
     cudaEventCreate(&beg);
     cudaEventCreate(&end);
     float elapsed;
-    bool ret = CutlassCgemmNN(m, n, k, alpha, dA, m, dB, k, beta, dC, m);
+    bool ret = CutlassCgemmNN(num_tests, m, n, k, alpha, dA, m, dB, k, beta, dC, m);
     // if (ret == 0) return;
     // cudaDeviceSynchronize();
     // cudaEventRecord(beg);
@@ -250,8 +250,11 @@ void test_cutlass(int m, int n, int k, int num_tests, DataT alpha, DataT beta, D
 int main(int argc, char** argv){
     DataT *A, *dA, *B, *dB, *C, *C_ref, *dC, *dC_ref;
     int M, N, K;
-    freopen("input.txt", "r", stdin);
-    scanf("%d%d%d", &M, &N, &K);
+    M = atoi(argv[1]);
+    N = atoi(argv[2]);
+    K = atoi(argv[3]);
+    // freopen("input.txt", "r", stdin);
+    // scanf("%d%d%d", &M, &N, &K);
     long long int A_size = ((M + 127) / 128) * 128 * ((K + 127) / 128) * 128;
     long long int B_size = ((N + 127) / 128) * 128 * ((K + 127) / 128) * 128;
     long long int C_size = ((M + 127) / 128) * 128 * ((N + 127) / 128) * 128;
@@ -285,13 +288,13 @@ int main(int argc, char** argv){
 
     DataT alpha = {0.1,0.1} , beta = {0.1,0.1}; 
 
-    int num_tests = 1;
+    int num_tests = argc > 4 ? atoi(argv[4]) : 1;
 
-    test_cutlass(M, N, K, num_tests, alpha, beta, dA, dB, dC);
+    // test_cutlass(M, N, K, num_tests, alpha, beta, dA, dB, dC);
     
     cublasHandle_t handle;   
     cublasCreate(&handle);
-    cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, M, N, K, (cuFloatComplex*)&alpha, (cuFloatComplex*)dA, M, (cuFloatComplex*)dB, K, (cuFloatComplex*)&beta, (cuFloatComplex*)dC, M);     
+    cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, M, N, K, (cuFloatComplex*)&alpha, (cuFloatComplex*)dA, M, (cuFloatComplex*)dB, K, (cuFloatComplex*)&beta, (cuFloatComplex*)dC_ref, M);     
     cudaEvent_t beg, end;
     cudaEventCreate(&beg);
     cudaEventCreate(&end);
@@ -299,7 +302,7 @@ int main(int argc, char** argv){
     cudaDeviceSynchronize();
     cudaEventRecord(beg);
     cudaDeviceSynchronize();
-    for(int i = 0; i < 10; ++i){
+    for(int i = 0; i < num_tests; ++i){
       cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, M, N, K, (cuFloatComplex*)&alpha, (cuFloatComplex*)dA, M, (cuFloatComplex*)dB, K, (cuFloatComplex*)&beta, (cuFloatComplex*)dC_ref, M);
       cudaDeviceSynchronize();
     }  
@@ -307,10 +310,11 @@ int main(int argc, char** argv){
     cudaEventSynchronize(beg);
     cudaEventSynchronize(end);
     cudaEventElapsedTime(&elapsed, beg, end);
-    double gflops = (double(2 * 10 * double(M) * double(N) * double(K)) / (1e9)) / (elapsed / 1e3);
-    printf("%d, %d, %d, %f, %f\n", M, N, K, elapsed, gflops);
+    double gflops = (double(2 * num_tests * double(M) * double(N) * double(K)) / (1e9)) / (elapsed / 1e3);
+    printf("cublas %d, %d, %d, %f, %f\n", M, N, K, elapsed, gflops);
 
-
+    test_cutlass(M, N, K, num_tests, alpha, beta, dA, dB, dC);
+    
     cudaMemcpy(C, dC, sizeof(DataT) * C_size, cudaMemcpyDeviceToHost);
     cudaMemcpy(C_ref, dC_ref, sizeof(DataT) * C_size, cudaMemcpyDeviceToHost);
 

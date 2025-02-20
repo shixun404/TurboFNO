@@ -75,17 +75,27 @@ void copy_matrix_double(double *src, double *dest, int n){
 
 bool verify_vector(float *vec1, float *vec2, int n){
     double diff = 0.0;
+    double max_diff = 0.0;
+    double max_rel_diff = 0.0;
+    double rel_diff = 0.0;
     int i;
     for (i = 0; vec1 + i && vec2 + i && i < n; i++){
         diff = fabs( (double)vec1[i] - (double)vec2[i] );
+        rel_diff = diff / double(vec1[i]);
+        if(rel_diff > max_rel_diff) {
+            max_rel_diff = rel_diff;
+        }
+        if(diff > max_diff) {
+            max_diff = diff;
+        }
+        // printf("error. vec1 %5.2f, vec2 %5.2f, 1d-ID %d\n", vec1[i], vec2[i],i);
         if (diff / double(vec1[i]) > 5e-3) {
-            printf("error. %5.2f,%5.2f,%d\n", vec1[i], vec2[i],i);
+            printf("error. vec1 %5.2f, vec2 %5.2f, 1d-ID %d\n", vec1[i], vec2[i],i);
             // return false;
-            // printf("asdadsad");
-            return false;
+            // break;
         }
     }
-    printf("verified\n");
+    printf("verified, max_rel_diff=%f, max_diff=%f\n", max_rel_diff, max_diff);
     return true;
 }
 
