@@ -49,10 +49,7 @@ int main(int argc, char** argv){
     // DataT alpha = {1.0, 0} , beta = {1.0, 0}; 
 
     int num_tests = argc > 4 ? atoi(argv[4]) : 1;
-    dim3 gridDim((M + THREADBLOCK_M - 1) / THREADBLOCK_M, (N + THREADBLOCK_N - 1) / THREADBLOCK_N, 1);
-    dim3 blockDim(256, 1, 1); 
-    int shmem_size = sizeof(DataT) * (THREADBLOCK_M * THREADBLOCK_K + THREADBLOCK_N * THREADBLOCK_K) * 2;  
-    printf("shmem_size=%d KB\n", shmem_size / 1024);
+   
     cublasHandle_t handle;   
     cublasCreate(&handle);
     cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, M, N, K, (cuFloatComplex*)&alpha, (cuFloatComplex*)dA, M, (cuFloatComplex*)dB, K, (cuFloatComplex*)&beta, (cuFloatComplex*)dC_ref, M);     
@@ -77,7 +74,26 @@ int main(int argc, char** argv){
 
         
     {
+      dim3 gridDim((M + THREADBLOCK_M - 1) / THREADBLOCK_M, (N + THREADBLOCK_N - 1) / THREADBLOCK_N, 1);
+      dim3 blockDim(THREAD_NUM, 1, 1); 
+      int shmem_size = sizeof(DataT) * (THREADBLOCK_M * THREADBLOCK_K + THREADBLOCK_N * THREADBLOCK_K) * 2;  
+      printf("shmem_size=%d KB\n", shmem_size / 1024);
+      size_t max_shmem;
+// cudaFuncGetAttribute(&max_shmem, cudaFuncAttributeMaxDynamicSharedMemorySize, cgemm);
+// if (shmem_size > max_shmem) {
+//     printf("Error: shmem_size=%d KB exceeds max available shared memory %lu KB\n", shmem_size / 1024, max_shmem / 1024);
+// }
       cgemm<<<gridDim, blockDim, shmem_size>>>(M, N, K, dA, dB, dC, alpha, beta);
+      cudaError_t err = cudaGetLastError();  // 获取最近的错误
+if (err != cudaSuccess) {
+    printf("CUDA Kernel Launch Error: %s\n", cudaGetErrorString(err));
+}
+cudaDeviceSynchronize();  // 确保 kernel 执行完成
+err = cudaGetLastError();  // 再次检查同步后的错误
+if (err != cudaSuccess) {
+    printf("CUDA Kernel Execution Error: %s\n", cudaGetErrorString(err));
+}
+
       cudaEvent_t beg, end;
       cudaEventCreate(&beg);
       cudaEventCreate(&end);
