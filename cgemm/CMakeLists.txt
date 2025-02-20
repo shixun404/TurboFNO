@@ -11,8 +11,8 @@ set(FT "0" CACHE STRING "Description of FT")
 # Include directories
 # include_directories(/global/homes/s/swu264/TurboFNO/cgemm_cutlass/include)
 include_directories(/home/swu264/miniconda3/envs/kmeans1/include)
-include_directories(/global/homes/s/swu264/TurboFNO/cgemm/Common)
-include_directories(/global/homes/s/swu264/TurboFNO/utils)
+include_directories(/home/swu264/TurboFNO/cgemm/Common)
+include_directories(/home/swu264/TurboFNO/utils)
 include_directories(${CMAKE_SOURCE_DIR})
 
 # CUDA paths
@@ -23,7 +23,7 @@ set(MATH_LIB "/home/swu264/miniconda3/envs/kmeans1/lib")
 link_directories(${MATH_LIB}/lib64)
 
 
-add_executable(cgemm main.cu /global/homes/s/swu264/TurboFNO/utils/utils.cu cgemm.cuh)
+add_executable(cgemm main.cu /home/swu264/TurboFNO/utils/utils.cu cgemm.cuh)
 target_compile_options(cgemm PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:--expt-relaxed-constexpr>)
 target_link_libraries(cgemm PRIVATE cublas)
 
