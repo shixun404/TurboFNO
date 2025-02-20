@@ -10,14 +10,14 @@ set(FT "0" CACHE STRING "Description of FT")
 
 # Include directories
 # include_directories(/global/homes/s/swu264/TurboFNO/cgemm_cutlass/include)
-include_directories(/opt/nvidia/hpc_sdk/Linux_x86_64/24.5/cuda/include)
+include_directories(/home/swu264/miniconda3/envs/kmeans1/include)
 include_directories(/global/homes/s/swu264/TurboFNO/cgemm/Common)
 include_directories(/global/homes/s/swu264/TurboFNO/utils)
 include_directories(${CMAKE_SOURCE_DIR})
 
 # CUDA paths
-set(CUDA_PATH "/opt/nvidia/hpc_sdk/Linux_x86_64/24.5/cuda")
-set(MATH_LIB "/opt/nvidia/hpc_sdk/Linux_x86_64/24.5/math_libs/12.4")
+set(CUDA_PATH "/home/swu264/miniconda3/envs/kmeans1/bin")
+set(MATH_LIB "/home/swu264/miniconda3/envs/kmeans1/lib")
 
 # Library directories
 link_directories(${MATH_LIB}/lib64)
