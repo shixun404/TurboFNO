@@ -11,7 +11,7 @@ set(FT "0" CACHE STRING "Description of FT")
 # Include directories
 # include_directories(/global/homes/s/swu264/TurboFNO/cgemm_cutlass/include)
 include_directories(/opt/nvidia/hpc_sdk/Linux_x86_64/24.5/cuda/include)
-include_directories(/global/homes/s/swu264/TurboFNO/cgemm/Common)
+include_directories(/global/homes/s/swu264/TurboFNO/Common)
 include_directories(/global/homes/s/swu264/TurboFNO/utils)
 include_directories(${CMAKE_SOURCE_DIR})
 
