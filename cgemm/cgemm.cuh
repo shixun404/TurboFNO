@@ -9,7 +9,7 @@
 #define THREAD_N 4
 #define WARP_NUM_ROW (THREADBLOCK_M / WARP_M)
 #define THREAD_NUM_ROW (WARP_M / THREAD_M)
-#define THREAD_NUM 256
+#define THREAD_NUM (THREADBLOCK_M * THREADBLOCK_N / (THREAD_M * THREAD_N))
 #define TID threadIdx.x
 #define WID (threadIdx.x / 32)
 #define BID_X blockIdx.x
