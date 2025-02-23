@@ -9,7 +9,7 @@
 #define THREAD_N 4
 #define WARP_NUM_ROW (THREADBLOCK_M / WARP_M)
 #define THREAD_NUM_ROW (WARP_M / THREAD_M)
-#define THREAD_NUM 256
+#define THREAD_NUM (THREADBLOCK_M * THREADBLOCK_N / (THREAD_M * THREAD_N))
 #define TID threadIdx.x
 #define WID (threadIdx.x / 32)
 #define BID_X blockIdx.x
@@ -17,7 +17,21 @@
 #define LOAD_PER_THREAD_A (THREADBLOCK_M * THREADBLOCK_K / THREAD_NUM)
 #define LOAD_PER_THREAD_B (THREADBLOCK_N * THREADBLOCK_K / THREAD_NUM)
 extern __shared__ float shared_mem[];
-__global__ void cgemm(int M, int N, int K, float2 *A, float2 *B, float2 *C, float2 alpha, float2 beta){
+
+__global__ void fft_(int FFT_len, float2 *in, float2 *shmem){
+
+}
+
+__global__ void ifft(int FFT_len, float2 *in, float2 *shmem){
+
+}
+
+__global__ void global_to_shared(int M, int N, float2 *in, float2 *shmem){
+}
+
+
+
+__global__ void fused_fft_cgemm(int bs, int dimX, int dimY, int N, int K, float2 *A, float2 *B, float2 *C, float2 alpha, float2 beta){
     float2 *shared_mem_float2 = (float2*)shared_mem;
     float2 * gC = (float2*)C;
     float2 * gA = (float2*)A;

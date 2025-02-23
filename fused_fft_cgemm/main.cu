@@ -50,7 +50,7 @@ int main(int argc, char** argv){
 
     int num_tests = argc > 4 ? atoi(argv[4]) : 1;
     dim3 gridDim((M + THREADBLOCK_M - 1) / THREADBLOCK_M, (N + THREADBLOCK_N - 1) / THREADBLOCK_N, 1);
-    dim3 blockDim(256, 1, 1); 
+    dim3 blockDim((THREADBLOCK_M * THREADBLOCK_N / (THREAD_M * THREAD_N)), 1, 1); 
     int shmem_size = sizeof(DataT) * (THREADBLOCK_M * THREADBLOCK_K + THREADBLOCK_N * THREADBLOCK_K) * 2;  
 
     cublasHandle_t handle;   
