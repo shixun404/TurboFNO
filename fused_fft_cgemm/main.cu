@@ -63,10 +63,19 @@ void test_myfft(float2* input_d, float2* output_d,
     dim3 blockDim(N / thread_bs[int(log2f(N)) - 7] * threadblock_bs, 1, 1);
     int shmem_size = sizeof(float2) * N * threadblock_bs;
     printf("%d %d %d\n", gridDim.x, blockDim.x, shmem_size);
+    fflush(stdout);
+    // fft_7<<<gridDim, blockDim, shmem_size>>>(input_d, output_d, threadblock_bs);
+    cudaError_t err;  // 获取最近的错误
+    
+
     for (int i = 0; i < ntest; ++i){
-        fft_7<<<gridDim, blockDim, shmem_size>>>(input_d, output_d);
+        fft_7<<<gridDim, blockDim, shmem_size>>>(input_d, output_d, threadblock_bs);
         cudaDeviceSynchronize();
     }
+    err = cudaGetLastError();
+  if (err != cudaSuccess) {
+    printf("CUDA Kernel Launch Error: %s\n", cudaGetErrorString(err));
+}
     cudaEventRecord(fft_end);
     cudaEventSynchronize(fft_begin);
     cudaEventSynchronize(fft_end);
@@ -188,7 +197,10 @@ int main(int argc, char** argv){
     cudaMalloc((void**)&output_d, sizeof(DataT) * output_size);
     cudaMalloc((void**)&output_ref_d, sizeof(DataT) * output_size);
 
-    generate_random_vector((float*)input, input_size * 2);
+    // generate_random_vector((float*)input, input_size * 2);
+    fill_vector((float*)input, 0, output_size * 2);
+    input[0].x = 1.0;
+    input[0].y = 0.0;
 
     cudaMemcpy(input_d, input, sizeof(DataT) * input_size, cudaMemcpyHostToDevice);
 
