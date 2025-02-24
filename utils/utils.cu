@@ -88,12 +88,13 @@ bool verify_vector(float *vec1, float *vec2, int n){
         if(diff > max_diff) {
             max_diff = diff;
         }
-        printf("error. vec1 %5.2f, vec2 %5.2f, 1d-ID %d\n", vec1[i], vec2[i],i);
-        // if (diff / double(vec1[i]) > 5e-3) {
-            // printf("error. vec1 %5.2f, vec2 %5.2f, 1d-ID %d\n", vec1[i], vec2[i],i);
-            // return false;
+        // printf("error. vec1 %5.2f, vec2 %5.2f, 1d-ID %d\n", vec1[i], vec2[i],i);
+        if (rel_diff > 5e-3 && diff > 1e-3) {
+            printf("error. vec1=%10.6f, vec2=%10.6f, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d\n", vec1[i], vec2[i], rel_diff, diff, i);
+            printf("Not Pass!");
+            return false;
             // break;
-        // }
+        }
     }
     printf("verified, max_rel_diff=%f, max_diff=%f\n", max_rel_diff, max_diff);
     return true;

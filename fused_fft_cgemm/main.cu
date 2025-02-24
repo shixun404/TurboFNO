@@ -4,13 +4,15 @@
 #include <stdio.h>
 #include "utils.cuh"
 #include "fused_fft_cgemm.cuh"
-#include "fft_7.cuh"
+#include "fft_radix_2_logN_7_upload_0.cuh"
+#include "fft_radix_2_logN_8_upload_0.cuh"
+#include "fft_radix_2_logN_9_upload_0.cuh"
+#include "fft_radix_2_logN_10_upload_0.cuh"
 #include <cufftXt.h>
 
 using DataT = float2;
 int thread_bs[4] = {8, 16, 8, 16};
-
-
+void (*turboFFTArr [4])(float2 *, float2 *, int) ={fft_7, fft_8, fft_9, fft_10};
 
 void test_cufft(float2* input_d, float2* output_d, 
   float2* output_cufft, long long int N, size_t bs, int ntest) {
@@ -23,6 +25,11 @@ void test_cufft(float2* input_d, float2* output_d,
 
     cufftPlan1d(&plan, N, CUFFT_C2C, bs);
 
+
+    cufftExecC2C(plan, reinterpret_cast<cufftComplex*>(input_d), 
+                        reinterpret_cast<cufftComplex*>(output_d), 
+                        CUFFT_FORWARD);
+        cudaDeviceSynchronize();
     cudaEventCreate(&fft_begin);
     cudaEventCreate(&fft_end);
 
@@ -42,7 +49,7 @@ void test_cufft(float2* input_d, float2* output_d,
     gflops = 5 * N * log2f(N) * bs / elapsed_time * 1000 / 1000000000.f;
     
     mem_bandwidth = (float)(N * bs * 8 * 2) / (elapsed_time) * 1000.f / 1000000000.f;
-    printf("cuFFT, %d, %d, %8.3f, %8.3f, %8.3f\n",  (int)log2f(N),  (int)log2f(bs), elapsed_time, gflops, mem_bandwidth);
+    printf("cuFFT, N=%d, BS=%d, TIME=%8.3f, GFLOPS%8.3f, MEM=%8.3f\n",  (int)log2f(N),  (int)log2f(bs), elapsed_time, gflops, mem_bandwidth);
 
     cudaMemcpy(output_cufft, output_d, N * bs * sizeof(float2), 
                    cudaMemcpyDeviceToHost);
@@ -53,29 +60,27 @@ void test_cufft(float2* input_d, float2* output_d,
 void test_myfft(float2* input_d, float2* output_d, 
   float2* output_host, long long int N, size_t bs, int threadblock_bs, int ntest) {
     float gflops, elapsed_time, mem_bandwidth;
+    dim3 gridDim(bs / threadblock_bs, 1, 1);
+    dim3 blockDim(N / thread_bs[int(log2f(N)) - 7] * threadblock_bs, 1, 1);
+    int shmem_size = sizeof(float2) * N * threadblock_bs;
+    printf("%d %d %d\n", gridDim.x, blockDim.x, shmem_size);
+    void (*myfft_ptr)(float2 *, float2 *, int) = turboFFTArr[int(log2f(N)) - 7];
+    myfft_ptr<<<gridDim, blockDim, shmem_size>>>(input_d, output_d, threadblock_bs);
+    cudaDeviceSynchronize();
     cudaEvent_t fft_begin, fft_end;
 
     cudaEventCreate(&fft_begin);
     cudaEventCreate(&fft_end);
 
     cudaEventRecord(fft_begin);
-    dim3 gridDim(bs / threadblock_bs, 1, 1);
-    dim3 blockDim(N / thread_bs[int(log2f(N)) - 7] * threadblock_bs, 1, 1);
-    int shmem_size = sizeof(float2) * N * threadblock_bs;
-    printf("%d %d %d\n", gridDim.x, blockDim.x, shmem_size);
-    fflush(stdout);
     // fft_7<<<gridDim, blockDim, shmem_size>>>(input_d, output_d, threadblock_bs);
-    cudaError_t err;  // 获取最近的错误
+    // cudaError_t err;  // 获取最近的错误
     
 
     for (int i = 0; i < ntest; ++i){
-        fft_7<<<gridDim, blockDim, shmem_size>>>(input_d, output_d, threadblock_bs);
+        myfft_ptr<<<gridDim, blockDim, shmem_size>>>(input_d, output_d, threadblock_bs);
         cudaDeviceSynchronize();
     }
-    err = cudaGetLastError();
-  if (err != cudaSuccess) {
-    printf("CUDA Kernel Launch Error: %s\n", cudaGetErrorString(err));
-}
     cudaEventRecord(fft_end);
     cudaEventSynchronize(fft_begin);
     cudaEventSynchronize(fft_end);
@@ -86,19 +91,25 @@ void test_myfft(float2* input_d, float2* output_d,
     
     // printf("cuFFT finished: T=%8.3fms, FLOPS=%8.3fGFLOPS\n", elapsed_time, gflops);
     mem_bandwidth = (float)(N * bs * 8 * 2) / (elapsed_time) * 1000.f / 1000000000.f;
-    printf("TurboFFT, %d, %d, %8.3f, %8.3f, %8.3f\n",  (int)log2f(N),  (int)log2f(bs), elapsed_time, gflops, mem_bandwidth);
+    printf("TurboFFT, N=%d, BS=%d, TIME=%8.3f, GFLOPS%8.3f, MEM=%8.3f\n",  (int)log2f(N),  (int)log2f(bs), elapsed_time, gflops, mem_bandwidth);
 
     checkCudaErrors(cudaMemcpy(output_host, output_d, N * bs * sizeof(float2), 
                    cudaMemcpyDeviceToHost));
 }
 
 int main(int argc, char** argv){
+    if(argc < 6){
+      printf("Usage: %s 0 M N K ntest\n", argv[0]);
+      printf("Usage: %s 1 N BS threadblock_bs ntest\n", argv[0]);
+      return 1;
+    }
     if(argv[1] == 0){
       DataT *A, *dA, *B, *dB, *C, *C_ref, *dC, *dC_ref;
     int M, N, K;
       M = atoi(argv[2]);
       N = atoi(argv[3]);
       K = atoi(argv[4]);
+      int num_tests = argc > 5 ? atoi(argv[5]) : 1;
       // freopen("input.txt", "r", stdin);
       // scanf("%d%d%d", &M, &N, &K);
       long long int A_size = M * K;
@@ -126,7 +137,7 @@ int main(int argc, char** argv){
       DataT alpha = {1.0, -1.0} , beta = {-1.0, 1.0}; 
       // DataT alpha = {1.0, 0} , beta = {1.0, 0}; 
 
-      int num_tests = argc > 5 ? atoi(argv[5]) : 1;
+      
       dim3 gridDim((M + THREADBLOCK_M - 1) / THREADBLOCK_M, (N + THREADBLOCK_N - 1) / THREADBLOCK_N, 1);
       dim3 blockDim((THREADBLOCK_M * THREADBLOCK_N / (THREAD_M * THREAD_N)), 1, 1); 
       int shmem_size = sizeof(DataT) * (THREADBLOCK_M * THREADBLOCK_K + THREADBLOCK_N * THREADBLOCK_K) * 2;  
@@ -197,10 +208,10 @@ int main(int argc, char** argv){
     cudaMalloc((void**)&output_d, sizeof(DataT) * output_size);
     cudaMalloc((void**)&output_ref_d, sizeof(DataT) * output_size);
 
-    // generate_random_vector((float*)input, input_size * 2);
-    fill_vector((float*)input, 0, output_size * 2);
-    input[0].x = 1.0;
-    input[0].y = 0.0;
+    generate_random_vector((float*)input, input_size * 2);
+    // fill_vector((float*)input, 0, output_size * 2);
+    // input[0].x = 1.0;
+    // input[0].y = 0.0;
 
     cudaMemcpy(input_d, input, sizeof(DataT) * input_size, cudaMemcpyHostToDevice);
 
