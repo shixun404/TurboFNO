@@ -20,9 +20,9 @@ set(MATH_LIB "/opt/nvidia/hpc_sdk/Linux_x86_64/24.5/math_libs/12.4")
 link_directories(${MATH_LIB}/lib64)
 
 
-add_executable(fused_fft_cgemm main.cu /global/homes/s/swu264/TurboFNO/utils/utils.cu fused_fft_cgemm.cuh)
-target_compile_options(fused_fft_cgemm PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:--expt-relaxed-constexpr>)
-target_link_libraries(fused_fft_cgemm PRIVATE cublas cufft)
+add_executable(TurboFNO main.cu /global/homes/s/swu264/TurboFNO/utils/utils.cu fused_fft_cgemm.cuh fft_7.cuh)
+target_compile_options(TurboFNO PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:--expt-relaxed-constexpr>)
+target_link_libraries(TurboFNO PRIVATE cublas cufft)
 
 # Clean the build
 add_custom_target(clean-all
