@@ -1,7 +1,7 @@
 
 #include "../../../TurboFFT_radix_2_template.h"
 template<>
-__global__ void fft_radix_2<float2, 7, 0, 0, 0, 0>(int bs, int dimX, int dimY, int N, int K, float2* inputs, float2* outputs,  int BS, int thread_bs) {
+__global__ void fft_radix_2<float2, 7, 0, 0, 0, 0>(int bs, int dimX, int dimY, int N, int K, float2* gPtr, float2* rPtr, float2* rPtr_3) {
     int threadblock_k = 0;
     
     float2* shared = (float2*) ext_shared;
@@ -29,13 +29,9 @@ __global__ void fft_radix_2<float2, 7, 0, 0, 0, 0>(int bs, int dimX, int dimY, i
     float2* gPtr;
     float2* shPtr;
     float2 rPtr[8];
-    float2 rPtr_2[8];
+    // float2 rPtr_2[8];
     float2 rPtr_3[8];
-    float2 rPtr_4[8];
     float2 tmp;
-    float2 tmp_1;
-    float2 tmp_2;
-    float2 tmp_3;
     float2 angle;
     float2 delta_angle;
     j = 0;
@@ -51,12 +47,7 @@ __global__ void fft_radix_2<float2, 7, 0, 0, 0, 0>(int bs, int dimX, int dimY, i
     offset = 0;
     gPtr = inputs;
     shPtr = shared;
-    
-    __syncthreads();
     int bid = 0;
-    // for(bid = (blockIdx.x / tb_gap) * tb_gap * thread_bs + blockIdx.x % tb_gap;
-    //             threadblock_k < K && bid < (128 * BS + 512 - 1) / 512; bid += delta_bid, threadblock_k += THREADBLOCK_K)
-    // {
             
     bx = bid;
     tx = threadIdx.x;
@@ -473,38 +464,12 @@ __global__ void fft_radix_2<float2, 7, 0, 0, 0, 0>(int bs, int dimX, int dimY, i
     
     gPtr += (bx % BS * 512);
     
-            *(gPtr + 0) = rPtr[0];
-            rPtr_4[0].x += rPtr[0].x;
-            rPtr_4[0].y += rPtr[0].y;
-            
+            *(gPtr + 0) = rPtr[0];            
             *(gPtr + 16) = rPtr[1];
-            rPtr_4[1].x += rPtr[1].x;
-            rPtr_4[1].y += rPtr[1].y;
-            
             *(gPtr + 32) = rPtr[2];
-            rPtr_4[2].x += rPtr[2].x;
-            rPtr_4[2].y += rPtr[2].y;
-            
             *(gPtr + 48) = rPtr[3];
-            rPtr_4[3].x += rPtr[3].x;
-            rPtr_4[3].y += rPtr[3].y;
-            
             *(gPtr + 64) = rPtr[4];
-            rPtr_4[4].x += rPtr[4].x;
-            rPtr_4[4].y += rPtr[4].y;
-            
             *(gPtr + 80) = rPtr[5];
-            rPtr_4[5].x += rPtr[5].x;
-            rPtr_4[5].y += rPtr[5].y;
-            
             *(gPtr + 96) = rPtr[6];
-            rPtr_4[6].x += rPtr[6].x;
-            rPtr_4[6].y += rPtr[6].y;
-            
             *(gPtr + 112) = rPtr[7];
-            rPtr_4[7].x += rPtr[7].x;
-            rPtr_4[7].y += rPtr[7].y;
-            
-    // }
-    
 }
