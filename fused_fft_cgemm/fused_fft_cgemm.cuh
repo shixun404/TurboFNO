@@ -1,22 +1,10 @@
 #include <stdio.h>
 #include <mma.h>
-#define THREADBLOCK_M 64
-#define THREADBLOCK_N 64
-#define THREADBLOCK_K 8
-#define WARP_M 32
-#define WARP_N 16
-#define THREAD_M 4
-#define THREAD_N 4
-#define WARP_NUM_ROW (THREADBLOCK_M / WARP_M)
-#define THREAD_NUM_ROW (WARP_M / THREAD_M)
-#define THREAD_NUM (THREADBLOCK_M * THREADBLOCK_N / (THREAD_M * THREAD_N))
-#define TID threadIdx.x
-#define WID (threadIdx.x / 32)
-#define BID_X blockIdx.x
-#define BID_Y blockIdx.y
-#define LOAD_PER_THREAD_A (THREADBLOCK_M * THREADBLOCK_K / THREAD_NUM)
-#define LOAD_PER_THREAD_B (THREADBLOCK_N * THREADBLOCK_K / THREAD_NUM)
-extern __shared__ float shared_mem[];
+#include <turboFNO.h>
+#include "fft_radix_2_logN_7_upload_0_fused.cuh"
+#include "fft_radix_2_logN_8_upload_0_fused.cuh"
+#include "fft_radix_2_logN_9_upload_0_fused.cuh"
+#include "fft_radix_2_logN_10_upload_0_fused.cuh"
 
 __global__ void fft_(int FFT_len, float2 *in, float2 *shmem){
 
@@ -73,26 +61,14 @@ __global__ void fused_fft_cgemm(int M, int N, int K, float2 *A, float2 *B, float
     
     // gPtr += (BID_X * dimY);
 
-    // fft_7(gPtr, regFFT);
-
-
-
-    #pragma unroll
-    for(int i = 0; i < LOAD_PER_THREAD_A; i++){
-        tmp_A[i] = gA[BID_X * THREADBLOCK_M + (TID * LOAD_PER_THREAD_A + i) % THREADBLOCK_M
-        + (TID * LOAD_PER_THREAD_A + i) / THREADBLOCK_M * M];
-    }
+    fft_7_fused(gA + BID_X * THREADBLOCK_M, shared_mem_float2, M);
 
     #pragma unroll
     for(int i = 0; i < LOAD_PER_THREAD_B; i++){
         tmp_B[i] = gB[(TID * LOAD_PER_THREAD_B + i) / THREADBLOCK_N
         + (BID_Y * THREADBLOCK_N + (TID * LOAD_PER_THREAD_B + i) % THREADBLOCK_N) * K];
     }
-    
-    #pragma unroll
-    for(int i = 0; i < LOAD_PER_THREAD_A; i++){
-        sA[TID * LOAD_PER_THREAD_A + i] = tmp_A[i];
-    }
+
 
     #pragma unroll
     for(int i = 0; i < LOAD_PER_THREAD_B; i++){
