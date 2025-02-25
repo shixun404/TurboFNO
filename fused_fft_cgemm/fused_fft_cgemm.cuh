@@ -6,19 +6,6 @@
 #include "fft_radix_2_logN_9_upload_0_fused.cuh"
 #include "fft_radix_2_logN_10_upload_0_fused.cuh"
 
-__global__ void fft_(int FFT_len, float2 *in, float2 *shmem){
-
-}
-
-__global__ void ifft(int FFT_len, float2 *in, float2 *shmem){
-
-}
-
-__global__ void global_to_shared(int M, int N, float2 *in, float2 *shmem){
-}
-
-
-
 __global__ void fused_fft_cgemm(int M, int N, int K, float2 *A, float2 *B, float2 *C, float2 alpha, float2 beta){
     float2 *shared_mem_float2 = (float2*)shared_mem;
     float2 * gC = (float2*)C;
@@ -52,23 +39,13 @@ __global__ void fused_fft_cgemm(int M, int N, int K, float2 *A, float2 *B, float
     int offset = 0, offset_k = 0;
     int k = 0;
     
-    // FFT Global offest
-    // gPtr = gA;
-    
-    // gPtr += TID % 16 * 1;
-    
-    // gPtr += ((TID / 16) + threadblock_k) * bs * dimX * dimY;
-    
-    // gPtr += (BID_X * dimY);
-
-    fft_7_fused(gA + BID_X * THREADBLOCK_M, shared_mem_float2, M);
-
     #pragma unroll
     for(int i = 0; i < LOAD_PER_THREAD_B; i++){
         tmp_B[i] = gB[(TID * LOAD_PER_THREAD_B + i) / THREADBLOCK_N
         + (BID_Y * THREADBLOCK_N + (TID * LOAD_PER_THREAD_B + i) % THREADBLOCK_N) * K];
     }
-
+    
+    fft_7_fused(gA + BID_X * 128, shared_mem_float2, M * 2);
 
     #pragma unroll
     for(int i = 0; i < LOAD_PER_THREAD_B; i++){
@@ -86,18 +63,18 @@ __global__ void fused_fft_cgemm(int M, int N, int K, float2 *A, float2 *B, float
         b[0][i] = sB[(WID / WARP_NUM_ROW) * WARP_N + ((TID % 32) /  THREAD_NUM_ROW) * THREAD_N + i];
     }
     int thread_prefetch = 0;
-    int warp_prefetch = 1;
+    // int warp_prefetch = 1;
     // Main Loop along K
     #pragma unroll
     for(int k = 0; k < K - THREADBLOCK_K; k += THREADBLOCK_K){
 
         // Prefetech from global memory
-        #pragma unroll
-        for(int i = 0; i < LOAD_PER_THREAD_A; i++){
-            tmp_A[i] = gA[BID_X * THREADBLOCK_M + (TID * LOAD_PER_THREAD_A + i) % THREADBLOCK_M
-            + (TID * LOAD_PER_THREAD_A + i) / THREADBLOCK_M * M + (k + THREADBLOCK_K) * M];
-        }
-    
+        // #pragma unroll
+        // for(int i = 0; i < LOAD_PER_THREAD_A; i++){
+        //     tmp_A[i] = gA[BID_X * THREADBLOCK_M + (TID * LOAD_PER_THREAD_A + i) % THREADBLOCK_M
+        //     + (TID * LOAD_PER_THREAD_A + i) / THREADBLOCK_M * M + (k + THREADBLOCK_K) * M];
+        // }
+        
         #pragma unroll
         for(int i = 0; i < LOAD_PER_THREAD_B; i++){
             tmp_B[i] = gB[(TID * LOAD_PER_THREAD_B + i) / THREADBLOCK_N + (k + THREADBLOCK_K)
@@ -134,23 +111,22 @@ __global__ void fused_fft_cgemm(int M, int N, int K, float2 *A, float2 *B, float
             }
         }
 
+        __syncthreads();
+        
+        fft_7_fused(gA + BID_X * 128 + (k + THREADBLOCK_K) * M * 2, shared_mem_float2, M * 2); 
         // Store prefeteched global data to shared
-        #pragma unroll
-        for(int i = 0; i < LOAD_PER_THREAD_A; i++){
-            shared_mem_float2[warp_prefetch * (THREADBLOCK_M + THREADBLOCK_N) * THREADBLOCK_K + TID * LOAD_PER_THREAD_A + i] = tmp_A[i];
-        }
     
         #pragma unroll
         for(int i = 0; i < LOAD_PER_THREAD_B; i++){
-            shared_mem_float2[THREADBLOCK_M * THREADBLOCK_K + warp_prefetch * (THREADBLOCK_M + THREADBLOCK_N) * THREADBLOCK_K
+            shared_mem_float2[THREADBLOCK_M * THREADBLOCK_K + 0 * (THREADBLOCK_M + THREADBLOCK_N) * THREADBLOCK_K
                                  + TID * LOAD_PER_THREAD_B + i] = tmp_B[i];
         }
         
         __syncthreads();
         
         // Prefetech from shared memory
-        sA = shared_mem_float2 + warp_prefetch * (THREADBLOCK_M + THREADBLOCK_N) * THREADBLOCK_K;
-        sB = shared_mem_float2 + THREADBLOCK_M * THREADBLOCK_K + warp_prefetch * (THREADBLOCK_M + THREADBLOCK_N) * THREADBLOCK_K;
+        // sA = shared_mem_float2 + warp_prefetch * (THREADBLOCK_M + THREADBLOCK_N) * THREADBLOCK_K;
+        // sB = shared_mem_float2 + THREADBLOCK_M * THREADBLOCK_K + warp_prefetch * (THREADBLOCK_M + THREADBLOCK_N) * THREADBLOCK_K;
         thread_prefetch = 0;
         #pragma unroll
         for(int i = 0; i < THREAD_M; i++){
@@ -160,7 +136,6 @@ __global__ void fused_fft_cgemm(int M, int N, int K, float2 *A, float2 *B, float
         for(int i = 0; i < THREAD_N; i++){
             b[thread_prefetch][i] = sB[(WID / WARP_NUM_ROW) * WARP_N + ((TID % 32) /  THREAD_NUM_ROW) * THREAD_N + i];
         }
-        warp_prefetch = (warp_prefetch + 1) % 2;
     }
     // Thread-level GEMM
     #pragma unroll
