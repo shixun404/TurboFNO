@@ -6,10 +6,10 @@
 #include "fft_radix_2_logN_9_upload_0_fused.cuh"
 #include "fft_radix_2_logN_10_upload_0_fused.cuh"
 
-__global__ void fused_fft_cgemm(int M, int N, int K, float2 *A, float2 *B, float2 *C, float2 alpha, float2 beta){
+__global__ void fused_fft_cgemm(int M, int N, int K, float2 *FFT_input, float2 *B, float2 *C, float2 alpha, float2 beta){
     float2 *shared_mem_float2 = (float2*)shared_mem;
     float2 * gC = (float2*)C;
-    float2 * gA = (float2*)A;
+    float2 * gFFT_input = (float2*)FFT_input;
     float2 * gB = (float2*)B;
 
     float2* sA = shared_mem_float2;
@@ -45,7 +45,7 @@ __global__ void fused_fft_cgemm(int M, int N, int K, float2 *A, float2 *B, float
         + (BID_Y * THREADBLOCK_N + (TID * LOAD_PER_THREAD_B + i) % THREADBLOCK_N) * K];
     }
     
-    fft_7_fused(gA + BID_X * 128, shared_mem_float2, M * 2);
+    fft_7_fused(gFFT_input + BID_X * 128, shared_mem_float2, M * 2);
 
     #pragma unroll
     for(int i = 0; i < LOAD_PER_THREAD_B; i++){
@@ -113,7 +113,7 @@ __global__ void fused_fft_cgemm(int M, int N, int K, float2 *A, float2 *B, float
 
         __syncthreads();
         
-        fft_7_fused(gA + BID_X * 128 + (k + THREADBLOCK_K) * M * 2, shared_mem_float2, M * 2); 
+        fft_7_fused(gFFT_input + BID_X * 128 + (k + THREADBLOCK_K) * M * 2, shared_mem_float2, M * 2); 
         // Store prefeteched global data to shared
     
         #pragma unroll
