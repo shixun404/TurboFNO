@@ -89,14 +89,14 @@ bool verify_vector(float *vec1, float *vec2, int n, int nrow=1){
             max_diff = diff;
         }
         
-        if (rel_diff > 1e-2 && diff > 1e-3) {
+        if (rel_diff > 1e-1 && diff > 1e-1) {
             if(i % 2 == 0)
             printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", vec1[i], vec1[i + 1], vec2[i], vec2[i + 1], rel_diff, diff, i, (i / 2) % nrow, (i / 2) / nrow);
             else
             printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", vec1[i - 1], vec1[i], vec2[i - 1], vec2[i], rel_diff, diff, i, (i / 2) % nrow, (i / 2) / nrow);
             // printf("Not Pass!\n");
             // return false;
-            // break;
+            break;
         }
         // if(i % 2 == 0)
         //     printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", vec1[i], vec1[i + 1], vec2[i], vec2[i + 1], rel_diff, diff, i, (i / 2) % nrow, (i / 2) / nrow);

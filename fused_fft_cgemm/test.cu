@@ -18,7 +18,7 @@ void test_cufft(float2* input_d, float2* output_d,
   float2* output_cufft, long long int N, size_t bs, int ntest) {
   cufftHandle plan;
     float gflops, elapsed_time, mem_bandwidth;
-    cudaEvent_t fft_begin, fft_end;
+    
 
 
     cufftCreate(&plan);
@@ -30,7 +30,8 @@ void test_cufft(float2* input_d, float2* output_d,
                         reinterpret_cast<cufftComplex*>(output_d), 
                         CUFFT_FORWARD);
         cudaDeviceSynchronize();
-    cudaEventCreate(&fft_begin);
+        cudaEvent_t fft_begin, fft_end;
+        cudaEventCreate(&fft_begin);
     cudaEventCreate(&fft_end);
 
     cudaEventRecord(fft_begin);

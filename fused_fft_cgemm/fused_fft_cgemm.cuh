@@ -42,8 +42,6 @@ __global__ void fused_fft_cgemm(int M, int N, int K, float2 *FFT_input, float2 *
         tmp_B[i] = gB[(TID * LOAD_PER_THREAD_B + i) / THREADBLOCK_N
         + (BID_Y * THREADBLOCK_N + (TID * LOAD_PER_THREAD_B + i) % THREADBLOCK_N) * K];
     }
-    
-
         fft_7_fused(gFFT_input + BID_X * 128, shared_mem_float2, sFFT, M * 2);
 
     #pragma unroll

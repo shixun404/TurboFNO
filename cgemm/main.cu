@@ -100,7 +100,7 @@ int main(int argc, char** argv){
     cudaMemcpy(C, dC, sizeof(DataT) * C_size, cudaMemcpyDeviceToHost);
     cudaMemcpy(C_ref, dC_ref, sizeof(DataT) * C_size, cudaMemcpyDeviceToHost);
 
-    verify_vector((float*)C_ref, (float*)C, M * N * 2);
+    verify_vector((float*)C_ref, (float*)C, M * N * 2, 1);
 
     return 0;
 }
