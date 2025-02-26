@@ -21,7 +21,7 @@ set(MATH_LIB "/opt/nvidia/hpc_sdk/Linux_x86_64/24.5/math_libs/12.4")
 link_directories(${MATH_LIB}/lib64)
 
 
-add_executable(TurboFNO main.cu /global/homes/s/swu264/TurboFNO/utils/utils.cu)
+add_executable(TurboFNO fused.cu /global/homes/s/swu264/TurboFNO/utils/utils.cu)
 target_compile_options(TurboFNO PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:--expt-relaxed-constexpr>)
 target_link_libraries(TurboFNO PRIVATE cublas cufft)
 

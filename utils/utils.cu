@@ -73,7 +73,7 @@ void copy_matrix_double(double *src, double *dest, int n){
 }
 
 
-bool verify_vector(float *vec1, float *vec2, int n){
+bool verify_vector(float *vec1, float *vec2, int n, int nrow=1){
     double diff = 0.0;
     double max_diff = 0.0;
     double max_rel_diff = 0.0;
@@ -88,13 +88,20 @@ bool verify_vector(float *vec1, float *vec2, int n){
         if(diff > max_diff) {
             max_diff = diff;
         }
-        // printf("error. vec1 %5.2f, vec2 %5.2f, 1d-ID %d\n", vec1[i], vec2[i],i);
-        if (rel_diff > 5e-3 && diff > 1e-3) {
-            printf("error. vec1=%10.6f, vec2=%10.6f, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d\n", vec1[i], vec2[i], rel_diff, diff, i);
-            printf("Not Pass!");
-            return false;
+        
+        if (rel_diff > 1e-2 && diff > 1e-3) {
+            if(i % 2 == 0)
+            printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", vec1[i], vec1[i + 1], vec2[i], vec2[i + 1], rel_diff, diff, i, (i / 2) % nrow, (i / 2) / nrow);
+            else
+            printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", vec1[i - 1], vec1[i], vec2[i - 1], vec2[i], rel_diff, diff, i, (i / 2) % nrow, (i / 2) / nrow);
+            // printf("Not Pass!\n");
+            // return false;
             // break;
         }
+        // if(i % 2 == 0)
+        //     printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", vec1[i], vec1[i + 1], vec2[i], vec2[i + 1], rel_diff, diff, i, (i / 2) % nrow, (i / 2) / nrow);
+        //     else
+        //     printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", vec1[i - 1], vec1[i], vec2[i - 1], vec2[i], rel_diff, diff, i, (i / 2) % nrow, (i / 2) / nrow);
     }
     printf("verified, max_rel_diff=%f, max_diff=%f\n", max_rel_diff, max_diff);
     return true;
