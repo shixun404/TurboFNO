@@ -4,6 +4,17 @@
 #include <cublas_v2.h>
 #include <helper_functions.h>
 #include <helper_cuda.h>
+
+#define CHECK_CUDA_KERNEL() { \
+    cudaError_t err = cudaGetLastError(); \
+    if (err != cudaSuccess) { \
+        fprintf(stderr, "CUDA Kernel Error: %s at %s:%d\n", cudaGetErrorString(err), __FILE__, __LINE__); \
+        exit(EXIT_FAILURE); \
+    } \
+    cudaDeviceSynchronize(); \
+}
+
+
 #define CUDA_CALLER(call) do{\
   cudaError_t cuda_ret = (call);\
   if(cuda_ret != cudaSuccess){\
@@ -50,6 +61,21 @@
                      status );                                                                                         \
     }
 #endif  // CUFFT_CALL
+
+// cublas API error chekcing
+#ifndef CUBLAS_CALL
+#define CUBLAS_CALL(call)                                                                                      \
+    {                                                                                                          \
+        cublasStatus_t status = call;                                                                          \
+        if (status != CUBLAS_STATUS_SUCCESS) {                                                                 \
+            fprintf(stderr,                                                                                    \
+                    "ERROR: cuBLAS call \"%s\" failed in line %d of file %s with error code (%d).\n",          \
+                    #call, __LINE__, __FILE__, status);                                                        \
+            exit(EXIT_FAILURE);                                                                                \
+        }                                                                                                      \
+    }
+#endif
+
 #define CEIL_DIV(m,n) ( (m) + (n) - 1 ) / (n)
 
 

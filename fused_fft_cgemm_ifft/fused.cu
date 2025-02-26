@@ -68,7 +68,9 @@ int main(int argc, char** argv){
       printf("Usage: %s bs dimX dimY N K ntest\n", argv[0]);
       return 1;
     }
-      DataT *A, *dA, *B, *dB, *C, *C_ref, *dC, *dC_ref, *FFT_input, *dFFT_input, *FFT_output, *dFFT_output, *FFT_output_ref, *dFFT_output_ref;
+      DataT *A, *dA, *B, *dB, *C, *C_ref, *dC, *dC_ref, 
+            *FFT_input, *dFFT_input, *dFFT_output, 
+            *iFFT_output, *diFFT_output, *iFFT_output_ref, *diFFT_output_ref;
     long long int bs, dimX, dimY, M, N, K, FFT_len, FFT_bs, iFFT_bs, FFT_input_size, iFFT_output_size;
       bs = atoi(argv[1]);
       dimX = atoi(argv[2]);
@@ -89,31 +91,36 @@ int main(int argc, char** argv){
       long long int B_size = N * K;
       long long int C_size = M * N;
       FFT_input = (DataT*)malloc(sizeof(DataT) * (FFT_input_size + ntest));
-      FFT_output = (DataT*)malloc(sizeof(DataT) * (iFFT_output_size + ntest));
-      FFT_output_ref = (DataT*)malloc(sizeof(DataT) * (iFFT_output_size + ntest));
+      iFFT_output = (DataT*)malloc(sizeof(DataT) * (iFFT_output_size + ntest));
+      iFFT_output_ref = (DataT*)malloc(sizeof(DataT) * (iFFT_output_size + ntest));
       B = (DataT*)malloc(sizeof(DataT) * (B_size + ntest));
       C = (DataT*)malloc(sizeof(DataT) * (C_size + ntest));
       C_ref = (DataT*)malloc(sizeof(DataT) * (C_size + ntest));
 
-      cudaMalloc((void**)&dFFT_input, sizeof(DataT) * (FFT_input_size + ntest));
-      cudaMalloc((void**)&dFFT_output, sizeof(DataT) * (iFFT_output_size + ntest));
-      cudaMalloc((void**)&dFFT_output_ref, sizeof(DataT) * (iFFT_output_size + ntest));
-      cudaMalloc((void**)&dA, sizeof(DataT) * (A_size + ntest));
-      cudaMalloc((void**)&dB, sizeof(DataT) * (B_size + ntest));
-      cudaMalloc((void**)&dC, sizeof(DataT) * (C_size + ntest));
-      cudaMalloc((void**)&dC_ref, sizeof(DataT) * (C_size + ntest));
+
+      CUDA_RT_CALL(cudaMalloc((void**)&dFFT_input, sizeof(DataT) * (FFT_input_size + ntest)));
+      CUDA_RT_CALL(cudaMalloc((void**)&dFFT_output, sizeof(DataT) * (FFT_input_size + ntest)));
+      CUDA_RT_CALL(cudaMalloc((void**)&diFFT_output, sizeof(DataT) * (iFFT_output_size + ntest)));
+      CUDA_RT_CALL(cudaMalloc((void**)&diFFT_output_ref, sizeof(DataT) * (iFFT_output_size + ntest)));
+      CUDA_RT_CALL(cudaMalloc((void**)&dA, sizeof(DataT) * (A_size + ntest)));
+      CUDA_RT_CALL(cudaMalloc((void**)&dB, sizeof(DataT) * (B_size + ntest)));
+      CUDA_RT_CALL(cudaMalloc((void**)&dC, sizeof(DataT) * (C_size + ntest)));
+      CUDA_RT_CALL(cudaMalloc((void**)&dC_ref, sizeof(DataT) * (C_size + ntest)));
 
       generate_random_vector((float*)FFT_input, FFT_input_size * 2);
       generate_random_vector((float*)B, B_size * 2);
       fill_vector((float*)C, 0, C_size * 2);
-      fill_vector((float*)FFT_output, 0, iFFT_output_size * 2);
+      fill_vector((float*)iFFT_output, 0, iFFT_output_size * 2);
 
-      cudaMemcpy(dFFT_input, FFT_input, sizeof(DataT) * FFT_input_size, cudaMemcpyHostToDevice);
-      cudaMemcpy(dFFT_output, FFT_output, sizeof(DataT) * FFT_input_size, cudaMemcpyHostToDevice);
-      cudaMemcpy(dFFT_output_ref, FFT_output, sizeof(DataT) * FFT_input_size, cudaMemcpyHostToDevice);
-      cudaMemcpy(dB, B, sizeof(DataT) * B_size, cudaMemcpyHostToDevice);
-      cudaMemcpy(dC, C, sizeof(DataT) * C_size, cudaMemcpyHostToDevice);
-      cudaMemcpy(dC_ref, C, sizeof(DataT) * C_size, cudaMemcpyHostToDevice);
+      CUDA_RT_CALL(cudaMemcpy(dFFT_input, FFT_input, sizeof(DataT) * FFT_input_size, cudaMemcpyHostToDevice));
+      CUDA_RT_CALL(cudaMemcpy(dFFT_output, FFT_input, sizeof(DataT) * FFT_input_size, cudaMemcpyHostToDevice));
+
+      CUDA_RT_CALL(cudaMemcpy(diFFT_output, iFFT_output, sizeof(DataT) * iFFT_output_size, cudaMemcpyHostToDevice));
+      CUDA_RT_CALL(cudaMemcpy(diFFT_output_ref, iFFT_output, sizeof(DataT) * iFFT_output_size, cudaMemcpyHostToDevice));
+      
+      CUDA_RT_CALL(cudaMemcpy(dB, B, sizeof(DataT) * B_size, cudaMemcpyHostToDevice));
+      CUDA_RT_CALL(cudaMemcpy(dC, C, sizeof(DataT) * C_size, cudaMemcpyHostToDevice));
+      CUDA_RT_CALL(cudaMemcpy(dC_ref, C, sizeof(DataT) * C_size, cudaMemcpyHostToDevice));
 
       DataT alpha = {1.0, -1.0} , beta = {-1.0, 1.0}; 
       // DataT alpha = {1.0, 0} , beta = {1.0, 0}; 
@@ -142,54 +149,57 @@ int main(int argc, char** argv){
       printf("blockDim .x=%d .y=%d .z=%d\n", blockDim_copy.x, blockDim_copy.y, blockDim_copy.z);
       printf("gridDim .x=%d .y=%d .z=%d\n", gridDim_copy.x, gridDim_copy.y, gridDim_copy.z);
       // printf("shmem size = %d byte\n", shmem_size);
-      printf("******************************************\n");
+      printf("******************************************\n\n");
       
 
       cublasHandle_t handle;   
       cublasCreate(&handle);
 
       cufftHandle plan, iplan;
-      cufftCreate(&plan);
-      cufftCreate(&iplan);
+      CUFFT_CALL(cufftCreate(&plan));
+      CUFFT_CALL(cufftCreate(&iplan));
   
-      cufftPlan1d(&plan, FFT_len, CUFFT_C2C, FFT_bs);
-      cufftPlan1d(&iplan, FFT_len, CUFFT_C2C, iFFT_bs);
+      CUFFT_CALL(cufftPlan1d(&plan, FFT_len, CUFFT_C2C, FFT_bs));
+      CUFFT_CALL(cufftPlan1d(&iplan, FFT_len, CUFFT_C2C, iFFT_bs));
 
+      printf("***************Verification starts*****************\n");
       printf("start cuFFT!\n");
-      cufftExecC2C(plan, reinterpret_cast<cufftComplex*>(dFFT_input), 
+      CUFFT_CALL(cufftExecC2C(plan, reinterpret_cast<cufftComplex*>(dFFT_input), 
                           reinterpret_cast<cufftComplex*>(dFFT_output), 
-                          CUFFT_FORWARD);
+                          CUFFT_FORWARD));
       cudaDeviceSynchronize();
       printf("start truncation!\n");
       direct_copy_colmajor_float4_truncation<<<gridDim_copy, blockDim_copy>>>(dFFT_output, dA, FFT_len, FFT_bs, THREADBLOCK_M);
+      CHECK_CUDA_KERNEL();
       cudaDeviceSynchronize();
       printf("start cublasCGEMM!\n");
-      cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, M, N, K, (cuFloatComplex*)&alpha, (cuFloatComplex*)dA, M, (cuFloatComplex*)dB, K, (cuFloatComplex*)&beta, (cuFloatComplex*)dC_ref, M);     
+      CUBLAS_CALL(cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, M, N, K, (cuFloatComplex*)&alpha, (cuFloatComplex*)dA, M, (cuFloatComplex*)dB, K, (cuFloatComplex*)&beta, (cuFloatComplex*)dC_ref, M));
       cudaDeviceSynchronize();
       printf("start zero-padding!\n");
-      direct_copy_colmajor_float4_zero_padding<<<gridDim_copy, blockDim_copy>>>(dC_ref, dFFT_output, FFT_len, iFFT_bs, THREADBLOCK_M);
+      direct_copy_colmajor_float4_zero_padding<<<gridDim_copy, blockDim_copy>>>(dC_ref, diFFT_output, FFT_len, iFFT_bs, THREADBLOCK_M);
+      CHECK_CUDA_KERNEL();
       cudaDeviceSynchronize();
       printf("start inverse cuFFT!\n");
-      cufftExecC2C(iplan, reinterpret_cast<cufftComplex*>(dFFT_output), 
-      reinterpret_cast<cufftComplex*>(dFFT_output_ref), 
-      CUFFT_FORWARD);
+      CUFFT_CALL(cufftExecC2C(iplan, reinterpret_cast<cufftComplex*>(diFFT_output), reinterpret_cast<cufftComplex*>(diFFT_output_ref), CUFFT_FORWARD));
       
       cudaDeviceSynchronize();
 
-
+            
       printf("Start Fused!\n");
-      fused_fft_cgemm_ifft<<<gridDim, blockDim, shmem_size>>>(M, N, K, dFFT_input, dB, dC,dFFT_output, alpha, beta);
+      fused_fft_cgemm_ifft<<<gridDim, blockDim, shmem_size>>>(M, N, K, dFFT_input, dB, dC,diFFT_output, alpha, beta);
+      CHECK_CUDA_KERNEL();
       cudaDeviceSynchronize();
       printf("Finish Fused!\n");
         
     
 
-      cudaMemcpy(FFT_output, dFFT_output, sizeof(DataT) * iFFT_output_size, cudaMemcpyDeviceToHost);
-      cudaMemcpy(FFT_output_ref, dFFT_output_ref, sizeof(DataT) * iFFT_output_size, cudaMemcpyDeviceToHost);
+      CUDA_RT_CALL(cudaMemcpy(iFFT_output, diFFT_output, sizeof(DataT) * iFFT_output_size, cudaMemcpyDeviceToHost));
+      CUDA_RT_CALL(cudaMemcpy(iFFT_output_ref, diFFT_output_ref, sizeof(DataT) * iFFT_output_size, cudaMemcpyDeviceToHost));
       printf("Compare cuFFT-->DirectCopy-->CGEMM-->Zero Padding Copy-->cuFFT vs. fusedFFT-GEMM!\n");
-      verify_vector((float*)FFT_output_ref, (float*)FFT_output, iFFT_output_size * 2, dimY);
-
-      printf("Profiling\n");
+      verify_vector((float*)iFFT_output_ref, (float*)iFFT_output, iFFT_output_size * 2, dimY);
+      printf("***************Finish Verification*****************\n\n");  
+      
+      printf("***************Profiling starts *****************\n");  
 
       {
       cudaEvent_t fft_begin, fft_end;
@@ -207,10 +217,10 @@ int main(int argc, char** argv){
         cudaDeviceSynchronize();
         cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, M, N, K, (cuFloatComplex*)&alpha, (cuFloatComplex*)dA, M, (cuFloatComplex*)dB, K, (cuFloatComplex*)&beta, (cuFloatComplex*)dC_ref, M);     
         cudaDeviceSynchronize();
-        direct_copy_colmajor_float4_zero_padding<<<gridDim_copy, blockDim_copy>>>(dC_ref, dFFT_output, FFT_len, iFFT_bs, THREADBLOCK_M);
+        direct_copy_colmajor_float4_zero_padding<<<gridDim_copy, blockDim_copy>>>(dC_ref, diFFT_output, FFT_len, iFFT_bs, THREADBLOCK_M);
         cudaDeviceSynchronize();
-        cufftExecC2C(iplan, reinterpret_cast<cufftComplex*>(dFFT_output), 
-        reinterpret_cast<cufftComplex*>(dFFT_output_ref), 
+        cufftExecC2C(iplan, reinterpret_cast<cufftComplex*>(diFFT_output), 
+        reinterpret_cast<cufftComplex*>(diFFT_output_ref), 
         CUFFT_FORWARD);
 
       }
@@ -220,8 +230,8 @@ int main(int argc, char** argv){
       cudaEventElapsedTime(&elapsed_time, fft_begin, fft_end);
 
       elapsed_time = elapsed_time / ntest;
-      printf("bs=%d dimX=%d dimY=%d M=%d, N=%d K=%d\n", bs, dimX, dimY, M, N, K);
-      printf("FFT_len=%d FFT_bs=%d\n", FFT_len, FFT_bs);
+      // printf("bs=%d dimX=%d dimY=%d M=%d, N=%d K=%d\n", bs, dimX, dimY, M, N, K);
+      // printf("FFT_len=%d FFT_bs=%d\n", FFT_len, FFT_bs);
       printf("cuFFT-->DirectCopy-->CGEMM-->Zero Padding Copy-->cuFFT, TIME=%8.3f ms\n",  elapsed_time);
     }
 
@@ -233,7 +243,7 @@ int main(int argc, char** argv){
         cudaEventCreate(&fft_end);
       cudaEventRecord(fft_begin);
       for (int i = 0; i < ntest; ++i){
-        fused_fft_cgemm_ifft<<<gridDim, blockDim, shmem_size>>>(M, N, K, dFFT_input, dB, dC, dFFT_output, alpha, beta);
+        fused_fft_cgemm_ifft<<<gridDim, blockDim, shmem_size>>>(M, N, K, dFFT_input, dB, dC, diFFT_output, alpha, beta);
         cudaDeviceSynchronize();
       }
       cudaEventRecord(fft_end);
@@ -242,8 +252,8 @@ int main(int argc, char** argv){
       cudaEventElapsedTime(&elapsed_time, fft_begin, fft_end);
 
       elapsed_time = elapsed_time / ntest;
-      printf("bs=%d dimX=%d dimY=%d M=%d, N=%d K=%d\n", bs, dimX, dimY, M, N, K);
-      printf("FFT_len=%d FFT_bs=%d\n", FFT_len, FFT_bs);
+      // printf("bs=%d dimX=%d dimY=%d M=%d, N=%d K=%d\n", bs, dimX, dimY, M, N, K);
+      // printf("FFT_len=%d FFT_bs=%d\n", FFT_len, FFT_bs);
       printf("fusedFFT-GEMM, TIME=%8.3f ms\n",  elapsed_time);
     }
     return 0;

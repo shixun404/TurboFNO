@@ -73,38 +73,84 @@ void copy_matrix_double(double *src, double *dest, int n){
 }
 
 
-bool verify_vector(float *vec1, float *vec2, int n, int nrow=1){
-    double diff = 0.0;
-    double max_diff = 0.0;
-    double max_rel_diff = 0.0;
-    double rel_diff = 0.0;
-    int i;
-    for (i = 0; vec1 + i && vec2 + i && i < n; i++){
-        diff = fabs( (double)vec1[i] - (double)vec2[i] );
-        rel_diff = diff / fabs(double(vec1[i]));
-        if(rel_diff > max_rel_diff) {
-            max_rel_diff = rel_diff;
-        }
-        if(diff > max_diff) {
+// bool verify_vector(float *vec1, float *vec2, int n, int nrow=1){
+//     double diff = 0.0;
+//     double max_diff = 0.0;
+//     double max_rel_diff = 0.0;
+//     double rel_diff = 0.0;
+//     int i;
+//     for (i = 0; vec1 + i && vec2 + i && i < n; i++){
+//         diff = fabs( (double)vec1[i] - (double)vec2[i] );
+//         rel_diff = diff / fabs(double(vec1[i]));
+//         if(rel_diff > max_rel_diff) {
+//             max_rel_diff = rel_diff;
+//         }
+//         if(diff > max_diff) {
+//             max_diff = diff;
+//         }
+//         if (rel_diff > 1e-1 && diff > 1e-1) {
+//             if(i % 2 == 0)
+//             printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", vec1[i], vec1[i + 1], vec2[i], vec2[i + 1], rel_diff, diff, i, (i / 2) % nrow, (i / 2) / nrow);
+//             else
+//             printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", vec1[i - 1], vec1[i], vec2[i - 1], vec2[i], rel_diff, diff, i, (i / 2) % nrow, (i / 2) / nrow);
+//             // printf("Not Pass!\n");
+//             // return false;
+//             break;
+//         }
+//     }
+//     printf("verified, max_rel_diff=%f, max_diff=%f\n", max_rel_diff, max_diff);
+//     return true;
+// }
+
+bool verify_vector(float *vec1, float *vec2, int n, int nrow = 1) {
+    double diff, max_diff = 0.0, max_rel_diff = 0.0;
+    double sum_abs_diff = 0.0, sum_sq_diff = 0.0;
+    double sum_abs_vec1 = 0.0, sum_rel_diff = 0.0;
+    double epsilon = 1e-6; // Small threshold to prevent divide-by-zero
+
+    for (int i = 0; i < n; i++) {
+        diff = fabs((double)vec1[i] - (double)vec2[i]);
+        double abs_val = fabs((double)vec1[i]);
+
+        sum_abs_diff += diff;
+        sum_sq_diff += diff * diff;
+        sum_abs_vec1 += abs_val;
+        sum_rel_diff += diff / std::max(abs_val, epsilon);
+
+        if (diff > max_diff) {
             max_diff = diff;
         }
-        if (rel_diff > 1e-1 && diff > 1e-1) {
-            if(i % 2 == 0)
-            printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", vec1[i], vec1[i + 1], vec2[i], vec2[i + 1], rel_diff, diff, i, (i / 2) % nrow, (i / 2) / nrow);
-            else
-            printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", vec1[i - 1], vec1[i], vec2[i - 1], vec2[i], rel_diff, diff, i, (i / 2) % nrow, (i / 2) / nrow);
-            // printf("Not Pass!\n");
-            // return false;
-            break;
+        if (diff / std::max(abs_val, epsilon) > max_rel_diff) {
+            max_rel_diff = diff / std::max(abs_val, epsilon);
         }
-        // if(i % 2 == 0)
-        //     printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", vec1[i], vec1[i + 1], vec2[i], vec2[i + 1], rel_diff, diff, i, (i / 2) % nrow, (i / 2) / nrow);
-        //     else
-        //     printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", vec1[i - 1], vec1[i], vec2[i - 1], vec2[i], rel_diff, diff, i, (i / 2) % nrow, (i / 2) / nrow);
+
+        // Error reporting (Only for significant errors)
+        if (diff > 1e-1 && diff / std::max(abs_val, epsilon) > 1e-1) {
+            if (i % 2 == 0) {
+                printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", 
+                    vec1[i], vec1[i + 1], vec2[i], vec2[i + 1], diff / std::max(abs_val, epsilon), diff, i, (i / 2) % nrow, (i / 2) / nrow);
+            } else {
+                printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", 
+                    vec1[i - 1], vec1[i], vec2[i - 1], vec2[i], diff / std::max(abs_val, epsilon), diff, i, (i / 2) % nrow, (i / 2) / nrow);
+            }
+            // break;
+        }
     }
-    printf("verified, max_rel_diff=%f, max_diff=%f\n", max_rel_diff, max_diff);
+
+    // Compute final metrics
+    double mae = sum_abs_diff / n;
+    double rmse = sqrt(sum_sq_diff / n);
+    double rmae = sum_abs_diff / (sum_abs_vec1 + epsilon);
+    double mre = sum_rel_diff / n;
+    double psnr = 20 * log10(max_diff / rmse + epsilon);
+
+    // Print results
+    printf("verified, max_rel_diff=%e, max_diff=%e, MAE=%e, RMSE=%e, RMAE=%e, MRE=%e, PSNR=%f dB\n",
+           max_rel_diff, max_diff, mae, rmse, rmae, mre, psnr);
+
     return true;
 }
+
 
 
 bool verify_matrix(float *mat1, float *mat2, int n){
