@@ -81,14 +81,13 @@ bool verify_vector(float *vec1, float *vec2, int n, int nrow=1){
     int i;
     for (i = 0; vec1 + i && vec2 + i && i < n; i++){
         diff = fabs( (double)vec1[i] - (double)vec2[i] );
-        rel_diff = diff / double(vec1[i]);
+        rel_diff = diff / fabs(double(vec1[i]));
         if(rel_diff > max_rel_diff) {
             max_rel_diff = rel_diff;
         }
         if(diff > max_diff) {
             max_diff = diff;
         }
-        
         if (rel_diff > 1e-1 && diff > 1e-1) {
             if(i % 2 == 0)
             printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", vec1[i], vec1[i + 1], vec2[i], vec2[i + 1], rel_diff, diff, i, (i / 2) % nrow, (i / 2) / nrow);
