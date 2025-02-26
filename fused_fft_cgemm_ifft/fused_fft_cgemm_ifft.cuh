@@ -2,14 +2,16 @@
 #include <mma.h>
 #include <turboFNO.h>
 #include "fft_radix_2_logN_7_upload_0_fused.cuh"
+#include "fft_radix_2_logN_7_upload_0_fused_output.cuh"
 // #include "fft_radix_2_logN_8_upload_0_fused.cuh"
 // #include "fft_radix_2_logN_9_upload_0_fused.cuh"
 // #include "fft_radix_2_logN_10_upload_0_fused.cuh"
 
-__global__ void fused_fft_cgemm(int M, int N, int K, float2 *FFT_input, float2 *B, float2 *C, float2 alpha, float2 beta){
+__global__ void fused_fft_cgemm_ifft(int M, int N, int K, float2 *FFT_input, float2 *B, float2 *C, float2 *FFT_output, float2 alpha, float2 beta){
     float2 *shared_mem_float2 = (float2*)shared_mem;
     float2 * gC = (float2*)C;
     float2 * gFFT_input = (float2*)FFT_input;
+    float2 * gFFT_output = (float2*)FFT_output;
     float2 * gB = (float2*)B;
 
     float2* sA = shared_mem_float2;
@@ -165,14 +167,14 @@ __global__ void fused_fft_cgemm(int M, int N, int K, float2 *FFT_input, float2 *
     }
 
 
-    #pragma unroll
-    for(int j = 0; j < THREAD_N; j++){
-        #pragma unroll
-        for(int i = 0; i < THREAD_M; i++){
-            c_load[i][j] = gC[BID_X * THREADBLOCK_M + (WID % WARP_NUM_ROW) * WARP_M + ((TID % 32) %  THREAD_NUM_ROW) * THREAD_M + i
-            + (BID_Y * THREADBLOCK_N + (WID / WARP_NUM_ROW) * WARP_N + ((TID % 32) /  THREAD_NUM_ROW) * THREAD_N + j) * M];
-        }
-    }
+    // #pragma unroll
+    // for(int j = 0; j < THREAD_N; j++){
+    //     #pragma unroll
+    //     for(int i = 0; i < THREAD_M; i++){
+    //         c_load[i][j] = gC[BID_X * THREADBLOCK_M + (WID % WARP_NUM_ROW) * WARP_M + ((TID % 32) %  THREAD_NUM_ROW) * THREAD_M + i
+    //         + (BID_Y * THREADBLOCK_N + (WID / WARP_NUM_ROW) * WARP_N + ((TID % 32) /  THREAD_NUM_ROW) * THREAD_N + j) * M];
+    //     }
+    // }
 
 
     #pragma unroll
@@ -180,25 +182,28 @@ __global__ void fused_fft_cgemm(int M, int N, int K, float2 *FFT_input, float2 *
         #pragma unroll
         for(int i = 0; i < THREAD_M; i++){
             float2 tmp;
-            tmp.x = c[i][j].x * alpha.x - c[i][j].y * alpha.y + c_load[i][j].x * beta.x - c_load[i][j].y * beta.y;
-            tmp.y = c[i][j].x * alpha.y + c[i][j].y * alpha.x + c_load[i][j].y * beta.x + c_load[i][j].x * beta.y;
+            tmp.x = c[i][j].x * alpha.x - c[i][j].y * alpha.y;
+            tmp.y = c[i][j].x * alpha.y + c[i][j].y * alpha.x;
+            // tmp.x = c[i][j].x * alpha.x - c[i][j].y * alpha.y + c_load[i][j].x * beta.x - c_load[i][j].y * beta.y;
+            // tmp.y = c[i][j].x * alpha.y + c[i][j].y * alpha.x + c_load[i][j].y * beta.x + c_load[i][j].x * beta.y;
             c[i][j] = tmp;
         }
     }
 
-    #pragma unroll
-    for(int j = 0; j < THREAD_N; j++){
-        #pragma unroll
-        for(int i = 0; i < THREAD_M; i++){
-            sFFT[(WID % WARP_NUM_ROW) * WARP_M + ((TID % 32) %  THREAD_NUM_ROW) * THREAD_M + i
-            + ((WID / WARP_NUM_ROW) * WARP_N + ((TID % 32) /  THREAD_NUM_ROW) * THREAD_N + j) * THREADBLOCK_M] = c[i][j];
-        }
-    }
+    // #pragma unroll
+    // for(int j = 0; j < THREAD_N; j++){
+    //     #pragma unroll
+    //     for(int i = 0; i < THREAD_M; i++){
+    //         sFFT[(WID % WARP_NUM_ROW) * WARP_M + ((TID % 32) %  THREAD_NUM_ROW) * THREAD_M + i
+    //         + ((WID / WARP_NUM_ROW) * WARP_N + ((TID % 32) /  THREAD_NUM_ROW) * THREAD_N + j) * THREADBLOCK_M] = c[i][j];
+    //     }
+    // }
 
 
     #pragma unroll
     for(int tid_start = 0; tid_start < THREADBLOCK_N; tid_start += THREADBLOCK_K){
         int threadblock_C_col = (WID / WARP_NUM_ROW) * WARP_N + ((TID % 32) /  THREAD_NUM_ROW) * THREAD_N;
+        __syncthreads();
         if(tid_start <= threadblock_C_col && threadblock_C_col < tid_start + THREADBLOCK_K) {
             #pragma unroll
             for(int j = 0; j < THREAD_N; j++){
@@ -211,7 +216,8 @@ __global__ void fused_fft_cgemm(int M, int N, int K, float2 *FFT_input, float2 *
             }
         }
         __syncthreads();
-
+        fft_7_fused_output(sFFT, gFFT_output + BID_X * 128 + (BID_Y * THREADBLOCK_N + tid_start) * M * 2, sFFT, M * 2);
     }
+
 
 }
