@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <mma.h>
 #include <turboFNO.h>
-#include "fft_radix_2_logN_10_upload_0_fused_trunc.cuh"
-#include "fft_radix_2_logN_10_upload_0_fused_output_trunc.cuh"
+#include "fft_radix_2_logN_10_upload_0_fused.cuh"
+#include "fft_radix_2_logN_10_upload_0_fused_output.cuh"
 // #include "fft_radix_2_logN_7_upload_0_fused_trunc.cuh"
 // #include "fft_radix_2_logN_7_upload_0_fused_output_trunc.cuh"
 // #include "fft_radix_2_logN_8_upload_0_fused.cuh"
@@ -46,7 +46,7 @@ __global__ void fused_fft_cgemm_ifft_10(int M, int N, int K, float2 *FFT_input, 
         tmp_B[i] = gB[(TID * LOAD_PER_THREAD_B + i) / THREADBLOCK_N
         + (BID_Y * THREADBLOCK_N + (TID * LOAD_PER_THREAD_B + i) % THREADBLOCK_N) * K];
     }
-    fft_10_fused_trunc(gFFT_input + BID_X * 1024, shared_mem_float2, sFFT, M * 16);
+    fft_10_fused(gFFT_input + BID_X * 1024, shared_mem_float2, sFFT, M * 16);
 
     #pragma unroll
     for(int i = 0; i < LOAD_PER_THREAD_B; i++){
@@ -114,7 +114,7 @@ __global__ void fused_fft_cgemm_ifft_10(int M, int N, int K, float2 *FFT_input, 
 
         __syncthreads();
         // if(threadIdx.x < THREADBLOCK_K * 128 / 8){
-            fft_10_fused_trunc(gFFT_input + BID_X * 1024 + (k + THREADBLOCK_K) * M * 16, shared_mem_float2, sFFT, M * 16); 
+            fft_10_fused(gFFT_input + BID_X * 1024 + (k + THREADBLOCK_K) * M * 16, shared_mem_float2, sFFT, M * 16); 
         // }
         // Store prefeteched global data to shared
     
@@ -218,7 +218,7 @@ __global__ void fused_fft_cgemm_ifft_10(int M, int N, int K, float2 *FFT_input, 
             }
         }
         __syncthreads();
-        fft_10_fused_output_trunc(sFFT, gFFT_output + BID_X * 1024 + (BID_Y * THREADBLOCK_N + tid_start) * M * 16, sFFT, M * 16);
+        fft_10_fused_output(sFFT, gFFT_output + BID_X * 1024 + (BID_Y * THREADBLOCK_N + tid_start) * M * 16, sFFT, M * 16);
     }
 
 

@@ -3,8 +3,8 @@
 #include <turboFNO.h>
 // #include "fft_radix_2_logN_7_upload_0_fused_trunc.cuh"
 // #include "fft_radix_2_logN_7_upload_0_fused_output_trunc.cuh"
-#include "fft_radix_2_logN_9_upload_0_fused_trunc.cuh"
-#include "fft_radix_2_logN_9_upload_0_fused_output_trunc.cuh"
+#include "fft_radix_2_logN_9_upload_0_fused.cuh"
+#include "fft_radix_2_logN_9_upload_0_fused_output.cuh"
 // #include "fft_radix_2_logN_8_upload_0_fused.cuh"
 // #include "fft_radix_2_logN_9_upload_0_fused.cuh"
 // #include "fft_radix_2_logN_10_upload_0_fused.cuh"
@@ -46,7 +46,7 @@ __global__ void fused_fft_cgemm_ifft_9(int M, int N, int K, float2 *FFT_input, f
         tmp_B[i] = gB[(TID * LOAD_PER_THREAD_B + i) / THREADBLOCK_N
         + (BID_Y * THREADBLOCK_N + (TID * LOAD_PER_THREAD_B + i) % THREADBLOCK_N) * K];
     }
-    fft_9_fused_trunc(gFFT_input + BID_X * 512, shared_mem_float2, sFFT, M * 8);
+    fft_9_fused(gFFT_input + BID_X * 512, shared_mem_float2, sFFT, M * 8);
 
     #pragma unroll
     for(int i = 0; i < LOAD_PER_THREAD_B; i++){
@@ -114,7 +114,7 @@ __global__ void fused_fft_cgemm_ifft_9(int M, int N, int K, float2 *FFT_input, f
 
         __syncthreads();
         // if(threadIdx.x < THREADBLOCK_K * 128 / 8){
-            fft_9_fused_trunc(gFFT_input + BID_X * 512 + (k + THREADBLOCK_K) * M * 8, shared_mem_float2, sFFT, M * 8); 
+            fft_9_fused(gFFT_input + BID_X * 512 + (k + THREADBLOCK_K) * M * 8, shared_mem_float2, sFFT, M * 8); 
         // }
         // Store prefeteched global data to shared
     
@@ -218,7 +218,7 @@ __global__ void fused_fft_cgemm_ifft_9(int M, int N, int K, float2 *FFT_input, f
             }
         }
         __syncthreads();
-        fft_9_fused_output_trunc(sFFT, gFFT_output + BID_X * 512 + (BID_Y * THREADBLOCK_N + tid_start) * M * 8, sFFT, M * 8);
+        fft_9_fused_output(sFFT, gFFT_output + BID_X * 512 + (BID_Y * THREADBLOCK_N + tid_start) * M * 8, sFFT, M * 8);
     }
 
 
