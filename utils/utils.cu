@@ -107,7 +107,7 @@ bool verify_vector(float *vec1, float *vec2, int n, int nrow = 1) {
     double sum_abs_diff = 0.0, sum_sq_diff = 0.0;
     double sum_abs_vec1 = 0.0, sum_rel_diff = 0.0;
     double epsilon = 1e-6; // Small threshold to prevent divide-by-zero
-
+    int cnt = 0;
     for (int i = 0; i < n; i++) {
         diff = fabs((double)vec1[i] - (double)vec2[i]);
         double abs_val = fabs((double)vec1[i]);
@@ -125,15 +125,16 @@ bool verify_vector(float *vec1, float *vec2, int n, int nrow = 1) {
         }
 
         // Error reporting (Only for significant errors)
-        if (diff > 1e-1 && diff / std::max(abs_val, epsilon) > 1e-1) {
-            if (i % 2 == 0) {
-                printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", 
-                    vec1[i], vec1[i + 1], vec2[i], vec2[i + 1], diff / std::max(abs_val, epsilon), diff, i, (i / 2) % nrow, (i / 2) / nrow);
-            } else {
-                printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", 
-                    vec1[i - 1], vec1[i], vec2[i - 1], vec2[i], diff / std::max(abs_val, epsilon), diff, i, (i / 2) % nrow, (i / 2) / nrow);
-            }
-            break;
+        if (diff > 1e-2 && diff / std::max(abs_val, epsilon) > 1e-1) {
+            // if (i % 2 == 0) {
+            //     printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", 
+            //         vec1[i], vec1[i + 1], vec2[i], vec2[i + 1], diff / std::max(abs_val, epsilon), diff, i, (i / 2) % nrow, (i / 2) / nrow);
+            // } else {
+            //     printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", 
+            //         vec1[i - 1], vec1[i], vec2[i - 1], vec2[i], diff / std::max(abs_val, epsilon), diff, i, (i / 2) % nrow, (i / 2) / nrow);
+            // }
+            // break;
+            cnt++;
         }
     }
 
@@ -145,8 +146,8 @@ bool verify_vector(float *vec1, float *vec2, int n, int nrow = 1) {
     double psnr = 20 * log10(max_diff / rmse + epsilon);
 
     // Print results
-    printf("verified, max_rel_diff=%e, max_diff=%e, MAE=%e, RMSE=%e, RMAE=%e, MRE=%e, PSNR=%f dB\n",
-           max_rel_diff, max_diff, mae, rmse, rmae, mre, psnr);
+    printf("verified, total_length=%d, outlier_cnt=%d, outlier_perct=%f%, max_rel_diff=%e, max_diff=%e, MAE=%e, RMSE=%e, RMAE=%e, MRE=%e, PSNR=%f dB\n",
+           n, cnt, (float(cnt) / float(n)) * 100,  max_rel_diff, max_diff, mae, rmse, rmae, mre, psnr);
 
     return true;
 }

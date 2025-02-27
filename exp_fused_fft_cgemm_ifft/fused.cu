@@ -3,12 +3,16 @@
 #include <cuda_runtime.h>
 #include <stdio.h>
 #include "utils.cuh"
-#include "fused_fft_cgemm_ifft.cuh"
+#include "fused_fft_cgemm_ifft_7.cuh"
+#include "fused_fft_cgemm_ifft_8.cuh"
+#include "fused_fft_cgemm_ifft_9.cuh"
+#include "fused_fft_cgemm_ifft_10.cuh"
 #include <cufftXt.h>
 
 using DataT = float2;
 int thread_bs[4] = {8, 16, 8, 16};
-
+void (*fused_fft_cgemm_ifft [4])(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2) = 
+{fused_fft_cgemm_ifft_7, fused_fft_cgemm_ifft_8, fused_fft_cgemm_ifft_9, fused_fft_cgemm_ifft_10};
 __global__ void direct_copy_colmajor_float4_truncation(const float2 *input,
   float2       *output,
   int M, int K, int reduced_M)
@@ -77,6 +81,7 @@ int main(int argc, char** argv){
       dimY = atoi(argv[3]);
       N = atoi(argv[4]);
       K = atoi(argv[5]);
+      int ntest = atoi(argv[6]);
       M = bs * dimX * THREADBLOCK_M;
       FFT_len = dimY;
       FFT_bs = bs * dimX * K;
@@ -85,7 +90,7 @@ int main(int argc, char** argv){
       iFFT_output_size = bs * dimX * dimY * N;
       printf("bs=%d dimX=%d dimY=%d M=%d, N=%d K=%d\n", bs, dimX, dimY, M, N, K);
       printf("FFT_len=%d FFT_bs=%d\n", FFT_len, FFT_bs);
-      int ntest = atoi(argv[6]);
+      
 
       long long int A_size = M * K;
       long long int B_size = N * K;
@@ -186,7 +191,7 @@ int main(int argc, char** argv){
 
             
       printf("Start Fused!\n");
-      fused_fft_cgemm_ifft<<<gridDim, blockDim, shmem_size>>>(M, N, K, dFFT_input, dB, dC,diFFT_output, alpha, beta);
+      fused_fft_cgemm_ifft[int(log2f(dimY)) - 7]<<<gridDim, blockDim, shmem_size>>>(M, N, K, dFFT_input, dB, dC,diFFT_output, alpha, beta);
       CHECK_CUDA_KERNEL();
       cudaDeviceSynchronize();
       printf("Finish Fused!\n");
@@ -243,7 +248,7 @@ int main(int argc, char** argv){
         cudaEventCreate(&fft_end);
       cudaEventRecord(fft_begin);
       for (int i = 0; i < ntest; ++i){
-        fused_fft_cgemm_ifft<<<gridDim, blockDim, shmem_size>>>(M, N, K, dFFT_input, dB, dC, diFFT_output, alpha, beta);
+        fused_fft_cgemm_ifft[int(log2f(dimY)) - 7]<<<gridDim, blockDim, shmem_size>>>(M, N, K, dFFT_input, dB, dC, diFFT_output, alpha, beta);
         cudaDeviceSynchronize();
       }
       cudaEventRecord(fft_end);

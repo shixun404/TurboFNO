@@ -1,7 +1,7 @@
 extern __shared__ float shared_mem[];
 #define THREADBLOCK_M 64
 #define THREADBLOCK_N 64
-#define THREADBLOCK_K 8
+#define THREADBLOCK_K 4
 #define WARP_M 32
 #define WARP_N 16
 #define THREAD_M 4

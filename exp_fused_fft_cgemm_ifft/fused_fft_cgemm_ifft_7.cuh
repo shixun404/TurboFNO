@@ -7,7 +7,7 @@
 // #include "fft_radix_2_logN_9_upload_0_fused.cuh"
 // #include "fft_radix_2_logN_10_upload_0_fused.cuh"
 
-__global__ void fused_fft_cgemm_ifft(int M, int N, int K, float2 *FFT_input, float2 *B, float2 *C, float2 *FFT_output, float2 alpha, float2 beta){
+__global__ void fused_fft_cgemm_ifft_7(int M, int N, int K, float2 *FFT_input, float2 *B, float2 *C, float2 *FFT_output, float2 alpha, float2 beta){
     float2 *shared_mem_float2 = (float2*)shared_mem;
     float2 * gC = (float2*)C;
     float2 * gFFT_input = (float2*)FFT_input;
