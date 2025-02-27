@@ -218,7 +218,7 @@ int main(int argc, char** argv){
       CUFFT_CALL(cufftCreate(&plan));
       CUFFT_CALL(cufftCreate(&iplan));
     
-      int n[2] = {DY, DX};  // 2D FFT 维度
+      int n[2] = {DX, DY};  // 2D FFT 维度
       CUFFT_CALL(cufftPlanMany(&plan, 2, n,
         nullptr, 1, DY * DX,   // 输入紧密存储
         nullptr, 1, DY * DX,   // 输出紧密存储
@@ -259,8 +259,8 @@ int main(int argc, char** argv){
       dim3 gridDim_ifft_dimx((DY * N * bs + threadblock_bs - 1) / threadblock_bs, 1, 1);
       gridDim_fft_dimx.x = gridDim_fft_dimx.x > 65536 ? 65536 : gridDim_fft_dimx.x;
       gridDim_ifft_dimx.x = gridDim_ifft_dimx.x > 65536 ? 65536 : gridDim_ifft_dimx.x;
-      dim3 blockDim_fft_dimx(DX / thread_bs[0] * threadblock_bs, 1, 1); 
-      int shmem_size_fft_dimx = sizeof(DataT) * DY * threadblock_bs ;  
+      dim3 blockDim_fft_dimx(DX / thread_bs[int(log2f(DX)) - 7] * threadblock_bs, 1, 1); 
+      int shmem_size_fft_dimx = sizeof(DataT) * DX * threadblock_bs ;  
       
       printf("Start X-dim FFT\n\n");
       printf("********* DX-dim FFT**********\n");
