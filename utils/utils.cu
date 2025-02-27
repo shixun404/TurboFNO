@@ -27,7 +27,7 @@ cudaDeviceProp getDetails(int deviceId)
 
 void generate_random_vector(float* target, int n){
     for(int i = 0; i < n; ++i){
-        float tmp = (float)(rand() % 5) + rand() % 5 * 0.01;
+        float tmp = rand() % 10 * 0.001;
         tmp = (rand() % 2 == 0) ? tmp : tmp * (-1.);
         target[i] = tmp;
     }
@@ -133,7 +133,7 @@ bool verify_vector(float *vec1, float *vec2, int n, int nrow = 1) {
                 printf("error. vec1=%10.6f+%10.6f.j, vec2=%10.6f+%10.6f.j, rel_diff=%10.6f, diff=%10.6f, 1d-ID %d, row %d, col %d\n", 
                     vec1[i - 1], vec1[i], vec2[i - 1], vec2[i], diff / std::max(abs_val, epsilon), diff, i, (i / 2) % nrow, (i / 2) / nrow);
             }
-            // break;
+            break;
         }
     }
 

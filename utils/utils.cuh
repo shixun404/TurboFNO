@@ -7,6 +7,7 @@
 
 #define CHECK_CUDA_KERNEL() { \
     cudaError_t err = cudaGetLastError(); \
+    fflush(stdout); \
     if (err != cudaSuccess) { \
         fprintf(stderr, "CUDA Kernel Error: %s at %s:%d\n", cudaGetErrorString(err), __FILE__, __LINE__); \
         exit(EXIT_FAILURE); \
@@ -17,6 +18,7 @@
 
 #define CUDA_CALLER(call) do{\
   cudaError_t cuda_ret = (call);\
+  fflush(stdout); \
   if(cuda_ret != cudaSuccess){\
     printf("CUDA Error at line %d in file %s\n", __LINE__, __FILE__);\
     printf("  Error message: %s\n", cudaGetErrorString(cuda_ret));\
@@ -32,6 +34,7 @@
 #define CUDA_RT_CALL( call )                                                                                           \
     {                                                                                                                  \
         auto status = static_cast<cudaError_t>( call );                                                                \
+        fflush(stdout); \
         if ( status != cudaSuccess )                                                                                   \
             fprintf( stderr,                                                                                           \
                      "ERROR: CUDA RT call \"%s\" in line %d of file %s failed "                                        \
@@ -50,6 +53,7 @@
 #define CUFFT_CALL( call )                                                                                             \
     {                                                                                                                  \
         auto status = static_cast<cufftResult>( call );                                                                \
+        fflush(stdout); \
         if ( status != CUFFT_SUCCESS )                                                                                 \
             fprintf( stderr,                                                                                           \
                      "ERROR: CUFFT call \"%s\" in line %d of file %s failed "                                          \
@@ -67,6 +71,7 @@
 #define CUBLAS_CALL(call)                                                                                      \
     {                                                                                                          \
         cublasStatus_t status = call;                                                                          \
+        fflush(stdout); \
         if (status != CUBLAS_STATUS_SUCCESS) {                                                                 \
             fprintf(stderr,                                                                                    \
                     "ERROR: cuBLAS call \"%s\" failed in line %d of file %s with error code (%d).\n",          \
