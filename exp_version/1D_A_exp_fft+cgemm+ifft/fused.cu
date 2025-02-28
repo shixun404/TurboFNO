@@ -174,11 +174,17 @@ int main(int argc, char** argv){
       int shmem_size_fft_dimY = sizeof(DataT) * DY * threadblock_bs ;  
             
       fft_stride_DY[logFFT_len]<<<gridDim_fft_dimY, blockDim_fft_dimY, shmem_size_fft_dimY>>>(dFFT_input,  dA, threadblock_bs, dimX * K * bs);
+      CHECK_CUDA_KERNEL();
       cudaDeviceSynchronize();
+      CHECK_CUDA_KERNEL();
       cgemm<<<gridDim, blockDim, shmem_size>>>(M, N, K, dA, dB, dC, alpha, beta);
+      CHECK_CUDA_KERNEL();
       cudaDeviceSynchronize();
+      CHECK_CUDA_KERNEL();
       ifft_stride_DY[logFFT_len]<<<gridDim_ifft_dimY, blockDim_fft_dimY, shmem_size_fft_dimY>>>(dC, diFFT_output, threadblock_bs, dimX * N * bs);
+      CHECK_CUDA_KERNEL();
       cudaDeviceSynchronize();
+      CHECK_CUDA_KERNEL();
 
 
       {
