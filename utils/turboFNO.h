@@ -18,8 +18,11 @@ extern __shared__ float shared_mem[];
 
 
 
-int bs_list[8] = {1, 16, 32, 48, 64, 80, 96, 128};
-int dimX_list[4] = {32, 64, 128, 256};
-int DY_list[2] = {128, 256};
-int N_list[2] = {64, 128};
-int K_list[4] = {32, 64, 96, 128};
+std::vector<int> bs_list = {1, 16, 32, 48, 64, 80, 96, 128};
+std::vector<int> dimX_list = {32, 64, 128, 256};
+std::vector<int> DY_list = {128, 256};
+std::vector<int> N_list = {64, 128};
+std::vector<int> K_list = {32, 64, 96, 128};
+
+int ntest=5;
+int threadblock_bs = 4;

@@ -54,7 +54,7 @@
     {                                                                                                                  \
         auto status = static_cast<cufftResult>( call );                                                                \
         fflush(stdout); \
-        if ( status != CUFFT_SUCCESS )                                                                                 \
+        if ( status != CUFFT_SUCCESS )  {                                                                               \
             fprintf( stderr,                                                                                           \
                      "ERROR: CUFFT call \"%s\" in line %d of file %s failed "                                          \
                      "with "                                                                                           \
@@ -63,6 +63,8 @@
                      __LINE__,                                                                                         \
                      __FILE__,                                                                                         \
                      status );                                                                                         \
+                     fflush(stdout);\
+                     return 1;} \
     }
 #endif  // CUFFT_CALL
 
