@@ -3,10 +3,7 @@
 #include <cuda_runtime.h>
 #include <stdio.h>
 #include "utils.cuh"
-#include "fused_fft_cgemm_ifft_trunc_2D_7.cuh"
-#include "fused_fft_cgemm_ifft_trunc_2D_8.cuh"
-#include "fused_fft_cgemm_ifft_trunc_2D_9.cuh"
-#include "fused_fft_cgemm_ifft_trunc_2D_10.cuh"
+#include "turboFNO.h"
 #include "fft_radix_2_logN_7_upload_0_stride.cuh"
 #include "ifft_radix_2_logN_7_upload_0_stride.cuh"
 
@@ -19,14 +16,32 @@
 #include "fft_radix_2_logN_10_upload_0_stride.cuh"
 #include "ifft_radix_2_logN_10_upload_0_stride.cuh"
 
+#include "ifft_radix_2_logN_7_upload_0_stride_DY.cuh"
+#include "ifft_radix_2_logN_8_upload_0_stride_DY.cuh"
+#include "ifft_radix_2_logN_9_upload_0_stride_DY.cuh"
+#include "ifft_radix_2_logN_10_upload_0_stride_DY.cuh"
+
+#include "fused_fft_cgemm_7.cuh"
+#include "fused_fft_cgemm_8.cuh"
+#include "fused_fft_cgemm_9.cuh"
+#include "fused_fft_cgemm_10.cuh"
+
 #include <cufftXt.h>
 
 using DataT = float2;
 int thread_bs[4] = {8, 16, 8, 16};
 void (*fft_stride [4])(float2 *, float2 *, int, int, int, int) = {fft_7_stride, fft_8_stride, fft_9_stride, fft_10_stride};
+
+void (*fused_fft_cgemm [4])(int, int, int, float2 *, float2 *,  float2 *, float2, float2) = 
+{fused_fft_cgemm_7, fused_fft_cgemm_8, fused_fft_cgemm_9, fused_fft_cgemm_10};
+
 void (*ifft_stride [4])(float2 *, float2 *, int, int, int, int) = {ifft_7_stride, ifft_8_stride, ifft_9_stride, ifft_10_stride};
-void (*fused_fft_cgemm_ifft [4])(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2) = 
-{fused_fft_cgemm_ifft_7, fused_fft_cgemm_ifft_8, fused_fft_cgemm_ifft_9, fused_fft_cgemm_ifft_10};
+// void (*fused_fft_cgemm_ifft [4])(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2) = 
+// {fused_fft_cgemm_ifft_7, fused_fft_cgemm_ifft_8, fused_fft_cgemm_ifft_9, fused_fft_cgemm_ifft_10};
+
+void (*ifft_stride_DY [4])(float2 *, float2 *, int, int) = {ifft_7_stride_DY, ifft_8_stride_DY, ifft_9_stride_DY, ifft_10_stride_DY};
+// void (*fft_stride_DY [4])(float2 *, float2 *, int, int) = {fft_7_stride_DY, fft_8_stride_DY, fft_9_stride_DY, fft_10_stride_DY};
+
 
 __global__ void direct_copy_colmajor_float4_truncation_2d(
     const float2 *input,
@@ -188,10 +203,7 @@ int main(int argc, char** argv){
       // DataT alpha = {1.0, 0} , beta = {1.0, 0}; 
 
       
-      dim3 gridDim((M + THREADBLOCK_M - 1) / THREADBLOCK_M, (N + THREADBLOCK_N - 1) / THREADBLOCK_N, 1);
-      dim3 blockDim((THREADBLOCK_M * THREADBLOCK_N / (THREAD_M * THREAD_N)), 1, 1); 
-      int shmem_size = sizeof(DataT) * (THREADBLOCK_M + THREADBLOCK_N + DY) * THREADBLOCK_K ;  
-      
+
 
       
       dim3 blockDim_copy(32, 32, 1);
@@ -218,8 +230,7 @@ int main(int argc, char** argv){
       CUFFT_CALL(cufftCreate(&plan));
       CUFFT_CALL(cufftCreate(&iplan));
     
-      // int n[2] = {DX, DY};  // 2D FFT 维度
-      int n[2] = {DY, DX};  // 2D FFT 维度
+      int n[2] = {DX, DY};  // 2D FFT 维度
       CUFFT_CALL(cufftPlanMany(&plan, 2, n,
         nullptr, 1, DY * DX,   // 输入紧密存储
         nullptr, 1, DY * DX,   // 输出紧密存储
@@ -253,8 +264,10 @@ int main(int argc, char** argv){
       cudaDeviceSynchronize();
       
 
-
-
+      dim3 gridDim((M + THREADBLOCK_M - 1) / THREADBLOCK_M, (N + THREADBLOCK_N - 1) / THREADBLOCK_N, 1);
+      dim3 blockDim((THREADBLOCK_M * THREADBLOCK_N / (THREAD_M * THREAD_N)), 1, 1); 
+      int shmem_size = sizeof(DataT) * (THREADBLOCK_M + THREADBLOCK_N + DY) * THREADBLOCK_K;
+      
       
       dim3 gridDim_fft_dimx((DY * K * bs + threadblock_bs - 1) / threadblock_bs, 1, 1);
       dim3 gridDim_ifft_dimx((DY * N * bs + threadblock_bs - 1) / threadblock_bs, 1, 1);
@@ -263,6 +276,15 @@ int main(int argc, char** argv){
       dim3 blockDim_fft_dimx(DX / thread_bs[int(log2f(DX)) - 7] * threadblock_bs, 1, 1); 
       int shmem_size_fft_dimx = sizeof(DataT) * DX * threadblock_bs ;  
       
+      int logFFT_len = int(log2f(DY)) - 7;
+      dim3 gridDim_fft_dimY((dimX * K * bs + threadblock_bs - 1) / threadblock_bs, 1, 1);
+      dim3 gridDim_ifft_dimY((dimX * N * bs + threadblock_bs - 1) / threadblock_bs, 1, 1);
+      gridDim_fft_dimY.x = gridDim_fft_dimY.x > 65536 ? 65536 : gridDim_fft_dimY.x;
+      gridDim_ifft_dimY.x = gridDim_ifft_dimY.x > 65536 ? 65536 : gridDim_ifft_dimY.x;
+      dim3 blockDim_fft_dimY(DY / thread_bs[logFFT_len] * threadblock_bs, 1, 1); 
+      int shmem_size_fft_dimY = sizeof(DataT) * DY * threadblock_bs ;  
+            
+
       printf("Start X-dim FFT\n\n");
       printf("********* DX-dim FFT**********\n");
       printf("blockDim .x=%d .y=%d .z=%d\n", blockDim_fft_dimx.x, blockDim_fft_dimx.y, blockDim_fft_dimx.z);
@@ -273,13 +295,23 @@ int main(int argc, char** argv){
       CHECK_CUDA_KERNEL();
       cudaDeviceSynchronize();
       CHECK_CUDA_KERNEL();
-      printf("Start Fused!\n");
-      printf("*********fused gemm kernel param**********\n");
-      printf("blockDim .x=%d .y=%d .z=%d\n", blockDim.x, blockDim.y, blockDim.z);
-      printf("gridDim .x=%d .y=%d .z=%d\n", gridDim.x, gridDim.y, gridDim.z);
-      printf("shmem size = %d byte\n", shmem_size);
-      printf("******************************************\n");
-      fused_fft_cgemm_ifft[int(log2f(DY)) - 7]<<<gridDim, blockDim, shmem_size>>>(M, N, K, dFFT_output, dB, dC,dFFT_input, alpha, beta);
+
+      // printf("Start FFT_DY!\n");
+      // fft_stride_DY[logFFT_len]<<<gridDim_fft_dimY, blockDim_fft_dimY, shmem_size_fft_dimY>>>(dFFT_output,  dA, threadblock_bs, dimX * K * bs);
+      // CHECK_CUDA_KERNEL();
+      // cudaDeviceSynchronize();
+      // CHECK_CUDA_KERNEL();
+      // printf("Start CGEMM!\n");
+      // cgemm<<<gridDim, blockDim, shmem_size>>>(M, N, K, dA, dB, dC, alpha, beta);
+      fused_fft_cgemm[logFFT_len]<<<gridDim, blockDim, shmem_size>>>(M, N, K, dFFT_output, dB, dC, alpha, beta);
+      CHECK_CUDA_KERNEL();
+      cudaDeviceSynchronize();
+      CHECK_CUDA_KERNEL();
+      printf("Start iFFT_DY!\n");
+      ifft_stride_DY[logFFT_len]<<<gridDim_ifft_dimY, blockDim_fft_dimY, shmem_size_fft_dimY>>>(dC, dFFT_input, threadblock_bs, dimX * N * bs);
+      CHECK_CUDA_KERNEL();
+      printf("Finish Fused!\n");
+      cudaDeviceSynchronize();
       CHECK_CUDA_KERNEL();
       cudaDeviceSynchronize();
       CHECK_CUDA_KERNEL();
@@ -350,9 +382,11 @@ int main(int argc, char** argv){
       for (int i = 0; i < ntest; ++i){
         fft_stride[int(log2f(DX)) - 7]<<<gridDim_fft_dimx, blockDim_fft_dimx, shmem_size_fft_dimx>>>(dFFT_input, dFFT_output, threadblock_bs, DY, DY * K * bs, dimX);
         cudaDeviceSynchronize();
-        fused_fft_cgemm_ifft[int(log2f(DY)) - 7]<<<gridDim, blockDim, shmem_size>>>(M, N, K, dFFT_output, dB, dC, diFFT_output, alpha, beta);
+        fused_fft_cgemm[logFFT_len]<<<gridDim, blockDim, shmem_size>>>(M, N, K, dFFT_output, dB, dC, alpha, beta);
         cudaDeviceSynchronize();
-        ifft_stride[int(log2f(DX)) - 7]<<<gridDim_ifft_dimx, blockDim_fft_dimx, shmem_size_fft_dimx>>>(diFFT_output, diFFT_output_ref, threadblock_bs, DY, DY * N * bs, dimX);
+        ifft_stride_DY[logFFT_len]<<<gridDim_ifft_dimY, blockDim_fft_dimY, shmem_size_fft_dimY>>>(dC, dFFT_output, threadblock_bs, dimX * N * bs);
+        cudaDeviceSynchronize();
+        ifft_stride[int(log2f(DX)) - 7]<<<gridDim_ifft_dimx, blockDim_fft_dimx, shmem_size_fft_dimx>>>(dFFT_output, diFFT_output, threadblock_bs, DY, DY * N * bs, dimX);
         cudaDeviceSynchronize();
       }
       cudaEventRecord(fft_end);

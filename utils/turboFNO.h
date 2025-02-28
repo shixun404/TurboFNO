@@ -15,3 +15,11 @@ extern __shared__ float shared_mem[];
 #define BID_Y blockIdx.y
 #define LOAD_PER_THREAD_A (THREADBLOCK_M * THREADBLOCK_K / THREAD_NUM)
 #define LOAD_PER_THREAD_B (THREADBLOCK_N * THREADBLOCK_K / THREAD_NUM)
+
+
+
+int bs_list[8] = {1, 16, 32, 48, 64, 80, 96, 128};
+int dimX_list[4] = {32, 64, 128, 256};
+int DY_list[2] = {128, 256};
+int N_list[2] = {64, 128};
+int K_list[4] = {32, 64, 96, 128};

@@ -78,8 +78,6 @@ __global__ void direct_copy_colmajor_float4_zero_padding(const float2 *input,
   }
 }
 
-
-
 int main(int argc, char** argv){
     if(argc < 7){
       printf("Usage: %s bs dimX DY N K ntest\n", argv[0]);
@@ -97,6 +95,12 @@ int main(int argc, char** argv){
       int ntest = atoi(argv[6]);
       int threadblock_bs = argc > 7 ? atoi(argv[7]) : 4;
 
+      bs = 128;
+      dimX = 256;
+      DY = 256;
+      N =  128;
+      K = 128;
+      int ntest = 5;
 
       M = bs * dimX * THREADBLOCK_M;
       dimY = 64;
