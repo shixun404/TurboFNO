@@ -3,7 +3,7 @@
 #include <cuda_runtime.h>
 #include <stdio.h>
 #include "utils.cuh"
-#include "turboFNO.h"
+#include "turboFNO_2D.h"
 #include "fft_radix_2_logN_7_upload_0_stride.cuh"
 #include "ifft_radix_2_logN_7_upload_0_stride.cuh"
 
@@ -114,7 +114,29 @@ int main(int argc, char** argv){
       // DataT alpha = {1.0, 0} , beta = {1.0, 0}; 
 
       cudaDeviceSynchronize();
-      
+      for (int bs : bs_list) {
+        for (int DX : DX_list) {
+            for (int DY : DY_list) {
+                for (int N : N_list) {
+                    for (int K : K_list) {
+                      
+            M = bs * dimX * THREADBLOCK_M;
+            FFT_len = DY;
+            FFT_bs = bs * dimX * K;
+            iFFT_bs = bs * dimX * N;
+            FFT_input_size = bs * dimX * DY * K;
+            iFFT_output_size = bs * dimX * DY * N;
+            M = bs * dimX * THREADBLOCK_M;
+            FFT_len = dimY;
+            FFT_bs = bs * dimX * K;
+            iFFT_bs = bs * dimX * N;
+       
+            FFT_bs_2d = bs * K;
+            iFFT_bs_2d = bs * N;
+            
+            FFT_input_size = bs * DX * DY * K;
+            iFFT_output_size = bs * DX * DY * N;
+
 
       dim3 gridDim((M + THREADBLOCK_M - 1) / THREADBLOCK_M, (N + THREADBLOCK_N - 1) / THREADBLOCK_N, 1);
       dim3 blockDim((THREADBLOCK_M * THREADBLOCK_N / (THREAD_M * THREAD_N)), 1, 1); 
@@ -148,81 +170,36 @@ int main(int argc, char** argv){
       cudaDeviceSynchronize();
       CHECK_CUDA_KERNEL();
 
-      printf("Start FFT_DY!\n");
+      // printf("Start FFT_DY!\n");
       fft_stride_DY[logFFT_len]<<<gridDim_fft_dimY, blockDim_fft_dimY, shmem_size_fft_dimY>>>(dFFT_output,  dA, threadblock_bs, dimX * K * bs);
       CHECK_CUDA_KERNEL();
       cudaDeviceSynchronize();
       CHECK_CUDA_KERNEL();
-      printf("Start CGEMM!\n");
+      // printf("Start CGEMM!\n");
       cgemm<<<gridDim, blockDim, shmem_size>>>(M, N, K, dA, dB, dC, alpha, beta);
       CHECK_CUDA_KERNEL();
       cudaDeviceSynchronize();
       CHECK_CUDA_KERNEL();
-      printf("Start iFFT_DY!\n");
+      // printf("Start iFFT_DY!\n");
       ifft_stride_DY[logFFT_len]<<<gridDim_ifft_dimY, blockDim_fft_dimY, shmem_size_fft_dimY>>>(dC, dFFT_input, threadblock_bs, dimX * N * bs);
       CHECK_CUDA_KERNEL();
-      printf("Finish Fused!\n");
+      // printf("Finish Fused!\n");
       cudaDeviceSynchronize();
       CHECK_CUDA_KERNEL();
       cudaDeviceSynchronize();
       CHECK_CUDA_KERNEL();
-      printf("Start X-dim iFFT\n");
-      printf("Start X-dim FFT\n\n");
-      printf("********* DX-dim FFT**********\n");
-      printf("blockDim .x=%d .y=%d .z=%d\n", blockDim_fft_dimx.x, blockDim_fft_dimx.y, blockDim_fft_dimx.z);
-      printf("gridDim .x=%d .y=%d .z=%d\n", gridDim_ifft_dimx.x, gridDim_ifft_dimx.y, gridDim_ifft_dimx.z);
-      printf("shmem size = %d byte\n", shmem_size_fft_dimx);
-      printf("******************************************\n");
+      // printf("Start X-dim iFFT\n");
+      // printf("Start X-dim FFT\n\n");
+      // printf("********* DX-dim FFT**********\n");
+      // printf("blockDim .x=%d .y=%d .z=%d\n", blockDim_fft_dimx.x, blockDim_fft_dimx.y, blockDim_fft_dimx.z);
+      // printf("gridDim .x=%d .y=%d .z=%d\n", gridDim_ifft_dimx.x, gridDim_ifft_dimx.y, gridDim_ifft_dimx.z);
+      // printf("shmem size = %d byte\n", shmem_size_fft_dimx);
+      // printf("******************************************\n");
       ifft_stride[int(log2f(DX)) - 7]<<<gridDim_ifft_dimx, blockDim_fft_dimx, shmem_size_fft_dimx>>>(dFFT_input, diFFT_output, threadblock_bs, DY, DY * N * bs, dimX);
       CHECK_CUDA_KERNEL();
       cudaDeviceSynchronize();
       CHECK_CUDA_KERNEL();
-      printf("Finish Fused!\n");
-        
-    
-
-      CUDA_RT_CALL(cudaMemcpy(iFFT_output, diFFT_output, sizeof(DataT) * iFFT_output_size, cudaMemcpyDeviceToHost));
-      CUDA_RT_CALL(cudaMemcpy(iFFT_output_ref, diFFT_output_ref, sizeof(DataT) * iFFT_output_size, cudaMemcpyDeviceToHost));
-      printf("Compare cuFFT-->DirectCopy-->CGEMM-->Zero Padding Copy-->cuFFT vs. fusedFFT-GEMM!\n");
-      verify_vector((float*)iFFT_output_ref, (float*)iFFT_output, iFFT_output_size * 2, dimY);
-      printf("***************Finish Verification*****************\n\n");  
-      
-      printf("***************Profiling starts *****************\n");  
-
-      {
-      cudaEvent_t fft_begin, fft_end;
-      float elapsed_time;
-      cudaEventCreate(&fft_begin);
-      cudaEventCreate(&fft_end);
-
-      cudaEventRecord(fft_begin);
-      for (int i = 0; i < ntest; ++i){
-        cufftExecC2C(plan, reinterpret_cast<cufftComplex*>(dFFT_input), 
-        reinterpret_cast<cufftComplex*>(dFFT_output), 
-        CUFFT_FORWARD);
-        cudaDeviceSynchronize();
-        direct_copy_colmajor_float4_truncation_2d<<<gridDim_copy, blockDim_copy>>>(dFFT_output, dA, DY, DX, bs*K, dimY, dimX);
-        
-        cudaDeviceSynchronize();
-        
-        cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, M, N, K, (cuFloatComplex*)&alpha, (cuFloatComplex*)dA, M, (cuFloatComplex*)dB, K, (cuFloatComplex*)&beta, (cuFloatComplex*)dC_ref, M);
-        cudaDeviceSynchronize();
-        direct_copy_colmajor_float4_zero_padding_2d<<<gridDim_copy, blockDim_copy>>>(dC_ref, diFFT_output, DY, DX, bs*N, dimY, dimX);
-        cudaDeviceSynchronize();
-        cufftExecC2C(iplan, reinterpret_cast<cufftComplex*>(diFFT_output), reinterpret_cast<cufftComplex*>(diFFT_output_ref), CUFFT_FORWARD);
-        cudaDeviceSynchronize();
-      }
-      cudaEventRecord(fft_end);
-      cudaEventSynchronize(fft_begin);
-      cudaEventSynchronize(fft_end);
-      cudaEventElapsedTime(&elapsed_time, fft_begin, fft_end);
-
-      elapsed_time = elapsed_time / ntest;
-      // printf("bs=%d dimX=%d dimY=%d M=%d, N=%d K=%d\n", bs, dimX, dimY, M, N, K);
-      // printf("FFT_len=%d FFT_bs=%d\n", FFT_len, FFT_bs);
-      printf("cuFFT-->DirectCopy-->CGEMM-->Zero Padding Copy-->cuFFT, TIME=%8.3f ms\n",  elapsed_time);
-    }
-
+      // printf("Finish Fused!\n");
 
       {
         cudaEvent_t fft_begin, fft_end;
@@ -250,7 +227,9 @@ int main(int argc, char** argv){
       elapsed_time = elapsed_time / ntest;
       // printf("bs=%d dimX=%d dimY=%d M=%d, N=%d K=%d\n", bs, dimX, dimY, M, N, K);
       // printf("FFT_len=%d FFT_bs=%d\n", FFT_len, FFT_bs);
-      printf("fusedFFT-GEMM,                                          TIME=%8.3f ms\n",  elapsed_time);
+      printf("2D_A, bs=%-4d, DX=%-4d, DY=%-4d, N=%-4d, K=%-4d, TIME=%8.3fms\n",
+        bs, DX, DY, N, K, elapsed_time);
     }
+  }}}}}
     return 0;
 }

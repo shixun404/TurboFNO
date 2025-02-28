@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <mma.h>
-#include <turboFNO.h>
 // #include "fft_radix_2_logN_7_upload_0_fused.cuh"
 // #include "fft_radix_2_logN_8_upload_0_fused.cuh"
 #include "fft_radix_2_logN_9_upload_0_fused.cuh"
