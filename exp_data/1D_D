@@ -1,512 +1,960 @@
-1D_D, bs=1   , dimX=32  , DY=128 , N=64  , K=32  , TIME=   0.038ms
-1D_D, bs=1   , dimX=32  , DY=128 , N=64  , K=64  , TIME=   0.054ms
-1D_D, bs=1   , dimX=32  , DY=128 , N=64  , K=96  , TIME=   0.070ms
-1D_D, bs=1   , dimX=32  , DY=128 , N=64  , K=128 , TIME=   0.086ms
-1D_D, bs=1   , dimX=32  , DY=128 , N=128 , K=32  , TIME=   0.038ms
-1D_D, bs=1   , dimX=32  , DY=128 , N=128 , K=64  , TIME=   0.055ms
-1D_D, bs=1   , dimX=32  , DY=128 , N=128 , K=96  , TIME=   0.071ms
-1D_D, bs=1   , dimX=32  , DY=128 , N=128 , K=128 , TIME=   0.086ms
-1D_D, bs=1   , dimX=32  , DY=256 , N=64  , K=32  , TIME=   0.044ms
-1D_D, bs=1   , dimX=32  , DY=256 , N=64  , K=64  , TIME=   0.060ms
-1D_D, bs=1   , dimX=32  , DY=256 , N=64  , K=96  , TIME=   0.078ms
-1D_D, bs=1   , dimX=32  , DY=256 , N=64  , K=128 , TIME=   0.095ms
-1D_D, bs=1   , dimX=32  , DY=256 , N=128 , K=32  , TIME=   0.044ms
-1D_D, bs=1   , dimX=32  , DY=256 , N=128 , K=64  , TIME=   0.061ms
-1D_D, bs=1   , dimX=32  , DY=256 , N=128 , K=96  , TIME=   0.078ms
-1D_D, bs=1   , dimX=32  , DY=256 , N=128 , K=128 , TIME=   0.096ms
-1D_D, bs=1   , dimX=64  , DY=128 , N=64  , K=32  , TIME=   0.038ms
-1D_D, bs=1   , dimX=64  , DY=128 , N=64  , K=64  , TIME=   0.055ms
-1D_D, bs=1   , dimX=64  , DY=128 , N=64  , K=96  , TIME=   0.070ms
-1D_D, bs=1   , dimX=64  , DY=128 , N=64  , K=128 , TIME=   0.087ms
-1D_D, bs=1   , dimX=64  , DY=128 , N=128 , K=32  , TIME=   0.058ms
-1D_D, bs=1   , dimX=64  , DY=128 , N=128 , K=64  , TIME=   0.085ms
-1D_D, bs=1   , dimX=64  , DY=128 , N=128 , K=96  , TIME=   0.112ms
-1D_D, bs=1   , dimX=64  , DY=128 , N=128 , K=128 , TIME=   0.139ms
-1D_D, bs=1   , dimX=64  , DY=256 , N=64  , K=32  , TIME=   0.044ms
-1D_D, bs=1   , dimX=64  , DY=256 , N=64  , K=64  , TIME=   0.061ms
-1D_D, bs=1   , dimX=64  , DY=256 , N=64  , K=96  , TIME=   0.080ms
-1D_D, bs=1   , dimX=64  , DY=256 , N=64  , K=128 , TIME=   0.100ms
-1D_D, bs=1   , dimX=64  , DY=256 , N=128 , K=32  , TIME=   0.070ms
-1D_D, bs=1   , dimX=64  , DY=256 , N=128 , K=64  , TIME=   0.099ms
-1D_D, bs=1   , dimX=64  , DY=256 , N=128 , K=96  , TIME=   0.130ms
-1D_D, bs=1   , dimX=64  , DY=256 , N=128 , K=128 , TIME=   0.161ms
-1D_D, bs=1   , dimX=128 , DY=128 , N=64  , K=32  , TIME=   0.058ms
-1D_D, bs=1   , dimX=128 , DY=128 , N=64  , K=64  , TIME=   0.084ms
-1D_D, bs=1   , dimX=128 , DY=128 , N=64  , K=96  , TIME=   0.113ms
-1D_D, bs=1   , dimX=128 , DY=128 , N=64  , K=128 , TIME=   0.143ms
-1D_D, bs=1   , dimX=128 , DY=128 , N=128 , K=32  , TIME=   0.084ms
-1D_D, bs=1   , dimX=128 , DY=128 , N=128 , K=64  , TIME=   0.124ms
-1D_D, bs=1   , dimX=128 , DY=128 , N=128 , K=96  , TIME=   0.167ms
-1D_D, bs=1   , dimX=128 , DY=128 , N=128 , K=128 , TIME=   0.209ms
-1D_D, bs=1   , dimX=128 , DY=256 , N=64  , K=32  , TIME=   0.070ms
-1D_D, bs=1   , dimX=128 , DY=256 , N=64  , K=64  , TIME=   0.101ms
-1D_D, bs=1   , dimX=128 , DY=256 , N=64  , K=96  , TIME=   0.132ms
-1D_D, bs=1   , dimX=128 , DY=256 , N=64  , K=128 , TIME=   0.163ms
-1D_D, bs=1   , dimX=128 , DY=256 , N=128 , K=32  , TIME=   0.102ms
-1D_D, bs=1   , dimX=128 , DY=256 , N=128 , K=64  , TIME=   0.147ms
-1D_D, bs=1   , dimX=128 , DY=256 , N=128 , K=96  , TIME=   0.193ms
-1D_D, bs=1   , dimX=128 , DY=256 , N=128 , K=128 , TIME=   0.239ms
-1D_D, bs=1   , dimX=256 , DY=128 , N=64  , K=32  , TIME=   0.085ms
-1D_D, bs=1   , dimX=256 , DY=128 , N=64  , K=64  , TIME=   0.127ms
-1D_D, bs=1   , dimX=256 , DY=128 , N=64  , K=96  , TIME=   0.169ms
-1D_D, bs=1   , dimX=256 , DY=128 , N=64  , K=128 , TIME=   0.211ms
-1D_D, bs=1   , dimX=256 , DY=128 , N=128 , K=32  , TIME=   0.132ms
-1D_D, bs=1   , dimX=256 , DY=128 , N=128 , K=64  , TIME=   0.198ms
-1D_D, bs=1   , dimX=256 , DY=128 , N=128 , K=96  , TIME=   0.268ms
-1D_D, bs=1   , dimX=256 , DY=128 , N=128 , K=128 , TIME=   0.334ms
-1D_D, bs=1   , dimX=256 , DY=256 , N=64  , K=32  , TIME=   0.104ms
-1D_D, bs=1   , dimX=256 , DY=256 , N=64  , K=64  , TIME=   0.148ms
-1D_D, bs=1   , dimX=256 , DY=256 , N=64  , K=96  , TIME=   0.194ms
-1D_D, bs=1   , dimX=256 , DY=256 , N=64  , K=128 , TIME=   0.239ms
-1D_D, bs=1   , dimX=256 , DY=256 , N=128 , K=32  , TIME=   0.163ms
-1D_D, bs=1   , dimX=256 , DY=256 , N=128 , K=64  , TIME=   0.235ms
-1D_D, bs=1   , dimX=256 , DY=256 , N=128 , K=96  , TIME=   0.308ms
-1D_D, bs=1   , dimX=256 , DY=256 , N=128 , K=128 , TIME=   0.381ms
-1D_D, bs=16  , dimX=32  , DY=128 , N=64  , K=32  , TIME=   0.132ms
-1D_D, bs=16  , dimX=32  , DY=128 , N=64  , K=64  , TIME=   0.197ms
-1D_D, bs=16  , dimX=32  , DY=128 , N=64  , K=96  , TIME=   0.266ms
-1D_D, bs=16  , dimX=32  , DY=128 , N=64  , K=128 , TIME=   0.332ms
-1D_D, bs=16  , dimX=32  , DY=128 , N=128 , K=32  , TIME=   0.243ms
-1D_D, bs=16  , dimX=32  , DY=128 , N=128 , K=64  , TIME=   0.372ms
-1D_D, bs=16  , dimX=32  , DY=128 , N=128 , K=96  , TIME=   0.505ms
-1D_D, bs=16  , dimX=32  , DY=128 , N=128 , K=128 , TIME=   0.634ms
-1D_D, bs=16  , dimX=32  , DY=256 , N=64  , K=32  , TIME=   0.163ms
-1D_D, bs=16  , dimX=32  , DY=256 , N=64  , K=64  , TIME=   0.234ms
-1D_D, bs=16  , dimX=32  , DY=256 , N=64  , K=96  , TIME=   0.308ms
-1D_D, bs=16  , dimX=32  , DY=256 , N=64  , K=128 , TIME=   0.380ms
-1D_D, bs=16  , dimX=32  , DY=256 , N=128 , K=32  , TIME=   0.302ms
-1D_D, bs=16  , dimX=32  , DY=256 , N=128 , K=64  , TIME=   0.443ms
-1D_D, bs=16  , dimX=32  , DY=256 , N=128 , K=96  , TIME=   0.585ms
-1D_D, bs=16  , dimX=32  , DY=256 , N=128 , K=128 , TIME=   0.726ms
-1D_D, bs=16  , dimX=64  , DY=128 , N=64  , K=32  , TIME=   0.243ms
-1D_D, bs=16  , dimX=64  , DY=128 , N=64  , K=64  , TIME=   0.373ms
-1D_D, bs=16  , dimX=64  , DY=128 , N=64  , K=96  , TIME=   0.505ms
-1D_D, bs=16  , dimX=64  , DY=128 , N=64  , K=128 , TIME=   0.635ms
-1D_D, bs=16  , dimX=64  , DY=128 , N=128 , K=32  , TIME=   0.454ms
-1D_D, bs=16  , dimX=64  , DY=128 , N=128 , K=64  , TIME=   0.696ms
-1D_D, bs=16  , dimX=64  , DY=128 , N=128 , K=96  , TIME=   0.947ms
-1D_D, bs=16  , dimX=64  , DY=128 , N=128 , K=128 , TIME=   1.191ms
-1D_D, bs=16  , dimX=64  , DY=256 , N=64  , K=32  , TIME=   0.302ms
-1D_D, bs=16  , dimX=64  , DY=256 , N=64  , K=64  , TIME=   0.442ms
-1D_D, bs=16  , dimX=64  , DY=256 , N=64  , K=96  , TIME=   0.585ms
-1D_D, bs=16  , dimX=64  , DY=256 , N=64  , K=128 , TIME=   0.725ms
-1D_D, bs=16  , dimX=64  , DY=256 , N=128 , K=32  , TIME=   0.566ms
-1D_D, bs=16  , dimX=64  , DY=256 , N=128 , K=64  , TIME=   0.827ms
-1D_D, bs=16  , dimX=64  , DY=256 , N=128 , K=96  , TIME=   1.095ms
-1D_D, bs=16  , dimX=64  , DY=256 , N=128 , K=128 , TIME=   1.364ms
-1D_D, bs=16  , dimX=128 , DY=128 , N=64  , K=32  , TIME=   0.453ms
-1D_D, bs=16  , dimX=128 , DY=128 , N=64  , K=64  , TIME=   0.694ms
-1D_D, bs=16  , dimX=128 , DY=128 , N=64  , K=96  , TIME=   0.944ms
-1D_D, bs=16  , dimX=128 , DY=128 , N=64  , K=128 , TIME=   1.188ms
-1D_D, bs=16  , dimX=128 , DY=128 , N=128 , K=32  , TIME=   0.883ms
-1D_D, bs=16  , dimX=128 , DY=128 , N=128 , K=64  , TIME=   1.362ms
-1D_D, bs=16  , dimX=128 , DY=128 , N=128 , K=96  , TIME=   1.861ms
-1D_D, bs=16  , dimX=128 , DY=128 , N=128 , K=128 , TIME=   2.347ms
-1D_D, bs=16  , dimX=128 , DY=256 , N=64  , K=32  , TIME=   0.572ms
-1D_D, bs=16  , dimX=128 , DY=256 , N=64  , K=64  , TIME=   0.838ms
-1D_D, bs=16  , dimX=128 , DY=256 , N=64  , K=96  , TIME=   1.111ms
-1D_D, bs=16  , dimX=128 , DY=256 , N=64  , K=128 , TIME=   1.384ms
-1D_D, bs=16  , dimX=128 , DY=256 , N=128 , K=32  , TIME=   1.116ms
-1D_D, bs=16  , dimX=128 , DY=256 , N=128 , K=64  , TIME=   1.642ms
-1D_D, bs=16  , dimX=128 , DY=256 , N=128 , K=96  , TIME=   2.181ms
-1D_D, bs=16  , dimX=128 , DY=256 , N=128 , K=128 , TIME=   2.719ms
-1D_D, bs=16  , dimX=256 , DY=128 , N=64  , K=32  , TIME=   0.886ms
-1D_D, bs=16  , dimX=256 , DY=128 , N=64  , K=64  , TIME=   1.368ms
-1D_D, bs=16  , dimX=256 , DY=128 , N=64  , K=96  , TIME=   1.869ms
-1D_D, bs=16  , dimX=256 , DY=128 , N=64  , K=128 , TIME=   2.356ms
-1D_D, bs=16  , dimX=256 , DY=128 , N=128 , K=32  , TIME=   1.743ms
-1D_D, bs=16  , dimX=256 , DY=128 , N=128 , K=64  , TIME=   2.708ms
-1D_D, bs=16  , dimX=256 , DY=128 , N=128 , K=96  , TIME=   3.702ms
-1D_D, bs=16  , dimX=256 , DY=128 , N=128 , K=128 , TIME=   4.672ms
-1D_D, bs=16  , dimX=256 , DY=256 , N=64  , K=32  , TIME=   1.128ms
-1D_D, bs=16  , dimX=256 , DY=256 , N=64  , K=64  , TIME=   1.654ms
-1D_D, bs=16  , dimX=256 , DY=256 , N=64  , K=96  , TIME=   2.202ms
-1D_D, bs=16  , dimX=256 , DY=256 , N=64  , K=128 , TIME=   2.735ms
-1D_D, bs=16  , dimX=256 , DY=256 , N=128 , K=32  , TIME=   2.227ms
-1D_D, bs=16  , dimX=256 , DY=256 , N=128 , K=64  , TIME=   3.259ms
-1D_D, bs=16  , dimX=256 , DY=256 , N=128 , K=96  , TIME=   4.334ms
-1D_D, bs=16  , dimX=256 , DY=256 , N=128 , K=128 , TIME=   5.403ms
-1D_D, bs=32  , dimX=32  , DY=128 , N=64  , K=32  , TIME=   0.243ms
-1D_D, bs=32  , dimX=32  , DY=128 , N=64  , K=64  , TIME=   0.372ms
-1D_D, bs=32  , dimX=32  , DY=128 , N=64  , K=96  , TIME=   0.506ms
-1D_D, bs=32  , dimX=32  , DY=128 , N=64  , K=128 , TIME=   0.635ms
-1D_D, bs=32  , dimX=32  , DY=128 , N=128 , K=32  , TIME=   0.455ms
-1D_D, bs=32  , dimX=32  , DY=128 , N=128 , K=64  , TIME=   0.695ms
-1D_D, bs=32  , dimX=32  , DY=128 , N=128 , K=96  , TIME=   0.946ms
-1D_D, bs=32  , dimX=32  , DY=128 , N=128 , K=128 , TIME=   1.191ms
-1D_D, bs=32  , dimX=32  , DY=256 , N=64  , K=32  , TIME=   0.302ms
-1D_D, bs=32  , dimX=32  , DY=256 , N=64  , K=64  , TIME=   0.443ms
-1D_D, bs=32  , dimX=32  , DY=256 , N=64  , K=96  , TIME=   0.585ms
-1D_D, bs=32  , dimX=32  , DY=256 , N=64  , K=128 , TIME=   0.725ms
-1D_D, bs=32  , dimX=32  , DY=256 , N=128 , K=32  , TIME=   0.565ms
-1D_D, bs=32  , dimX=32  , DY=256 , N=128 , K=64  , TIME=   0.826ms
-1D_D, bs=32  , dimX=32  , DY=256 , N=128 , K=96  , TIME=   1.097ms
-1D_D, bs=32  , dimX=32  , DY=256 , N=128 , K=128 , TIME=   1.361ms
-1D_D, bs=32  , dimX=64  , DY=128 , N=64  , K=32  , TIME=   0.454ms
-1D_D, bs=32  , dimX=64  , DY=128 , N=64  , K=64  , TIME=   0.694ms
-1D_D, bs=32  , dimX=64  , DY=128 , N=64  , K=96  , TIME=   0.944ms
-1D_D, bs=32  , dimX=64  , DY=128 , N=64  , K=128 , TIME=   1.189ms
-1D_D, bs=32  , dimX=64  , DY=128 , N=128 , K=32  , TIME=   0.883ms
-1D_D, bs=32  , dimX=64  , DY=128 , N=128 , K=64  , TIME=   1.362ms
-1D_D, bs=32  , dimX=64  , DY=128 , N=128 , K=96  , TIME=   1.862ms
-1D_D, bs=32  , dimX=64  , DY=128 , N=128 , K=128 , TIME=   2.346ms
-1D_D, bs=32  , dimX=64  , DY=256 , N=64  , K=32  , TIME=   0.572ms
-1D_D, bs=32  , dimX=64  , DY=256 , N=64  , K=64  , TIME=   0.839ms
-1D_D, bs=32  , dimX=64  , DY=256 , N=64  , K=96  , TIME=   1.110ms
-1D_D, bs=32  , dimX=64  , DY=256 , N=64  , K=128 , TIME=   1.384ms
-1D_D, bs=32  , dimX=64  , DY=256 , N=128 , K=32  , TIME=   1.119ms
-1D_D, bs=32  , dimX=64  , DY=256 , N=128 , K=64  , TIME=   1.641ms
-1D_D, bs=32  , dimX=64  , DY=256 , N=128 , K=96  , TIME=   2.183ms
-1D_D, bs=32  , dimX=64  , DY=256 , N=128 , K=128 , TIME=   2.720ms
-1D_D, bs=32  , dimX=128 , DY=128 , N=64  , K=32  , TIME=   0.884ms
-1D_D, bs=32  , dimX=128 , DY=128 , N=64  , K=64  , TIME=   1.368ms
-1D_D, bs=32  , dimX=128 , DY=128 , N=64  , K=96  , TIME=   1.869ms
-1D_D, bs=32  , dimX=128 , DY=128 , N=64  , K=128 , TIME=   2.356ms
-1D_D, bs=32  , dimX=128 , DY=128 , N=128 , K=32  , TIME=   1.742ms
-1D_D, bs=32  , dimX=128 , DY=128 , N=128 , K=64  , TIME=   2.706ms
-1D_D, bs=32  , dimX=128 , DY=128 , N=128 , K=96  , TIME=   3.701ms
-1D_D, bs=32  , dimX=128 , DY=128 , N=128 , K=128 , TIME=   4.672ms
-1D_D, bs=32  , dimX=128 , DY=256 , N=64  , K=32  , TIME=   1.127ms
-1D_D, bs=32  , dimX=128 , DY=256 , N=64  , K=64  , TIME=   1.655ms
-1D_D, bs=32  , dimX=128 , DY=256 , N=64  , K=96  , TIME=   2.202ms
-1D_D, bs=32  , dimX=128 , DY=256 , N=64  , K=128 , TIME=   2.733ms
-1D_D, bs=32  , dimX=128 , DY=256 , N=128 , K=32  , TIME=   2.223ms
-1D_D, bs=32  , dimX=128 , DY=256 , N=128 , K=64  , TIME=   3.258ms
-1D_D, bs=32  , dimX=128 , DY=256 , N=128 , K=96  , TIME=   4.337ms
-1D_D, bs=32  , dimX=128 , DY=256 , N=128 , K=128 , TIME=   5.404ms
-1D_D, bs=32  , dimX=256 , DY=128 , N=64  , K=32  , TIME=   1.741ms
-1D_D, bs=32  , dimX=256 , DY=128 , N=64  , K=64  , TIME=   2.705ms
-1D_D, bs=32  , dimX=256 , DY=128 , N=64  , K=96  , TIME=   3.709ms
-1D_D, bs=32  , dimX=256 , DY=128 , N=64  , K=128 , TIME=   4.668ms
-1D_D, bs=32  , dimX=256 , DY=128 , N=128 , K=32  , TIME=   3.456ms
-1D_D, bs=32  , dimX=256 , DY=128 , N=128 , K=64  , TIME=   5.376ms
-1D_D, bs=32  , dimX=256 , DY=128 , N=128 , K=96  , TIME=   7.320ms
-1D_D, bs=32  , dimX=256 , DY=128 , N=128 , K=128 , TIME=   9.286ms
-1D_D, bs=32  , dimX=256 , DY=256 , N=64  , K=32  , TIME=   2.206ms
-1D_D, bs=32  , dimX=256 , DY=256 , N=64  , K=64  , TIME=   3.232ms
-1D_D, bs=32  , dimX=256 , DY=256 , N=64  , K=96  , TIME=   4.303ms
-1D_D, bs=32  , dimX=256 , DY=256 , N=64  , K=128 , TIME=   5.361ms
-1D_D, bs=32  , dimX=256 , DY=256 , N=128 , K=32  , TIME=   4.382ms
-1D_D, bs=32  , dimX=256 , DY=256 , N=128 , K=64  , TIME=   6.412ms
-1D_D, bs=32  , dimX=256 , DY=256 , N=128 , K=96  , TIME=   8.534ms
-1D_D, bs=32  , dimX=256 , DY=256 , N=128 , K=128 , TIME=  10.643ms
-1D_D, bs=48  , dimX=32  , DY=128 , N=64  , K=32  , TIME=   0.352ms
-1D_D, bs=48  , dimX=32  , DY=128 , N=64  , K=64  , TIME=   0.547ms
-1D_D, bs=48  , dimX=32  , DY=128 , N=64  , K=96  , TIME=   0.745ms
-1D_D, bs=48  , dimX=32  , DY=128 , N=64  , K=128 , TIME=   0.939ms
-1D_D, bs=48  , dimX=32  , DY=128 , N=128 , K=32  , TIME=   0.671ms
-1D_D, bs=48  , dimX=32  , DY=128 , N=128 , K=64  , TIME=   1.043ms
-1D_D, bs=48  , dimX=32  , DY=128 , N=128 , K=96  , TIME=   1.424ms
-1D_D, bs=48  , dimX=32  , DY=128 , N=128 , K=128 , TIME=   1.796ms
-1D_D, bs=48  , dimX=32  , DY=256 , N=64  , K=32  , TIME=   0.439ms
-1D_D, bs=48  , dimX=32  , DY=256 , N=64  , K=64  , TIME=   0.649ms
-1D_D, bs=48  , dimX=32  , DY=256 , N=64  , K=96  , TIME=   0.862ms
-1D_D, bs=48  , dimX=32  , DY=256 , N=64  , K=128 , TIME=   1.071ms
-1D_D, bs=48  , dimX=32  , DY=256 , N=128 , K=32  , TIME=   0.841ms
-1D_D, bs=48  , dimX=32  , DY=256 , N=128 , K=64  , TIME=   1.238ms
-1D_D, bs=48  , dimX=32  , DY=256 , N=128 , K=96  , TIME=   1.646ms
-1D_D, bs=48  , dimX=32  , DY=256 , N=128 , K=128 , TIME=   2.051ms
-1D_D, bs=48  , dimX=64  , DY=128 , N=64  , K=32  , TIME=   0.670ms
-1D_D, bs=48  , dimX=64  , DY=128 , N=64  , K=64  , TIME=   1.043ms
-1D_D, bs=48  , dimX=64  , DY=128 , N=64  , K=96  , TIME=   1.424ms
-1D_D, bs=48  , dimX=64  , DY=128 , N=64  , K=128 , TIME=   1.796ms
-1D_D, bs=48  , dimX=64  , DY=128 , N=128 , K=32  , TIME=   1.313ms
-1D_D, bs=48  , dimX=64  , DY=128 , N=128 , K=64  , TIME=   2.040ms
-1D_D, bs=48  , dimX=64  , DY=128 , N=128 , K=96  , TIME=   2.789ms
-1D_D, bs=48  , dimX=64  , DY=128 , N=128 , K=128 , TIME=   3.519ms
-1D_D, bs=48  , dimX=64  , DY=256 , N=64  , K=32  , TIME=   0.839ms
-1D_D, bs=48  , dimX=64  , DY=256 , N=64  , K=64  , TIME=   1.237ms
-1D_D, bs=48  , dimX=64  , DY=256 , N=64  , K=96  , TIME=   1.643ms
-1D_D, bs=48  , dimX=64  , DY=256 , N=64  , K=128 , TIME=   2.051ms
-1D_D, bs=48  , dimX=64  , DY=256 , N=128 , K=32  , TIME=   1.651ms
-1D_D, bs=48  , dimX=64  , DY=256 , N=128 , K=64  , TIME=   2.422ms
-1D_D, bs=48  , dimX=64  , DY=256 , N=128 , K=96  , TIME=   3.216ms
-1D_D, bs=48  , dimX=64  , DY=256 , N=128 , K=128 , TIME=   4.014ms
-1D_D, bs=48  , dimX=128 , DY=128 , N=64  , K=32  , TIME=   1.317ms
-1D_D, bs=48  , dimX=128 , DY=128 , N=64  , K=64  , TIME=   2.040ms
-1D_D, bs=48  , dimX=128 , DY=128 , N=64  , K=96  , TIME=   2.791ms
-1D_D, bs=48  , dimX=128 , DY=128 , N=64  , K=128 , TIME=   3.523ms
-1D_D, bs=48  , dimX=128 , DY=128 , N=128 , K=32  , TIME=   2.610ms
-1D_D, bs=48  , dimX=128 , DY=128 , N=128 , K=64  , TIME=   4.052ms
-1D_D, bs=48  , dimX=128 , DY=128 , N=128 , K=96  , TIME=   5.543ms
-1D_D, bs=48  , dimX=128 , DY=128 , N=128 , K=128 , TIME=   7.002ms
-1D_D, bs=48  , dimX=128 , DY=256 , N=64  , K=32  , TIME=   1.661ms
-1D_D, bs=48  , dimX=128 , DY=256 , N=64  , K=64  , TIME=   2.445ms
-1D_D, bs=48  , dimX=128 , DY=256 , N=64  , K=96  , TIME=   3.237ms
-1D_D, bs=48  , dimX=128 , DY=256 , N=64  , K=128 , TIME=   4.041ms
-1D_D, bs=48  , dimX=128 , DY=256 , N=128 , K=32  , TIME=   3.294ms
-1D_D, bs=48  , dimX=128 , DY=256 , N=128 , K=64  , TIME=   4.835ms
-1D_D, bs=48  , dimX=128 , DY=256 , N=128 , K=96  , TIME=   6.408ms
-1D_D, bs=48  , dimX=128 , DY=256 , N=128 , K=128 , TIME=   8.002ms
-1D_D, bs=48  , dimX=256 , DY=128 , N=64  , K=32  , TIME=   2.611ms
-1D_D, bs=48  , dimX=256 , DY=128 , N=64  , K=64  , TIME=   4.058ms
-1D_D, bs=48  , dimX=256 , DY=128 , N=64  , K=96  , TIME=   5.549ms
-1D_D, bs=48  , dimX=256 , DY=128 , N=64  , K=128 , TIME=   7.002ms
-1D_D, bs=48  , dimX=256 , DY=128 , N=128 , K=32  , TIME=   5.198ms
-1D_D, bs=48  , dimX=256 , DY=128 , N=128 , K=64  , TIME=   8.078ms
-1D_D, bs=48  , dimX=256 , DY=128 , N=128 , K=96  , TIME=  11.045ms
-1D_D, bs=48  , dimX=256 , DY=128 , N=128 , K=128 , TIME=  13.945ms
-1D_D, bs=48  , dimX=256 , DY=256 , N=64  , K=32  , TIME=   3.273ms
-1D_D, bs=48  , dimX=256 , DY=256 , N=64  , K=64  , TIME=   4.798ms
-1D_D, bs=48  , dimX=256 , DY=256 , N=64  , K=96  , TIME=   6.386ms
-1D_D, bs=48  , dimX=256 , DY=256 , N=64  , K=128 , TIME=   7.968ms
-1D_D, bs=48  , dimX=256 , DY=256 , N=128 , K=32  , TIME=   6.517ms
-1D_D, bs=48  , dimX=256 , DY=256 , N=128 , K=64  , TIME=   9.550ms
-1D_D, bs=48  , dimX=256 , DY=256 , N=128 , K=96  , TIME=  12.711ms
-1D_D, bs=48  , dimX=256 , DY=256 , N=128 , K=128 , TIME=  15.853ms
-1D_D, bs=64  , dimX=32  , DY=128 , N=64  , K=32  , TIME=   0.453ms
-1D_D, bs=64  , dimX=32  , DY=128 , N=64  , K=64  , TIME=   0.693ms
-1D_D, bs=64  , dimX=32  , DY=128 , N=64  , K=96  , TIME=   0.944ms
-1D_D, bs=64  , dimX=32  , DY=128 , N=64  , K=128 , TIME=   1.188ms
-1D_D, bs=64  , dimX=32  , DY=128 , N=128 , K=32  , TIME=   0.884ms
-1D_D, bs=64  , dimX=32  , DY=128 , N=128 , K=64  , TIME=   1.363ms
-1D_D, bs=64  , dimX=32  , DY=128 , N=128 , K=96  , TIME=   1.860ms
-1D_D, bs=64  , dimX=32  , DY=128 , N=128 , K=128 , TIME=   2.345ms
-1D_D, bs=64  , dimX=32  , DY=256 , N=64  , K=32  , TIME=   0.572ms
-1D_D, bs=64  , dimX=32  , DY=256 , N=64  , K=64  , TIME=   0.838ms
-1D_D, bs=64  , dimX=32  , DY=256 , N=64  , K=96  , TIME=   1.111ms
-1D_D, bs=64  , dimX=32  , DY=256 , N=64  , K=128 , TIME=   1.383ms
-1D_D, bs=64  , dimX=32  , DY=256 , N=128 , K=32  , TIME=   1.118ms
-1D_D, bs=64  , dimX=32  , DY=256 , N=128 , K=64  , TIME=   1.641ms
-1D_D, bs=64  , dimX=32  , DY=256 , N=128 , K=96  , TIME=   2.179ms
-1D_D, bs=64  , dimX=32  , DY=256 , N=128 , K=128 , TIME=   2.721ms
-1D_D, bs=64  , dimX=64  , DY=128 , N=64  , K=32  , TIME=   0.886ms
-1D_D, bs=64  , dimX=64  , DY=128 , N=64  , K=64  , TIME=   1.368ms
-1D_D, bs=64  , dimX=64  , DY=128 , N=64  , K=96  , TIME=   1.868ms
-1D_D, bs=64  , dimX=64  , DY=128 , N=64  , K=128 , TIME=   2.356ms
-1D_D, bs=64  , dimX=64  , DY=128 , N=128 , K=32  , TIME=   1.743ms
-1D_D, bs=64  , dimX=64  , DY=128 , N=128 , K=64  , TIME=   2.707ms
-1D_D, bs=64  , dimX=64  , DY=128 , N=128 , K=96  , TIME=   3.701ms
-1D_D, bs=64  , dimX=64  , DY=128 , N=128 , K=128 , TIME=   4.672ms
-1D_D, bs=64  , dimX=64  , DY=256 , N=64  , K=32  , TIME=   1.128ms
-1D_D, bs=64  , dimX=64  , DY=256 , N=64  , K=64  , TIME=   1.654ms
-1D_D, bs=64  , dimX=64  , DY=256 , N=64  , K=96  , TIME=   2.201ms
-1D_D, bs=64  , dimX=64  , DY=256 , N=64  , K=128 , TIME=   2.735ms
-1D_D, bs=64  , dimX=64  , DY=256 , N=128 , K=32  , TIME=   2.227ms
-1D_D, bs=64  , dimX=64  , DY=256 , N=128 , K=64  , TIME=   3.259ms
-1D_D, bs=64  , dimX=64  , DY=256 , N=128 , K=96  , TIME=   4.334ms
-1D_D, bs=64  , dimX=64  , DY=256 , N=128 , K=128 , TIME=   5.402ms
-1D_D, bs=64  , dimX=128 , DY=128 , N=64  , K=32  , TIME=   1.741ms
-1D_D, bs=64  , dimX=128 , DY=128 , N=64  , K=64  , TIME=   2.706ms
-1D_D, bs=64  , dimX=128 , DY=128 , N=64  , K=96  , TIME=   3.710ms
-1D_D, bs=64  , dimX=128 , DY=128 , N=64  , K=128 , TIME=   4.667ms
-1D_D, bs=64  , dimX=128 , DY=128 , N=128 , K=32  , TIME=   3.454ms
-1D_D, bs=64  , dimX=128 , DY=128 , N=128 , K=64  , TIME=   5.375ms
-1D_D, bs=64  , dimX=128 , DY=128 , N=128 , K=96  , TIME=   7.367ms
-1D_D, bs=64  , dimX=128 , DY=128 , N=128 , K=128 , TIME=   9.287ms
-1D_D, bs=64  , dimX=128 , DY=256 , N=64  , K=32  , TIME=   2.208ms
-1D_D, bs=64  , dimX=128 , DY=256 , N=64  , K=64  , TIME=   3.231ms
-1D_D, bs=64  , dimX=128 , DY=256 , N=64  , K=96  , TIME=   4.301ms
-1D_D, bs=64  , dimX=128 , DY=256 , N=64  , K=128 , TIME=   5.363ms
-1D_D, bs=64  , dimX=128 , DY=256 , N=128 , K=32  , TIME=   4.383ms
-1D_D, bs=64  , dimX=128 , DY=256 , N=128 , K=64  , TIME=   6.410ms
-1D_D, bs=64  , dimX=128 , DY=256 , N=128 , K=96  , TIME=   8.537ms
-1D_D, bs=64  , dimX=128 , DY=256 , N=128 , K=128 , TIME=  10.642ms
-1D_D, bs=64  , dimX=256 , DY=128 , N=64  , K=32  , TIME=   3.442ms
-1D_D, bs=64  , dimX=256 , DY=128 , N=64  , K=64  , TIME=   5.365ms
-1D_D, bs=64  , dimX=256 , DY=128 , N=64  , K=96  , TIME=   7.341ms
-1D_D, bs=64  , dimX=256 , DY=128 , N=64  , K=128 , TIME=   9.269ms
-1D_D, bs=64  , dimX=256 , DY=128 , N=128 , K=32  , TIME=   6.867ms
-1D_D, bs=64  , dimX=256 , DY=128 , N=128 , K=64  , TIME=  10.691ms
-1D_D, bs=64  , dimX=256 , DY=128 , N=128 , K=96  , TIME=  14.634ms
-1D_D, bs=64  , dimX=256 , DY=128 , N=128 , K=128 , TIME=  18.483ms
-1D_D, bs=64  , dimX=256 , DY=256 , N=64  , K=32  , TIME=   4.368ms
-1D_D, bs=64  , dimX=256 , DY=256 , N=64  , K=64  , TIME=   6.397ms
-1D_D, bs=64  , dimX=256 , DY=256 , N=64  , K=96  , TIME=   8.503ms
-1D_D, bs=64  , dimX=256 , DY=256 , N=64  , K=128 , TIME=  10.620ms
-1D_D, bs=64  , dimX=256 , DY=256 , N=128 , K=32  , TIME=   8.718ms
-1D_D, bs=64  , dimX=256 , DY=256 , N=128 , K=64  , TIME=  12.753ms
-1D_D, bs=64  , dimX=256 , DY=256 , N=128 , K=96  , TIME=  16.952ms
-1D_D, bs=64  , dimX=256 , DY=256 , N=128 , K=128 , TIME=  21.170ms
-1D_D, bs=80  , dimX=32  , DY=128 , N=64  , K=32  , TIME=   0.564ms
-1D_D, bs=80  , dimX=32  , DY=128 , N=64  , K=64  , TIME=   0.872ms
-1D_D, bs=80  , dimX=32  , DY=128 , N=64  , K=96  , TIME=   1.188ms
-1D_D, bs=80  , dimX=32  , DY=128 , N=64  , K=128 , TIME=   1.499ms
-1D_D, bs=80  , dimX=32  , DY=128 , N=128 , K=32  , TIME=   1.105ms
-1D_D, bs=80  , dimX=32  , DY=128 , N=128 , K=64  , TIME=   1.715ms
-1D_D, bs=80  , dimX=32  , DY=128 , N=128 , K=96  , TIME=   2.345ms
-1D_D, bs=80  , dimX=32  , DY=128 , N=128 , K=128 , TIME=   2.961ms
-1D_D, bs=80  , dimX=32  , DY=256 , N=64  , K=32  , TIME=   0.717ms
-1D_D, bs=80  , dimX=32  , DY=256 , N=64  , K=64  , TIME=   1.048ms
-1D_D, bs=80  , dimX=32  , DY=256 , N=64  , K=96  , TIME=   1.386ms
-1D_D, bs=80  , dimX=32  , DY=256 , N=64  , K=128 , TIME=   1.725ms
-1D_D, bs=80  , dimX=32  , DY=256 , N=128 , K=32  , TIME=   1.400ms
-1D_D, bs=80  , dimX=32  , DY=256 , N=128 , K=64  , TIME=   2.052ms
-1D_D, bs=80  , dimX=32  , DY=256 , N=128 , K=96  , TIME=   2.722ms
-1D_D, bs=80  , dimX=32  , DY=256 , N=128 , K=128 , TIME=   3.392ms
-1D_D, bs=80  , dimX=64  , DY=128 , N=64  , K=32  , TIME=   1.106ms
-1D_D, bs=80  , dimX=64  , DY=128 , N=64  , K=64  , TIME=   1.716ms
-1D_D, bs=80  , dimX=64  , DY=128 , N=64  , K=96  , TIME=   2.346ms
-1D_D, bs=80  , dimX=64  , DY=128 , N=64  , K=128 , TIME=   2.962ms
-1D_D, bs=80  , dimX=64  , DY=128 , N=128 , K=32  , TIME=   2.184ms
-1D_D, bs=80  , dimX=64  , DY=128 , N=128 , K=64  , TIME=   3.388ms
-1D_D, bs=80  , dimX=64  , DY=128 , N=128 , K=96  , TIME=   4.633ms
-1D_D, bs=80  , dimX=64  , DY=128 , N=128 , K=128 , TIME=   5.849ms
-1D_D, bs=80  , dimX=64  , DY=256 , N=64  , K=32  , TIME=   1.399ms
-1D_D, bs=80  , dimX=64  , DY=256 , N=64  , K=64  , TIME=   2.047ms
-1D_D, bs=80  , dimX=64  , DY=256 , N=64  , K=96  , TIME=   2.718ms
-1D_D, bs=80  , dimX=64  , DY=256 , N=64  , K=128 , TIME=   3.390ms
-1D_D, bs=80  , dimX=64  , DY=256 , N=128 , K=32  , TIME=   2.771ms
-1D_D, bs=80  , dimX=64  , DY=256 , N=128 , K=64  , TIME=   4.037ms
-1D_D, bs=80  , dimX=64  , DY=256 , N=128 , K=96  , TIME=   5.352ms
-1D_D, bs=80  , dimX=64  , DY=256 , N=128 , K=128 , TIME=   6.686ms
-1D_D, bs=80  , dimX=128 , DY=128 , N=64  , K=32  , TIME=   2.180ms
-1D_D, bs=80  , dimX=128 , DY=128 , N=64  , K=64  , TIME=   3.386ms
-1D_D, bs=80  , dimX=128 , DY=128 , N=64  , K=96  , TIME=   4.631ms
-1D_D, bs=80  , dimX=128 , DY=128 , N=64  , K=128 , TIME=   5.846ms
-1D_D, bs=80  , dimX=128 , DY=128 , N=128 , K=32  , TIME=   4.334ms
-1D_D, bs=80  , dimX=128 , DY=128 , N=128 , K=64  , TIME=   6.735ms
-1D_D, bs=80  , dimX=128 , DY=128 , N=128 , K=96  , TIME=   9.215ms
-1D_D, bs=80  , dimX=128 , DY=128 , N=128 , K=128 , TIME=  11.635ms
-1D_D, bs=80  , dimX=128 , DY=256 , N=64  , K=32  , TIME=   2.773ms
-1D_D, bs=80  , dimX=128 , DY=256 , N=64  , K=64  , TIME=   4.043ms
-1D_D, bs=80  , dimX=128 , DY=256 , N=64  , K=96  , TIME=   5.369ms
-1D_D, bs=80  , dimX=128 , DY=256 , N=64  , K=128 , TIME=   6.688ms
-1D_D, bs=80  , dimX=128 , DY=256 , N=128 , K=32  , TIME=   5.513ms
-1D_D, bs=80  , dimX=128 , DY=256 , N=128 , K=64  , TIME=   8.035ms
-1D_D, bs=80  , dimX=128 , DY=256 , N=128 , K=96  , TIME=  10.657ms
-1D_D, bs=80  , dimX=128 , DY=256 , N=128 , K=128 , TIME=  13.288ms
-1D_D, bs=80  , dimX=256 , DY=128 , N=64  , K=32  , TIME=   4.345ms
-1D_D, bs=80  , dimX=256 , DY=128 , N=64  , K=64  , TIME=   6.737ms
-1D_D, bs=80  , dimX=256 , DY=128 , N=64  , K=96  , TIME=   9.217ms
-1D_D, bs=80  , dimX=256 , DY=128 , N=64  , K=128 , TIME=  11.635ms
-1D_D, bs=80  , dimX=256 , DY=128 , N=128 , K=32  , TIME=   8.635ms
-1D_D, bs=80  , dimX=256 , DY=128 , N=128 , K=64  , TIME=  13.437ms
-1D_D, bs=80  , dimX=256 , DY=128 , N=128 , K=96  , TIME=  18.378ms
-1D_D, bs=80  , dimX=256 , DY=128 , N=128 , K=128 , TIME=  23.215ms
-1D_D, bs=80  , dimX=256 , DY=256 , N=64  , K=32  , TIME=   5.477ms
-1D_D, bs=80  , dimX=256 , DY=256 , N=64  , K=64  , TIME=   8.002ms
-1D_D, bs=80  , dimX=256 , DY=256 , N=64  , K=96  , TIME=  10.641ms
-1D_D, bs=80  , dimX=256 , DY=256 , N=64  , K=128 , TIME=  13.268ms
-1D_D, bs=80  , dimX=256 , DY=256 , N=128 , K=32  , TIME=  10.936ms
-1D_D, bs=80  , dimX=256 , DY=256 , N=128 , K=64  , TIME=  15.969ms
-1D_D, bs=80  , dimX=256 , DY=256 , N=128 , K=96  , TIME=  21.219ms
-1D_D, bs=80  , dimX=256 , DY=256 , N=128 , K=128 , TIME=  26.467ms
-1D_D, bs=96  , dimX=32  , DY=128 , N=64  , K=32  , TIME=   0.670ms
-1D_D, bs=96  , dimX=32  , DY=128 , N=64  , K=64  , TIME=   1.042ms
-1D_D, bs=96  , dimX=32  , DY=128 , N=64  , K=96  , TIME=   1.424ms
-1D_D, bs=96  , dimX=32  , DY=128 , N=64  , K=128 , TIME=   1.795ms
-1D_D, bs=96  , dimX=32  , DY=128 , N=128 , K=32  , TIME=   1.317ms
-1D_D, bs=96  , dimX=32  , DY=128 , N=128 , K=64  , TIME=   2.041ms
-1D_D, bs=96  , dimX=32  , DY=128 , N=128 , K=96  , TIME=   2.791ms
-1D_D, bs=96  , dimX=32  , DY=128 , N=128 , K=128 , TIME=   3.518ms
-1D_D, bs=96  , dimX=32  , DY=256 , N=64  , K=32  , TIME=   0.841ms
-1D_D, bs=96  , dimX=32  , DY=256 , N=64  , K=64  , TIME=   1.236ms
-1D_D, bs=96  , dimX=32  , DY=256 , N=64  , K=96  , TIME=   1.645ms
-1D_D, bs=96  , dimX=32  , DY=256 , N=64  , K=128 , TIME=   2.051ms
-1D_D, bs=96  , dimX=32  , DY=256 , N=128 , K=32  , TIME=   1.651ms
-1D_D, bs=96  , dimX=32  , DY=256 , N=128 , K=64  , TIME=   2.421ms
-1D_D, bs=96  , dimX=32  , DY=256 , N=128 , K=96  , TIME=   3.219ms
-1D_D, bs=96  , dimX=32  , DY=256 , N=128 , K=128 , TIME=   4.013ms
-1D_D, bs=96  , dimX=64  , DY=128 , N=64  , K=32  , TIME=   1.319ms
-1D_D, bs=96  , dimX=64  , DY=128 , N=64  , K=64  , TIME=   2.042ms
-1D_D, bs=96  , dimX=64  , DY=128 , N=64  , K=96  , TIME=   2.791ms
-1D_D, bs=96  , dimX=64  , DY=128 , N=64  , K=128 , TIME=   3.522ms
-1D_D, bs=96  , dimX=64  , DY=128 , N=128 , K=32  , TIME=   2.610ms
-1D_D, bs=96  , dimX=64  , DY=128 , N=128 , K=64  , TIME=   4.052ms
-1D_D, bs=96  , dimX=64  , DY=128 , N=128 , K=96  , TIME=   5.544ms
-1D_D, bs=96  , dimX=64  , DY=128 , N=128 , K=128 , TIME=   7.000ms
-1D_D, bs=96  , dimX=64  , DY=256 , N=64  , K=32  , TIME=   1.661ms
-1D_D, bs=96  , dimX=64  , DY=256 , N=64  , K=64  , TIME=   2.445ms
-1D_D, bs=96  , dimX=64  , DY=256 , N=64  , K=96  , TIME=   3.238ms
-1D_D, bs=96  , dimX=64  , DY=256 , N=64  , K=128 , TIME=   4.040ms
-1D_D, bs=96  , dimX=64  , DY=256 , N=128 , K=32  , TIME=   3.292ms
-1D_D, bs=96  , dimX=64  , DY=256 , N=128 , K=64  , TIME=   4.837ms
-1D_D, bs=96  , dimX=64  , DY=256 , N=128 , K=96  , TIME=   6.407ms
-1D_D, bs=96  , dimX=64  , DY=256 , N=128 , K=128 , TIME=   8.005ms
-1D_D, bs=96  , dimX=128 , DY=128 , N=64  , K=32  , TIME=   2.608ms
-1D_D, bs=96  , dimX=128 , DY=128 , N=64  , K=64  , TIME=   4.060ms
-1D_D, bs=96  , dimX=128 , DY=128 , N=64  , K=96  , TIME=   5.548ms
-1D_D, bs=96  , dimX=128 , DY=128 , N=64  , K=128 , TIME=   7.001ms
-1D_D, bs=96  , dimX=128 , DY=128 , N=128 , K=32  , TIME=   5.193ms
-1D_D, bs=96  , dimX=128 , DY=128 , N=128 , K=64  , TIME=   8.076ms
-1D_D, bs=96  , dimX=128 , DY=128 , N=128 , K=96  , TIME=  11.043ms
-1D_D, bs=96  , dimX=128 , DY=128 , N=128 , K=128 , TIME=  13.945ms
-1D_D, bs=96  , dimX=128 , DY=256 , N=64  , K=32  , TIME=   3.273ms
-1D_D, bs=96  , dimX=128 , DY=256 , N=64  , K=64  , TIME=   4.798ms
-1D_D, bs=96  , dimX=128 , DY=256 , N=64  , K=96  , TIME=   6.383ms
-1D_D, bs=96  , dimX=128 , DY=256 , N=64  , K=128 , TIME=   7.966ms
-1D_D, bs=96  , dimX=128 , DY=256 , N=128 , K=32  , TIME=   6.518ms
-1D_D, bs=96  , dimX=128 , DY=256 , N=128 , K=64  , TIME=   9.546ms
-1D_D, bs=96  , dimX=128 , DY=256 , N=128 , K=96  , TIME=  12.706ms
-1D_D, bs=96  , dimX=128 , DY=256 , N=128 , K=128 , TIME=  15.848ms
-1D_D, bs=96  , dimX=256 , DY=128 , N=64  , K=32  , TIME=   5.184ms
-1D_D, bs=96  , dimX=256 , DY=128 , N=64  , K=64  , TIME=   8.063ms
-1D_D, bs=96  , dimX=256 , DY=128 , N=64  , K=96  , TIME=  11.034ms
-1D_D, bs=96  , dimX=256 , DY=128 , N=64  , K=128 , TIME=  13.932ms
-1D_D, bs=96  , dimX=256 , DY=128 , N=128 , K=32  , TIME=  10.350ms
-1D_D, bs=96  , dimX=256 , DY=128 , N=128 , K=64  , TIME=  16.088ms
-1D_D, bs=96  , dimX=256 , DY=128 , N=128 , K=96  , TIME=  22.019ms
-1D_D, bs=96  , dimX=256 , DY=128 , N=128 , K=128 , TIME=  27.805ms
-1D_D, bs=96  , dimX=256 , DY=256 , N=64  , K=32  , TIME=   6.475ms
-1D_D, bs=96  , dimX=256 , DY=256 , N=64  , K=64  , TIME=   9.514ms
-1D_D, bs=96  , dimX=256 , DY=256 , N=64  , K=96  , TIME=  12.666ms
-1D_D, bs=96  , dimX=256 , DY=256 , N=64  , K=128 , TIME=  15.813ms
-1D_D, bs=96  , dimX=256 , DY=256 , N=128 , K=32  , TIME=  12.940ms
-1D_D, bs=96  , dimX=256 , DY=256 , N=128 , K=64  , TIME=  18.986ms
-1D_D, bs=96  , dimX=256 , DY=256 , N=128 , K=96  , TIME=  25.272ms
-1D_D, bs=96  , dimX=256 , DY=256 , N=128 , K=128 , TIME=  31.555ms
-1D_D, bs=128 , dimX=32  , DY=128 , N=64  , K=32  , TIME=   0.886ms
-1D_D, bs=128 , dimX=32  , DY=128 , N=64  , K=64  , TIME=   1.368ms
-1D_D, bs=128 , dimX=32  , DY=128 , N=64  , K=96  , TIME=   1.868ms
-1D_D, bs=128 , dimX=32  , DY=128 , N=64  , K=128 , TIME=   2.356ms
-1D_D, bs=128 , dimX=32  , DY=128 , N=128 , K=32  , TIME=   1.743ms
-1D_D, bs=128 , dimX=32  , DY=128 , N=128 , K=64  , TIME=   2.707ms
-1D_D, bs=128 , dimX=32  , DY=128 , N=128 , K=96  , TIME=   3.700ms
-1D_D, bs=128 , dimX=32  , DY=128 , N=128 , K=128 , TIME=   4.672ms
-1D_D, bs=128 , dimX=32  , DY=256 , N=64  , K=32  , TIME=   1.127ms
-1D_D, bs=128 , dimX=32  , DY=256 , N=64  , K=64  , TIME=   1.656ms
-1D_D, bs=128 , dimX=32  , DY=256 , N=64  , K=96  , TIME=   2.202ms
-1D_D, bs=128 , dimX=32  , DY=256 , N=64  , K=128 , TIME=   2.732ms
-1D_D, bs=128 , dimX=32  , DY=256 , N=128 , K=32  , TIME=   2.226ms
-1D_D, bs=128 , dimX=32  , DY=256 , N=128 , K=64  , TIME=   3.256ms
-1D_D, bs=128 , dimX=32  , DY=256 , N=128 , K=96  , TIME=   4.335ms
-1D_D, bs=128 , dimX=32  , DY=256 , N=128 , K=128 , TIME=   5.401ms
-1D_D, bs=128 , dimX=64  , DY=128 , N=64  , K=32  , TIME=   1.742ms
-1D_D, bs=128 , dimX=64  , DY=128 , N=64  , K=64  , TIME=   2.706ms
-1D_D, bs=128 , dimX=64  , DY=128 , N=64  , K=96  , TIME=   3.710ms
-1D_D, bs=128 , dimX=64  , DY=128 , N=64  , K=128 , TIME=   4.668ms
-1D_D, bs=128 , dimX=64  , DY=128 , N=128 , K=32  , TIME=   3.458ms
-1D_D, bs=128 , dimX=64  , DY=128 , N=128 , K=64  , TIME=   5.374ms
-1D_D, bs=128 , dimX=64  , DY=128 , N=128 , K=96  , TIME=   7.369ms
-1D_D, bs=128 , dimX=64  , DY=128 , N=128 , K=128 , TIME=   9.287ms
-1D_D, bs=128 , dimX=64  , DY=256 , N=64  , K=32  , TIME=   2.206ms
-1D_D, bs=128 , dimX=64  , DY=256 , N=64  , K=64  , TIME=   3.231ms
-1D_D, bs=128 , dimX=64  , DY=256 , N=64  , K=96  , TIME=   4.302ms
-1D_D, bs=128 , dimX=64  , DY=256 , N=64  , K=128 , TIME=   5.362ms
-1D_D, bs=128 , dimX=64  , DY=256 , N=128 , K=32  , TIME=   4.387ms
-1D_D, bs=128 , dimX=64  , DY=256 , N=128 , K=64  , TIME=   6.412ms
-1D_D, bs=128 , dimX=64  , DY=256 , N=128 , K=96  , TIME=   8.535ms
-1D_D, bs=128 , dimX=64  , DY=256 , N=128 , K=128 , TIME=  10.641ms
-1D_D, bs=128 , dimX=128 , DY=128 , N=64  , K=32  , TIME=   3.444ms
-1D_D, bs=128 , dimX=128 , DY=128 , N=64  , K=64  , TIME=   5.365ms
-1D_D, bs=128 , dimX=128 , DY=128 , N=64  , K=96  , TIME=   7.339ms
-1D_D, bs=128 , dimX=128 , DY=128 , N=64  , K=128 , TIME=   9.269ms
-1D_D, bs=128 , dimX=128 , DY=128 , N=128 , K=32  , TIME=   6.865ms
-1D_D, bs=128 , dimX=128 , DY=128 , N=128 , K=64  , TIME=  10.693ms
-1D_D, bs=128 , dimX=128 , DY=128 , N=128 , K=96  , TIME=  14.636ms
-1D_D, bs=128 , dimX=128 , DY=128 , N=128 , K=128 , TIME=  18.484ms
-1D_D, bs=128 , dimX=128 , DY=256 , N=64  , K=32  , TIME=   4.370ms
-1D_D, bs=128 , dimX=128 , DY=256 , N=64  , K=64  , TIME=   6.394ms
-1D_D, bs=128 , dimX=128 , DY=256 , N=64  , K=96  , TIME=   8.505ms
-1D_D, bs=128 , dimX=128 , DY=256 , N=64  , K=128 , TIME=  10.621ms
-1D_D, bs=128 , dimX=128 , DY=256 , N=128 , K=32  , TIME=   8.720ms
-1D_D, bs=128 , dimX=128 , DY=256 , N=128 , K=64  , TIME=  12.748ms
-1D_D, bs=128 , dimX=128 , DY=256 , N=128 , K=96  , TIME=  16.952ms
-1D_D, bs=128 , dimX=128 , DY=256 , N=128 , K=128 , TIME=  21.163ms
-1D_D, bs=128 , dimX=256 , DY=128 , N=64  , K=32  , TIME=   6.867ms
-1D_D, bs=128 , dimX=256 , DY=128 , N=64  , K=64  , TIME=  10.689ms
-1D_D, bs=128 , dimX=256 , DY=128 , N=64  , K=96  , TIME=  14.635ms
-1D_D, bs=128 , dimX=256 , DY=128 , N=64  , K=128 , TIME=  18.484ms
-1D_D, bs=128 , dimX=256 , DY=128 , N=128 , K=32  , TIME=  13.703ms
-1D_D, bs=128 , dimX=256 , DY=128 , N=128 , K=64  , TIME=  21.348ms
-1D_D, bs=128 , dimX=256 , DY=128 , N=128 , K=96  , TIME=  29.220ms
-1D_D, bs=128 , dimX=256 , DY=128 , N=128 , K=128 , TIME=  36.910ms
-1D_D, bs=128 , dimX=256 , DY=256 , N=64  , K=32  , TIME=   8.598ms
-1D_D, bs=128 , dimX=256 , DY=256 , N=64  , K=64  , TIME=  12.630ms
-1D_D, bs=128 , dimX=256 , DY=256 , N=64  , K=96  , TIME=  16.819ms
-1D_D, bs=128 , dimX=256 , DY=256 , N=64  , K=128 , TIME=  21.005ms
-1D_D, bs=128 , dimX=256 , DY=256 , N=128 , K=32  , TIME=  17.165ms
-1D_D, bs=128 , dimX=256 , DY=256 , N=128 , K=64  , TIME=  25.201ms
-1D_D, bs=128 , dimX=256 , DY=256 , N=128 , K=96  , TIME=  33.561ms
-1D_D, bs=128 , dimX=256 , DY=256 , N=128 , K=128 , TIME=  41.923ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=64  , K=8   , TIME=   0.024ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=64  , K=16  , TIME=   0.029ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=64  , K=24  , TIME=   0.033ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=64  , K=32  , TIME=   0.036ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=64  , K=40  , TIME=   0.040ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=64  , K=48  , TIME=   0.044ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=64  , K=56  , TIME=   0.048ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=64  , K=64  , TIME=   0.052ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=64  , K=72  , TIME=   0.056ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=64  , K=80  , TIME=   0.063ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=64  , K=88  , TIME=   0.064ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=64  , K=96  , TIME=   0.068ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=64  , K=104 , TIME=   0.072ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=64  , K=112 , TIME=   0.076ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=64  , K=120 , TIME=   0.080ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=64  , K=128 , TIME=   0.084ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=128 , K=8   , TIME=   0.025ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=128 , K=16  , TIME=   0.029ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=128 , K=24  , TIME=   0.033ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=128 , K=32  , TIME=   0.037ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=128 , K=40  , TIME=   0.041ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=128 , K=48  , TIME=   0.044ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=128 , K=56  , TIME=   0.048ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=128 , K=64  , TIME=   0.052ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=128 , K=72  , TIME=   0.056ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=128 , K=80  , TIME=   0.060ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=128 , K=88  , TIME=   0.064ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=128 , K=96  , TIME=   0.068ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=128 , K=104 , TIME=   0.072ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=128 , K=112 , TIME=   0.076ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=128 , K=120 , TIME=   0.081ms
+1D_D, bs=1   , dimX=1   , DY=128 , N=128 , K=128 , TIME=   0.084ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=64  , K=8   , TIME=   0.029ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=64  , K=16  , TIME=   0.035ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=64  , K=24  , TIME=   0.038ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=64  , K=32  , TIME=   0.042ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=64  , K=40  , TIME=   0.047ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=64  , K=48  , TIME=   0.051ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=64  , K=56  , TIME=   0.056ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=64  , K=64  , TIME=   0.060ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=64  , K=72  , TIME=   0.064ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=64  , K=80  , TIME=   0.068ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=64  , K=88  , TIME=   0.073ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=64  , K=96  , TIME=   0.077ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=64  , K=104 , TIME=   0.081ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=64  , K=112 , TIME=   0.085ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=64  , K=120 , TIME=   0.090ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=64  , K=128 , TIME=   0.094ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=128 , K=8   , TIME=   0.029ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=128 , K=16  , TIME=   0.034ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=128 , K=24  , TIME=   0.038ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=128 , K=32  , TIME=   0.044ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=128 , K=40  , TIME=   0.047ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=128 , K=48  , TIME=   0.051ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=128 , K=56  , TIME=   0.056ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=128 , K=64  , TIME=   0.060ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=128 , K=72  , TIME=   0.064ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=128 , K=80  , TIME=   0.068ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=128 , K=88  , TIME=   0.073ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=128 , K=96  , TIME=   0.077ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=128 , K=104 , TIME=   0.081ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=128 , K=112 , TIME=   0.086ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=128 , K=120 , TIME=   0.090ms
+1D_D, bs=1   , dimX=1   , DY=256 , N=128 , K=128 , TIME=   0.094ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=64  , K=8   , TIME=   0.025ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=64  , K=16  , TIME=   0.029ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=64  , K=24  , TIME=   0.034ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=64  , K=32  , TIME=   0.037ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=64  , K=40  , TIME=   0.041ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=64  , K=48  , TIME=   0.045ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=64  , K=56  , TIME=   0.049ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=64  , K=64  , TIME=   0.053ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=64  , K=72  , TIME=   0.056ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=64  , K=80  , TIME=   0.061ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=64  , K=88  , TIME=   0.065ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=64  , K=96  , TIME=   0.069ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=64  , K=104 , TIME=   0.072ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=64  , K=112 , TIME=   0.077ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=64  , K=120 , TIME=   0.080ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=64  , K=128 , TIME=   0.084ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=128 , K=8   , TIME=   0.025ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=128 , K=16  , TIME=   0.029ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=128 , K=24  , TIME=   0.033ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=128 , K=32  , TIME=   0.038ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=128 , K=40  , TIME=   0.041ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=128 , K=48  , TIME=   0.045ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=128 , K=56  , TIME=   0.049ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=128 , K=64  , TIME=   0.053ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=128 , K=72  , TIME=   0.057ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=128 , K=80  , TIME=   0.061ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=128 , K=88  , TIME=   0.065ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=128 , K=96  , TIME=   0.069ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=128 , K=104 , TIME=   0.072ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=128 , K=112 , TIME=   0.077ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=128 , K=120 , TIME=   0.081ms
+1D_D, bs=2   , dimX=1   , DY=128 , N=128 , K=128 , TIME=   0.085ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=64  , K=8   , TIME=   0.030ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=64  , K=16  , TIME=   0.034ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=64  , K=24  , TIME=   0.039ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=64  , K=32  , TIME=   0.043ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=64  , K=40  , TIME=   0.047ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=64  , K=48  , TIME=   0.051ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=64  , K=56  , TIME=   0.055ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=64  , K=64  , TIME=   0.060ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=64  , K=72  , TIME=   0.064ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=64  , K=80  , TIME=   0.068ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=64  , K=88  , TIME=   0.073ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=64  , K=96  , TIME=   0.077ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=64  , K=104 , TIME=   0.081ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=64  , K=112 , TIME=   0.085ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=64  , K=120 , TIME=   0.090ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=64  , K=128 , TIME=   0.094ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=128 , K=8   , TIME=   0.030ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=128 , K=16  , TIME=   0.034ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=128 , K=24  , TIME=   0.039ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=128 , K=32  , TIME=   0.043ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=128 , K=40  , TIME=   0.047ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=128 , K=48  , TIME=   0.051ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=128 , K=56  , TIME=   0.056ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=128 , K=64  , TIME=   0.060ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=128 , K=72  , TIME=   0.064ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=128 , K=80  , TIME=   0.069ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=128 , K=88  , TIME=   0.073ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=128 , K=96  , TIME=   0.077ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=128 , K=104 , TIME=   0.081ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=128 , K=112 , TIME=   0.085ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=128 , K=120 , TIME=   0.090ms
+1D_D, bs=2   , dimX=1   , DY=256 , N=128 , K=128 , TIME=   0.094ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=64  , K=8   , TIME=   0.025ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=64  , K=16  , TIME=   0.030ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=64  , K=24  , TIME=   0.034ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=64  , K=32  , TIME=   0.037ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=64  , K=40  , TIME=   0.041ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=64  , K=48  , TIME=   0.045ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=64  , K=56  , TIME=   0.049ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=64  , K=64  , TIME=   0.052ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=64  , K=72  , TIME=   0.056ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=64  , K=80  , TIME=   0.061ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=64  , K=88  , TIME=   0.065ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=64  , K=96  , TIME=   0.069ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=64  , K=104 , TIME=   0.072ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=64  , K=112 , TIME=   0.076ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=64  , K=120 , TIME=   0.080ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=64  , K=128 , TIME=   0.084ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=128 , K=8   , TIME=   0.024ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=128 , K=16  , TIME=   0.029ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=128 , K=24  , TIME=   0.033ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=128 , K=32  , TIME=   0.037ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=128 , K=40  , TIME=   0.041ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=128 , K=48  , TIME=   0.045ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=128 , K=56  , TIME=   0.049ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=128 , K=64  , TIME=   0.052ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=128 , K=72  , TIME=   0.056ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=128 , K=80  , TIME=   0.061ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=128 , K=88  , TIME=   0.065ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=128 , K=96  , TIME=   0.069ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=128 , K=104 , TIME=   0.073ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=128 , K=112 , TIME=   0.076ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=128 , K=120 , TIME=   0.081ms
+1D_D, bs=4   , dimX=1   , DY=128 , N=128 , K=128 , TIME=   0.084ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=64  , K=8   , TIME=   0.030ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=64  , K=16  , TIME=   0.034ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=64  , K=24  , TIME=   0.039ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=64  , K=32  , TIME=   0.043ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=64  , K=40  , TIME=   0.048ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=64  , K=48  , TIME=   0.051ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=64  , K=56  , TIME=   0.056ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=64  , K=64  , TIME=   0.061ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=64  , K=72  , TIME=   0.064ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=64  , K=80  , TIME=   0.069ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=64  , K=88  , TIME=   0.073ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=64  , K=96  , TIME=   0.077ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=64  , K=104 , TIME=   0.081ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=64  , K=112 , TIME=   0.085ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=64  , K=120 , TIME=   0.090ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=64  , K=128 , TIME=   0.094ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=128 , K=8   , TIME=   0.030ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=128 , K=16  , TIME=   0.034ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=128 , K=24  , TIME=   0.039ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=128 , K=32  , TIME=   0.043ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=128 , K=40  , TIME=   0.047ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=128 , K=48  , TIME=   0.052ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=128 , K=56  , TIME=   0.056ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=128 , K=64  , TIME=   0.060ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=128 , K=72  , TIME=   0.064ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=128 , K=80  , TIME=   0.068ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=128 , K=88  , TIME=   0.073ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=128 , K=96  , TIME=   0.077ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=128 , K=104 , TIME=   0.081ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=128 , K=112 , TIME=   0.085ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=128 , K=120 , TIME=   0.090ms
+1D_D, bs=4   , dimX=1   , DY=256 , N=128 , K=128 , TIME=   0.094ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=64  , K=8   , TIME=   0.025ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=64  , K=16  , TIME=   0.029ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=64  , K=24  , TIME=   0.033ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=64  , K=32  , TIME=   0.037ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=64  , K=40  , TIME=   0.041ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=64  , K=48  , TIME=   0.045ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=64  , K=56  , TIME=   0.050ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=64  , K=64  , TIME=   0.053ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=64  , K=72  , TIME=   0.057ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=64  , K=80  , TIME=   0.061ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=64  , K=88  , TIME=   0.065ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=64  , K=96  , TIME=   0.069ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=64  , K=104 , TIME=   0.073ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=64  , K=112 , TIME=   0.076ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=64  , K=120 , TIME=   0.081ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=64  , K=128 , TIME=   0.085ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=128 , K=8   , TIME=   0.025ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=128 , K=16  , TIME=   0.029ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=128 , K=24  , TIME=   0.034ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=128 , K=32  , TIME=   0.038ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=128 , K=40  , TIME=   0.042ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=128 , K=48  , TIME=   0.046ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=128 , K=56  , TIME=   0.050ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=128 , K=64  , TIME=   0.054ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=128 , K=72  , TIME=   0.057ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=128 , K=80  , TIME=   0.061ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=128 , K=88  , TIME=   0.065ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=128 , K=96  , TIME=   0.069ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=128 , K=104 , TIME=   0.073ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=128 , K=112 , TIME=   0.077ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=128 , K=120 , TIME=   0.081ms
+1D_D, bs=8   , dimX=1   , DY=128 , N=128 , K=128 , TIME=   0.085ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=64  , K=8   , TIME=   0.030ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=64  , K=16  , TIME=   0.035ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=64  , K=24  , TIME=   0.039ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=64  , K=32  , TIME=   0.043ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=64  , K=40  , TIME=   0.048ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=64  , K=48  , TIME=   0.051ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=64  , K=56  , TIME=   0.056ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=64  , K=64  , TIME=   0.060ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=64  , K=72  , TIME=   0.064ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=64  , K=80  , TIME=   0.069ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=64  , K=88  , TIME=   0.073ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=64  , K=96  , TIME=   0.077ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=64  , K=104 , TIME=   0.081ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=64  , K=112 , TIME=   0.085ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=64  , K=120 , TIME=   0.090ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=64  , K=128 , TIME=   0.094ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=128 , K=8   , TIME=   0.030ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=128 , K=16  , TIME=   0.034ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=128 , K=24  , TIME=   0.039ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=128 , K=32  , TIME=   0.043ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=128 , K=40  , TIME=   0.049ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=128 , K=48  , TIME=   0.051ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=128 , K=56  , TIME=   0.056ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=128 , K=64  , TIME=   0.060ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=128 , K=72  , TIME=   0.064ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=128 , K=80  , TIME=   0.068ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=128 , K=88  , TIME=   0.073ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=128 , K=96  , TIME=   0.077ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=128 , K=104 , TIME=   0.081ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=128 , K=112 , TIME=   0.086ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=128 , K=120 , TIME=   0.090ms
+1D_D, bs=8   , dimX=1   , DY=256 , N=128 , K=128 , TIME=   0.094ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=64  , K=8   , TIME=   0.025ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=64  , K=16  , TIME=   0.029ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=64  , K=24  , TIME=   0.034ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=64  , K=32  , TIME=   0.038ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=64  , K=40  , TIME=   0.041ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=64  , K=48  , TIME=   0.045ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=64  , K=56  , TIME=   0.049ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=64  , K=64  , TIME=   0.053ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=64  , K=72  , TIME=   0.057ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=64  , K=80  , TIME=   0.061ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=64  , K=88  , TIME=   0.065ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=64  , K=96  , TIME=   0.069ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=64  , K=104 , TIME=   0.073ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=64  , K=112 , TIME=   0.077ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=64  , K=120 , TIME=   0.082ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=64  , K=128 , TIME=   0.085ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=128 , K=8   , TIME=   0.025ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=128 , K=16  , TIME=   0.030ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=128 , K=24  , TIME=   0.034ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=128 , K=32  , TIME=   0.038ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=128 , K=40  , TIME=   0.041ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=128 , K=48  , TIME=   0.045ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=128 , K=56  , TIME=   0.049ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=128 , K=64  , TIME=   0.053ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=128 , K=72  , TIME=   0.057ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=128 , K=80  , TIME=   0.061ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=128 , K=88  , TIME=   0.066ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=128 , K=96  , TIME=   0.069ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=128 , K=104 , TIME=   0.073ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=128 , K=112 , TIME=   0.077ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=128 , K=120 , TIME=   0.081ms
+1D_D, bs=16  , dimX=1   , DY=128 , N=128 , K=128 , TIME=   0.085ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=64  , K=8   , TIME=   0.030ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=64  , K=16  , TIME=   0.034ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=64  , K=24  , TIME=   0.039ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=64  , K=32  , TIME=   0.043ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=64  , K=40  , TIME=   0.047ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=64  , K=48  , TIME=   0.052ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=64  , K=56  , TIME=   0.056ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=64  , K=64  , TIME=   0.060ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=64  , K=72  , TIME=   0.064ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=64  , K=80  , TIME=   0.069ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=64  , K=88  , TIME=   0.073ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=64  , K=96  , TIME=   0.077ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=64  , K=104 , TIME=   0.081ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=64  , K=112 , TIME=   0.086ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=64  , K=120 , TIME=   0.091ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=64  , K=128 , TIME=   0.094ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=128 , K=8   , TIME=   0.030ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=128 , K=16  , TIME=   0.035ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=128 , K=24  , TIME=   0.039ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=128 , K=32  , TIME=   0.043ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=128 , K=40  , TIME=   0.047ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=128 , K=48  , TIME=   0.052ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=128 , K=56  , TIME=   0.056ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=128 , K=64  , TIME=   0.060ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=128 , K=72  , TIME=   0.065ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=128 , K=80  , TIME=   0.069ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=128 , K=88  , TIME=   0.074ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=128 , K=96  , TIME=   0.078ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=128 , K=104 , TIME=   0.082ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=128 , K=112 , TIME=   0.086ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=128 , K=120 , TIME=   0.091ms
+1D_D, bs=16  , dimX=1   , DY=256 , N=128 , K=128 , TIME=   0.095ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=64  , K=8   , TIME=   0.025ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=64  , K=16  , TIME=   0.030ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=64  , K=24  , TIME=   0.034ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=64  , K=32  , TIME=   0.038ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=64  , K=40  , TIME=   0.042ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=64  , K=48  , TIME=   0.046ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=64  , K=56  , TIME=   0.050ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=64  , K=64  , TIME=   0.054ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=64  , K=72  , TIME=   0.059ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=64  , K=80  , TIME=   0.062ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=64  , K=88  , TIME=   0.066ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=64  , K=96  , TIME=   0.070ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=64  , K=104 , TIME=   0.074ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=64  , K=112 , TIME=   0.078ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=64  , K=120 , TIME=   0.082ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=64  , K=128 , TIME=   0.086ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=128 , K=8   , TIME=   0.025ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=128 , K=16  , TIME=   0.030ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=128 , K=24  , TIME=   0.034ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=128 , K=32  , TIME=   0.038ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=128 , K=40  , TIME=   0.042ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=128 , K=48  , TIME=   0.046ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=128 , K=56  , TIME=   0.050ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=128 , K=64  , TIME=   0.054ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=128 , K=72  , TIME=   0.058ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=128 , K=80  , TIME=   0.062ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=128 , K=88  , TIME=   0.066ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=128 , K=96  , TIME=   0.071ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=128 , K=104 , TIME=   0.074ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=128 , K=112 , TIME=   0.078ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=128 , K=120 , TIME=   0.082ms
+1D_D, bs=32  , dimX=1   , DY=128 , N=128 , K=128 , TIME=   0.086ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=64  , K=8   , TIME=   0.030ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=64  , K=16  , TIME=   0.034ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=64  , K=24  , TIME=   0.039ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=64  , K=32  , TIME=   0.043ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=64  , K=40  , TIME=   0.047ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=64  , K=48  , TIME=   0.051ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=64  , K=56  , TIME=   0.056ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=64  , K=64  , TIME=   0.061ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=64  , K=72  , TIME=   0.065ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=64  , K=80  , TIME=   0.069ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=64  , K=88  , TIME=   0.074ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=64  , K=96  , TIME=   0.077ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=64  , K=104 , TIME=   0.082ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=64  , K=112 , TIME=   0.086ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=64  , K=120 , TIME=   0.090ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=64  , K=128 , TIME=   0.095ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=128 , K=8   , TIME=   0.030ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=128 , K=16  , TIME=   0.035ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=128 , K=24  , TIME=   0.039ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=128 , K=32  , TIME=   0.043ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=128 , K=40  , TIME=   0.048ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=128 , K=48  , TIME=   0.052ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=128 , K=56  , TIME=   0.056ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=128 , K=64  , TIME=   0.060ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=128 , K=72  , TIME=   0.066ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=128 , K=80  , TIME=   0.069ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=128 , K=88  , TIME=   0.074ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=128 , K=96  , TIME=   0.078ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=128 , K=104 , TIME=   0.082ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=128 , K=112 , TIME=   0.087ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=128 , K=120 , TIME=   0.091ms
+1D_D, bs=32  , dimX=1   , DY=256 , N=128 , K=128 , TIME=   0.095ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=64  , K=8   , TIME=   0.026ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=64  , K=16  , TIME=   0.030ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=64  , K=24  , TIME=   0.034ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=64  , K=32  , TIME=   0.038ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=64  , K=40  , TIME=   0.043ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=64  , K=48  , TIME=   0.046ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=64  , K=56  , TIME=   0.050ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=64  , K=64  , TIME=   0.054ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=64  , K=72  , TIME=   0.058ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=64  , K=80  , TIME=   0.062ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=64  , K=88  , TIME=   0.066ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=64  , K=96  , TIME=   0.070ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=64  , K=104 , TIME=   0.075ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=64  , K=112 , TIME=   0.078ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=64  , K=120 , TIME=   0.083ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=64  , K=128 , TIME=   0.086ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=128 , K=8   , TIME=   0.037ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=128 , K=16  , TIME=   0.044ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=128 , K=24  , TIME=   0.051ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=128 , K=32  , TIME=   0.058ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=128 , K=40  , TIME=   0.065ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=128 , K=48  , TIME=   0.071ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=128 , K=56  , TIME=   0.078ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=128 , K=64  , TIME=   0.085ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=128 , K=72  , TIME=   0.092ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=128 , K=80  , TIME=   0.098ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=128 , K=88  , TIME=   0.105ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=128 , K=96  , TIME=   0.112ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=128 , K=104 , TIME=   0.119ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=128 , K=112 , TIME=   0.126ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=128 , K=120 , TIME=   0.132ms
+1D_D, bs=64  , dimX=1   , DY=128 , N=128 , K=128 , TIME=   0.139ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=64  , K=8   , TIME=   0.031ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=64  , K=16  , TIME=   0.035ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=64  , K=24  , TIME=   0.040ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=64  , K=32  , TIME=   0.044ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=64  , K=40  , TIME=   0.048ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=64  , K=48  , TIME=   0.052ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=64  , K=56  , TIME=   0.056ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=64  , K=64  , TIME=   0.061ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=64  , K=72  , TIME=   0.065ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=64  , K=80  , TIME=   0.070ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=64  , K=88  , TIME=   0.074ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=64  , K=96  , TIME=   0.079ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=64  , K=104 , TIME=   0.084ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=64  , K=112 , TIME=   0.090ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=64  , K=120 , TIME=   0.095ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=64  , K=128 , TIME=   0.101ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=128 , K=8   , TIME=   0.044ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=128 , K=16  , TIME=   0.053ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=128 , K=24  , TIME=   0.061ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=128 , K=32  , TIME=   0.069ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=128 , K=40  , TIME=   0.076ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=128 , K=48  , TIME=   0.085ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=128 , K=56  , TIME=   0.092ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=128 , K=64  , TIME=   0.100ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=128 , K=72  , TIME=   0.107ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=128 , K=80  , TIME=   0.115ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=128 , K=88  , TIME=   0.123ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=128 , K=96  , TIME=   0.130ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=128 , K=104 , TIME=   0.138ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=128 , K=112 , TIME=   0.145ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=128 , K=120 , TIME=   0.153ms
+1D_D, bs=64  , dimX=1   , DY=256 , N=128 , K=128 , TIME=   0.161ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=64  , K=8   , TIME=   0.037ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=64  , K=16  , TIME=   0.044ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=64  , K=24  , TIME=   0.051ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=64  , K=32  , TIME=   0.058ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=64  , K=40  , TIME=   0.064ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=64  , K=48  , TIME=   0.071ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=64  , K=56  , TIME=   0.077ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=64  , K=64  , TIME=   0.084ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=64  , K=72  , TIME=   0.092ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=64  , K=80  , TIME=   0.099ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=64  , K=88  , TIME=   0.105ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=64  , K=96  , TIME=   0.113ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=64  , K=104 , TIME=   0.121ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=64  , K=112 , TIME=   0.128ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=64  , K=120 , TIME=   0.136ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=64  , K=128 , TIME=   0.143ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=128 , K=8   , TIME=   0.055ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=128 , K=16  , TIME=   0.065ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=128 , K=24  , TIME=   0.075ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=128 , K=32  , TIME=   0.084ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=128 , K=40  , TIME=   0.095ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=128 , K=48  , TIME=   0.105ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=128 , K=56  , TIME=   0.114ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=128 , K=64  , TIME=   0.125ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=128 , K=72  , TIME=   0.135ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=128 , K=80  , TIME=   0.146ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=128 , K=88  , TIME=   0.156ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=128 , K=96  , TIME=   0.167ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=128 , K=104 , TIME=   0.177ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=128 , K=112 , TIME=   0.188ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=128 , K=120 , TIME=   0.199ms
+1D_D, bs=128 , dimX=1   , DY=128 , N=128 , K=128 , TIME=   0.209ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=64  , K=8   , TIME=   0.045ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=64  , K=16  , TIME=   0.053ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=64  , K=24  , TIME=   0.062ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=64  , K=32  , TIME=   0.070ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=64  , K=40  , TIME=   0.078ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=64  , K=48  , TIME=   0.086ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=64  , K=56  , TIME=   0.095ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=64  , K=64  , TIME=   0.101ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=64  , K=72  , TIME=   0.109ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=64  , K=80  , TIME=   0.118ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=64  , K=88  , TIME=   0.125ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=64  , K=96  , TIME=   0.132ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=64  , K=104 , TIME=   0.140ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=64  , K=112 , TIME=   0.147ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=64  , K=120 , TIME=   0.156ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=64  , K=128 , TIME=   0.163ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=128 , K=8   , TIME=   0.069ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=128 , K=16  , TIME=   0.081ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=128 , K=24  , TIME=   0.091ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=128 , K=32  , TIME=   0.103ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=128 , K=40  , TIME=   0.114ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=128 , K=48  , TIME=   0.125ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=128 , K=56  , TIME=   0.135ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=128 , K=64  , TIME=   0.147ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=128 , K=72  , TIME=   0.158ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=128 , K=80  , TIME=   0.171ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=128 , K=88  , TIME=   0.182ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=128 , K=96  , TIME=   0.192ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=128 , K=104 , TIME=   0.204ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=128 , K=112 , TIME=   0.216ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=128 , K=120 , TIME=   0.227ms
+1D_D, bs=128 , dimX=1   , DY=256 , N=128 , K=128 , TIME=   0.238ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=64  , K=8   , TIME=   0.054ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=64  , K=16  , TIME=   0.066ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=64  , K=24  , TIME=   0.075ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=64  , K=32  , TIME=   0.085ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=64  , K=40  , TIME=   0.096ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=64  , K=48  , TIME=   0.106ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=64  , K=56  , TIME=   0.115ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=64  , K=64  , TIME=   0.127ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=64  , K=72  , TIME=   0.137ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=64  , K=80  , TIME=   0.149ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=64  , K=88  , TIME=   0.158ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=64  , K=96  , TIME=   0.169ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=64  , K=104 , TIME=   0.179ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=64  , K=112 , TIME=   0.190ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=64  , K=120 , TIME=   0.201ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=64  , K=128 , TIME=   0.210ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=128 , K=8   , TIME=   0.085ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=128 , K=16  , TIME=   0.103ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=128 , K=24  , TIME=   0.117ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=128 , K=32  , TIME=   0.132ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=128 , K=40  , TIME=   0.148ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=128 , K=48  , TIME=   0.164ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=128 , K=56  , TIME=   0.181ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=128 , K=64  , TIME=   0.197ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=128 , K=72  , TIME=   0.215ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=128 , K=80  , TIME=   0.233ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=128 , K=88  , TIME=   0.249ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=128 , K=96  , TIME=   0.267ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=128 , K=104 , TIME=   0.283ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=128 , K=112 , TIME=   0.300ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=128 , K=120 , TIME=   0.318ms
+1D_D, bs=256 , dimX=1   , DY=128 , N=128 , K=128 , TIME=   0.334ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=64  , K=8   , TIME=   0.070ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=64  , K=16  , TIME=   0.082ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=64  , K=24  , TIME=   0.092ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=64  , K=32  , TIME=   0.103ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=64  , K=40  , TIME=   0.114ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=64  , K=48  , TIME=   0.126ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=64  , K=56  , TIME=   0.136ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=64  , K=64  , TIME=   0.148ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=64  , K=72  , TIME=   0.160ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=64  , K=80  , TIME=   0.171ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=64  , K=88  , TIME=   0.182ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=64  , K=96  , TIME=   0.193ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=64  , K=104 , TIME=   0.205ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=64  , K=112 , TIME=   0.216ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=64  , K=120 , TIME=   0.228ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=64  , K=128 , TIME=   0.238ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=128 , K=8   , TIME=   0.112ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=128 , K=16  , TIME=   0.130ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=128 , K=24  , TIME=   0.146ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=128 , K=32  , TIME=   0.162ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=128 , K=40  , TIME=   0.180ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=128 , K=48  , TIME=   0.199ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=128 , K=56  , TIME=   0.217ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=128 , K=64  , TIME=   0.235ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=128 , K=72  , TIME=   0.253ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=128 , K=80  , TIME=   0.272ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=128 , K=88  , TIME=   0.289ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=128 , K=96  , TIME=   0.308ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=128 , K=104 , TIME=   0.326ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=128 , K=112 , TIME=   0.344ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=128 , K=120 , TIME=   0.363ms
+1D_D, bs=256 , dimX=1   , DY=256 , N=128 , K=128 , TIME=   0.380ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=64  , K=8   , TIME=   0.086ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=64  , K=16  , TIME=   0.103ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=64  , K=24  , TIME=   0.117ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=64  , K=32  , TIME=   0.132ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=64  , K=40  , TIME=   0.149ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=64  , K=48  , TIME=   0.164ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=64  , K=56  , TIME=   0.180ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=64  , K=64  , TIME=   0.197ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=64  , K=72  , TIME=   0.215ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=64  , K=80  , TIME=   0.233ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=64  , K=88  , TIME=   0.248ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=64  , K=96  , TIME=   0.266ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=64  , K=104 , TIME=   0.282ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=64  , K=112 , TIME=   0.299ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=64  , K=120 , TIME=   0.318ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=64  , K=128 , TIME=   0.332ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=128 , K=8   , TIME=   0.154ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=128 , K=16  , TIME=   0.189ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=128 , K=24  , TIME=   0.216ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=128 , K=32  , TIME=   0.243ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=128 , K=40  , TIME=   0.275ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=128 , K=48  , TIME=   0.306ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=128 , K=56  , TIME=   0.339ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=128 , K=64  , TIME=   0.373ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=128 , K=72  , TIME=   0.406ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=128 , K=80  , TIME=   0.440ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=128 , K=88  , TIME=   0.471ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=128 , K=96  , TIME=   0.505ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=128 , K=104 , TIME=   0.537ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=128 , K=112 , TIME=   0.571ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=128 , K=120 , TIME=   0.606ms
+1D_D, bs=512 , dimX=1   , DY=128 , N=128 , K=128 , TIME=   0.634ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=64  , K=8   , TIME=   0.112ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=64  , K=16  , TIME=   0.131ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=64  , K=24  , TIME=   0.146ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=64  , K=32  , TIME=   0.162ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=64  , K=40  , TIME=   0.180ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=64  , K=48  , TIME=   0.200ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=64  , K=56  , TIME=   0.217ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=64  , K=64  , TIME=   0.235ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=64  , K=72  , TIME=   0.253ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=64  , K=80  , TIME=   0.271ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=64  , K=88  , TIME=   0.288ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=64  , K=96  , TIME=   0.307ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=64  , K=104 , TIME=   0.326ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=64  , K=112 , TIME=   0.343ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=64  , K=120 , TIME=   0.362ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=64  , K=128 , TIME=   0.381ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=128 , K=8   , TIME=   0.201ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=128 , K=16  , TIME=   0.239ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=128 , K=24  , TIME=   0.271ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=128 , K=32  , TIME=   0.301ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=128 , K=40  , TIME=   0.335ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=128 , K=48  , TIME=   0.371ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=128 , K=56  , TIME=   0.407ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=128 , K=64  , TIME=   0.442ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=128 , K=72  , TIME=   0.478ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=128 , K=80  , TIME=   0.514ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=128 , K=88  , TIME=   0.550ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=128 , K=96  , TIME=   0.585ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=128 , K=104 , TIME=   0.621ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=128 , K=112 , TIME=   0.656ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=128 , K=120 , TIME=   0.692ms
+1D_D, bs=512 , dimX=1   , DY=256 , N=128 , K=128 , TIME=   0.727ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=64  , K=8   , TIME=   0.155ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=64  , K=16  , TIME=   0.189ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=64  , K=24  , TIME=   0.217ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=64  , K=32  , TIME=   0.243ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=64  , K=40  , TIME=   0.276ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=64  , K=48  , TIME=   0.307ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=64  , K=56  , TIME=   0.340ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=64  , K=64  , TIME=   0.372ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=64  , K=72  , TIME=   0.405ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=64  , K=80  , TIME=   0.441ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=64  , K=88  , TIME=   0.472ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=64  , K=96  , TIME=   0.506ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=64  , K=104 , TIME=   0.538ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=64  , K=112 , TIME=   0.571ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=64  , K=120 , TIME=   0.606ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=64  , K=128 , TIME=   0.635ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=128 , K=8   , TIME=   0.290ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=128 , K=16  , TIME=   0.354ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=128 , K=24  , TIME=   0.405ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=128 , K=32  , TIME=   0.455ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=128 , K=40  , TIME=   0.512ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=128 , K=48  , TIME=   0.572ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=128 , K=56  , TIME=   0.634ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=128 , K=64  , TIME=   0.695ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=128 , K=72  , TIME=   0.757ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=128 , K=80  , TIME=   0.825ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=128 , K=88  , TIME=   0.881ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=128 , K=96  , TIME=   0.946ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=128 , K=104 , TIME=   1.008ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=128 , K=112 , TIME=   1.069ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=128 , K=120 , TIME=   1.136ms
+1D_D, bs=1024, dimX=1   , DY=128 , N=128 , K=128 , TIME=   1.190ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=64  , K=8   , TIME=   0.201ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=64  , K=16  , TIME=   0.240ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=64  , K=24  , TIME=   0.271ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=64  , K=32  , TIME=   0.303ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=64  , K=40  , TIME=   0.337ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=64  , K=48  , TIME=   0.370ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=64  , K=56  , TIME=   0.407ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=64  , K=64  , TIME=   0.443ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=64  , K=72  , TIME=   0.478ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=64  , K=80  , TIME=   0.509ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=64  , K=88  , TIME=   0.543ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=64  , K=96  , TIME=   0.583ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=64  , K=104 , TIME=   0.620ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=64  , K=112 , TIME=   0.655ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=64  , K=120 , TIME=   0.693ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=64  , K=128 , TIME=   0.725ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=128 , K=8   , TIME=   0.379ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=128 , K=16  , TIME=   0.449ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=128 , K=24  , TIME=   0.509ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=128 , K=32  , TIME=   0.564ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=128 , K=40  , TIME=   0.628ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=128 , K=48  , TIME=   0.695ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=128 , K=56  , TIME=   0.760ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=128 , K=64  , TIME=   0.827ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=128 , K=72  , TIME=   0.895ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=128 , K=80  , TIME=   0.963ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=128 , K=88  , TIME=   1.027ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=128 , K=96  , TIME=   1.095ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=128 , K=104 , TIME=   1.164ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=128 , K=112 , TIME=   1.229ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=128 , K=120 , TIME=   1.300ms
+1D_D, bs=1024, dimX=1   , DY=256 , N=128 , K=128 , TIME=   1.362ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=64  , K=8   , TIME=   0.554ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=64  , K=16  , TIME=   0.681ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=64  , K=24  , TIME=   0.787ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=64  , K=32  , TIME=   0.885ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=64  , K=40  , TIME=   1.004ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=64  , K=48  , TIME=   1.123ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=64  , K=56  , TIME=   1.245ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=64  , K=64  , TIME=   1.367ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=64  , K=72  , TIME=   1.493ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=64  , K=80  , TIME=   1.628ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=64  , K=88  , TIME=   1.740ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=64  , K=96  , TIME=   1.872ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=64  , K=104 , TIME=   1.994ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=64  , K=112 , TIME=   2.117ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=64  , K=120 , TIME=   2.256ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=64  , K=128 , TIME=   2.360ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=128 , K=8   , TIME=   1.089ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=128 , K=16  , TIME=   1.340ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=128 , K=24  , TIME=   1.550ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=128 , K=32  , TIME=   1.745ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=128 , K=40  , TIME=   1.980ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=128 , K=48  , TIME=   2.214ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=128 , K=56  , TIME=   2.464ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=128 , K=64  , TIME=   2.708ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=128 , K=72  , TIME=   2.951ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=128 , K=80  , TIME=   3.221ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=128 , K=88  , TIME=   3.448ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=128 , K=96  , TIME=   3.706ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=128 , K=104 , TIME=   3.949ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=128 , K=112 , TIME=   4.195ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=128 , K=120 , TIME=   4.468ms
+1D_D, bs=4096, dimX=1   , DY=128 , N=128 , K=128 , TIME=   4.680ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=64  , K=8   , TIME=   0.741ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=64  , K=16  , TIME=   0.883ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=64  , K=24  , TIME=   1.002ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=64  , K=32  , TIME=   1.117ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=64  , K=40  , TIME=   1.246ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=64  , K=48  , TIME=   1.377ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=64  , K=56  , TIME=   1.507ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=64  , K=64  , TIME=   1.642ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=64  , K=72  , TIME=   1.780ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=64  , K=80  , TIME=   1.921ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=64  , K=88  , TIME=   2.052ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=64  , K=96  , TIME=   2.185ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=64  , K=104 , TIME=   2.315ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=64  , K=112 , TIME=   2.447ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=64  , K=120 , TIME=   2.585ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=64  , K=128 , TIME=   2.711ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=128 , K=8   , TIME=   1.457ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=128 , K=16  , TIME=   1.741ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=128 , K=24  , TIME=   1.979ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=128 , K=32  , TIME=   2.203ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=128 , K=40  , TIME=   2.456ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=128 , K=48  , TIME=   2.713ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=128 , K=56  , TIME=   2.968ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=128 , K=64  , TIME=   3.233ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=128 , K=72  , TIME=   3.502ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=128 , K=80  , TIME=   3.774ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=128 , K=88  , TIME=   4.038ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=128 , K=96  , TIME=   4.302ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=128 , K=104 , TIME=   4.565ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=128 , K=112 , TIME=   4.829ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=128 , K=120 , TIME=   5.105ms
+1D_D, bs=4096, dimX=1   , DY=256 , N=128 , K=128 , TIME=   5.363ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=64  , K=8   , TIME=   1.088ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=64  , K=16  , TIME=   1.338ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=64  , K=24  , TIME=   1.546ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=64  , K=32  , TIME=   1.740ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=64  , K=40  , TIME=   1.978ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=64  , K=48  , TIME=   2.212ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=64  , K=56  , TIME=   2.463ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=64  , K=64  , TIME=   2.705ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=64  , K=72  , TIME=   2.956ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=64  , K=80  , TIME=   3.228ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=64  , K=88  , TIME=   3.449ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=64  , K=96  , TIME=   3.706ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=64  , K=104 , TIME=   3.947ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=64  , K=112 , TIME=   4.186ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=64  , K=120 , TIME=   4.454ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=64  , K=128 , TIME=   4.662ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=128 , K=8   , TIME=   2.152ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=128 , K=16  , TIME=   2.649ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=128 , K=24  , TIME=   3.071ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=128 , K=32  , TIME=   3.453ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=128 , K=40  , TIME=   3.927ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=128 , K=48  , TIME=   4.391ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=128 , K=56  , TIME=   4.892ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=128 , K=64  , TIME=   5.377ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=128 , K=72  , TIME=   5.866ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=128 , K=80  , TIME=   6.403ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=128 , K=88  , TIME=   6.861ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=128 , K=96  , TIME=   7.363ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=128 , K=104 , TIME=   7.846ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=128 , K=112 , TIME=   8.334ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=128 , K=120 , TIME=   8.871ms
+1D_D, bs=8192, dimX=1   , DY=128 , N=128 , K=128 , TIME=   9.282ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=64  , K=8   , TIME=   1.437ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=64  , K=16  , TIME=   1.723ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=64  , K=24  , TIME=   1.965ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=64  , K=32  , TIME=   2.192ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=64  , K=40  , TIME=   2.454ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=64  , K=48  , TIME=   2.707ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=64  , K=56  , TIME=   2.958ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=64  , K=64  , TIME=   3.215ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=64  , K=72  , TIME=   3.488ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=64  , K=80  , TIME=   3.757ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=64  , K=88  , TIME=   4.015ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=64  , K=96  , TIME=   4.284ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=64  , K=104 , TIME=   4.552ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=64  , K=112 , TIME=   4.817ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=64  , K=120 , TIME=   5.089ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=64  , K=128 , TIME=   5.338ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=128 , K=8   , TIME=   2.847ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=128 , K=16  , TIME=   3.429ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=128 , K=24  , TIME=   3.901ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=128 , K=32  , TIME=   4.361ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=128 , K=40  , TIME=   4.872ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=128 , K=48  , TIME=   5.377ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=128 , K=56  , TIME=   5.871ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=128 , K=64  , TIME=   6.379ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=128 , K=72  , TIME=   6.912ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=128 , K=80  , TIME=   7.447ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=128 , K=88  , TIME=   7.957ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=128 , K=96  , TIME=   8.496ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=128 , K=104 , TIME=   9.024ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=128 , K=112 , TIME=   9.555ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=128 , K=120 , TIME=  10.096ms
+1D_D, bs=8192, dimX=1   , DY=256 , N=128 , K=128 , TIME=  10.592ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=64  , K=8   , TIME=   2.148ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=64  , K=16  , TIME=   2.646ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=64  , K=24  , TIME=   3.063ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=64  , K=32  , TIME=   3.446ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=64  , K=40  , TIME=   3.920ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=64  , K=48  , TIME=   4.381ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=64  , K=56  , TIME=   4.881ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=64  , K=64  , TIME=   5.365ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=64  , K=72  , TIME=   5.850ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=64  , K=80  , TIME=   6.395ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=64  , K=88  , TIME=   6.838ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=64  , K=96  , TIME=   7.343ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=64  , K=104 , TIME=   7.834ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=64  , K=112 , TIME=   8.311ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=64  , K=120 , TIME=   8.853ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=64  , K=128 , TIME=   9.269ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=128 , K=8   , TIME=   4.266ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=128 , K=16  , TIME=   5.261ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=128 , K=24  , TIME=   6.095ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=128 , K=32  , TIME=   6.874ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=128 , K=40  , TIME=   7.807ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=128 , K=48  , TIME=   8.727ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=128 , K=56  , TIME=   9.728ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=128 , K=64  , TIME=  10.689ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=128 , K=72  , TIME=  11.654ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=128 , K=80  , TIME=  12.733ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=128 , K=88  , TIME=  13.635ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=128 , K=96  , TIME=  14.634ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=128 , K=104 , TIME=  15.613ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=128 , K=112 , TIME=  16.577ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=128 , K=120 , TIME=  17.659ms
+1D_D, bs=16384, dimX=1   , DY=128 , N=128 , K=128 , TIME=  18.481ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=64  , K=8   , TIME=   2.878ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=64  , K=16  , TIME=   3.427ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=64  , K=24  , TIME=   3.897ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=64  , K=32  , TIME=   4.349ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=64  , K=40  , TIME=   4.860ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=64  , K=48  , TIME=   5.366ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=64  , K=56  , TIME=   5.871ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=64  , K=64  , TIME=   6.381ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=64  , K=72  , TIME=   6.913ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=64  , K=80  , TIME=   7.459ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=64  , K=88  , TIME=   7.954ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=64  , K=96  , TIME=   8.492ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=64  , K=104 , TIME=   9.024ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=64  , K=112 , TIME=   9.545ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=64  , K=120 , TIME=  10.095ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=64  , K=128 , TIME=  10.604ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=128 , K=8   , TIME=   5.698ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=128 , K=16  , TIME=   6.836ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=128 , K=24  , TIME=   7.772ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=128 , K=32  , TIME=   8.689ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=128 , K=40  , TIME=   9.699ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=128 , K=48  , TIME=  10.705ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=128 , K=56  , TIME=  11.699ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=128 , K=64  , TIME=  12.726ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=128 , K=72  , TIME=  13.772ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=128 , K=80  , TIME=  14.836ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=128 , K=88  , TIME=  15.849ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=128 , K=96  , TIME=  16.936ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=128 , K=104 , TIME=  17.968ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=128 , K=112 , TIME=  19.014ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=128 , K=120 , TIME=  20.117ms
+1D_D, bs=16384, dimX=1   , DY=256 , N=128 , K=128 , TIME=  21.127ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=64  , K=8   , TIME=   4.270ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=64  , K=16  , TIME=   5.269ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=64  , K=24  , TIME=   6.096ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=64  , K=32  , TIME=   6.871ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=64  , K=40  , TIME=   7.809ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=64  , K=48  , TIME=   8.724ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=64  , K=56  , TIME=   9.726ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=64  , K=64  , TIME=  10.687ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=64  , K=72  , TIME=  11.651ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=64  , K=80  , TIME=  12.743ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=64  , K=88  , TIME=  13.626ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=64  , K=96  , TIME=  14.636ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=64  , K=104 , TIME=  15.620ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=64  , K=112 , TIME=  16.569ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=64  , K=120 , TIME=  17.666ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=64  , K=128 , TIME=  18.486ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=128 , K=8   , TIME=   8.508ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=128 , K=16  , TIME=  10.505ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=128 , K=24  , TIME=  12.172ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=128 , K=32  , TIME=  13.705ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=128 , K=40  , TIME=  15.580ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=128 , K=48  , TIME=  17.415ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=128 , K=56  , TIME=  19.411ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=128 , K=64  , TIME=  21.344ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=128 , K=72  , TIME=  23.254ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=128 , K=80  , TIME=  25.437ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=128 , K=88  , TIME=  27.225ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=128 , K=96  , TIME=  29.222ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=128 , K=104 , TIME=  31.165ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=128 , K=112 , TIME=  33.093ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=128 , K=120 , TIME=  35.257ms
+1D_D, bs=32768, dimX=1   , DY=128 , N=128 , K=128 , TIME=  36.921ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=64  , K=8   , TIME=   5.632ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=64  , K=16  , TIME=   6.758ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=64  , K=24  , TIME=   7.683ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=64  , K=32  , TIME=   8.584ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=64  , K=40  , TIME=   9.602ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=64  , K=48  , TIME=  10.612ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=64  , K=56  , TIME=  11.620ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=64  , K=64  , TIME=  12.628ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=64  , K=72  , TIME=  13.675ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=64  , K=80  , TIME=  14.763ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=64  , K=88  , TIME=  15.744ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=64  , K=96  , TIME=  16.810ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=64  , K=104 , TIME=  17.863ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=64  , K=112 , TIME=  18.907ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=64  , K=120 , TIME=  20.009ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=64  , K=128 , TIME=  20.990ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=128 , K=8   , TIME=  11.218ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=128 , K=16  , TIME=  13.486ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=128 , K=24  , TIME=  15.333ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=128 , K=32  , TIME=  17.148ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=128 , K=40  , TIME=  19.157ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=128 , K=48  , TIME=  21.186ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=128 , K=56  , TIME=  23.159ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=128 , K=64  , TIME=  25.197ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=128 , K=72  , TIME=  27.283ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=128 , K=80  , TIME=  29.425ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=128 , K=88  , TIME=  31.435ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=128 , K=96  , TIME=  33.541ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=128 , K=104 , TIME=  35.615ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=128 , K=112 , TIME=  37.711ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=128 , K=120 , TIME=  39.910ms
+1D_D, bs=32768, dimX=1   , DY=256 , N=128 , K=128 , TIME=  41.914ms

@@ -18,9 +18,8 @@ extern __shared__ float shared_mem[];
 
 
 
-std::vector<int> bs_list = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 4096, 8192, 16384, 32768};
-// std::vector<int> dimX_list = {32, 64, 128, 256};
-std::vector<int> dimX_list = {1};
+std::vector<int> bs_list = {1, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128};
+std::vector<int> DX_list = {128, 256};
 std::vector<int> DY_list = {128, 256};
 std::vector<int> N_list = {64, 128};
 std::vector<int> K_list = {8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128};

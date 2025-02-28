@@ -16,4 +16,4 @@ data = []
 for file in file_path:
 	data.append(load_data_to_tensor(file_path))
 plt.figure()
-plt.plot(data[0][:, -1] / data[1][:, -1], , label='A')
+plt.plot(data[0][:, -1] / data[1][:, -1], label='A')
