@@ -3,7 +3,7 @@
 #include <cuda_runtime.h>
 #include <stdio.h>
 #include "utils.cuh"
-#include "turboFNO_2D.h"
+#include "TurboFNO.h"
 #include "fft_radix_2_logN_7_upload_0_stride.cuh"
 #include "ifft_radix_2_logN_7_upload_0_stride.cuh"
 
@@ -118,7 +118,25 @@ int main(int argc, char** argv){
       DataT alpha = {1.0, -1.0} , beta = {-1.0, 1.0}; 
     
       cudaDeviceSynchronize();
-      
+      std::ifstream infile(DEFAULT_CONFIG_PATH );
+      std::string line;
+  
+      std::unordered_map<std::string, std::vector<int>> config;
+  
+      while (std::getline(infile, line)) {
+          if (line.empty() || line[0] == '#') continue;  // 跳过注释或空行
+          std::istringstream iss(line);
+          std::string key;
+          iss >> key;
+          config[key] = parse_line(line);
+      }
+  
+      // 提取参数
+      auto& bs_list   = config["bs_list"];
+      auto& DX_list = config["DX_list"];
+      auto& DY_list   = config["DY_list"];
+      auto& N_list    = config["N_list"];
+      auto& K_list    = config["K_list"];
       for (int bs : bs_list) {
         for (int DX : DX_list) {
             for (int DY : DY_list) {

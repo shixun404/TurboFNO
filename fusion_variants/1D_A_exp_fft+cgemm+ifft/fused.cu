@@ -15,11 +15,10 @@
 #include "fft_radix_2_logN_8_upload_0_stride_DY.cuh"
 #include "fft_radix_2_logN_9_upload_0_stride_DY.cuh"
 #include "fft_radix_2_logN_10_upload_0_stride_DY.cuh"
-#include "turboFNO.h"
+#include "TurboFNO.h"
 #include "cgemm.cuh"
 #include <cufftXt.h>
 #include <vector>
-
 
 using DataT = float2;
 int thread_bs[4] = {8, 16, 8, 16};
@@ -137,6 +136,26 @@ int main(int argc, char** argv){
       DataT alpha = {1.0, -1.0} , beta = {-1.0, 1.0}; 
       // DataT alpha = {1.0, 0} , beta = {1.0, 0}; 
 
+      
+      std::ifstream infile(DEFAULT_CONFIG_PATH );
+      std::string line;
+  
+      std::unordered_map<std::string, std::vector<int>> config;
+  
+      while (std::getline(infile, line)) {
+          if (line.empty() || line[0] == '#') continue;  // 跳过注释或空行
+          std::istringstream iss(line);
+          std::string key;
+          iss >> key;
+          config[key] = parse_line(line);
+      }
+  
+      // 提取参数
+      auto& bs_list   = config["bs_list"];
+      auto& dimX_list = config["dimX_list"];
+      auto& DY_list   = config["DY_list"];
+      auto& N_list    = config["N_list"];
+      auto& K_list    = config["K_list"];
       
       for (int bs : bs_list) {
         for (int dimX : dimX_list) {

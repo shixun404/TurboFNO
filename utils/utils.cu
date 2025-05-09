@@ -11,6 +11,15 @@ __global__ void fill(float *a , float x, int N)
    }
 }
 */
+std::vector<int> parse_line(const std::string& line) {
+    std::vector<int> values;
+    std::istringstream iss(line);
+    std::string key, eq;
+    iss >> key >> eq;  // skip key and '='
+    int val;
+    while (iss >> val) values.push_back(val);
+    return values;
+}
 
 void fill_vector(float *target, int size, float val){
     for(int i = 0; i < size; ++i){

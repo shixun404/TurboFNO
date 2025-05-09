@@ -22,8 +22,8 @@ VARIANT_DIRS=(
   "2D_E_baseline"
 )
 
-# === uninstall 模式 ===
-if [ "$1" == "uninstall" ]; then
+# === clinea ===
+if [ "$1" == "clean" ]; then
   echo "🧹 Cleaning all build directories..."
   for dir in "${VARIANT_DIRS[@]}"; do
     if [ -d "fusion_variants/$dir/build" ]; then

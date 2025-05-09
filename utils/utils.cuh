@@ -4,6 +4,15 @@
 #include <cublas_v2.h>
 #include <helper_functions.h>
 #include <helper_cuda.h>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <unordered_map>
+
+
+std::vector<int> parse_line(const std::string& line);
 
 #define CHECK_CUDA_KERNEL() { \
     cudaError_t err = cudaGetLastError(); \

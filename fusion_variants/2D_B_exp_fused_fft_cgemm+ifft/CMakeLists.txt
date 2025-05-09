@@ -15,9 +15,11 @@ endif()
 
 set(PROJECT_ROOT $ENV{PROJECT_ROOT})
 
+add_compile_definitions(DEFAULT_CONFIG_PATH="${PROJECT_ROOT}/benchmark_config/problem_size_2d.txt")
+
 # =========== Include directories ===========
 include_directories(
-    ${PROJECT_ROOT}/Common
+    ${PROJECT_ROOT}/TurboFFT/Common
     ${PROJECT_ROOT}/utils
     ${PROJECT_ROOT}/TurboFFT/TurboFFT/include/code_gen/generated/float2
 )
@@ -33,6 +35,17 @@ add_executable(${PROJECT_NAME} ${SRC})
 
 target_compile_options(${PROJECT_NAME}
     PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:--expt-relaxed-constexpr>
+    PRIVATE
+    $<$<COMPILE_LANGUAGE:CXX>:
+      -Wno-unused-function
+      -Wno-unused-variable
+      -Wno-unused-parameter
+      -Wno-unused-but-set-variable
+      -Wno-unused-result
+    >
+    $<$<COMPILE_LANGUAGE:CUDA>:
+      --disable-warnings
+    >
 )
 
 target_link_libraries(${PROJECT_NAME}
