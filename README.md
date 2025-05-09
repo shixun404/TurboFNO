@@ -1,6 +1,9 @@
 # TurboFNO
 
-<img src="figs/FNO_illustration.png" alt="TurboFNO" width="450"/>
+<p align="center">
+  <img src="figs/FNO_illustration.png" alt="TurboFNO" width="450"/>
+</p>
+
 
 **TurboFNO** is a high-performance GPU implementation of the Fourier Neural Operator (FNO), designed for solving PDEs with deep learning. Unlike standard FNO implementations that execute FFT, filtering, GEMM, and iFFT as separate kernels—causing redundant memory traffic—TurboFNO introduces the **first fully fused FFT–GEMM–iFFT GPU kernel** with built-in optimizations.
 
@@ -126,36 +129,51 @@ We progressively optimize the kernel execution from unfused (baseline) to fully 
 Below are the benchmark visualizations for 1D and 2D cases.
 
 ---
-
 ### 🔷 1D Kernel Fusion Stages
 
 #### A: FFT + GEMM + iFFT
-![1D_A](figs/1D_bar_A.png)
+<p align="center">
+  <img src="figs/1D_bar_A.png" width="600"/>
+</p>
 
 #### B: Fused FFT + GEMM
-![1D_B](figs/1D_bar_B.png)
+<p align="center">
+  <img src="figs/1D_bar_B.png" width="600"/>
+</p>
 
 #### C: FFT + Fused GEMM + iFFT
-![1D_C](figs/1D_bar_C.png)
+<p align="center">
+  <img src="figs/1D_bar_C.png" width="600"/>
+</p>
 
 #### D: Fully Fused
-![1D_D](figs/1D_bar_D.png)
+<p align="center">
+  <img src="figs/1D_bar_D.png" width="600"/>
+</p>
 
 ---
 
 ### 🔶 2D Kernel Fusion Stages
 
 #### A: FFT + GEMM + iFFT
-![2D_A](figs/2D_bar_A.png)
+<p align="center">
+  <img src="figs/2D_bar_A.png" width="600"/>
+</p>
 
 #### B: Fused FFT + GEMM
-![2D_B](figs/2D_bar_B.png)
+<p align="center">
+  <img src="figs/2D_bar_B.png" width="600"/>
+</p>
 
 #### C: FFT + Fused GEMM + iFFT
-![2D_C](figs/2D_bar_C.png)
+<p align="center">
+  <img src="figs/2D_bar_C.png" width="600"/>
+</p>
 
 #### D: Fully Fused
-![2D_D](figs/2D_bar_D.png)
+<p align="center">
+  <img src="figs/2D_bar_D.png" width="600"/>
+</p>
 
 ---
 
