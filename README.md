@@ -79,6 +79,17 @@ K_list = 8 16 24 32
 TurboFNO_1D_A
 ```
 
+Sample Output
+
+```bash
+1D_A, bs=1   , dimX=1   , DY=128 , N=64  , K=8   , TIME=   0.026ms
+1D_A, bs=1   , dimX=1   , DY=128 , N=64  , K=16  , TIME=   0.028ms
+1D_A, bs=1   , dimX=1   , DY=128 , N=64  , K=24  , TIME=   0.031ms
+1D_A, bs=1   , dimX=1   , DY=128 , N=64  , K=32  , TIME=   0.034ms
+1D_A, bs=1   , dimX=1   , DY=128 , N=64  , K=40  , TIME=   0.036ms
+1D_A, bs=1   , dimX=1   , DY=128 , N=64  , K=48  , TIME=   0.039ms
+```
+
 > ⚠️ If no config path is provided, a default path is compiled in via CMake.
 
 
@@ -97,7 +108,7 @@ TurboFNO_1D_A
 
 
 
-### 📊 Expected Stepwise Optimization Result
+## 📊 Expected Stepwise Optimization Result
 
 We progressively optimize the kernel execution from unfused (baseline) to fully fused implementation.
 Below are the benchmark visualizations for 1D and 2D cases.
