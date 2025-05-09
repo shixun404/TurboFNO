@@ -59,21 +59,21 @@ TurboFNO/
 
 ## Run
 
-Each variant builds a `TurboFNO` binary that accepts problem size configurations via a **runtime `.txt` config file** (no recompilation needed).
-
-### a. Input Format (via `benchmark_config/problem_size_1d.txt` or `problem_size_2d.txt`)
 
 Currently, only complex-to-complex (C2C) FFTs are supported, and the frequency domain is truncated to size 64 after applying the high-frequency filter.
 
-```txt
-bs_list = 1 2 4 8 16 32 64
-dimX_list = 1
-DY_list = 128 256
-N_list = 64 128
-K_list = 8 16 24 32
-```
 
-### b. Launching a Variant
+### Variant Summary (Progressive Kernel Fusion)
+
+| Variant | Executable Name                   | Fusion Strategy                      | Description                    |
+| ------- | --------------------------------- | ------------------------------------ | ------------------------------ |
+| E       | `TurboFNO_1D_E` / `TurboFNO_2D_E` | No fusion                            | Baseline                       |
+| A       | `TurboFNO_1D_A` / `TurboFNO_2D_A` | FFT + GEMM + iFFT (separate kernels) | Initial kernel sequence        |
+| B       | `TurboFNO_1D_B` / `TurboFNO_2D_B` | Fused FFT + GEMM                     | First-stage fusion             |
+| C       | `TurboFNO_1D_C` / `TurboFNO_2D_C` | FFT + Fused GEMM + iFFT              | Mid-stage fusion               |
+| D       | `TurboFNO_1D_D` / `TurboFNO_2D_D` | Fully fused FFT + GEMM + iFFT        | Final optimized implementation |
+
+### Launching a Variant
 
 ```bash
 TurboFNO_1D_A
@@ -90,18 +90,19 @@ Sample Output
 1D_A, bs=1   , dimX=1   , DY=128 , N=64  , K=48  , TIME=   0.039ms
 ```
 
+### Input Format (via `benchmark_config/problem_size_1d.txt` or `problem_size_2d.txt`)
+
+Each variant builds a `TurboFNO` binary that accepts problem size configurations via a **runtime `.txt` config file** (no recompilation needed).
+
+```txt
+bs_list = 1 2 4 8 16 32 64
+dimX_list = 1
+DY_list = 128 256
+N_list = 64 128
+K_list = 8 16 24 32
+```
+
 > ⚠️ If no config path is provided, a default path is compiled in via CMake.
-
-
-### Variant Summary (Progressive Kernel Fusion)
-
-| Variant | Executable Name                   | Fusion Strategy                      | Description                    |
-| ------- | --------------------------------- | ------------------------------------ | ------------------------------ |
-| E       | `TurboFNO_1D_E` / `TurboFNO_2D_E` | No fusion                            | Baseline                       |
-| A       | `TurboFNO_1D_A` / `TurboFNO_2D_A` | FFT + GEMM + iFFT (separate kernels) | Initial kernel sequence        |
-| B       | `TurboFNO_1D_B` / `TurboFNO_2D_B` | Fused FFT + GEMM                     | First-stage fusion             |
-| C       | `TurboFNO_1D_C` / `TurboFNO_2D_C` | FFT + Fused GEMM + iFFT              | Mid-stage fusion               |
-| D       | `TurboFNO_1D_D` / `TurboFNO_2D_D` | Fully fused FFT + GEMM + iFFT        | Final optimized implementation |
 
 
 ---
