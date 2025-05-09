@@ -117,9 +117,6 @@ Below are the benchmark visualizations for 1D and 2D cases.
 
 ### 🔷 1D Kernel Fusion Stages
 
-#### E: Baseline
-![1D_E](figs/1D_bar_E.png)
-
 #### A: FFT + GEMM + iFFT
 ![1D_A](figs/1D_bar_A.png)
 
@@ -135,9 +132,6 @@ Below are the benchmark visualizations for 1D and 2D cases.
 ---
 
 ### 🔶 2D Kernel Fusion Stages
-
-#### E: Baseline
-![2D_E](figs/2D_bar_E.png)
 
 #### A: FFT + GEMM + iFFT
 ![2D_A](figs/2D_bar_A.png)
