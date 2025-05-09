@@ -1,7 +1,5 @@
 # TurboFNO
 
-
-
 **TurboFNO** is a high-performance GPU implementation of the Fourier Neural Operator (FNO), designed for solving PDEs with deep learning. Unlike standard FNO implementations that execute FFT, filtering, GEMM, and iFFT as separate kernels—causing redundant memory traffic—TurboFNO introduces the **first fully fused FFT–GEMM–iFFT GPU kernel** with built-in optimizations.
 
 <p align="center">
@@ -26,7 +24,7 @@ TurboFNO/
 ├── fusion_variants/           # All kernel fusion variants (stepwise E→A→B→C→D for 1D/2D)
 ├── benchmark_config/          # Input problem sizes for 1D and 2D
 ├── TurboFFT/                  # Git submodule (TurboFNO_dev branch)
-├── utils/, Common/            # Shared code and support modules
+├── utils/                     # Shared code and support modules
 ├── install.sh                 # Batch compile and PATH setup script
 └── README.md
 ```
