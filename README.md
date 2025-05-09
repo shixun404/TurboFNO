@@ -15,7 +15,7 @@ TurboFNO includes:
 * A novel kernel fusion strategy where **each thread block traverses the hidden dimension**, aligning FFT output with GEMM computation;
 * Shared memory swizzling techniques to ensure **100% memory bank utilization** between FFT, GEMM, and iFFT stages.
 
-> On NVIDIA A100, TurboFNO achieves up to **1.5× speedup** over PyTorch and NVIDIA’s closed-source libraries.
+* On NVIDIA A100, TurboFNO achieves up to **1.5× speedup** over PyTorch and NVIDIA’s closed-source libraries.
 
 ---
 
