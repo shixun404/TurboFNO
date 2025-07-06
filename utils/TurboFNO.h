@@ -18,3 +18,4 @@ extern __shared__ float shared_mem[];
 
 int ntest=5;
 int threadblock_bs = 4;
+int threadblock_bs_1 = 8;
