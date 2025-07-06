@@ -61,21 +61,21 @@ int main(int argc, char** argv){
             ntest = 5;
 
                 // 解析命令行参数
-    if (argc > 1) {
-      if (argc != 6) {
-          printf("Usage: %s <bs> <dimX> <DY> <N> <K>\n", argv[0]);
-          printf("Example: %s 128 256 256 128 128\n", argv[0]);
-          printf("Using default values: bs=%lld, dimX=%lld, DY=%lld, N=%lld, K=%lld\n", 
-                 bs, dimX, DY, N, K);
-      } else {
-          bs = atoi(argv[1]);
-          dimX = atoi(argv[2]);
-          DY = atoi(argv[3]);
-          N = atoi(argv[4]);
-          K = atoi(argv[5]);
-          
-      }
-  }
+                if (argc > 1) {
+                  if (argc != 6) {
+                      printf("Usage: %s <bs> <DX> <DY> <N> <K>\n", argv[0]);
+                      printf("Example: %s 128 256 256 128 128\n", argv[0]);
+                      printf("Using default values: bs=%lld, DX=%lld, DY=%lld, N=%lld, K=%lld\n", 
+                             bs, dimX, DY, N, K);
+                  } else {
+                      bs = atoi(argv[1]);
+                      DX = atoi(argv[2]);
+                      DY = atoi(argv[3]);
+                      N = atoi(argv[4]);
+                      K = atoi(argv[5]);
+                      
+                  }
+              }
       
             M = bs * dimX * THREADBLOCK_M;
             FFT_len = DY;
@@ -184,8 +184,15 @@ int main(int argc, char** argv){
       
       dim3 gridDim_fft_dimx((DY * K * bs + threadblock_bs - 1) / threadblock_bs, 1, 1);
       dim3 gridDim_ifft_dimx((DY * N * bs + threadblock_bs - 1) / threadblock_bs, 1, 1);
-      gridDim_fft_dimx.x = gridDim_fft_dimx.x > 65536 ? 65536 : gridDim_fft_dimx.x;
-      gridDim_ifft_dimx.x = gridDim_ifft_dimx.x > 65536 ? 65536 : gridDim_ifft_dimx.x;
+      long long int num_blocks = (DY * K * bs + threadblock_bs - 1) / threadblock_bs;
+      gridDim_fft_dimx.x = num_blocks > 65536 ? 65536 : num_blocks;
+      gridDim_ifft_dimx.x = num_blocks > 65536 ? 65536 : num_blocks;
+      
+      gridDim_fft_dimx.y = (num_blocks + 65535) / 65536 > 1 ? (num_blocks + 65535) / 65536 : 1;
+      gridDim_ifft_dimx.y = (num_blocks + 65535) / 65536 > 1 ? (num_blocks + 65535) / 65536 : 1;
+      
+      
+      
       dim3 blockDim_fft_dimx(DX / thread_bs[int(log2f(DX)) - 7] * threadblock_bs, 1, 1); 
       int shmem_size_fft_dimx = sizeof(DataT) * DX * threadblock_bs ;  
       

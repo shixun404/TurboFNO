@@ -87,21 +87,21 @@ int main(int argc, char** argv){
             ntest = 5;
 
                 // 解析命令行参数
-    if (argc > 1) {
-      if (argc != 6) {
-          printf("Usage: %s <bs> <dimX> <DY> <N> <K>\n", argv[0]);
-          printf("Example: %s 128 256 256 128 128\n", argv[0]);
-          printf("Using default values: bs=%lld, dimX=%lld, DY=%lld, N=%lld, K=%lld\n", 
-                 bs, dimX, DY, N, K);
-      } else {
-          bs = atoi(argv[1]);
-          dimX = atoi(argv[2]);
-          DY = atoi(argv[3]);
-          N = atoi(argv[4]);
-          K = atoi(argv[5]);
-          
-      }
-  }
+                if (argc > 1) {
+                  if (argc != 6) {
+                      printf("Usage: %s <bs> <DX> <DY> <N> <K>\n", argv[0]);
+                      printf("Example: %s 128 256 256 128 128\n", argv[0]);
+                      printf("Using default values: bs=%lld, DX=%lld, DY=%lld, N=%lld, K=%lld\n", 
+                             bs, dimX, DY, N, K);
+                  } else {
+                      bs = atoi(argv[1]);
+                      DX = atoi(argv[2]);
+                      DY = atoi(argv[3]);
+                      N = atoi(argv[4]);
+                      K = atoi(argv[5]);
+                      
+                  }
+              }
       
             M = bs * dimX * THREADBLOCK_M;
             FFT_len = DY;
