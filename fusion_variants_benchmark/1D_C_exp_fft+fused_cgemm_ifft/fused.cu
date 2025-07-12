@@ -16,7 +16,7 @@
 
 
 using DataT = float2;
-int thread_bs[4] = {8, 16, 8, 16};
+int thread_bs[4] = {16, 16, 8, 16};
 void (*fused_cgemm_ifft [4])(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2) = 
 {fused_cgemm_ifft_7, fused_cgemm_ifft_8, fused_cgemm_ifft_9, fused_cgemm_ifft_10};
 void (*fft_stride_DY [4])(float2 *, float2 *, int, int) = {fft_7_stride_DY, fft_8_stride_DY, fft_9_stride_DY, fft_10_stride_DY};

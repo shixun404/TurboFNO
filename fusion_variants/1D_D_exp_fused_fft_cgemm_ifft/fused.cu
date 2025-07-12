@@ -11,7 +11,7 @@
 #include <cufftXt.h>
 
 using DataT = float2;
-int thread_bs[4] = {8, 16, 8, 16};
+int thread_bs[4] = {16, 16, 8, 16};
 void (*fused_fft_cgemm_ifft [4])(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2) = 
 {fused_fft_cgemm_ifft_7, fused_fft_cgemm_ifft_8, fused_fft_cgemm_ifft_9, fused_fft_cgemm_ifft_10};
 

@@ -33,24 +33,24 @@ __global__ void cgemm(int M, int N, int K, float2 *A, float2 *B, float2 *C, floa
     
     #pragma unroll
     for(int i = 0; i < LOAD_PER_THREAD_A; i++){
-        tmp_A[i] = gA[BID_X * THREADBLOCK_M + (TID * LOAD_PER_THREAD_A + i) % THREADBLOCK_M
-        + (TID * LOAD_PER_THREAD_A + i) / THREADBLOCK_M * M];
+        tmp_A[i] = gA[BID_X * THREADBLOCK_M + (TID + i * blockDim.x) % THREADBLOCK_M
+        + (TID + i * blockDim.x) / THREADBLOCK_M * M];
     }
 
     #pragma unroll
     for(int i = 0; i < LOAD_PER_THREAD_B; i++){
-        tmp_B[i] = gB[(TID * LOAD_PER_THREAD_B + i) / THREADBLOCK_N
-        + (BID_Y * THREADBLOCK_N + (TID * LOAD_PER_THREAD_B + i) % THREADBLOCK_N) * K];
+        tmp_B[i] = gB[(TID + i * blockDim.x) / THREADBLOCK_N
+        + (BID_Y * THREADBLOCK_N + (TID + i * blockDim.x) % THREADBLOCK_N) * K];
     }
     
     #pragma unroll
     for(int i = 0; i < LOAD_PER_THREAD_A; i++){
-        sA[TID * LOAD_PER_THREAD_A + i] = tmp_A[i];
+        sA[TID + i * blockDim.x] = tmp_A[i];
     }
 
     #pragma unroll
     for(int i = 0; i < LOAD_PER_THREAD_B; i++){
-        sB[TID * LOAD_PER_THREAD_B + i] = tmp_B[i];
+        sB[TID + i * blockDim.x] = tmp_B[i];
     }
 
     __syncthreads();
@@ -72,14 +72,14 @@ __global__ void cgemm(int M, int N, int K, float2 *A, float2 *B, float2 *C, floa
         // Prefetech from global memory
         #pragma unroll
         for(int i = 0; i < LOAD_PER_THREAD_A; i++){
-            tmp_A[i] = gA[BID_X * THREADBLOCK_M + (TID * LOAD_PER_THREAD_A + i) % THREADBLOCK_M
-            + (TID * LOAD_PER_THREAD_A + i) / THREADBLOCK_M * M + (k + THREADBLOCK_K) * M];
+            tmp_A[i] = gA[BID_X * THREADBLOCK_M + (TID + i * blockDim.x) % THREADBLOCK_M
+            + (TID + i * blockDim.x) / THREADBLOCK_M * M + (k + THREADBLOCK_K) * M];
         }
     
         #pragma unroll
         for(int i = 0; i < LOAD_PER_THREAD_B; i++){
-            tmp_B[i] = gB[(TID * LOAD_PER_THREAD_B + i) / THREADBLOCK_N + (k + THREADBLOCK_K)
-            + (BID_Y * THREADBLOCK_N + (TID * LOAD_PER_THREAD_B + i) % THREADBLOCK_N) * K];
+            tmp_B[i] = gB[(TID + i * blockDim.x) / THREADBLOCK_N + (k + THREADBLOCK_K)
+            + (BID_Y * THREADBLOCK_N + (TID + i * blockDim.x) % THREADBLOCK_N) * K];
         }
 
         // Thread-level GEMM
@@ -115,13 +115,13 @@ __global__ void cgemm(int M, int N, int K, float2 *A, float2 *B, float2 *C, floa
         // Store prefeteched global data to shared
         #pragma unroll
         for(int i = 0; i < LOAD_PER_THREAD_A; i++){
-            shared_mem_float2[warp_prefetch * (THREADBLOCK_M + THREADBLOCK_N) * THREADBLOCK_K + TID * LOAD_PER_THREAD_A + i] = tmp_A[i];
+            shared_mem_float2[warp_prefetch * (THREADBLOCK_M + THREADBLOCK_N) * THREADBLOCK_K + TID + i * blockDim.x] = tmp_A[i];
         }
     
         #pragma unroll
         for(int i = 0; i < LOAD_PER_THREAD_B; i++){
             shared_mem_float2[THREADBLOCK_M * THREADBLOCK_K + warp_prefetch * (THREADBLOCK_M + THREADBLOCK_N) * THREADBLOCK_K
-                                 + TID * LOAD_PER_THREAD_B + i] = tmp_B[i];
+                                 + TID + i * blockDim.x] = tmp_B[i];
         }
         
         __syncthreads();

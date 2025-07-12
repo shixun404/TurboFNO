@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <mma.h>
-#include "fft_radix_2_logN_7_upload_0_fused_trunc.cuh"
-#include "fft_radix_2_logN_7_upload_0_fused_output_trunc.cuh"
+#include "fft_radix_2_logN_7_upload_0_fused.cuh"
+#include "fft_radix_2_logN_7_upload_0_fused_output.cuh"
 // #include "fft_radix_2_logN_8_upload_0_fused.cuh"
 // #include "fft_radix_2_logN_9_upload_0_fused.cuh"
 // #include "fft_radix_2_logN_10_upload_0_fused.cuh"
@@ -215,7 +215,7 @@ __global__ void fused_fft_cgemm_ifft_7(int M, int N, int K, float2 *FFT_input, f
             }
         }
         __syncthreads();
-        fft_7_fused_output_trunc(sFFT, gFFT_output + BID_X * 128 + (BID_Y * THREADBLOCK_N + tid_start) * M * 2, sFFT, M * 2);
+        fft_7_fused_output(sFFT, gFFT_output + BID_X * 128 + (BID_Y * THREADBLOCK_N + tid_start) * M * 2, sFFT, M * 2);
     }
 
 

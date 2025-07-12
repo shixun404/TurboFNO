@@ -64,8 +64,8 @@ __global__ void direct_copy_colmajor_float4_zero_padding(const float2 *input,
 
 int main(int argc, char** argv){
       DataT *A, *dA, *B, *dB, *C, *C_ref, *dC, *dC_ref, 
-            *FFT_input, *dFFT_input, *dFFT_output, 
-            *iFFT_output, *iFFT_output_ref;
+            *FFT_input, *dFFT_input, *dFFT_output, *diFFT_input, *diFFT_output, 
+            *iFFT_output, *iFFT_output_ref, di;
     long long int bs, dimX, dimY, DY, M, N, K, FFT_len, FFT_bs, iFFT_bs, FFT_input_size, iFFT_output_size;
 
       bs = 128;
@@ -105,7 +105,6 @@ int main(int argc, char** argv){
       long long int C_size = M * N;
       FFT_input = (DataT*)malloc(sizeof(DataT) * (FFT_input_size + ntest));
       iFFT_output = (DataT*)malloc(sizeof(DataT) * (iFFT_output_size + ntest));
-      iFFT_output_ref = (DataT*)malloc(sizeof(DataT) * (iFFT_output_size + ntest));
       B = (DataT*)malloc(sizeof(DataT) * (B_size + ntest));
       C = (DataT*)malloc(sizeof(DataT) * (C_size + ntest));
       C_ref = (DataT*)malloc(sizeof(DataT) * (C_size + ntest));
@@ -113,6 +112,8 @@ int main(int argc, char** argv){
 
       CUDA_RT_CALL(cudaMalloc((void**)&dFFT_input, sizeof(DataT) * (FFT_input_size + ntest)));
       CUDA_RT_CALL(cudaMalloc((void**)&dFFT_output, sizeof(DataT) * (FFT_input_size + ntest)));
+      CUDA_RT_CALL(cudaMalloc((void**)&diFFT_input, sizeof(DataT) * (iFFT_output_size + ntest)));
+      CUDA_RT_CALL(cudaMalloc((void**)&diFFT_output, sizeof(DataT) * (iFFT_output_size + ntest)));
       CUDA_RT_CALL(cudaMalloc((void**)&dA, sizeof(DataT) * (A_size + ntest)));
       CUDA_RT_CALL(cudaMalloc((void**)&dB, sizeof(DataT) * (B_size + ntest)));
       CUDA_RT_CALL(cudaMalloc((void**)&dC, sizeof(DataT) * (C_size + ntest)));
@@ -125,6 +126,8 @@ int main(int argc, char** argv){
 
       CUDA_RT_CALL(cudaMemcpy(dFFT_input, FFT_input, sizeof(DataT) * FFT_input_size, cudaMemcpyHostToDevice));
       CUDA_RT_CALL(cudaMemcpy(dFFT_output, FFT_input, sizeof(DataT) * FFT_input_size, cudaMemcpyHostToDevice));
+      CUDA_RT_CALL(cudaMemcpy(diFFT_input, iFFT_output, sizeof(DataT) * iFFT_output_size, cudaMemcpyHostToDevice));
+      CUDA_RT_CALL(cudaMemcpy(diFFT_output, iFFT_output, sizeof(DataT) * iFFT_output_size, cudaMemcpyHostToDevice));
 
       CUDA_RT_CALL(cudaMemcpy(dB, B, sizeof(DataT) * B_size, cudaMemcpyHostToDevice));
       CUDA_RT_CALL(cudaMemcpy(dC, C, sizeof(DataT) * C_size, cudaMemcpyHostToDevice));
@@ -202,9 +205,9 @@ int main(int argc, char** argv){
       cudaDeviceSynchronize();
       CUBLAS_CALL(cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, M, N, K, (cuFloatComplex*)&alpha, (cuFloatComplex*)dA, M, (cuFloatComplex*)dB, K, (cuFloatComplex*)&beta, (cuFloatComplex*)dC_ref, M));
       cudaDeviceSynchronize();
-      direct_copy_colmajor_float4_zero_padding<<<gridDim_copy, blockDim_copy>>>(dC_ref, dFFT_output, FFT_len, iFFT_bs, THREADBLOCK_M);
+      direct_copy_colmajor_float4_zero_padding<<<gridDim_copy, blockDim_copy>>>(dC_ref, diFFT_input, FFT_len, iFFT_bs, THREADBLOCK_M);
       cudaDeviceSynchronize();
-      CUFFT_CALL(cufftExecC2C(iplan, reinterpret_cast<cufftComplex*>(dFFT_output), reinterpret_cast<cufftComplex*>(dFFT_input), CUFFT_FORWARD));
+      CUFFT_CALL(cufftExecC2C(iplan, reinterpret_cast<cufftComplex*>(diFFT_input), reinterpret_cast<cufftComplex*>(diFFT_output), CUFFT_FORWARD));
       
       cudaDeviceSynchronize();
 
@@ -224,10 +227,10 @@ int main(int argc, char** argv){
         cudaDeviceSynchronize();
         cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, M, N, K, (cuFloatComplex*)&alpha, (cuFloatComplex*)dA, M, (cuFloatComplex*)dB, K, (cuFloatComplex*)&beta, (cuFloatComplex*)dC_ref, M);     
         cudaDeviceSynchronize();
-        direct_copy_colmajor_float4_zero_padding<<<gridDim_copy, blockDim_copy>>>(dC_ref, dFFT_output, FFT_len, iFFT_bs, THREADBLOCK_M);
+        direct_copy_colmajor_float4_zero_padding<<<gridDim_copy, blockDim_copy>>>(dC_ref, diFFT_input, FFT_len, iFFT_bs, THREADBLOCK_M);
         cudaDeviceSynchronize();
-        cufftExecC2C(iplan, reinterpret_cast<cufftComplex*>(dFFT_output), 
-        reinterpret_cast<cufftComplex*>(dFFT_input), 
+        cufftExecC2C(iplan, reinterpret_cast<cufftComplex*>(diFFT_input), 
+        reinterpret_cast<cufftComplex*>(diFFT_output), 
         CUFFT_FORWARD);
 
       }
