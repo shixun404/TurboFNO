@@ -130,7 +130,7 @@ void generate_random_vector(float* target, int n);
 
 void copy_vector(float *src, float *dest, int n);
 
-bool verify_vector(float *vec1, float *vec2, int n, int nrow);
+bool verify_vector(float *vec1, float *vec2, int n);
 
 void fill_vector(float*, int, float);
 

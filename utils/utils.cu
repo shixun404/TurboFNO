@@ -111,7 +111,7 @@ void copy_matrix_double(double *src, double *dest, int n){
 //     return true;
 // }
 
-bool verify_vector(float *vec1, float *vec2, int n, int nrow = 1) {
+bool verify_vector(float *vec1, float *vec2, int n) {
     double diff, max_diff = 0.0, max_rel_diff = 0.0;
     double sum_abs_diff = 0.0, sum_sq_diff = 0.0;
     double sum_abs_vec1 = 0.0, sum_rel_diff = 0.0;
