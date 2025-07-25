@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "utils.cuh"
 #include "TurboFNO.h"
-#include "cgemm.cuh"
+#include "cgemm_unloop.cuh"
 #include <vector>
 
 using DataT = float2;
@@ -44,7 +44,7 @@ int main(int argc, char** argv){
 
     ntest = 5;
 
-    M = bs * dimX * THREADBLOCK_M;
+    M = bs * dimX * 64;
     dimY = 64;
     FFT_len = DY;
     FFT_bs = bs * dimX * K;
@@ -82,7 +82,8 @@ int main(int argc, char** argv){
       DataT alpha = {1.0, -1.0} , beta = {-1.0, 1.0}; 
       
 
-      M = bs * dimX * THREADBLOCK_M;
+      // M = bs * dimX * THREADBLOCK_M;
+      M = bs * dimX * 64;
       dimY = 64;
       FFT_len = DY;
       FFT_bs = bs * dimX * K;
@@ -98,10 +99,15 @@ int main(int argc, char** argv){
       cublasCreate(&handle);
 
                 
-      dim3 gridDim((M + THREADBLOCK_M - 1) / THREADBLOCK_M, (N + THREADBLOCK_N - 1) / THREADBLOCK_N, 1);
+      // dim3 gridDim((M + THREADBLOCK_M - 1) / THREADBLOCK_M, (N + THREADBLOCK_N - 1) / THREADBLOCK_N, 1);
+      dim3 gridDim((N + THREADBLOCK_N - 1) / THREADBLOCK_N, (M + THREADBLOCK_M - 1) / THREADBLOCK_M, 1);
       dim3 blockDim((THREADBLOCK_M * THREADBLOCK_N / (THREAD_M * THREAD_N)), 1, 1); 
-      int shmem_size = sizeof(DataT) * (THREADBLOCK_M + THREADBLOCK_N) * THREADBLOCK_K * 2;
-
+      int shmem_size = sizeof(DataT) * (THREADBLOCK_M + THREADBLOCK_N + 2) * THREADBLOCK_K * 2;
+      printf("M: %d, N: %d, K: %d\n", M, N, K);
+      printf("gridDim.x: %d, gridDim.y: %d, gridDim.z: %d\n", gridDim.x, gridDim.y, gridDim.z);
+      printf("blockDim.x: %d, blockDim.y: %d, blockDim.z: %d\n", blockDim.x, blockDim.y, blockDim.z);
+      printf("shmem_size: %d\n", shmem_size);
+      printf("LOAD_PER_THREAD_A: %d, LOAD_PER_THREAD_B: %d\n", LOAD_PER_THREAD_A, LOAD_PER_THREAD_B);
       cudaDeviceSynchronize();
             
       CUBLAS_CALL(cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, M, N, K, (cuFloatComplex*)&alpha, (cuFloatComplex*)dA, M, (cuFloatComplex*)dB, K, (cuFloatComplex*)&beta, (cuFloatComplex*)dC_ref, M));
@@ -115,27 +121,47 @@ int main(int argc, char** argv){
     
       verify_vector((float*)C_ref, (float*)C, C_size * 2);
 
-      // {
-      //   cudaEvent_t fft_begin, fft_end;
-      //   float elapsed_time;
-      //   cudaEventCreate(&fft_begin);
-      //   cudaEventCreate(&fft_end);
-      // cudaEventRecord(fft_begin);
-      // for (int i = 0; i < ntest; ++i){
-      //   cgemm<<<gridDim, blockDim, shmem_size>>>(M, N, K, dA, dB, dC, alpha, beta);
-      //   cudaDeviceSynchronize();
-      // }
-      // cudaEventRecord(fft_end);
-      // cudaEventSynchronize(fft_begin);
-      // cudaEventSynchronize(fft_end);
-      // cudaEventElapsedTime(&elapsed_time, fft_begin, fft_end);
 
-      // elapsed_time = elapsed_time / ntest;
-      // // printf("bs=%d dimX=%d DY=%d M=%d, N=%d K=%d\n", bs, dimX, DY, M, N, K);
-      // // printf("FFT_len=%d FFT_bs=%d\n", FFT_len, FFT_bs);
-      // printf("1D_A, bs=%-4d, dimX=%-4d, DY=%-4d, N=%-4d, K=%-4d, TIME=%8.3fms\n",
-      //   bs, dimX, DY, N, K, elapsed_time);
-    // }
+    {
+        cudaEvent_t fft_begin, fft_end;
+        float elapsed_time;
+        cudaEventCreate(&fft_begin);
+        cudaEventCreate(&fft_end);
+      cudaEventRecord(fft_begin);
+      for (int i = 0; i < ntest; ++i){
+        cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, M, N, K, (cuFloatComplex*)&alpha, (cuFloatComplex*)dA, M, (cuFloatComplex*)dB, K, (cuFloatComplex*)&beta, (cuFloatComplex*)dC_ref, M);
+        cudaDeviceSynchronize();
+      }
+      cudaEventRecord(fft_end);
+      cudaEventSynchronize(fft_begin);
+      cudaEventSynchronize(fft_end);
+      cudaEventElapsedTime(&elapsed_time, fft_begin, fft_end);
+
+      elapsed_time = elapsed_time / ntest;
+      printf("cublasCgemm, bs=%-4d, dimX=%-4d, DY=%-4d, N=%-4d, K=%-4d, TIME=%8.3fms\n",
+        bs, dimX, DY, N, K, elapsed_time);
+    }
+
+    
+    {
+      cudaEvent_t fft_begin, fft_end;
+      float elapsed_time;
+      cudaEventCreate(&fft_begin);
+      cudaEventCreate(&fft_end);
+    cudaEventRecord(fft_begin);
+    for (int i = 0; i < ntest; ++i){
+      cgemm<<<gridDim, blockDim, shmem_size>>>(M, N, K, dA, dB, dC, alpha, beta);
+      cudaDeviceSynchronize();
+    }
+    cudaEventRecord(fft_end);
+    cudaEventSynchronize(fft_begin);
+    cudaEventSynchronize(fft_end);
+    cudaEventElapsedTime(&elapsed_time, fft_begin, fft_end);
+
+    elapsed_time = elapsed_time / ntest;
+    printf("cgemm, bs=%-4d, dimX=%-4d, DY=%-4d, N=%-4d, K=%-4d, TIME=%8.3fms\n",
+      bs, dimX, DY, N, K, elapsed_time);
+  }
 
     return 0;
 }
