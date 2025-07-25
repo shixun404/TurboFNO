@@ -29,13 +29,15 @@ extern __shared__ float shared_mem[];
 #define THREAD_N 4
 #define WARP_NUM_ROW (THREADBLOCK_M / WARP_M)
 #define THREAD_NUM_ROW (WARP_M / THREAD_M)
+#define WARP_NUM_COL (THREADBLOCK_N / WARP_N)
+#define THREAD_NUM_COL (WARP_N / THREAD_N)
 #define THREAD_NUM (THREADBLOCK_M * THREADBLOCK_N / (THREAD_M * THREAD_N))
 #define TID threadIdx.x
 #define WID (threadIdx.x / 32)
 #define BID_X blockIdx.x
 #define BID_Y blockIdx.y
-#define LOAD_PER_THREAD_A (THREADBLOCK_M * THREADBLOCK_K / (THREAD_NUM * 2))
-#define LOAD_PER_THREAD_B (THREADBLOCK_N * THREADBLOCK_K / (THREAD_NUM * 2))
+#define LOAD_PER_THREAD_A (THREADBLOCK_M * THREADBLOCK_K / (THREAD_NUM))
+#define LOAD_PER_THREAD_B (THREADBLOCK_N * THREADBLOCK_K / (THREAD_NUM))
 
 int ntest=5;
 int threadblock_bs = 4;
