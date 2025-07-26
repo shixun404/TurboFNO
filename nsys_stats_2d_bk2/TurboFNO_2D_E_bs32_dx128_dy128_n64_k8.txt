@@ -1,0 +1,190 @@
+NSYS Profile Results for TurboFNO_2D_E:
+bs=32, dx=128, dy=128, n=64, k=8
+================================================================================
+
+STDOUT:
+1D_E, bs=32  , DX=128 , DY=128 , N=64  , K=8   , TIME=   1.157ms
+Generating '/tmp/nsys-report-cd20.qdstrm'
+
+[1/7] [0%                          ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.nsys-rep
+[1/7] [0%                          ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.nsys-rep
+[1/7] [6%                          ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.nsys-rep
+[1/7] [11%                         ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.nsys-rep
+[1/7] [=16%                        ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.nsys-rep
+[1/7] [====27%                     ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.nsys-rep
+[1/7] [=======38%                  ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.nsys-rep
+[1/7] [===========53%              ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.nsys-rep
+[1/7] [================68%         ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.nsys-rep
+[1/7] [==================76%       ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.nsys-rep
+[1/7] [====================84%     ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.nsys-rep
+[1/7] [======================91%   ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.nsys-rep
+[1/7] [========================98% ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.nsys-rep
+[1/7] [========================99% ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.nsys-rep
+[1/7] [========================100%] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.nsys-rep
+[1/7] [========================100%] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.nsys-rep
+
+[2/7] [0%                          ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [1%                          ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [2%                          ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [3%                          ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [4%                          ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [5%                          ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [6%                          ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [7%                          ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [8%                          ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [9%                          ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [10%                         ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [11%                         ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [12%                         ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [13%                         ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [14%                         ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=15%                        ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=16%                        ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=17%                        ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [==18%                       ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [==19%                       ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [==20%                       ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [==21%                       ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [===22%                      ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [===23%                      ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [===24%                      ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [====25%                     ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [====26%                     ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [====27%                     ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [====28%                     ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=====29%                    ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=====30%                    ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=====31%                    ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=====32%                    ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [======33%                   ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [======34%                   ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [======35%                   ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=======36%                  ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=======37%                  ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=======38%                  ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=======39%                  ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [========40%                 ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [========41%                 ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [========42%                 ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=========43%                ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=========44%                ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=========45%                ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=========46%                ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [==========47%               ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [==========48%               ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [==========49%               ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [===========50%              ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [===========51%              ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [===========52%              ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [===========53%              ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [============54%             ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [============55%             ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [============56%             ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [============57%             ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=============58%            ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=============59%            ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=============60%            ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [==============61%           ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [==============62%           ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [==============63%           ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [==============64%           ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [===============65%          ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [===============66%          ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [===============67%          ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [================68%         ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [================69%         ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [================70%         ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [================71%         ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=================72%        ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=================73%        ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=================74%        ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [==================75%       ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [==================76%       ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [==================77%       ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [==================78%       ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [===================79%      ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [===================80%      ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [===================81%      ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [===================82%      ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [====================83%     ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [====================84%     ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [====================85%     ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=====================86%    ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=====================87%    ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=====================88%    ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=====================89%    ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [======================90%   ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [======================91%   ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [======================92%   ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=======================93%  ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=======================94%  ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=======================95%  ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [=======================96%  ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [========================97% ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [========================98% ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [========================99% ] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [========================100%] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[2/7] [========================100%] TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+[3/7] Executing 'nvtx_sum' stats report
+[4/7] Executing 'cuda_api_sum' stats report
+
+ Time (%)  Total Time (ns)  Num Calls    Avg (ns)     Med (ns)    Min (ns)    Max (ns)    StdDev (ns)                       Name                     
+ --------  ---------------  ---------  ------------  -----------  ---------  -----------  ------------  ---------------------------------------------
+     79.4      193,542,523          9  21,504,724.8    112,030.0      4,608  192,655,489  64,181,596.8  cudaMalloc                                   
+     10.3       25,180,767          4   6,295,191.8  2,485,980.5     42,018   20,166,788   9,326,578.9  cudaMemcpy                                   
+      3.3        8,013,407          1   8,013,407.0  8,013,407.0  8,013,407    8,013,407           0.0  cudaOccupancyMaxActiveBlocksPerMultiprocessor
+      2.7        6,672,887         34     196,261.4     93,099.5      1,052      669,224     236,072.6  cudaDeviceSynchronize                        
+      1.2        2,858,022          5     571,604.4    531,395.0    443,661      722,743     111,241.7  cuModuleLoadData                             
+      1.0        2,400,025          1   2,400,025.0  2,400,025.0  2,400,025    2,400,025           0.0  cudaFree                                     
+      0.5        1,285,597          1   1,285,597.0  1,285,597.0  1,285,597    1,285,597           0.0  cuLibraryLoadData                            
+      0.5        1,135,637          6     189,272.8        601.0        451    1,132,511     462,090.5  cuKernelGetFunction                          
+      0.4        1,072,378          6     178,729.7      9,037.0      8,626    1,012,927     408,716.4  cuMemcpyHtoD_v2                              
+      0.3          624,801         18      34,711.2      4,448.5      4,007      514,994     120,003.8  cudaLaunchKernel                             
+      0.1          257,126        810         317.4        281.0        130        7,113         324.7  cuGetProcAddress_v2                          
+      0.1          171,602          3      57,200.7      3,957.0      3,457      164,188      92,654.1  cuMemFree_v2                                 
+      0.1          147,647          3      49,215.7      6,182.0      4,749      136,716      75,780.9  cuMemAlloc_v2                                
+      0.1          125,902         18       6,994.6      4,408.0      3,837       43,992       9,299.3  cuLaunchKernel                               
+      0.0           94,097          5      18,819.4     17,072.0     16,241       24,846       3,550.7  cuModuleUnload                               
+      0.0           60,064         18       3,336.9        601.0        430       40,646       9,445.4  cudaEventCreateWithFlags                     
+      0.0           41,879          2      20,939.5     20,939.5     20,198       21,681       1,048.6  cuMemGetInfo_v2                              
+      0.0            8,256          2       4,128.0      4,128.0      2,996        5,260       1,600.9  cudaEventRecord                              
+      0.0            6,383          4       1,595.8      1,598.5      1,162        2,024         389.9  cuInit                                       
+      0.0            5,832          2       2,916.0      2,916.0        682        5,150       3,159.4  cudaEventCreate                              
+      0.0            5,351          2       2,675.5      2,675.5      1,714        3,637       1,359.8  cudaEventSynchronize                         
+      0.0            3,936          3       1,312.0        390.0        240        3,306       1,728.5  cuModuleGetLoadingMode                       
+      0.0            1,833          6         305.5        280.5        220          461          94.4  cuStreamIsCapturing                          
+      0.0            1,342          2         671.0        671.0        481          861         268.7  cudaGetDriverEntryPoint_v11030               
+      0.0            1,282          1       1,282.0      1,282.0      1,282        1,282           0.0  cuLibraryGetKernel                           
+      0.0              792          2         396.0        396.0        321          471         106.1  cuCtxSetCurrent                              
+
+[5/7] Executing 'cuda_gpu_kern_sum' stats report
+
+ Time (%)  Total Time (ns)  Instances  Avg (ns)   Med (ns)   Min (ns)  Max (ns)  StdDev (ns)                                                  Name                                                
+ --------  ---------------  ---------  ---------  ---------  --------  --------  -----------  ----------------------------------------------------------------------------------------------------
+     60.3        3,982,454          6  663,742.3  663,876.0   662,500   665,315      1,076.7  void vector_2d_fft<(unsigned int)128, (unsigned int)128, EPT<(unsigned int)16>, EPT<(unsigned int)1…
+     22.4        1,480,518          6  246,753.0  246,849.0   244,641   248,385      1,275.0  direct_copy_colmajor_float4_zero_padding_2d(const float2 *, float2 *, int, int, int, int, int)      
+      8.4          553,188          6   92,198.0   92,289.0    91,872    92,352        189.4  ampere_cgemm_64x32_nn                                                                               
+      4.0          263,362          6   43,893.7   43,840.5    43,168    44,640        508.3  void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…
+      4.0          262,593          6   43,765.5   43,440.0    43,328    45,409        810.1  void regular_fft<(unsigned int)128, EPT<(unsigned int)16>, (unsigned int)32, (unsigned int)4, (padd…
+      1.0           63,424          6   10,570.7   10,528.0    10,400    10,752        149.6  direct_copy_colmajor_float4_truncation_2d(const float2 *, float2 *, int, int, int, int, int)        
+
+[6/7] Executing 'cuda_gpu_mem_time_sum' stats report
+
+ Time (%)  Total Time (ns)  Count   Avg (ns)    Med (ns)  Min (ns)   Max (ns)   StdDev (ns)           Operation          
+ --------  ---------------  -----  -----------  --------  --------  ----------  -----------  ----------------------------
+    100.0       25,572,803     10  2,557,280.3   1,360.0     1,056  19,885,446  6,172,240.0  [CUDA memcpy Host-to-Device]
+
+[7/7] Executing 'cuda_gpu_mem_size_sum' stats report
+
+ Total (MB)  Count  Avg (MB)  Med (MB)  Min (MB)  Max (MB)  StdDev (MB)           Operation          
+ ----------  -----  --------  --------  --------  --------  -----------  ----------------------------
+    174.575     10    17.457     0.002     0.000    67.109       28.150  [CUDA memcpy Host-to-Device]
+
+Generated:
+    /global/u1/s/swu264/TurboFNO/nsys_profiles_2d/TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.nsys-rep
+    /global/u1/s/swu264/TurboFNO/nsys_profiles_2d/TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite
+
+
+STDERR:
+SKIPPED: /global/u1/s/swu264/TurboFNO/nsys_profiles_2d/TurboFNO_2D_E_bs32_dx128_dy128_n64_k8.sqlite does not contain NV Tools Extension (NVTX) data.
+

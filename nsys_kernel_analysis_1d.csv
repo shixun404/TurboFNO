@@ -1,0 +1,1195 @@
+variant,bs,dx,dy,n,k,kernel_name,kernel_name_full,total_time_ms,avg_time_ms,instances,time_percent
+TurboFNO_1D_A,32,128,128,64,16,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",1.901074,0.3168457,6,47.9
+TurboFNO_1D_A,32,128,128,64,16,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",1.557047,0.2595078,6,39.2
+TurboFNO_1D_A,32,128,128,64,16,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",0.510907,0.0851512,6,12.9
+TurboFNO_1D_A,32,128,128,64,32,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",2.486223,0.4143705,6,46.7
+TurboFNO_1D_A,32,128,128,64,32,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",1.895379,0.3158965,6,35.6
+TurboFNO_1D_A,32,128,128,64,32,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",0.944313,0.1573855,6,17.7
+TurboFNO_1D_A,32,128,128,64,64,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",4.501406,0.7502343,6,54.8
+TurboFNO_1D_A,32,128,128,64,64,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",1.887411,0.3145685,6,23.0
+TurboFNO_1D_A,32,128,128,64,64,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",1.818386,0.3030643,6,22.2
+TurboFNO_1D_A,32,128,128,64,128,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",8.612674,1.4354457,6,61.5
+TurboFNO_1D_A,32,128,128,64,128,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",3.519943,0.5866572,6,25.1
+TurboFNO_1D_A,32,128,128,64,128,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",1.878065,0.3130108,6,13.4
+TurboFNO_1D_A,32,128,128,64,256,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",13.201893,2.2003155,6,59.5
+TurboFNO_1D_A,32,128,128,64,256,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",7.110027,1.1850045,6,32.1
+TurboFNO_1D_A,32,128,128,64,256,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",1.86693,0.311155,6,8.4
+TurboFNO_1D_A,32,128,128,64,512,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",25.87387,4.3123117,6,61.7
+TurboFNO_1D_A,32,128,128,64,512,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",14.169727,2.3616212,6,33.8
+TurboFNO_1D_A,32,128,128,64,512,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",1.861139,0.3101898,6,4.4
+TurboFNO_1D_A,32,128,128,128,16,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.826308,0.637718,6,52.3
+TurboFNO_1D_A,32,128,128,128,16,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",2.983915,0.4973192,6,40.8
+TurboFNO_1D_A,32,128,128,128,16,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",0.506844,0.084474,6,6.9
+TurboFNO_1D_A,32,128,128,128,32,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",4.934493,0.8224155,6,50.9
+TurboFNO_1D_A,32,128,128,128,32,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.819142,0.6365236999999999,6,39.4
+TurboFNO_1D_A,32,128,128,128,32,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",0.944249,0.15737479999999998,6,9.7
+TurboFNO_1D_A,32,128,128,128,64,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",8.835364,1.4725607,6,61.1
+TurboFNO_1D_A,32,128,128,128,64,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.805286,0.6342143,6,26.3
+TurboFNO_1D_A,32,128,128,128,64,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",1.818035,0.3030058,6,12.6
+TurboFNO_1D_A,32,128,128,128,128,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",13.352069,2.2253448,6,64.4
+TurboFNO_1D_A,32,128,128,128,128,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.80906,0.6348433,6,18.4
+TurboFNO_1D_A,32,128,128,128,128,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",3.572519,0.5954198,6,17.2
+TurboFNO_1D_A,32,128,128,128,256,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",28.279297,4.7132162,6,72.3
+TurboFNO_1D_A,32,128,128,128,256,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",7.050672,1.175112,6,18.0
+TurboFNO_1D_A,32,128,128,128,256,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.785253,0.6308755,6,9.7
+TurboFNO_1D_A,32,128,128,128,512,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",50.827753,8.471292199999999,6,73.9
+TurboFNO_1D_A,32,128,128,128,512,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",14.169441,2.3615735,6,20.6
+TurboFNO_1D_A,32,128,128,128,512,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.781286,0.6302143,6,5.5
+TurboFNO_1D_A,32,128,256,64,16,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",3.215274,0.535879,6,57.2
+TurboFNO_1D_A,32,128,256,64,16,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",1.543349,0.2572248,6,27.4
+TurboFNO_1D_A,32,128,256,64,16,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",0.863801,0.14396679999999998,6,15.4
+TurboFNO_1D_A,32,128,256,64,32,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",3.22577,0.5376283000000001,6,43.8
+TurboFNO_1D_A,32,128,256,64,32,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",2.488336,0.4147227,6,33.8
+TurboFNO_1D_A,32,128,256,64,32,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",1.644885,0.2741475,6,22.4
+TurboFNO_1D_A,32,128,256,64,64,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",4.504033,0.7506721999999999,6,41.2
+TurboFNO_1D_A,32,128,256,64,64,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",3.225831,0.5376385,6,29.5
+TurboFNO_1D_A,32,128,256,64,64,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",3.207433,0.5345721999999999,6,29.3
+TurboFNO_1D_A,32,128,256,64,128,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",6.791343,1.1318905,6,42.8
+TurboFNO_1D_A,32,128,256,64,128,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",5.859992,0.9766653000000001,6,36.9
+TurboFNO_1D_A,32,128,256,64,128,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",3.217385,0.5362308,6,20.3
+TurboFNO_1D_A,32,128,256,64,256,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",13.19751,2.199585,6,47.3
+TurboFNO_1D_A,32,128,256,64,256,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",11.512465,1.9187442,6,41.2
+TurboFNO_1D_A,32,128,256,64,256,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",3.209098,0.5348497,6,11.5
+TurboFNO_1D_A,32,128,256,64,512,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",25.871698,4.3119497,6,49.8
+TurboFNO_1D_A,32,128,256,64,512,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",22.895142,3.815857,6,44.1
+TurboFNO_1D_A,32,128,256,64,512,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",3.202314,0.533719,6,6.2
+TurboFNO_1D_A,32,128,256,128,16,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.496597,1.0827662,6,62.9
+TurboFNO_1D_A,32,128,256,128,16,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",2.972462,0.49541029999999997,6,28.8
+TurboFNO_1D_A,32,128,256,128,16,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",0.863642,0.1439403,6,8.4
+TurboFNO_1D_A,32,128,256,128,32,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.500915,1.0834858,6,49.7
+TurboFNO_1D_A,32,128,256,128,32,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",4.935549,0.8225915,6,37.7
+TurboFNO_1D_A,32,128,256,128,32,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",1.651539,0.2752565,6,12.6
+TurboFNO_1D_A,32,128,256,128,64,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",8.436935,1.4061558,6,46.7
+TurboFNO_1D_A,32,128,256,128,64,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.498867,1.0831445,6,36.0
+TurboFNO_1D_A,32,128,256,128,64,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",3.120522,0.520087,6,17.3
+TurboFNO_1D_A,32,128,256,128,128,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",13.320423,2.2200705,6,51.9
+TurboFNO_1D_A,32,128,256,128,128,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.495605,1.0826008,6,25.3
+TurboFNO_1D_A,32,128,256,128,128,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",5.856441,0.9760735,6,22.8
+TurboFNO_1D_A,32,128,256,128,256,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",25.794321,4.2990535,6,58.9
+TurboFNO_1D_A,32,128,256,128,256,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",11.50197,1.916995,6,26.3
+TurboFNO_1D_A,32,128,256,128,256,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.466389,1.0777315,6,14.8
+TurboFNO_1D_A,32,128,256,128,512,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",50.831398,8.4718997,6,63.4
+TurboFNO_1D_A,32,128,256,128,512,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",22.895206,3.8158677,6,28.5
+TurboFNO_1D_A,32,128,256,128,512,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.467667,1.0779445,6,8.1
+TurboFNO_1D_A,32,256,128,64,16,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.82154,0.6369233000000001,6,49.1
+TurboFNO_1D_A,32,256,128,64,16,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",3.022157,0.5036927999999999,6,38.8
+TurboFNO_1D_A,32,256,128,64,16,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",0.94425,0.157375,6,12.1
+TurboFNO_1D_A,32,256,128,64,32,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",4.890494,0.8150823,6,46.5
+TurboFNO_1D_A,32,256,128,64,32,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.812871,0.6354785,6,36.2
+TurboFNO_1D_A,32,256,128,64,32,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",1.816213,0.30270220000000003,6,17.3
+TurboFNO_1D_A,32,256,128,64,64,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",8.864576,1.4774293,6,54.8
+TurboFNO_1D_A,32,256,128,64,64,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.80551,0.6342517,6,23.5
+TurboFNO_1D_A,32,256,128,64,64,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",3.519112,0.5865187,6,21.7
+TurboFNO_1D_A,32,256,128,64,128,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",14.642557,2.4404262,6,57.4
+TurboFNO_1D_A,32,256,128,64,128,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",7.065838,1.1776396999999998,6,27.7
+TurboFNO_1D_A,32,256,128,64,128,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.7929,0.63215,6,14.9
+TurboFNO_1D_A,32,256,128,64,256,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",26.165036,4.360839299999999,6,59.3
+TurboFNO_1D_A,32,256,128,64,256,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",14.17203,2.362005,6,32.1
+TurboFNO_1D_A,32,256,128,64,256,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.792646,0.6321076999999999,6,8.6
+TurboFNO_1D_A,32,256,128,64,512,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",51.358657,8.5597762,6,61.6
+TurboFNO_1D_A,32,256,128,64,512,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",28.26083,4.7101383,6,33.9
+TurboFNO_1D_A,32,256,128,64,512,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.763654,0.6272757,6,4.5
+TurboFNO_1D_A,32,256,128,128,16,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.66686,1.27781,6,52.9
+TurboFNO_1D_A,32,256,128,128,16,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",5.891128,0.9818547,6,40.6
+TurboFNO_1D_A,32,256,128,128,16,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",0.94233,0.157055,6,6.5
+TurboFNO_1D_A,32,256,128,128,32,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",7.718155,1.2863592,6,44.8
+TurboFNO_1D_A,32,256,128,128,32,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.67969,1.2799483,6,44.6
+TurboFNO_1D_A,32,256,128,128,32,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",1.835251,0.3058752,6,10.6
+TurboFNO_1D_A,32,256,128,128,64,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",14.261182,2.3768637000000004,6,55.9
+TurboFNO_1D_A,32,256,128,128,64,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.678956,1.279826,6,30.1
+TurboFNO_1D_A,32,256,128,128,64,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",3.576552,0.596092,6,14.0
+TurboFNO_1D_A,32,256,128,128,128,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",26.458178,4.4096963,6,64.1
+TurboFNO_1D_A,32,256,128,128,128,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.684394,1.2807323000000002,6,18.6
+TurboFNO_1D_A,32,256,128,128,128,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",7.105133,1.1841888,6,17.2
+TurboFNO_1D_A,32,256,128,128,256,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",51.393727,8.565621199999999,6,70.2
+TurboFNO_1D_A,32,256,128,128,256,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",14.170591,2.3617652000000002,6,19.4
+TurboFNO_1D_A,32,256,128,128,256,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.642156,1.2736927,6,10.4
+TurboFNO_1D_A,32,256,128,128,512,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",101.395188,16.899198,6,73.9
+TurboFNO_1D_A,32,256,128,128,512,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",28.273376,4.7122293,6,20.6
+TurboFNO_1D_A,32,256,128,128,512,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.586571,1.2644285,6,5.5
+TurboFNO_1D_A,32,256,256,64,16,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.504725,1.0841208,6,58.2
+TurboFNO_1D_A,32,256,256,64,16,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",3.019628,0.5032713,6,27.0
+TurboFNO_1D_A,32,256,256,64,16,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",1.655765,0.2759608,6,14.8
+TurboFNO_1D_A,32,256,256,64,32,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.488053,1.0813422,6,47.1
+TurboFNO_1D_A,32,256,256,64,32,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",4.246341,0.7077235,6,30.8
+TurboFNO_1D_A,32,256,256,64,32,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",3.043051,0.5071752,6,22.1
+TurboFNO_1D_A,32,256,256,64,64,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",7.092944,1.1821573,6,36.5
+TurboFNO_1D_A,32,256,256,64,64,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.508754,1.0847923000000002,6,33.5
+TurboFNO_1D_A,32,256,256,64,64,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",5.853051,0.9755085,6,30.1
+TurboFNO_1D_A,32,256,256,64,128,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",13.42794,2.23799,6,42.7
+TurboFNO_1D_A,32,256,256,64,128,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",11.504787,1.9174645,6,36.6
+TurboFNO_1D_A,32,256,256,64,128,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.481589,1.0802648000000001,6,20.6
+TurboFNO_1D_A,32,256,256,64,256,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",26.168784,4.361464,6,47.1
+TurboFNO_1D_A,32,256,256,64,256,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",22.896549,3.8160915,6,41.2
+TurboFNO_1D_A,32,256,256,64,256,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.47202,1.07867,6,11.7
+TurboFNO_1D_A,32,256,256,64,512,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",51.312933,8.5521555,6,49.6
+TurboFNO_1D_A,32,256,256,64,512,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",45.713064,7.618844,6,44.2
+TurboFNO_1D_A,32,256,256,64,512,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.45247,1.0754116999999999,6,6.2
+TurboFNO_1D_A,32,256,256,128,16,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.092136,2.1820227,6,65.5
+TurboFNO_1D_A,32,256,256,128,16,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",5.33702,0.8895033,6,26.7
+TurboFNO_1D_A,32,256,256,128,16,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",1.562997,0.2604995,6,7.8
+TurboFNO_1D_A,32,256,256,128,32,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.080678,2.180113,6,54.9
+TurboFNO_1D_A,32,256,256,128,32,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",7.715466,1.285911,6,32.4
+TurboFNO_1D_A,32,256,256,128,32,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",3.021289,0.5035482,6,12.7
+TurboFNO_1D_A,32,256,256,128,64,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",14.287615,2.3812692,6,43.0
+TurboFNO_1D_A,32,256,256,128,64,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.078919,2.1798197999999998,6,39.4
+TurboFNO_1D_A,32,256,256,128,64,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",5.852089,0.9753482,6,17.6
+TurboFNO_1D_A,32,256,256,128,128,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",26.457582,4.409597,6,51.8
+TurboFNO_1D_A,32,256,256,128,128,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.066793,2.1777987999999997,6,25.6
+TurboFNO_1D_A,32,256,256,128,128,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",11.514769,1.9191282,6,22.6
+TurboFNO_1D_A,32,256,256,128,256,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",51.400252,8.5667087,6,58.9
+TurboFNO_1D_A,32,256,256,128,256,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",22.90051,3.8167517,6,26.2
+TurboFNO_1D_A,32,256,256,128,256,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.030692,2.171782,6,14.9
+TurboFNO_1D_A,32,256,256,128,512,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",101.381299,16.896883199999998,6,63.3
+TurboFNO_1D_A,32,256,256,128,512,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",45.720045,7.6200075,6,28.5
+TurboFNO_1D_A,32,256,256,128,512,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.051143,2.1751905,6,8.1
+TurboFNO_1D_A,64,128,128,64,16,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.829958,0.6383263,6,49.1
+TurboFNO_1D_A,64,128,128,64,16,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",3.021771,0.5036285,6,38.8
+TurboFNO_1D_A,64,128,128,64,16,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",0.94121,0.1568683,6,12.1
+TurboFNO_1D_A,64,128,128,64,32,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",4.888061,0.8146768000000001,6,46.4
+TurboFNO_1D_A,64,128,128,64,32,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.82343,0.6372383,6,36.3
+TurboFNO_1D_A,64,128,128,64,32,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",1.814547,0.3024245,6,17.2
+TurboFNO_1D_A,64,128,128,64,64,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",7.026448,1.1710747,6,48.7
+TurboFNO_1D_A,64,128,128,64,64,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.818119,0.6363532,6,26.5
+TurboFNO_1D_A,64,128,128,64,64,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",3.583111,0.5971852,6,24.8
+TurboFNO_1D_A,64,128,128,64,128,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",15.208469,2.5347448,6,58.4
+TurboFNO_1D_A,64,128,128,64,128,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",7.039184,1.1731973,6,27.0
+TurboFNO_1D_A,64,128,128,64,128,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.790568,0.6317613000000001,6,14.6
+TurboFNO_1D_A,64,128,128,64,256,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",26.18094,4.36349,6,59.3
+TurboFNO_1D_A,64,128,128,64,256,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",14.160668,2.3601113,6,32.1
+TurboFNO_1D_A,64,128,128,64,256,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.778309,0.6297182,6,8.6
+TurboFNO_1D_A,64,128,128,64,512,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",51.355007,8.5591678,6,61.6
+TurboFNO_1D_A,64,128,128,64,512,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",28.252991,4.7088318,6,33.9
+TurboFNO_1D_A,64,128,128,64,512,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.758983,0.6264972,6,4.5
+TurboFNO_1D_A,64,128,128,128,16,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.646509,1.2744182,6,52.8
+TurboFNO_1D_A,64,128,128,128,16,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",5.897368,0.9828946999999999,6,40.7
+TurboFNO_1D_A,64,128,128,128,16,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",0.941402,0.1569003,6,6.5
+TurboFNO_1D_A,64,128,128,128,32,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",7.728779,1.2881298,6,44.8
+TurboFNO_1D_A,64,128,128,128,32,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.679179,1.2798631999999999,6,44.5
+TurboFNO_1D_A,64,128,128,128,32,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",1.830547,0.3050912,6,10.6
+TurboFNO_1D_A,64,128,128,128,64,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",15.070873,2.5118122,6,57.3
+TurboFNO_1D_A,64,128,128,128,64,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.671181,1.2785302,6,29.2
+TurboFNO_1D_A,64,128,128,128,64,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",3.558247,0.5930411999999999,6,13.5
+TurboFNO_1D_A,64,128,128,128,128,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",26.507147,4.4178578,6,64.2
+TurboFNO_1D_A,64,128,128,128,128,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.674571,1.2790952,6,18.6
+TurboFNO_1D_A,64,128,128,128,128,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",7.100368,1.1833947,6,17.2
+TurboFNO_1D_A,64,128,128,128,256,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",51.388878,8.564813,6,70.2
+TurboFNO_1D_A,64,128,128,128,256,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",14.161347,2.3602245,6,19.3
+TurboFNO_1D_A,64,128,128,128,256,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.644973,1.2741622,6,10.4
+TurboFNO_1D_A,64,128,128,128,512,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",101.387238,16.897873,6,73.9
+TurboFNO_1D_A,64,128,128,128,512,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",28.267516,4.7112527,6,20.6
+TurboFNO_1D_A,64,128,128,128,512,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.60657,1.2677616999999999,6,5.5
+TurboFNO_1D_A,64,128,256,64,16,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.512691,1.0854485,6,60.1
+TurboFNO_1D_A,64,128,256,64,16,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",2.766254,0.4610423,6,25.5
+TurboFNO_1D_A,64,128,256,64,16,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",1.566358,0.2610597,6,14.4
+TurboFNO_1D_A,64,128,256,64,32,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.502675,1.0837792,6,44.5
+TurboFNO_1D_A,64,128,256,64,32,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",4.887328,0.8145547,6,33.4
+TurboFNO_1D_A,64,128,256,64,32,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",3.224043,0.5373405,6,22.1
+TurboFNO_1D_A,64,128,256,64,64,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",7.027088,1.1711813,6,36.2
+TurboFNO_1D_A,64,128,256,64,64,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.510932,1.0851553,6,33.6
+TurboFNO_1D_A,64,128,256,64,64,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",5.855065,0.9758441999999999,6,30.2
+TurboFNO_1D_A,64,128,256,64,128,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",13.420454,2.2367423,6,42.7
+TurboFNO_1D_A,64,128,256,64,128,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",11.507441,1.9179068000000001,6,36.6
+TurboFNO_1D_A,64,128,256,64,128,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.492978,1.082163,6,20.7
+TurboFNO_1D_A,64,128,256,64,256,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",26.160784,4.3601307,6,47.1
+TurboFNO_1D_A,64,128,256,64,256,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",22.89367,3.8156117000000003,6,41.2
+TurboFNO_1D_A,64,128,256,64,256,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.476885,1.0794808,6,11.7
+TurboFNO_1D_A,64,128,256,64,512,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",51.322757,8.5537928,6,49.6
+TurboFNO_1D_A,64,128,256,64,512,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",45.717866,7.6196443,6,44.2
+TurboFNO_1D_A,64,128,256,64,512,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.458997,1.0764995,6,6.2
+TurboFNO_1D_A,64,128,256,128,16,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.097931,2.1829885,6,65.5
+TurboFNO_1D_A,64,128,256,128,16,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",5.34086,0.8901433000000001,6,26.7
+TurboFNO_1D_A,64,128,256,128,16,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",1.563382,0.2605637,6,7.8
+TurboFNO_1D_A,64,128,256,128,32,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.080483,2.1800805,6,54.9
+TurboFNO_1D_A,64,128,256,128,32,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",7.716684,1.286114,6,32.4
+TurboFNO_1D_A,64,128,256,128,32,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",3.028234,0.5047057,6,12.7
+TurboFNO_1D_A,64,128,256,128,64,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",14.243103,2.3738505,6,42.9
+TurboFNO_1D_A,64,128,256,128,64,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.071748,2.1786247000000003,6,39.4
+TurboFNO_1D_A,64,128,256,128,64,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",5.855224,0.9758707,6,17.7
+TurboFNO_1D_A,64,128,256,128,128,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",26.453898,4.408983,6,51.8
+TurboFNO_1D_A,64,128,256,128,128,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.054887,2.1758145,6,25.6
+TurboFNO_1D_A,64,128,256,128,128,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",11.514034,1.9190057,6,22.6
+TurboFNO_1D_A,64,128,256,128,256,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",51.390591,8.5650985,6,58.8
+TurboFNO_1D_A,64,128,256,128,256,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",22.894564,3.8157607000000002,6,26.2
+TurboFNO_1D_A,64,128,256,128,256,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.043975,2.1739957999999997,6,14.9
+TurboFNO_1D_A,64,128,256,128,512,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",101.378696,16.8964493,6,63.3
+TurboFNO_1D_A,64,128,256,128,512,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",45.716839,7.6194732,6,28.6
+TurboFNO_1D_A,64,128,256,128,512,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.020134,2.1700223,6,8.1
+TurboFNO_1D_A,64,256,128,64,16,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.682667,1.2804445,6,51.0
+TurboFNO_1D_A,64,256,128,64,16,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",5.549243,0.9248738000000001,6,36.8
+TurboFNO_1D_A,64,256,128,64,16,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",1.832755,0.3054592,6,12.2
+TurboFNO_1D_A,64,256,128,64,32,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.692747,1.2821245,6,40.6
+TurboFNO_1D_A,64,256,128,64,32,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",7.683722,1.2806203,6,40.5
+TurboFNO_1D_A,64,256,128,64,32,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",3.576773,0.5961288,6,18.9
+TurboFNO_1D_A,64,256,128,64,64,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",13.800995,2.3001658,6,48.3
+TurboFNO_1D_A,64,256,128,64,64,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.661996,1.2769993,6,26.8
+TurboFNO_1D_A,64,256,128,64,64,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",7.104593,1.1840988000000001,6,24.9
+TurboFNO_1D_A,64,256,128,64,128,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",26.694506,4.4490843,6,55.0
+TurboFNO_1D_A,64,256,128,64,128,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",14.175456,2.362576,6,29.2
+TurboFNO_1D_A,64,256,128,64,128,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.656301,1.2760502,6,15.8
+TurboFNO_1D_A,64,256,128,64,256,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",52.109691,8.6849485,6,59.2
+TurboFNO_1D_A,64,256,128,64,256,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",28.277662,4.7129437,6,32.1
+TurboFNO_1D_A,64,256,128,64,256,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.603979,1.2673298,6,8.6
+TurboFNO_1D_A,64,256,128,64,512,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",102.407639,17.0679398,6,61.5
+TurboFNO_1D_A,64,256,128,64,512,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",56.392968,9.398828,6,33.9
+TurboFNO_1D_A,64,256,128,64,512,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.594925,1.2658208,6,4.6
+TurboFNO_1D_A,64,256,128,128,16,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",15.397242,2.566207,6,55.3
+TurboFNO_1D_A,64,256,128,128,16,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",10.591545,1.7652575,6,38.1
+TurboFNO_1D_A,64,256,128,128,16,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",1.832947,0.3054912,6,6.6
+TurboFNO_1D_A,64,256,128,128,32,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",15.395513,2.5659188,6,44.8
+TurboFNO_1D_A,64,256,128,128,32,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",15.361912,2.5603187000000003,6,44.7
+TurboFNO_1D_A,64,256,128,128,32,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",3.578823,0.5964705,6,10.4
+TurboFNO_1D_A,64,256,128,128,64,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",28.479552,4.746592,6,55.9
+TurboFNO_1D_A,64,256,128,128,64,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",15.343386,2.557231,6,30.1
+TurboFNO_1D_A,64,256,128,128,64,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",7.108048,1.1846747,6,14.0
+TurboFNO_1D_A,64,256,128,128,128,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",52.664847,8.7774745,6,64.1
+TurboFNO_1D_A,64,256,128,128,128,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",15.31058,2.5517632999999997,6,18.6
+TurboFNO_1D_A,64,256,128,128,128,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",14.161083,2.3601805,6,17.2
+TurboFNO_1D_A,64,256,128,128,256,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",102.479199,17.0798665,6,70.2
+TurboFNO_1D_A,64,256,128,128,256,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",28.259101,4.7098502,6,19.4
+TurboFNO_1D_A,64,256,128,128,256,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",15.244182,2.540697,6,10.4
+TurboFNO_1D_A,64,256,128,128,512,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",202.254682,33.7091137,6,73.8
+TurboFNO_1D_A,64,256,128,128,512,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",56.413997,9.4023328,6,20.6
+TurboFNO_1D_A,64,256,128,128,512,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",15.226772,2.5377953,6,5.6
+TurboFNO_1D_A,64,256,256,64,16,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.090119,2.1816865,6,60.5
+TurboFNO_1D_A,64,256,256,64,16,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",5.52742,0.9212366999999999,6,25.5
+TurboFNO_1D_A,64,256,256,64,16,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",3.029449,0.5049082,6,14.0
+TurboFNO_1D_A,64,256,256,64,32,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.080742,2.1801237,6,49.1
+TurboFNO_1D_A,64,256,256,64,32,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",7.678987,1.2798312,6,28.9
+TurboFNO_1D_A,64,256,256,64,32,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",5.855,0.9758333,6,22.0
+TurboFNO_1D_A,64,256,256,64,64,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",13.895838,2.315973,6,36.1
+TurboFNO_1D_A,64,256,256,64,64,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.079845,2.1799742,6,34.0
+TurboFNO_1D_A,64,256,256,64,64,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",11.51544,1.91924,6,29.9
+TurboFNO_1D_A,64,256,256,64,128,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",26.673709,4.4456182,6,42.6
+TurboFNO_1D_A,64,256,256,64,128,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",22.894215,3.8157025,6,36.6
+TurboFNO_1D_A,64,256,256,64,128,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.042056,2.173676,6,20.8
+TurboFNO_1D_A,64,256,256,64,256,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",52.111266,8.685211,6,47.0
+TurboFNO_1D_A,64,256,256,64,256,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",45.726797,7.6211328,6,41.2
+TurboFNO_1D_A,64,256,256,64,256,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.033831,2.1723052000000003,6,11.8
+TurboFNO_1D_A,64,256,256,128,16,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",26.292781,4.3821302,6,65.9
+TurboFNO_1D_A,64,256,256,128,16,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",10.5902,1.7650333,6,26.5
+TurboFNO_1D_A,64,256,256,128,16,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",3.026827,0.5044712,6,7.6
+TurboFNO_1D_A,64,256,256,128,32,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",26.286119,4.3810198,6,55.3
+TurboFNO_1D_A,64,256,256,128,32,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",15.38418,2.56403,6,32.4
+TurboFNO_1D_A,64,256,256,128,32,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",5.856695,0.9761158000000001,6,12.3
+TurboFNO_1D_A,64,256,256,128,64,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",28.544697,4.7574495,6,43.0
+TurboFNO_1D_A,64,256,256,128,64,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",26.280617,4.3801027999999995,6,39.6
+TurboFNO_1D_A,64,256,256,128,64,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",11.519887,1.9199812,6,17.4
+TurboFNO_1D_A,64,256,256,128,128,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",52.66052,8.776753300000001,6,51.7
+TurboFNO_1D_A,64,256,256,128,128,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",26.28375,4.380625,6,25.8
+TurboFNO_1D_A,64,256,256,128,128,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",22.900316,3.8167193,6,22.5
+TurboFNO_1D_A,64,256,256,128,256,cgemm,"cgemm(int, int, int, float2 *, float2 *, float2 *, float2, float2)",102.445171,17.0741952,6,58.7
+TurboFNO_1D_A,64,256,256,128,256,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",45.72947,7.6215782999999995,6,26.2
+TurboFNO_1D_A,64,256,256,128,256,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",26.235465,4.3725775,6,15.0
+TurboFNO_1D_B,32,128,128,64,16,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",1.965202,0.32753370000000004,6,50.7
+TurboFNO_1D_B,32,128,128,64,16,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",1.907443,0.3179072,6,49.3
+TurboFNO_1D_B,32,128,128,64,32,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",3.634599,0.6057665,6,65.8
+TurboFNO_1D_B,32,128,128,64,32,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",1.891347,0.3152245,6,34.2
+TurboFNO_1D_B,32,128,128,64,64,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",6.796528,1.1327547,6,78.3
+TurboFNO_1D_B,32,128,128,64,64,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",1.887825,0.3146375,6,21.7
+TurboFNO_1D_B,32,128,128,64,128,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",12.630149,2.1050248,6,87.1
+TurboFNO_1D_B,32,128,128,64,128,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",1.875187,0.3125312,6,12.9
+TurboFNO_1D_B,32,128,128,64,256,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",24.551158,4.0918597000000005,6,92.9
+TurboFNO_1D_B,32,128,128,64,256,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",1.880659,0.31344320000000003,6,7.1
+TurboFNO_1D_B,32,128,128,64,512,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",37.361279,6.2268798,6,95.3
+TurboFNO_1D_B,32,128,128,64,512,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",1.854674,0.3091123,6,4.7
+TurboFNO_1D_B,32,128,128,128,16,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",4.39853,0.7330883,6,53.5
+TurboFNO_1D_B,32,128,128,128,16,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.825766,0.6376276999999999,6,46.5
+TurboFNO_1D_B,32,128,128,128,32,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",7.249871,1.2083118,6,65.5
+TurboFNO_1D_B,32,128,128,128,32,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.8153,0.6358833,6,34.5
+TurboFNO_1D_B,32,128,128,128,64,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",13.316322,2.219387,6,77.8
+TurboFNO_1D_B,32,128,128,128,64,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.79572,0.63262,6,22.2
+TurboFNO_1D_B,32,128,128,128,128,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",19.330492,3.2217487,6,83.6
+TurboFNO_1D_B,32,128,128,128,128,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.787654,0.6312757,6,16.4
+TurboFNO_1D_B,32,128,128,128,256,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",37.829373,6.3048955,6,90.9
+TurboFNO_1D_B,32,128,128,128,256,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.783015,0.6305025,6,9.1
+TurboFNO_1D_B,32,128,128,128,512,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",74.761826,12.4603043,6,95.2
+TurboFNO_1D_B,32,128,128,128,512,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.776295,0.6293825,6,4.8
+TurboFNO_1D_B,32,128,256,64,16,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",3.219722,0.5366203,6,58.1
+TurboFNO_1D_B,32,128,256,64,16,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",2.322353,0.3870588,6,41.9
+TurboFNO_1D_B,32,128,256,64,32,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",4.299778,0.7166296999999999,6,57.2
+TurboFNO_1D_B,32,128,256,64,32,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",3.213864,0.535644,6,42.8
+TurboFNO_1D_B,32,128,256,64,64,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",8.007241,1.3345402,6,71.4
+TurboFNO_1D_B,32,128,256,64,64,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",3.207112,0.5345186999999999,6,28.6
+TurboFNO_1D_B,32,128,256,64,128,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",11.91963,1.986605,6,78.8
+TurboFNO_1D_B,32,128,256,64,128,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",3.203467,0.5339111999999999,6,21.2
+TurboFNO_1D_B,32,128,256,64,256,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",23.344674,3.890779,6,87.9
+TurboFNO_1D_B,32,128,256,64,256,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",3.209677,0.5349461999999999,6,12.1
+TurboFNO_1D_B,32,128,256,64,512,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",46.081542,7.680257,6,93.5
+TurboFNO_1D_B,32,128,256,64,512,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",3.208042,0.5346736999999999,6,6.5
+TurboFNO_1D_B,32,128,256,128,16,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.49551,1.082585,6,62.2
+TurboFNO_1D_B,32,128,256,128,16,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",3.954695,0.6591158,6,37.8
+TurboFNO_1D_B,32,128,256,128,32,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",6.523409,1.0872348,6,50.1
+TurboFNO_1D_B,32,128,256,128,32,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.484628,1.0807713,6,49.9
+TurboFNO_1D_B,32,128,256,128,64,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",12.358639,2.0597732,6,65.6
+TurboFNO_1D_B,32,128,256,128,64,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.468021,1.0780035,6,34.4
+TurboFNO_1D_B,32,128,256,128,128,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",23.407267,3.9012112,6,78.3
+TurboFNO_1D_B,32,128,256,128,128,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.490932,1.081822,6,21.7
+TurboFNO_1D_B,32,128,256,128,256,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",46.10309,7.6838483,6,87.7
+TurboFNO_1D_B,32,128,256,128,256,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.481105,1.0801842,6,12.3
+TurboFNO_1D_B,32,128,256,128,512,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",91.168025,15.1946708,6,93.4
+TurboFNO_1D_B,32,128,256,128,512,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.461556,1.076926,6,6.6
+TurboFNO_1D_B,32,256,128,64,16,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",4.421538,0.736923,6,53.7
+TurboFNO_1D_B,32,256,128,64,16,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.80695,0.6344917,6,46.3
+TurboFNO_1D_B,32,256,128,64,32,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",6.14578,1.0242967,6,61.7
+TurboFNO_1D_B,32,256,128,64,32,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.818597,0.6364328,6,38.3
+TurboFNO_1D_B,32,256,128,64,64,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",10.620503,1.7700838,6,73.7
+TurboFNO_1D_B,32,256,128,64,64,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.788645,0.6314408,6,26.3
+TurboFNO_1D_B,32,256,128,64,128,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",19.279995,3.2133325,6,83.6
+TurboFNO_1D_B,32,256,128,64,128,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.784038,0.630673,6,16.4
+TurboFNO_1D_B,32,256,128,64,256,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",37.805627,6.3009378,6,90.9
+TurboFNO_1D_B,32,256,128,64,256,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.778116,0.629686,6,9.1
+TurboFNO_1D_B,32,256,128,64,512,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",74.28423,12.380705,6,95.2
+TurboFNO_1D_B,32,256,128,64,512,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.756166,0.6260277,6,4.8
+TurboFNO_1D_B,32,256,128,128,16,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",8.715908,1.4526513,6,53.2
+TurboFNO_1D_B,32,256,128,128,16,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.660621,1.2767701999999999,6,46.8
+TurboFNO_1D_B,32,256,128,128,32,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",13.529891,2.2549818,6,63.8
+TurboFNO_1D_B,32,256,128,128,32,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.663181,1.2771968,6,36.2
+TurboFNO_1D_B,32,256,128,128,64,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",25.35832,4.2263867,6,76.9
+TurboFNO_1D_B,32,256,128,128,64,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.637451,1.2729085,6,23.1
+TurboFNO_1D_B,32,256,128,128,128,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",38.297317,6.382886200000001,6,83.4
+TurboFNO_1D_B,32,256,128,128,128,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.639438,1.2732397,6,16.6
+TurboFNO_1D_B,32,256,128,128,256,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",75.20985,12.534975,6,90.8
+TurboFNO_1D_B,32,256,128,128,256,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.621291,1.2702152,6,9.2
+TurboFNO_1D_B,32,256,128,128,512,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",148.773494,24.7955823,6,95.1
+TurboFNO_1D_B,32,256,128,128,512,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.586154,1.264359,6,4.9
+TurboFNO_1D_B,32,256,256,64,16,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.489205,1.0815342,6,60.5
+TurboFNO_1D_B,32,256,256,64,16,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",4.232038,0.7053396999999999,6,39.5
+TurboFNO_1D_B,32,256,256,64,32,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",6.77077,1.1284617,6,51.1
+TurboFNO_1D_B,32,256,256,64,32,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.485428,1.0809047,6,48.9
+TurboFNO_1D_B,32,256,256,64,64,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",12.549419,2.0915698000000003,6,66.0
+TurboFNO_1D_B,32,256,256,64,64,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.471316,1.0785527,6,34.0
+TurboFNO_1D_B,32,256,256,64,128,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",23.616895,3.9361492,6,78.5
+TurboFNO_1D_B,32,256,256,64,128,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.477014,1.0795023000000001,6,21.5
+TurboFNO_1D_B,32,256,256,64,256,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",46.378663,7.7297772,6,87.8
+TurboFNO_1D_B,32,256,256,64,256,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.457108,1.0761847,6,12.2
+TurboFNO_1D_B,32,256,256,64,512,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",91.710288,15.285048,6,93.4
+TurboFNO_1D_B,32,256,256,64,512,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.462388,1.0770647,6,6.6
+TurboFNO_1D_B,32,256,256,128,16,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.062729,2.1771215,6,62.7
+TurboFNO_1D_B,32,256,256,128,16,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",7.756332,1.292722,6,37.3
+TurboFNO_1D_B,32,256,256,128,32,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.05655,2.1760917,6,50.4
+TurboFNO_1D_B,32,256,256,128,32,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",12.865446,2.144241,6,49.6
+TurboFNO_1D_B,32,256,256,128,64,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",24.517848,4.086308,6,65.3
+TurboFNO_1D_B,32,256,256,128,64,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.057222,2.1762037000000003,6,34.7
+TurboFNO_1D_B,32,256,256,128,128,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",46.66992,7.77832,6,78.1
+TurboFNO_1D_B,32,256,256,128,128,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.051559,2.1752597999999996,6,21.9
+TurboFNO_1D_B,32,256,256,128,256,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",91.888561,15.314760199999998,6,87.6
+TurboFNO_1D_B,32,256,256,128,256,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.040618,2.1734362999999997,6,12.4
+TurboFNO_1D_B,32,256,256,128,512,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",181.892271,30.3153785,6,93.3
+TurboFNO_1D_B,32,256,256,128,512,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.045673,2.1742787999999997,6,6.7
+TurboFNO_1D_B,64,128,128,64,16,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",3.992582,0.6654303,6,51.1
+TurboFNO_1D_B,64,128,128,64,16,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.82314,0.63719,6,48.9
+TurboFNO_1D_B,64,128,128,64,32,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",6.180341,1.0300568,6,61.9
+TurboFNO_1D_B,64,128,128,64,32,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.810631,0.6351051999999999,6,38.1
+TurboFNO_1D_B,64,128,128,64,64,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",13.426116,2.237686,6,78.0
+TurboFNO_1D_B,64,128,128,64,64,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.792774,0.632129,6,22.0
+TurboFNO_1D_B,64,128,128,64,128,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",19.288156,3.2146927,6,83.6
+TurboFNO_1D_B,64,128,128,64,128,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.785157,0.6308595,6,16.4
+TurboFNO_1D_B,64,128,128,64,256,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",37.803549,6.3005915,6,90.9
+TurboFNO_1D_B,64,128,128,64,256,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.77431,0.6290517,6,9.1
+TurboFNO_1D_B,64,128,128,64,512,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",74.295169,12.3825282,6,95.2
+TurboFNO_1D_B,64,128,128,64,512,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",3.759527,0.6265878,6,4.8
+TurboFNO_1D_B,64,128,128,128,16,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.677067,1.2795112,6,52.4
+TurboFNO_1D_B,64,128,128,128,16,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",6.970897,1.1618161999999999,6,47.6
+TurboFNO_1D_B,64,128,128,128,32,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",12.091853,2.0153088,6,61.2
+TurboFNO_1D_B,64,128,128,128,32,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.67745,1.279575,6,38.8
+TurboFNO_1D_B,64,128,128,128,64,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",20.811346,3.4685577000000003,6,73.1
+TurboFNO_1D_B,64,128,128,128,64,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.667563,1.2779272,6,26.9
+TurboFNO_1D_B,64,128,128,128,128,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",38.296183,6.3826972,6,83.4
+TurboFNO_1D_B,64,128,128,128,128,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.648586,1.2747643,6,16.6
+TurboFNO_1D_B,64,128,128,128,256,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",75.218456,12.5364093,6,90.8
+TurboFNO_1D_B,64,128,128,128,256,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.609003,1.2681672,6,9.2
+TurboFNO_1D_B,64,128,128,128,512,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",148.746332,24.7910553,6,95.2
+TurboFNO_1D_B,64,128,128,128,512,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.564972,1.2608287,6,4.8
+TurboFNO_1D_B,64,128,256,64,16,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.494035,1.0823392,6,56.7
+TurboFNO_1D_B,64,128,256,64,16,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",4.955553,0.8259255,6,43.3
+TurboFNO_1D_B,64,128,256,64,32,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",6.763953,1.1273255,6,51.1
+TurboFNO_1D_B,64,128,256,64,32,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.479157,1.0798595,6,48.9
+TurboFNO_1D_B,64,128,256,64,64,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",12.563307,2.0938845,6,66.0
+TurboFNO_1D_B,64,128,256,64,64,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.469937,1.0783228,6,34.0
+TurboFNO_1D_B,64,128,256,64,128,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",23.613566,3.9355943,6,78.5
+TurboFNO_1D_B,64,128,256,64,128,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.475637,1.0792728,6,21.5
+TurboFNO_1D_B,64,128,256,64,256,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",46.38129,7.730215,6,87.8
+TurboFNO_1D_B,64,128,256,64,256,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.458259,1.0763765,6,12.2
+TurboFNO_1D_B,64,128,256,64,512,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",91.713714,15.285619,6,93.4
+TurboFNO_1D_B,64,128,256,64,512,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",6.463634,1.0772723,6,6.6
+TurboFNO_1D_B,64,128,256,128,16,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.082183,2.1803638,6,62.8
+TurboFNO_1D_B,64,128,256,128,16,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",7.741229,1.2902048000000002,6,37.2
+TurboFNO_1D_B,64,128,256,128,32,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.062886,2.1771477000000004,6,50.4
+TurboFNO_1D_B,64,128,256,128,32,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",12.856776,2.142796,6,49.6
+TurboFNO_1D_B,64,128,256,128,64,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",24.519734,4.0866223,6,65.2
+TurboFNO_1D_B,64,128,256,128,64,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.062886,2.1771477000000004,6,34.8
+TurboFNO_1D_B,64,128,256,128,128,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",46.656418,7.7760697,6,78.2
+TurboFNO_1D_B,64,128,256,128,128,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.036839,2.1728065,6,21.8
+TurboFNO_1D_B,64,128,256,128,256,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",91.88765,15.314608300000002,6,87.6
+TurboFNO_1D_B,64,128,256,128,256,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.034758,2.1724597,6,12.4
+TurboFNO_1D_B,64,128,256,128,512,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",181.880998,30.313499699999998,6,93.3
+TurboFNO_1D_B,64,128,256,128,512,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.028456,2.1714092999999997,6,6.7
+TurboFNO_1D_B,64,256,128,64,16,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",8.759267,1.4598778000000001,6,53.4
+TurboFNO_1D_B,64,256,128,64,16,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.657354,1.2762257,6,46.6
+TurboFNO_1D_B,64,256,128,64,32,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",12.445513,2.0742522,6,61.9
+TurboFNO_1D_B,64,256,128,64,32,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.670218,1.2783697,6,38.1
+TurboFNO_1D_B,64,256,128,64,64,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",21.117936,3.519656,6,73.4
+TurboFNO_1D_B,64,256,128,64,64,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.645323,1.2742205,6,26.6
+TurboFNO_1D_B,64,256,128,64,128,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",38.08166,6.3469432999999995,6,83.3
+TurboFNO_1D_B,64,256,128,64,128,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.629291,1.2715485,6,16.7
+TurboFNO_1D_B,64,256,128,64,256,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",75.020383,12.503397199999998,6,90.8
+TurboFNO_1D_B,64,256,128,64,256,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.599599,1.2665998,6,9.2
+TurboFNO_1D_B,64,256,128,64,512,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",147.884747,24.6474578,6,95.1
+TurboFNO_1D_B,64,256,128,64,512,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",7.575022,1.2625037,6,4.9
+TurboFNO_1D_B,64,256,128,128,16,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",15.358649,2.5597748,6,52.6
+TurboFNO_1D_B,64,256,128,128,16,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",13.836835,2.3061392,6,47.4
+TurboFNO_1D_B,64,256,128,128,32,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",24.555452,4.0925753,6,61.5
+TurboFNO_1D_B,64,256,128,128,32,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",15.375833,2.5626387999999998,6,38.5
+TurboFNO_1D_B,64,256,128,128,64,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",41.636964,6.939494,6,73.1
+TurboFNO_1D_B,64,256,128,128,64,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",15.357464,2.5595773,6,26.9
+TurboFNO_1D_B,64,256,128,128,128,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",76.198296,12.699716,6,83.2
+TurboFNO_1D_B,64,256,128,128,128,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",15.341559,2.5569265,6,16.8
+TurboFNO_1D_B,64,256,128,128,256,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",149.997066,24.999511,6,90.8
+TurboFNO_1D_B,64,256,128,128,256,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",15.245111,2.5408518,6,9.2
+TurboFNO_1D_B,64,256,128,128,512,fused_fft_cgemm,"fused_fft_cgemm_7(int, int, int, float2 *, float2 *, float2 *, float2, float2)",296.886287,49.4810478,6,95.1
+TurboFNO_1D_B,64,256,128,128,512,ifft_7_stride,"ifft_7_stride_DY(float2 *, float2 *, int, int)",15.249145,2.5415242,6,4.9
+TurboFNO_1D_B,64,256,256,64,16,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.073894,2.1789823,6,61.0
+TurboFNO_1D_B,64,256,256,64,16,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",8.345574,1.390929,6,39.0
+TurboFNO_1D_B,64,256,256,64,32,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",13.521889,2.2536482,6,50.9
+TurboFNO_1D_B,64,256,256,64,32,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.068678,2.178113,6,49.1
+TurboFNO_1D_B,64,256,256,64,64,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",24.826357,4.1377262,6,65.6
+TurboFNO_1D_B,64,256,256,64,64,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.037863,2.1729772,6,34.4
+TurboFNO_1D_B,64,256,256,64,128,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",47.046284,7.8410473,6,78.3
+TurboFNO_1D_B,64,256,256,64,128,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.045675,2.1742792,6,21.7
+TurboFNO_1D_B,64,256,256,64,256,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",92.470561,15.4117602,6,87.7
+TurboFNO_1D_B,64,256,256,64,256,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",13.026054,2.171009,6,12.3
+TurboFNO_1D_B,64,256,256,128,16,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",26.277389,4.3795648,6,63.1
+TurboFNO_1D_B,64,256,256,128,16,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",15.376406,2.5627343,6,36.9
+TurboFNO_1D_B,64,256,256,128,32,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",26.286408,4.381068,6,50.6
+TurboFNO_1D_B,64,256,256,128,32,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",25.685645,4.2809408,6,49.4
+TurboFNO_1D_B,64,256,256,128,64,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",48.921671,8.1536118,6,65.1
+TurboFNO_1D_B,64,256,256,128,64,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",26.260998,4.376833,6,34.9
+TurboFNO_1D_B,64,256,256,128,128,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",93.192978,15.532163,6,78.0
+TurboFNO_1D_B,64,256,256,128,128,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",26.264105,4.377350799999999,6,22.0
+TurboFNO_1D_B,64,256,256,128,256,fused_fft_cgemm,"fused_fft_cgemm_8(int, int, int, float2 *, float2 *, float2 *, float2, float2)",183.552104,30.592017300000002,6,87.5
+TurboFNO_1D_B,64,256,256,128,256,ifft_8_stride,"ifft_8_stride_DY(float2 *, float2 *, int, int)",26.267147,4.3778578,6,12.5
+TurboFNO_1D_C,32,128,128,64,16,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",3.609699,0.6016165,6,87.7
+TurboFNO_1D_C,32,128,128,64,16,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",0.503996,0.0839993,6,12.3
+TurboFNO_1D_C,32,128,128,64,32,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",4.199744,0.6999573,6,81.7
+TurboFNO_1D_C,32,128,128,64,32,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",0.938553,0.1564255,6,18.3
+TurboFNO_1D_C,32,128,128,64,64,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",5.955797,0.9926328000000001,6,76.7
+TurboFNO_1D_C,32,128,128,64,64,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",1.80933,0.301555,6,23.3
+TurboFNO_1D_C,32,128,128,64,128,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",10.444181,1.7406968,6,74.8
+TurboFNO_1D_C,32,128,128,64,128,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",3.513895,0.5856492,6,25.2
+TurboFNO_1D_C,32,128,128,64,256,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",14.782362,2.463727,6,67.6
+TurboFNO_1D_C,32,128,128,64,256,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",7.081551,1.1802585,6,32.4
+TurboFNO_1D_C,32,128,128,64,512,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",27.868353,4.6447255,6,66.3
+TurboFNO_1D_C,32,128,128,64,512,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",14.148832,2.3581387,6,33.7
+TurboFNO_1D_C,32,128,128,128,16,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",6.784434,1.130739,6,93.1
+TurboFNO_1D_C,32,128,128,128,16,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",0.501085,0.0835142,6,6.9
+TurboFNO_1D_C,32,128,128,128,32,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",8.787651,1.4646085,6,90.4
+TurboFNO_1D_C,32,128,128,128,32,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",0.93657,0.156095,6,9.6
+TurboFNO_1D_C,32,128,128,128,64,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",12.233322,2.038887,6,87.1
+TurboFNO_1D_C,32,128,128,128,64,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",1.810419,0.3017365,6,12.9
+TurboFNO_1D_C,32,128,128,128,128,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",16.308145,2.7180242000000003,6,82.0
+TurboFNO_1D_C,32,128,128,128,128,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",3.569992,0.5949987,6,18.0
+TurboFNO_1D_C,32,128,128,128,256,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",28.96182,4.82697,6,80.3
+TurboFNO_1D_C,32,128,128,128,256,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",7.085615,1.1809358,6,19.7
+TurboFNO_1D_C,32,128,128,128,512,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",54.915274,9.1525457,6,79.5
+TurboFNO_1D_C,32,128,128,128,512,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",14.147327,2.3578878,6,20.5
+TurboFNO_1D_C,32,128,256,64,16,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",5.676473,0.9460788,6,86.8
+TurboFNO_1D_C,32,128,256,64,16,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",0.863256,0.143876,6,13.2
+TurboFNO_1D_C,32,128,256,64,32,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",5.666039,0.9443398000000001,6,78.4
+TurboFNO_1D_C,32,128,256,64,32,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",1.559412,0.259902,6,21.6
+TurboFNO_1D_C,32,128,256,64,64,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",6.96952,1.1615867,6,69.6
+TurboFNO_1D_C,32,128,256,64,64,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",3.051243,0.5085405,6,30.4
+TurboFNO_1D_C,32,128,256,64,128,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",10.688471,1.7814118,6,64.5
+TurboFNO_1D_C,32,128,256,64,128,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",5.887511,0.9812518,6,35.5
+TurboFNO_1D_C,32,128,256,64,256,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",16.093491,2.6822485,6,58.3
+TurboFNO_1D_C,32,128,256,64,256,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",11.506195,1.9176992,6,41.7
+TurboFNO_1D_C,32,128,256,64,512,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",29.316569,4.8860947999999995,6,56.2
+TurboFNO_1D_C,32,128,256,64,512,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",22.878501,3.8130835,6,43.8
+TurboFNO_1D_C,32,128,256,128,16,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",10.795768,1.7992947,6,93.0
+TurboFNO_1D_C,32,128,256,128,16,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",0.814235,0.1357058,6,7.0
+TurboFNO_1D_C,32,128,256,128,32,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",12.134088,2.022348,6,88.0
+TurboFNO_1D_C,32,128,256,128,32,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",1.653396,0.275566,6,12.0
+TurboFNO_1D_C,32,128,256,128,64,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",13.938786,2.323131,6,82.0
+TurboFNO_1D_C,32,128,256,128,64,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",3.065292,0.510882,6,18.0
+TurboFNO_1D_C,32,128,256,128,128,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",18.624163,3.1040272,6,76.1
+TurboFNO_1D_C,32,128,256,128,128,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",5.851832,0.9753053,6,23.9
+TurboFNO_1D_C,32,128,256,128,256,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",31.631529,5.2719215,6,73.3
+TurboFNO_1D_C,32,128,256,128,256,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",11.499601,1.9166002,6,26.7
+TurboFNO_1D_C,32,128,256,128,512,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",58.488574,9.748095699999999,6,71.9
+TurboFNO_1D_C,32,128,256,128,512,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",22.885481,3.8142468,6,28.1
+TurboFNO_1D_C,32,256,128,64,16,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",7.078448,1.1797413,6,88.3
+TurboFNO_1D_C,32,256,128,64,16,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",0.935576,0.1559293,6,11.7
+TurboFNO_1D_C,32,256,128,64,32,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",8.864676,1.477446,6,83.0
+TurboFNO_1D_C,32,256,128,64,32,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",1.811604,0.301934,6,17.0
+TurboFNO_1D_C,32,256,128,64,64,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",12.378889,2.0631482,6,77.9
+TurboFNO_1D_C,32,256,128,64,64,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",3.517033,0.5861721999999999,6,22.1
+TurboFNO_1D_C,32,256,128,64,128,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",16.911338,2.8185563,6,70.5
+TurboFNO_1D_C,32,256,128,64,128,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",7.082416,1.1804027,6,29.5
+TurboFNO_1D_C,32,256,128,64,256,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",29.41005,4.901675,6,67.5
+TurboFNO_1D_C,32,256,128,64,256,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",14.151941,2.3586568,6,32.5
+TurboFNO_1D_C,32,256,128,64,512,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",55.64237,9.2737283,6,66.3
+TurboFNO_1D_C,32,256,128,64,512,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",28.240958,4.7068262999999995,6,33.7
+TurboFNO_1D_C,32,256,128,128,16,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",12.544235,2.0907058,6,93.0
+TurboFNO_1D_C,32,256,128,128,16,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",0.939226,0.1565377,6,7.0
+TurboFNO_1D_C,32,256,128,128,32,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",17.164553,2.8607587999999997,6,90.5
+TurboFNO_1D_C,32,256,128,128,32,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",1.810997,0.3018328,6,9.5
+TurboFNO_1D_C,32,256,128,128,64,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",24.362298,4.060383,6,87.4
+TurboFNO_1D_C,32,256,128,128,64,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",3.517961,0.5863268,6,12.6
+TurboFNO_1D_C,32,256,128,128,128,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",32.597037,5.4328395,6,82.1
+TurboFNO_1D_C,32,256,128,128,128,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",7.109746,1.1849577,6,17.9
+TurboFNO_1D_C,32,256,128,128,256,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",57.809521,9.6349202,6,80.3
+TurboFNO_1D_C,32,256,128,128,256,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",14.153728,2.3589547000000004,6,19.7
+TurboFNO_1D_C,32,256,128,128,512,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",109.887738,18.314623,6,79.5
+TurboFNO_1D_C,32,256,128,128,512,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",28.262176,4.7103627,6,20.5
+TurboFNO_1D_C,32,256,256,64,16,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",10.840822,1.8068037,6,87.4
+TurboFNO_1D_C,32,256,256,64,16,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",1.561749,0.2602915,6,12.6
+TurboFNO_1D_C,32,256,256,64,32,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",11.083032,1.847172,6,78.6
+TurboFNO_1D_C,32,256,256,64,32,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",3.021737,0.5036228,6,21.4
+TurboFNO_1D_C,32,256,256,64,64,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",12.604651,2.1007752,6,68.3
+TurboFNO_1D_C,32,256,256,64,64,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",5.851704,0.975284,6,31.7
+TurboFNO_1D_C,32,256,256,64,128,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",18.832449,3.1387415,6,62.1
+TurboFNO_1D_C,32,256,256,64,128,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",11.497362,1.916227,6,37.9
+TurboFNO_1D_C,32,256,256,64,256,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",32.159239,5.3598732,6,58.4
+TurboFNO_1D_C,32,256,256,64,256,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",22.889541,3.8149235,6,41.6
+TurboFNO_1D_C,32,256,256,64,512,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",58.314646,9.719107699999999,6,56.1
+TurboFNO_1D_C,32,256,256,64,512,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",45.705387,7.6175645,6,43.9
+TurboFNO_1D_C,32,256,256,128,16,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",21.399814,3.5666357,6,93.2
+TurboFNO_1D_C,32,256,256,128,16,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",1.558357,0.2597262,6,6.8
+TurboFNO_1D_C,32,256,256,128,32,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",21.449388,3.574898,6,87.7
+TurboFNO_1D_C,32,256,256,128,32,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",3.021228,0.503538,6,12.3
+TurboFNO_1D_C,32,256,256,128,64,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",24.341273,4.0568788,6,80.6
+TurboFNO_1D_C,32,256,256,128,64,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",5.854872,0.975812,6,19.4
+TurboFNO_1D_C,32,256,256,128,128,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",36.977219,6.1628698,6,76.3
+TurboFNO_1D_C,32,256,256,128,128,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",11.506771,1.9177952,6,23.7
+TurboFNO_1D_C,32,256,256,128,256,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",63.501263,10.583543800000001,6,73.5
+TurboFNO_1D_C,32,256,256,128,256,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",22.890596,3.8150993,6,26.5
+TurboFNO_1D_C,32,256,256,128,512,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",116.928206,19.488034300000002,6,71.9
+TurboFNO_1D_C,32,256,256,128,512,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",45.705228,7.617538,6,28.1
+TurboFNO_1D_C,64,128,128,64,16,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",7.079376,1.179896,6,88.3
+TurboFNO_1D_C,64,128,128,64,16,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",0.936889,0.15614820000000001,6,11.7
+TurboFNO_1D_C,64,128,128,64,32,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",8.877731,1.4796218,6,83.0
+TurboFNO_1D_C,64,128,128,64,32,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",1.812116,0.3020193,6,17.0
+TurboFNO_1D_C,64,128,128,64,64,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",9.838684,1.6397807,6,73.4
+TurboFNO_1D_C,64,128,128,64,64,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",3.570249,0.5950415,6,26.6
+TurboFNO_1D_C,64,128,128,64,128,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",16.348302,2.724717,6,69.7
+TurboFNO_1D_C,64,128,128,64,128,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",7.103823,1.1839705,6,30.3
+TurboFNO_1D_C,64,128,128,64,256,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",29.401401,4.9002335,6,67.5
+TurboFNO_1D_C,64,128,128,64,256,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",14.16384,2.36064,6,32.5
+TurboFNO_1D_C,64,128,128,64,512,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",55.634849,9.272474800000001,6,66.3
+TurboFNO_1D_C,64,128,128,64,512,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",28.234046,4.7056743,6,33.7
+TurboFNO_1D_C,64,128,128,128,16,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",12.117964,2.0196606999999998,6,92.8
+TurboFNO_1D_C,64,128,128,128,16,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",0.940825,0.1568042,6,7.2
+TurboFNO_1D_C,64,128,128,128,32,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",16.811954,2.8019922999999998,6,90.3
+TurboFNO_1D_C,64,128,128,128,32,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",1.808628,0.301438,6,9.7
+TurboFNO_1D_C,64,128,128,128,64,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",19.232475,3.2054125,6,84.4
+TurboFNO_1D_C,64,128,128,128,64,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",3.563239,0.5938732,6,15.6
+TurboFNO_1D_C,64,128,128,128,128,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",32.604349,5.4340582,6,82.1
+TurboFNO_1D_C,64,128,128,128,128,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",7.10984,1.1849733,6,17.9
+TurboFNO_1D_C,64,128,128,128,256,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",57.792401,9.6320668,6,80.3
+TurboFNO_1D_C,64,128,128,128,256,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",14.155807,2.3593012,6,19.7
+TurboFNO_1D_C,64,128,128,128,512,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",109.868265,18.3113775,6,79.5
+TurboFNO_1D_C,64,128,128,128,512,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",28.252155,4.7086925,6,20.5
+TurboFNO_1D_C,64,128,256,64,16,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",10.858326,1.809721,6,87.4
+TurboFNO_1D_C,64,128,256,64,16,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",1.559093,0.2598488,6,12.6
+TurboFNO_1D_C,64,128,256,64,32,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",11.089972,1.8483287,6,78.6
+TurboFNO_1D_C,64,128,256,64,32,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",3.021261,0.5035435,6,21.4
+TurboFNO_1D_C,64,128,256,64,64,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",12.608745,2.1014575,6,68.3
+TurboFNO_1D_C,64,128,256,64,64,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",5.856822,0.976137,6,31.7
+TurboFNO_1D_C,64,128,256,64,128,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",18.829887,3.1383145,6,62.1
+TurboFNO_1D_C,64,128,256,64,128,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",11.497395,1.9162325,6,37.9
+TurboFNO_1D_C,64,128,256,64,256,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",32.129768,5.3549613,6,58.4
+TurboFNO_1D_C,64,128,256,64,256,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",22.888485,3.8147475,6,41.6
+TurboFNO_1D_C,64,128,256,64,512,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",58.303536,9.717256,6,56.1
+TurboFNO_1D_C,64,128,256,64,512,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",45.697927,7.6163212,6,43.9
+TurboFNO_1D_C,64,128,256,128,16,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",21.384717,3.5641195,6,93.2
+TurboFNO_1D_C,64,128,256,128,16,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",1.560823,0.2601372,6,6.8
+TurboFNO_1D_C,64,128,256,128,32,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",21.419788,3.5699647000000003,6,87.6
+TurboFNO_1D_C,64,128,256,128,32,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",3.023148,0.503858,6,12.4
+TurboFNO_1D_C,64,128,256,128,64,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",24.347222,4.057870299999999,6,80.6
+TurboFNO_1D_C,64,128,256,128,64,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",5.848439,0.9747398,6,19.4
+TurboFNO_1D_C,64,128,256,128,128,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",36.952194,6.158699,6,76.3
+TurboFNO_1D_C,64,128,256,128,128,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",11.504561,1.9174268,6,23.7
+TurboFNO_1D_C,64,128,256,128,256,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",63.505645,10.5842742,6,73.5
+TurboFNO_1D_C,64,128,256,128,256,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",22.889697,3.8149495,6,26.5
+TurboFNO_1D_C,64,128,256,128,512,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",116.888006,19.4813343,6,71.9
+TurboFNO_1D_C,64,128,256,128,512,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",45.711721,7.6186202000000005,6,28.1
+TurboFNO_1D_C,64,256,128,64,16,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",11.693007,1.9488345,6,86.5
+TurboFNO_1D_C,64,256,128,64,16,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",1.829781,0.3049635,6,13.5
+TurboFNO_1D_C,64,256,128,64,32,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",17.573349,2.9288915,6,83.3
+TurboFNO_1D_C,64,256,128,64,32,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",3.516775,0.5861291999999999,6,16.7
+TurboFNO_1D_C,64,256,128,64,64,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",19.512667,3.2521112000000003,6,73.3
+TurboFNO_1D_C,64,256,128,64,64,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",7.101038,1.1835063000000001,6,26.7
+TurboFNO_1D_C,64,256,128,64,128,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",32.467811,5.4113017999999995,6,69.6
+TurboFNO_1D_C,64,256,128,64,128,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",14.162943,2.3604905,6,30.4
+TurboFNO_1D_C,64,256,128,64,256,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",58.819056,9.803176,6,67.6
+TurboFNO_1D_C,64,256,128,64,256,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",28.243233,4.7072055,6,32.4
+TurboFNO_1D_C,64,256,128,64,512,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",110.94739,18.4912317,6,66.3
+TurboFNO_1D_C,64,256,128,64,512,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",56.38484,9.397473300000001,6,33.7
+TurboFNO_1D_C,64,256,128,128,16,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",22.810758,3.801793,6,92.5
+TurboFNO_1D_C,64,256,128,128,16,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",1.837747,0.3062912,6,7.5
+TurboFNO_1D_C,64,256,128,128,32,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",27.60666,4.60111,6,88.5
+TurboFNO_1D_C,64,256,128,128,32,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",3.576007,0.5960012,6,11.5
+TurboFNO_1D_C,64,256,128,128,64,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",38.306456,6.3844093,6,84.4
+TurboFNO_1D_C,64,256,128,128,64,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",7.105424,1.1842373,6,15.6
+TurboFNO_1D_C,64,256,128,128,128,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",64.947141,10.8245235,6,82.1
+TurboFNO_1D_C,64,256,128,128,128,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",14.152865,2.3588107999999997,6,17.9
+TurboFNO_1D_C,64,256,128,128,256,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",115.68269,19.2804483,6,80.4
+TurboFNO_1D_C,64,256,128,128,256,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",28.255292,4.709215299999999,6,19.6
+TurboFNO_1D_C,64,256,128,128,512,fused_cgemm_ifft,"fused_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",219.888961,36.6481602,6,79.6
+TurboFNO_1D_C,64,256,128,128,512,fft_7_stride,"fft_7_stride_DY(float2 *, float2 *, int, int)",56.37478,9.3957967,6,20.4
+TurboFNO_1D_C,64,256,256,64,16,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",21.96564,3.66094,6,87.9
+TurboFNO_1D_C,64,256,256,64,16,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",3.019691,0.5032818,6,12.1
+TurboFNO_1D_C,64,256,256,64,32,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",22.485508,3.7475847,6,79.4
+TurboFNO_1D_C,64,256,256,64,32,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",5.848086,0.974681,6,20.6
+TurboFNO_1D_C,64,256,256,64,64,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",25.023731,4.1706218,6,68.5
+TurboFNO_1D_C,64,256,256,64,64,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",11.51032,1.9183867,6,31.5
+TurboFNO_1D_C,64,256,256,64,128,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",37.726816,6.2878027,6,62.2
+TurboFNO_1D_C,64,256,256,64,128,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",22.891589,3.8152648,6,37.8
+TurboFNO_1D_C,64,256,256,64,256,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",63.924243,10.6540405,6,58.3
+TurboFNO_1D_C,64,256,256,64,256,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",45.705645,7.6176075,6,41.7
+TurboFNO_1D_C,64,256,256,128,16,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",43.375861,7.2293102000000005,6,93.5
+TurboFNO_1D_C,64,256,256,128,16,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",3.022986,0.503831,6,6.5
+TurboFNO_1D_C,64,256,256,128,32,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",43.50187,7.2503117,6,88.1
+TurboFNO_1D_C,64,256,256,128,32,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",5.853559,0.9755931999999999,6,11.9
+TurboFNO_1D_C,64,256,256,128,64,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",48.77364,8.12894,6,80.9
+TurboFNO_1D_C,64,256,256,128,64,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",11.518158,1.919693,6,19.1
+TurboFNO_1D_C,64,256,256,128,128,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",74.401236,12.400206,6,76.5
+TurboFNO_1D_C,64,256,256,128,128,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",22.888479,3.8147465,6,23.5
+TurboFNO_1D_C,64,256,256,128,256,fused_cgemm_ifft,"fused_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",127.121835,21.1869725,6,73.5
+TurboFNO_1D_C,64,256,256,128,256,fft_8_stride,"fft_8_stride_DY(float2 *, float2 *, int, int)",45.715619,7.6192698,6,26.5
+TurboFNO_1D_D,32,128,128,64,16,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",5.216825,0.8694708000000001,6,100.0
+TurboFNO_1D_D,32,128,128,64,32,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",7.155597,1.1925995,6,100.0
+TurboFNO_1D_D,32,128,128,64,64,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",11.130449,1.8550748000000001,6,100.0
+TurboFNO_1D_D,32,128,128,64,128,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",19.06105,3.1768417,6,100.0
+TurboFNO_1D_D,32,128,128,64,256,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",27.399105,4.5665175,6,100.0
+TurboFNO_1D_D,32,128,128,64,512,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",52.130427,8.6884045,6,100.0
+TurboFNO_1D_D,32,128,128,128,16,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",10.265209,1.7108682,6,100.0
+TurboFNO_1D_D,32,128,128,128,32,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",14.079904,2.3466507,6,100.0
+TurboFNO_1D_D,32,128,128,128,64,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",21.91475,3.6524582999999997,6,100.0
+TurboFNO_1D_D,32,128,128,128,128,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",32.62205,5.4370083,6,100.0
+TurboFNO_1D_D,32,128,128,128,256,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",54.227695,9.0379492,6,100.0
+TurboFNO_1D_D,32,128,128,128,512,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",103.532388,17.255398,6,100.0
+TurboFNO_1D_D,32,128,256,64,16,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",6.510707,1.0851178000000001,6,100.0
+TurboFNO_1D_D,32,128,256,64,32,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",7.903305,1.3172175,6,100.0
+TurboFNO_1D_D,32,128,256,64,64,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",11.51893,1.9198217,6,100.0
+TurboFNO_1D_D,32,128,256,64,128,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",15.142006,2.5236677000000003,6,100.0
+TurboFNO_1D_D,32,128,256,64,256,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",26.940233,4.4900388,6,100.0
+TurboFNO_1D_D,32,128,256,64,512,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",50.773706,8.4622843,6,100.0
+TurboFNO_1D_D,32,128,256,128,16,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",12.240972,2.040162,6,100.0
+TurboFNO_1D_D,32,128,256,128,32,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",15.217914,2.536319,6,100.0
+TurboFNO_1D_D,32,128,256,128,64,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",21.492272,3.5820453,6,100.0
+TurboFNO_1D_D,32,128,256,128,128,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",29.221402,4.8702337,6,100.0
+TurboFNO_1D_D,32,128,256,128,256,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",52.544444,8.7574073,6,100.0
+TurboFNO_1D_D,32,128,256,128,512,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",99.566138,16.5943563,6,100.0
+TurboFNO_1D_D,32,256,128,64,16,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",10.312536,1.718756,6,100.0
+TurboFNO_1D_D,32,256,128,64,32,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",13.672772,2.2787952999999996,6,100.0
+TurboFNO_1D_D,32,256,128,64,64,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",17.426406,2.904401,6,100.0
+TurboFNO_1D_D,32,256,128,64,128,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",29.900818,4.983469700000001,6,100.0
+TurboFNO_1D_D,32,256,128,64,256,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",54.55076,9.0917933,6,100.0
+TurboFNO_1D_D,32,256,128,64,512,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",104.317722,17.386287,6,100.0
+TurboFNO_1D_D,32,256,128,128,16,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",16.061491,2.6769152000000003,6,100.0
+TurboFNO_1D_D,32,256,128,128,32,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",24.555857,4.0926428,6,100.0
+TurboFNO_1D_D,32,256,128,128,64,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",34.405134,5.734189,6,100.0
+TurboFNO_1D_D,32,256,128,128,128,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",58.916609,9.819434800000002,6,100.0
+TurboFNO_1D_D,32,256,128,128,256,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",108.179869,18.0299782,6,100.0
+TurboFNO_1D_D,32,256,128,128,512,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",207.00772,34.5012867,6,100.0
+TurboFNO_1D_D,32,256,256,64,16,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",12.369199,2.0615332,6,100.0
+TurboFNO_1D_D,32,256,256,64,32,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",15.497558,2.5829263,6,100.0
+TurboFNO_1D_D,32,256,256,64,64,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",18.395976,3.065996,6,100.0
+TurboFNO_1D_D,32,256,256,64,128,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",29.705624,4.9509373,6,100.0
+TurboFNO_1D_D,32,256,256,64,256,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",53.519957,8.919992800000001,6,100.0
+TurboFNO_1D_D,32,256,256,64,512,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",100.657018,16.7761697,6,100.0
+TurboFNO_1D_D,32,256,256,128,16,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",23.508061,3.9180102000000003,6,100.0
+TurboFNO_1D_D,32,256,256,128,32,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",26.04718,4.3411967,6,100.0
+TurboFNO_1D_D,32,256,256,128,64,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",34.582165,5.7636942,6,100.0
+TurboFNO_1D_D,32,256,256,128,128,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",57.717397,9.6195662,6,100.0
+TurboFNO_1D_D,32,256,256,128,256,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",105.079123,17.5131872,6,100.0
+TurboFNO_1D_D,32,256,256,128,512,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",198.017526,33.002921,6,100.0
+TurboFNO_1D_D,64,128,128,64,16,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",10.264633,1.7107721999999999,6,100.0
+TurboFNO_1D_D,64,128,128,64,32,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",13.490216,2.2483693,6,100.0
+TurboFNO_1D_D,64,128,128,64,64,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",22.132167,3.6886945,6,100.0
+TurboFNO_1D_D,64,128,128,64,128,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",29.782801,4.9638002000000006,6,100.0
+TurboFNO_1D_D,64,128,128,64,256,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",54.619528,9.103254699999999,6,100.0
+TurboFNO_1D_D,64,128,128,64,512,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",104.326899,17.3878165,6,100.0
+TurboFNO_1D_D,64,128,128,128,16,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",15.985907,2.6643177999999996,6,100.0
+TurboFNO_1D_D,64,128,128,128,32,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",22.073287,3.6788812,6,100.0
+TurboFNO_1D_D,64,128,128,128,64,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",34.277748,5.712958,6,100.0
+TurboFNO_1D_D,64,128,128,128,128,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",58.935755,9.8226258,6,100.0
+TurboFNO_1D_D,64,128,128,128,256,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",108.134902,18.0224837,6,100.0
+TurboFNO_1D_D,64,128,128,128,512,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",207.08651,34.514418299999996,6,100.0
+TurboFNO_1D_D,64,128,256,64,16,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",12.785863,2.1309772000000002,6,100.0
+TurboFNO_1D_D,64,128,256,64,32,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",14.277727,2.3796212000000003,6,100.0
+TurboFNO_1D_D,64,128,256,64,64,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",18.392387,3.0653978,6,100.0
+TurboFNO_1D_D,64,128,256,64,128,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",29.696085,4.9493475,6,100.0
+TurboFNO_1D_D,64,128,256,64,256,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",53.511796,8.9186327,6,100.0
+TurboFNO_1D_D,64,128,256,64,512,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",100.719536,16.7865893,6,100.0
+TurboFNO_1D_D,64,128,256,128,16,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",23.512254,3.918709,6,100.0
+TurboFNO_1D_D,64,128,256,128,32,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",26.054252,4.3423753,6,100.0
+TurboFNO_1D_D,64,128,256,128,64,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",34.610705,5.7684508,6,100.0
+TurboFNO_1D_D,64,128,256,128,128,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",57.710132,9.618355300000001,6,100.0
+TurboFNO_1D_D,64,128,256,128,256,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",105.070893,17.5118155,6,100.0
+TurboFNO_1D_D,64,128,256,128,512,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",198.042874,33.0071457,6,100.0
+TurboFNO_1D_D,64,256,128,64,16,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",20.415026,3.4025043,6,100.0
+TurboFNO_1D_D,64,256,128,64,32,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",22.093158,3.682193,6,100.0
+TurboFNO_1D_D,64,256,128,64,64,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",34.469267,5.7448778,6,100.0
+TurboFNO_1D_D,64,256,128,64,128,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",59.240261,9.8733768,6,100.0
+TurboFNO_1D_D,64,256,128,64,256,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",109.332282,18.222047,6,100.0
+TurboFNO_1D_D,64,256,128,64,512,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",208.548596,34.7580993,6,100.0
+TurboFNO_1D_D,64,256,128,128,16,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",31.877583,5.3129305,6,100.0
+TurboFNO_1D_D,64,256,128,128,32,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",43.812057,7.3020095,6,100.0
+TurboFNO_1D_D,64,256,128,128,64,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",68.199499,11.366583199999999,6,100.0
+TurboFNO_1D_D,64,256,128,128,128,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",117.251778,19.541963,6,100.0
+TurboFNO_1D_D,64,256,128,128,256,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",216.555593,36.0925988,6,100.0
+TurboFNO_1D_D,64,256,128,128,512,fused_fft_cgemm,"fused_fft_cgemm_ifft_7(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",413.540577,68.9234295,6,100.0
+TurboFNO_1D_D,64,256,256,64,16,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",24.845559,4.1409265,6,100.0
+TurboFNO_1D_D,64,256,256,64,32,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",28.749495,4.7915825,6,100.0
+TurboFNO_1D_D,64,256,256,64,64,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",36.88282,6.1471367,6,100.0
+TurboFNO_1D_D,64,256,256,64,128,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",59.468431,9.911405199999999,6,100.0
+TurboFNO_1D_D,64,256,256,64,256,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",106.225816,17.7043027,6,100.0
+TurboFNO_1D_D,64,256,256,128,16,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",47.329818,7.888303,6,100.0
+TurboFNO_1D_D,64,256,256,128,32,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",52.418063,8.7363438,6,100.0
+TurboFNO_1D_D,64,256,256,128,64,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",69.038583,11.5064305,6,100.0
+TurboFNO_1D_D,64,256,256,128,128,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",116.197549,19.3662582,6,100.0
+TurboFNO_1D_D,64,256,256,128,256,fused_fft_cgemm,"fused_fft_cgemm_ifft_8(int, int, int, float2 *, float2 *, float2 *, float2 *, float2, float2)",209.217011,34.869501799999995,6,100.0
+TurboFNO_1D_E,32,128,128,64,16,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",2.984043,0.24867029999999998,12,44.1
+TurboFNO_1D_E,32,128,128,64,16,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",1.916852,0.31947529999999996,6,28.3
+TurboFNO_1D_E,32,128,128,64,16,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,1.546229,0.2577048,6,22.9
+TurboFNO_1D_E,32,128,128,64,16,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",0.315615,0.0526025,6,4.7
+TurboFNO_1D_E,32,128,128,64,32,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",3.560297,0.29669140000000005,12,43.6
+TurboFNO_1D_E,32,128,128,64,32,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,2.083057,0.3471762,6,25.5
+TurboFNO_1D_E,32,128,128,64,32,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",1.914002,0.3190003,6,23.5
+TurboFNO_1D_E,32,128,128,64,32,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",0.602459,0.10040980000000001,6,7.4
+TurboFNO_1D_E,32,128,128,64,64,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",4.721919,0.3934933,12,40.9
+TurboFNO_1D_E,32,128,128,64,64,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,3.749125,0.6248541999999999,6,32.5
+TurboFNO_1D_E,32,128,128,64,64,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",1.900818,0.316803,6,16.5
+TurboFNO_1D_E,32,128,128,64,64,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",1.179863,0.19664379999999998,6,10.2
+TurboFNO_1D_E,32,128,128,64,128,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",7.052846,0.5877372,12,41.3
+TurboFNO_1D_E,32,128,128,64,128,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,5.856599,0.9760998000000001,6,34.3
+TurboFNO_1D_E,32,128,128,64,128,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",2.331439,0.3885732,6,13.6
+TurboFNO_1D_E,32,128,128,64,128,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",1.853458,0.3089097,6,10.8
+TurboFNO_1D_E,32,128,128,64,256,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",14.586427,2.4310712000000003,6,42.8
+TurboFNO_1D_E,32,128,128,64,256,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",11.748654,0.9790545,12,34.4
+TurboFNO_1D_E,32,128,128,64,256,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",4.645792,0.7742987,6,13.6
+TurboFNO_1D_E,32,128,128,64,256,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",1.834739,0.3057898,6,5.4
+TurboFNO_1D_E,32,128,128,64,256,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",1.30063,0.043354300000000005,30,3.8
+TurboFNO_1D_E,32,128,128,64,512,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",27.054056,4.5090093,6,44.6
+TurboFNO_1D_E,32,128,128,64,512,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",21.119315,1.7599429,12,34.9
+TurboFNO_1D_E,32,128,128,64,512,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",9.303105,1.5505175,6,15.4
+TurboFNO_1D_E,32,128,128,64,512,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",1.826484,0.304414,6,3.0
+TurboFNO_1D_E,32,128,128,64,512,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",1.293338,0.043111300000000005,30,2.1
+TurboFNO_1D_E,32,128,128,128,16,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",5.310842,0.4425702,12,43.3
+TurboFNO_1D_E,32,128,128,128,16,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.819717,0.6366195,6,31.1
+TurboFNO_1D_E,32,128,128,128,16,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,2.82331,0.4705517,6,23.0
+TurboFNO_1D_E,32,128,128,128,16,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",0.313598,0.0522663,6,2.6
+TurboFNO_1D_E,32,128,128,128,32,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",5.877369,0.48978079999999996,12,40.9
+TurboFNO_1D_E,32,128,128,128,32,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,4.060485,0.6767475,6,28.3
+TurboFNO_1D_E,32,128,128,128,32,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.82906,0.6381766999999999,6,26.6
+TurboFNO_1D_E,32,128,128,128,32,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",0.602718,0.100453,6,4.2
+TurboFNO_1D_E,32,128,128,128,64,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",7.073681,0.5894734,12,39.6
+TurboFNO_1D_E,32,128,128,128,64,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,5.832471,0.9720785,6,32.7
+TurboFNO_1D_E,32,128,128,128,64,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.761797,0.6269661999999999,6,21.1
+TurboFNO_1D_E,32,128,128,128,64,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",1.175223,0.1958705,6,6.6
+TurboFNO_1D_E,32,128,128,128,128,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",16.796464,2.7994107,6,48.3
+TurboFNO_1D_E,32,128,128,128,128,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",9.417696,0.784808,12,27.1
+TurboFNO_1D_E,32,128,128,128,128,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.735047,0.6225078000000001,6,10.7
+TurboFNO_1D_E,32,128,128,128,128,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.520496,0.0840165,30,7.2
+TurboFNO_1D_E,32,128,128,128,128,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",2.335089,0.3891815,6,6.7
+TurboFNO_1D_E,32,128,128,128,256,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",29.093756,4.8489593,6,53.8
+TurboFNO_1D_E,32,128,128,128,256,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",14.089343,1.1741119,12,26.1
+TurboFNO_1D_E,32,128,128,128,256,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",4.655169,0.7758615,6,8.6
+TurboFNO_1D_E,32,128,128,128,256,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.724902,0.620817,6,6.9
+TurboFNO_1D_E,32,128,128,128,256,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.521868,0.0840623,30,4.7
+TurboFNO_1D_E,32,128,128,128,512,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",54.076048,9.0126747,6,58.1
+TurboFNO_1D_E,32,128,128,128,512,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",23.44656,1.95388,12,25.2
+TurboFNO_1D_E,32,128,128,128,512,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",9.300258,1.550043,6,10.0
+TurboFNO_1D_E,32,128,128,128,512,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.714183,0.6190305,6,4.0
+TurboFNO_1D_E,32,128,128,128,512,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.518766,0.08395889999999999,30,2.7
+TurboFNO_1D_E,32,128,256,64,16,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",5.909271,0.49243929999999997,12,53.1
+TurboFNO_1D_E,32,128,256,64,16,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.357384,0.559564,6,30.2
+TurboFNO_1D_E,32,128,256,64,16,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,1.542519,0.2570865,6,13.9
+TurboFNO_1D_E,32,128,256,64,16,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",0.316575,0.0527625,6,2.8
+TurboFNO_1D_E,32,128,256,64,32,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",7.087533,0.5906278,12,54.7
+TurboFNO_1D_E,32,128,256,64,32,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.322793,0.5537988,6,25.6
+TurboFNO_1D_E,32,128,256,64,32,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,1.954032,0.325672,6,15.1
+TurboFNO_1D_E,32,128,256,64,32,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",0.600829,0.1001382,6,4.6
+TurboFNO_1D_E,32,128,256,64,64,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",9.43603,0.7863358,12,56.1
+TurboFNO_1D_E,32,128,256,64,64,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.277515,0.5462525,6,19.5
+TurboFNO_1D_E,32,128,256,64,64,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,2.924396,0.4873993,6,17.4
+TurboFNO_1D_E,32,128,256,64,64,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",1.180086,0.196681,6,7.0
+TurboFNO_1D_E,32,128,256,64,128,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",14.119071,1.1765893,12,55.8
+TurboFNO_1D_E,32,128,256,64,128,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,5.609211,0.9348685,6,22.1
+TurboFNO_1D_E,32,128,256,64,128,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.249706,0.5416177,6,12.8
+TurboFNO_1D_E,32,128,256,64,128,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",2.347087,0.3911812,6,9.3
+TurboFNO_1D_E,32,128,256,64,256,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",23.479876,1.9566563000000001,12,49.7
+TurboFNO_1D_E,32,128,256,64,256,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",14.598942,2.433157,6,30.9
+TurboFNO_1D_E,32,128,256,64,256,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",4.656192,0.776032,6,9.9
+TurboFNO_1D_E,32,128,256,64,256,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.23681,0.5394683,6,6.8
+TurboFNO_1D_E,32,128,256,64,256,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",1.296023,0.043200800000000004,30,2.7
+TurboFNO_1D_E,32,128,256,64,512,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",42.214725,3.5178938,12,50.8
+TurboFNO_1D_E,32,128,256,64,512,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",27.073127,4.5121877999999995,6,32.6
+TurboFNO_1D_E,32,128,256,64,512,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",9.306658,1.5511097,6,11.2
+TurboFNO_1D_E,32,128,256,64,512,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.243114,0.540519,6,3.9
+TurboFNO_1D_E,32,128,256,64,512,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",1.307544,0.0435848,30,1.6
+TurboFNO_1D_E,32,128,256,128,16,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",10.556155,0.8796796,12,51.3
+TurboFNO_1D_E,32,128,256,128,16,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.763377,1.1272295,6,32.8
+TurboFNO_1D_E,32,128,256,128,16,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,2.952109,0.4920182,6,14.3
+TurboFNO_1D_E,32,128,256,128,16,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",0.318015,0.0530025,6,1.5
+TurboFNO_1D_E,32,128,256,128,32,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",11.783538,0.9819615,12,52.9
+TurboFNO_1D_E,32,128,256,128,32,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.631924,1.1053207,6,29.8
+TurboFNO_1D_E,32,128,256,128,32,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,3.264043,0.5440071999999999,6,14.6
+TurboFNO_1D_E,32,128,256,128,32,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",0.603707,0.10061780000000001,6,2.7
+TurboFNO_1D_E,32,128,256,128,64,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",14.117952,1.176496,12,50.9
+TurboFNO_1D_E,32,128,256,128,64,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.579985,1.0966642,6,23.7
+TurboFNO_1D_E,32,128,256,128,64,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,5.832343,0.9720572,6,21.0
+TurboFNO_1D_E,32,128,256,128,64,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",1.180026,0.196671,6,4.3
+TurboFNO_1D_E,32,128,256,128,128,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",18.814051,1.5678376,12,40.0
+TurboFNO_1D_E,32,128,256,128,128,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",16.777999,2.7963332000000003,6,35.7
+TurboFNO_1D_E,32,128,256,128,128,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.556788,1.092798,6,13.9
+TurboFNO_1D_E,32,128,256,128,128,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.527373,0.08424580000000001,30,5.4
+TurboFNO_1D_E,32,128,256,128,128,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",2.342863,0.3904772,6,5.0
+TurboFNO_1D_E,32,128,256,128,256,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",29.03718,4.83953,6,40.9
+TurboFNO_1D_E,32,128,256,128,256,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",28.162949,2.3469124,12,39.7
+TurboFNO_1D_E,32,128,256,128,256,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.544853,1.0908088,6,9.2
+TurboFNO_1D_E,32,128,256,128,256,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",4.655873,0.7759788000000001,6,6.6
+TurboFNO_1D_E,32,128,256,128,256,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.518095,0.0839365,30,3.6
+TurboFNO_1D_E,32,128,256,128,512,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",53.994129,8.9990215,6,45.3
+TurboFNO_1D_E,32,128,256,128,512,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",46.907809,3.9089841,12,39.3
+TurboFNO_1D_E,32,128,256,128,512,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",9.310976,1.5518293,6,7.8
+TurboFNO_1D_E,32,128,256,128,512,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.578515,1.0964192,6,5.5
+TurboFNO_1D_E,32,128,256,128,512,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.527919,0.084264,30,2.1
+TurboFNO_1D_E,32,256,128,64,16,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",5.903414,0.49195120000000003,12,44.9
+TurboFNO_1D_E,32,256,128,64,16,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.809445,0.6349075,6,29.0
+TurboFNO_1D_E,32,256,128,64,16,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,2.825773,0.4709622,6,21.5
+TurboFNO_1D_E,32,256,128,64,16,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",0.598939,0.0998232,6,4.6
+TurboFNO_1D_E,32,256,128,64,32,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",7.03499,0.5862491999999999,12,43.6
+TurboFNO_1D_E,32,256,128,64,32,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,4.099331,0.6832218000000001,6,25.4
+TurboFNO_1D_E,32,256,128,64,32,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.827683,0.6379471999999999,6,23.7
+TurboFNO_1D_E,32,256,128,64,32,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",1.179353,0.19655879999999998,6,7.3
+TurboFNO_1D_E,32,256,128,64,64,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",9.424064,0.7853387,12,44.1
+TurboFNO_1D_E,32,256,128,64,64,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,5.810616,0.968436,6,27.2
+TurboFNO_1D_E,32,256,128,64,64,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.78919,0.6315316999999999,6,17.7
+TurboFNO_1D_E,32,256,128,64,64,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",2.333874,0.388979,6,10.9
+TurboFNO_1D_E,32,256,128,64,128,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",16.65438,2.77573,6,39.9
+TurboFNO_1D_E,32,256,128,64,128,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",14.090941,1.1742451,12,33.7
+TurboFNO_1D_E,32,256,128,64,128,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",4.662591,0.7770985,6,11.2
+TurboFNO_1D_E,32,256,128,64,128,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.733189,0.6221981999999999,6,8.9
+TurboFNO_1D_E,32,256,128,64,128,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.613966,0.0484068,54,6.3
+TurboFNO_1D_E,32,256,128,64,256,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",28.943029,4.8238382,6,42.6
+TurboFNO_1D_E,32,256,128,64,256,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",23.44384,1.9536533,12,34.5
+TurboFNO_1D_E,32,256,128,64,256,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",9.297726,1.549621,6,13.7
+TurboFNO_1D_E,32,256,128,64,256,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.723944,0.6206573000000001,6,5.5
+TurboFNO_1D_E,32,256,128,64,256,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.603081,0.0482052,54,3.8
+TurboFNO_1D_E,32,256,128,64,512,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",54.015026,9.0025043,6,44.6
+TurboFNO_1D_E,32,256,128,64,512,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",42.167074,3.5139228,12,34.8
+TurboFNO_1D_E,32,256,128,64,512,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",18.630176,3.1050293,6,15.4
+TurboFNO_1D_E,32,256,128,64,512,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.725799,0.6209665,6,3.1
+TurboFNO_1D_E,32,256,128,64,512,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.618001,0.0484815,54,2.2
+TurboFNO_1D_E,32,256,128,128,16,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",10.591669,0.8826391,12,43.8
+TurboFNO_1D_E,32,256,128,128,16,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.599084,1.266514,6,31.4
+TurboFNO_1D_E,32,256,128,128,16,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,5.41782,0.90297,6,22.4
+TurboFNO_1D_E,32,256,128,128,16,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",0.598621,0.0997702,6,2.5
+TurboFNO_1D_E,32,256,128,128,32,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",11.75512,0.9795933,12,43.6
+TurboFNO_1D_E,32,256,128,128,32,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.586411,1.2644018000000001,6,28.2
+TurboFNO_1D_E,32,256,128,128,32,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,6.417555,1.0695925,6,23.8
+TurboFNO_1D_E,32,256,128,128,32,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",1.176855,0.1961425,6,4.4
+TurboFNO_1D_E,32,256,128,128,64,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",14.09232,1.17436,12,39.7
+TurboFNO_1D_E,32,256,128,128,64,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,11.569679,1.9282798,6,32.6
+TurboFNO_1D_E,32,256,128,128,64,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.542029,1.2570048,6,21.2
+TurboFNO_1D_E,32,256,128,128,64,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",2.33624,0.3893733,6,6.6
+TurboFNO_1D_E,32,256,128,128,128,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",33.232152,5.538692,6,48.0
+TurboFNO_1D_E,32,256,128,128,128,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",18.771644,1.5643037,12,27.1
+TurboFNO_1D_E,32,256,128,128,128,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.505198,1.2508663,6,10.8
+TurboFNO_1D_E,32,256,128,128,128,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",5.066783,0.0938293,54,7.3
+TurboFNO_1D_E,32,256,128,128,128,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",4.658945,0.7764908,6,6.7
+TurboFNO_1D_E,32,256,128,128,256,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",57.705016,9.6175027,6,53.6
+TurboFNO_1D_E,32,256,128,128,256,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",28.122784,2.3435653,12,26.1
+TurboFNO_1D_E,32,256,128,128,256,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",9.294111,1.5490185,6,8.6
+TurboFNO_1D_E,32,256,128,128,256,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.513645,1.2522742,6,7.0
+TurboFNO_1D_E,32,256,128,128,256,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",5.080992,0.09409239999999999,54,4.7
+TurboFNO_1D_E,32,256,128,128,512,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",108.551173,18.091862199999998,6,58.2
+TurboFNO_1D_E,32,256,128,128,512,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",46.785413,3.8987844,12,25.1
+TurboFNO_1D_E,32,256,128,128,512,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",18.621058,3.1035097,6,10.0
+TurboFNO_1D_E,32,256,128,128,512,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.493936,1.2489893,6,4.0
+TurboFNO_1D_E,32,256,128,128,512,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",5.072703,0.09393889999999999,54,2.7
+TurboFNO_1D_E,32,256,256,64,16,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",11.782125,0.9818438,12,54.1
+TurboFNO_1D_E,32,256,256,64,16,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.623539,1.1039231999999999,6,30.4
+TurboFNO_1D_E,32,256,256,64,16,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,2.769741,0.4616235,6,12.7
+TurboFNO_1D_E,32,256,256,64,16,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",0.602523,0.1004205,6,2.8
+TurboFNO_1D_E,32,256,256,64,32,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",14.122594,1.1768828,12,55.9
+TurboFNO_1D_E,32,256,256,64,32,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.612628,1.1021047,6,26.2
+TurboFNO_1D_E,32,256,256,64,32,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,3.33268,0.5554467,6,13.2
+TurboFNO_1D_E,32,256,256,64,32,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",1.179129,0.1965215,6,4.7
+TurboFNO_1D_E,32,256,256,64,64,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",18.812066,1.5676721999999998,12,56.0
+TurboFNO_1D_E,32,256,256,64,64,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.606481,1.1010802,6,19.7
+TurboFNO_1D_E,32,256,256,64,64,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,5.810298,0.968383,6,17.3
+TurboFNO_1D_E,32,256,256,64,64,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",2.343569,0.39059479999999996,6,7.0
+TurboFNO_1D_E,32,256,256,64,128,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",28.172738,2.3477282,12,48.1
+TurboFNO_1D_E,32,256,256,64,128,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",16.628976,2.771496,6,28.4
+TurboFNO_1D_E,32,256,256,64,128,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.561811,1.0936352,6,11.2
+TurboFNO_1D_E,32,256,256,64,128,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",4.644929,0.7741548,6,7.9
+TurboFNO_1D_E,32,256,256,64,128,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.609746,0.0483286,54,4.5
+TurboFNO_1D_E,32,256,256,64,256,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",46.894531,3.9078776,12,49.7
+TurboFNO_1D_E,32,256,256,64,256,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",28.929721,4.8216202,6,30.7
+TurboFNO_1D_E,32,256,256,64,256,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",9.307294,1.5512157,6,9.9
+TurboFNO_1D_E,32,256,256,64,256,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.582195,1.0970325,6,7.0
+TurboFNO_1D_E,32,256,256,64,256,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.615983,0.0484441,54,2.8
+TurboFNO_1D_E,32,256,256,64,512,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",84.406565,7.0338804,12,50.8
+TurboFNO_1D_E,32,256,256,64,512,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",53.977396,8.996232699999998,6,32.5
+TurboFNO_1D_E,32,256,256,64,512,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",18.598882,3.0998137000000003,6,11.2
+TurboFNO_1D_E,32,256,256,64,512,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.582356,1.0970593,6,4.0
+TurboFNO_1D_E,32,256,256,64,512,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.619756,0.048514,54,1.6
+TurboFNO_1D_E,32,256,256,128,16,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",21.140909,1.7617424,12,52.4
+TurboFNO_1D_E,32,256,256,128,16,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",13.245221,2.2075367999999997,6,32.8
+TurboFNO_1D_E,32,256,256,128,16,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,5.360859,0.8934765,6,13.3
+TurboFNO_1D_E,32,256,256,128,16,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",0.604957,0.10082619999999999,6,1.5
+TurboFNO_1D_E,32,256,256,128,32,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",23.493854,1.9578212,12,52.9
+TurboFNO_1D_E,32,256,256,128,32,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",13.274753,2.2124588,6,29.9
+TurboFNO_1D_E,32,256,256,128,32,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,6.450613,1.0751022,6,14.5
+TurboFNO_1D_E,32,256,256,128,32,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",1.179607,0.1966012,6,2.7
+TurboFNO_1D_E,32,256,256,128,64,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",28.166239,2.3471866,12,50.9
+TurboFNO_1D_E,32,256,256,128,64,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",13.214663,2.2024437999999997,6,23.9
+TurboFNO_1D_E,32,256,256,128,64,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,11.570545,1.9284242,6,20.9
+TurboFNO_1D_E,32,256,256,128,64,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",2.339312,0.3898853,6,4.2
+TurboFNO_1D_E,32,256,256,128,128,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",37.529376,3.127448,12,40.1
+TurboFNO_1D_E,32,256,256,128,128,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",33.219773,5.5366288,6,35.5
+TurboFNO_1D_E,32,256,256,128,128,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",13.192934,2.1988223,6,14.1
+TurboFNO_1D_E,32,256,256,128,128,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",5.084185,0.0941516,54,5.4
+TurboFNO_1D_E,32,256,256,128,128,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",4.665441,0.7775735,6,5.0
+TurboFNO_1D_E,32,256,256,128,256,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",57.737433,9.6229055,6,40.7
+TurboFNO_1D_E,32,256,256,128,256,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",56.260835,4.688402900000001,12,39.7
+TurboFNO_1D_E,32,256,256,128,256,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",13.297956,2.216326,6,9.4
+TurboFNO_1D_E,32,256,256,128,256,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",9.312097,1.5520162,6,6.6
+TurboFNO_1D_E,32,256,256,128,256,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",5.086943,0.09420260000000001,54,3.6
+TurboFNO_1D_E,32,256,256,128,512,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",107.744456,17.957409300000002,6,45.2
+TurboFNO_1D_E,32,256,256,128,512,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",93.771752,7.8143127,12,39.3
+TurboFNO_1D_E,32,256,256,128,512,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",18.60909,3.101515,6,7.8
+TurboFNO_1D_E,32,256,256,128,512,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",13.263462,2.210577,6,5.6
+TurboFNO_1D_E,32,256,256,128,512,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",5.078111,0.0940391,54,2.1
+TurboFNO_1D_E,64,128,128,64,16,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",5.913016,0.4927513,12,45.1
+TurboFNO_1D_E,64,128,128,64,16,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.805478,0.6342463,6,29.0
+TurboFNO_1D_E,64,128,128,64,16,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,2.789452,0.4649087,6,21.3
+TurboFNO_1D_E,64,128,128,64,16,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",0.600029,0.1000048,6,4.6
+TurboFNO_1D_E,64,128,128,64,32,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",7.073776,0.5894813000000001,12,46.0
+TurboFNO_1D_E,64,128,128,64,32,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.795811,0.6326352,6,24.7
+TurboFNO_1D_E,64,128,128,64,32,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,3.337066,0.5561777,6,21.7
+TurboFNO_1D_E,64,128,128,64,32,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",1.175415,0.1959025,6,7.6
+TurboFNO_1D_E,64,128,128,64,64,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",9.363201,0.7802668,12,40.7
+TurboFNO_1D_E,64,128,128,64,64,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,7.464781,1.2441301999999999,6,32.5
+TurboFNO_1D_E,64,128,128,64,64,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.823301,0.6372168,6,16.6
+TurboFNO_1D_E,64,128,128,64,64,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",2.336656,0.38944270000000003,6,10.2
+TurboFNO_1D_E,64,128,128,64,128,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",16.661263,2.7768772000000004,6,39.9
+TurboFNO_1D_E,64,128,128,64,128,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",14.088417,1.1740348,12,33.7
+TurboFNO_1D_E,64,128,128,64,128,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",4.65379,0.7756316999999999,6,11.1
+TurboFNO_1D_E,64,128,128,64,128,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.733768,0.6222947,6,8.9
+TurboFNO_1D_E,64,128,128,64,128,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.612209,0.0483742,54,6.3
+TurboFNO_1D_E,64,128,128,64,256,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",28.937432,4.8229052999999995,6,42.5
+TurboFNO_1D_E,64,128,128,64,256,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",23.449309,1.9541091000000002,12,34.5
+TurboFNO_1D_E,64,128,128,64,256,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",9.301119,1.5501865,6,13.7
+TurboFNO_1D_E,64,128,128,64,256,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.724966,0.6208277,6,5.5
+TurboFNO_1D_E,64,128,128,64,256,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.614318,0.048413300000000006,54,3.8
+TurboFNO_1D_E,64,128,128,64,512,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",54.134125,9.022354199999999,6,44.6
+TurboFNO_1D_E,64,128,128,64,512,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",42.15651,3.5130425,12,34.8
+TurboFNO_1D_E,64,128,128,64,512,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",18.630272,3.1050453,6,15.4
+TurboFNO_1D_E,64,128,128,64,512,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",3.722599,0.6204331999999999,6,3.1
+TurboFNO_1D_E,64,128,128,64,512,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.607981,0.0482959,54,2.2
+TurboFNO_1D_E,64,128,128,128,16,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",10.597111,0.8830926,12,43.8
+TurboFNO_1D_E,64,128,128,128,16,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.598796,1.266466,6,31.4
+TurboFNO_1D_E,64,128,128,128,16,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,5.415929,0.9026548000000001,6,22.4
+TurboFNO_1D_E,64,128,128,128,16,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",0.598746,0.099791,6,2.5
+TurboFNO_1D_E,64,128,128,128,32,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",11.758894,0.9799078,12,43.6
+TurboFNO_1D_E,64,128,128,128,32,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.596619,1.2661031999999999,6,28.2
+TurboFNO_1D_E,64,128,128,128,32,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,6.419477,1.0699128,6,23.8
+TurboFNO_1D_E,64,128,128,128,32,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",1.173751,0.1956252,6,4.4
+TurboFNO_1D_E,64,128,128,128,64,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",14.100287,1.1750239,12,39.6
+TurboFNO_1D_E,64,128,128,128,64,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,11.568303,1.9280505,6,32.5
+TurboFNO_1D_E,64,128,128,128,64,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.558381,1.2597302,6,21.3
+TurboFNO_1D_E,64,128,128,128,64,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",2.33832,0.38972,6,6.6
+TurboFNO_1D_E,64,128,128,128,128,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",33.228124,5.538020700000001,6,48.0
+TurboFNO_1D_E,64,128,128,128,128,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",18.769758,1.5641465,12,27.1
+TurboFNO_1D_E,64,128,128,128,128,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.508939,1.2514898,6,10.8
+TurboFNO_1D_E,64,128,128,128,128,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",5.056836,0.09364510000000001,54,7.3
+TurboFNO_1D_E,64,128,128,128,128,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",4.657696,0.7762827,6,6.7
+TurboFNO_1D_E,64,128,128,128,256,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",57.742961,9.623826800000002,6,53.6
+TurboFNO_1D_E,64,128,128,128,256,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",28.116061,2.3430051,12,26.1
+TurboFNO_1D_E,64,128,128,128,256,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",9.307008,1.551168,6,8.6
+TurboFNO_1D_E,64,128,128,128,256,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.514765,1.2524608000000002,6,7.0
+TurboFNO_1D_E,64,128,128,128,256,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",5.07123,0.0939117,54,4.7
+TurboFNO_1D_E,64,128,128,128,512,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",108.739032,18.123172,6,58.2
+TurboFNO_1D_E,64,128,128,128,512,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",46.787987,3.8989989,12,25.1
+TurboFNO_1D_E,64,128,128,128,512,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",18.624251,3.1040417999999996,6,10.0
+TurboFNO_1D_E,64,128,128,128,512,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.493995,1.2489991999999999,6,4.0
+TurboFNO_1D_E,64,128,128,128,512,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",5.06697,0.09383280000000001,54,2.7
+TurboFNO_1D_E,64,128,256,64,16,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",11.777871,0.9814893,12,54.1
+TurboFNO_1D_E,64,128,256,64,16,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.618579,1.1030965,6,30.4
+TurboFNO_1D_E,64,128,256,64,16,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,2.771341,0.46189020000000003,6,12.7
+TurboFNO_1D_E,64,128,256,64,16,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",0.602909,0.1004848,6,2.8
+TurboFNO_1D_E,64,128,256,64,32,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",14.119231,1.1766026,12,55.9
+TurboFNO_1D_E,64,128,256,64,32,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.626899,1.1044832,6,26.2
+TurboFNO_1D_E,64,128,256,64,32,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,3.338377,0.5563962,6,13.2
+TurboFNO_1D_E,64,128,256,64,32,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",1.180567,0.19676120000000002,6,4.7
+TurboFNO_1D_E,64,128,256,64,64,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",18.799007,1.5665839,12,56.0
+TurboFNO_1D_E,64,128,256,64,64,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.592307,1.0987178,6,19.6
+TurboFNO_1D_E,64,128,256,64,64,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,5.814329,0.9690548,6,17.3
+TurboFNO_1D_E,64,128,256,64,64,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",2.348433,0.3914055,6,7.0
+TurboFNO_1D_E,64,128,256,64,128,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",28.171915,2.3476596,12,48.1
+TurboFNO_1D_E,64,128,256,64,128,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",16.625143,2.7708572,6,28.4
+TurboFNO_1D_E,64,128,256,64,128,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.559861,1.0933102,6,11.2
+TurboFNO_1D_E,64,128,256,64,128,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",4.650306,0.775051,6,7.9
+TurboFNO_1D_E,64,128,256,64,128,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.611472,0.0483606,54,4.5
+TurboFNO_1D_E,64,128,256,64,256,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",46.895332,3.9079442999999996,12,49.7
+TurboFNO_1D_E,64,128,256,64,256,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",28.919324,4.8198872999999995,6,30.7
+TurboFNO_1D_E,64,128,256,64,256,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",9.307137,1.5511895,6,9.9
+TurboFNO_1D_E,64,128,256,64,256,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.572755,1.0954591999999999,6,7.0
+TurboFNO_1D_E,64,128,256,64,256,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.624075,0.048594,54,2.8
+TurboFNO_1D_E,64,128,256,64,512,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",84.386338,7.0321948,12,50.8
+TurboFNO_1D_E,64,128,256,64,512,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",53.954865,8.9924775,6,32.5
+TurboFNO_1D_E,64,128,256,64,512,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",18.627008,3.1045013,6,11.2
+TurboFNO_1D_E,64,128,256,64,512,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",6.580658,1.0967763000000001,6,4.0
+TurboFNO_1D_E,64,128,256,64,512,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",2.614062,0.048408599999999996,54,1.6
+TurboFNO_1D_E,64,128,256,128,16,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",21.148013,1.7623343999999999,12,52.4
+TurboFNO_1D_E,64,128,256,128,16,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",13.252421,2.2087367999999996,6,32.8
+TurboFNO_1D_E,64,128,256,128,16,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,5.356091,0.8926818000000001,6,13.3
+TurboFNO_1D_E,64,128,256,128,16,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",0.605274,0.100879,6,1.5
+TurboFNO_1D_E,64,128,256,128,32,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",23.488703,1.9573919,12,52.9
+TurboFNO_1D_E,64,128,256,128,32,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",13.251652,2.2086087,6,29.9
+TurboFNO_1D_E,64,128,256,128,32,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,6.452338,1.0753897,6,14.5
+TurboFNO_1D_E,64,128,256,128,32,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",1.180247,0.1967078,6,2.7
+TurboFNO_1D_E,64,128,256,128,64,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",28.175681,2.3479734,12,50.9
+TurboFNO_1D_E,64,128,256,128,64,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",13.24138,2.2068967,6,23.9
+TurboFNO_1D_E,64,128,256,128,64,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,11.564686,1.9274476999999999,6,20.9
+TurboFNO_1D_E,64,128,256,128,64,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",2.345872,0.3909787,6,4.2
+TurboFNO_1D_E,64,128,256,128,128,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",37.537952,3.1281627000000003,12,40.1
+TurboFNO_1D_E,64,128,256,128,128,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",33.222524,5.5370873,6,35.5
+TurboFNO_1D_E,64,128,256,128,128,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",13.17767,2.1962783,6,14.1
+TurboFNO_1D_E,64,128,256,128,128,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",5.079196,0.0940592,54,5.4
+TurboFNO_1D_E,64,128,256,128,128,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",4.663969,0.7773281999999999,6,5.0
+TurboFNO_1D_E,64,128,256,128,256,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",57.637076,9.6061793,6,40.7
+TurboFNO_1D_E,64,128,256,128,256,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",56.277534,4.6897945,12,39.8
+TurboFNO_1D_E,64,128,256,128,256,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",13.25626,2.2093767,6,9.4
+TurboFNO_1D_E,64,128,256,128,256,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",9.320259,1.5533765,6,6.6
+TurboFNO_1D_E,64,128,256,128,256,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",5.085181,0.09417,54,3.6
+TurboFNO_1D_E,64,128,256,128,512,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",107.795714,17.9659523,6,45.2
+TurboFNO_1D_E,64,128,256,128,512,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",93.747301,7.8122751,12,39.3
+TurboFNO_1D_E,64,128,256,128,512,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",18.603873,3.1006455,6,7.8
+TurboFNO_1D_E,64,128,256,128,512,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",13.26263,2.2104383,6,5.6
+TurboFNO_1D_E,64,128,256,128,512,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",5.080478,0.0940829,54,2.1
+TurboFNO_1D_E,64,256,128,64,16,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",11.761006,0.9800838000000001,12,45.0
+TurboFNO_1D_E,64,256,128,64,16,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.589036,1.2648393,6,29.0
+TurboFNO_1D_E,64,256,128,64,16,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,5.613051,0.4677543,12,21.5
+TurboFNO_1D_E,64,256,128,64,16,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",1.175768,0.19596129999999998,6,4.5
+TurboFNO_1D_E,64,256,128,64,32,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",14.092482,1.1743735,12,45.9
+TurboFNO_1D_E,64,256,128,64,32,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.57534,1.2625567,6,24.7
+TurboFNO_1D_E,64,256,128,64,32,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,6.627217,1.1045361999999999,6,21.6
+TurboFNO_1D_E,64,256,128,64,32,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",2.336654,0.38944229999999996,6,7.6
+TurboFNO_1D_E,64,256,128,64,32,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,0.059616,0.009936,6,0.2
+TurboFNO_1D_E,64,256,128,64,64,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",18.772543,1.5643786000000002,12,44.0
+TurboFNO_1D_E,64,256,128,64,64,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,11.578225,1.9297042,6,27.2
+TurboFNO_1D_E,64,256,128,64,64,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.53358,1.2555967,6,17.7
+TurboFNO_1D_E,64,256,128,64,64,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",4.654658,0.7757763000000001,6,10.9
+TurboFNO_1D_E,64,256,128,64,64,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,0.083039,0.0138398,6,0.2
+TurboFNO_1D_E,64,256,128,64,128,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",33.598458,2.7998715,12,40.1
+TurboFNO_1D_E,64,256,128,64,128,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",28.139068,2.3449223,12,33.6
+TurboFNO_1D_E,64,256,128,64,128,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",9.288224,1.5480373,6,11.1
+TurboFNO_1D_E,64,256,128,64,128,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.523599,1.2539331999999999,6,9.0
+TurboFNO_1D_E,64,256,128,64,128,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",5.273244,0.054929599999999995,96,6.3
+TurboFNO_1D_E,64,256,128,64,128,void scal_kernel(cublasTransposePa…,"void scal_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTransposePa…",0.016126,0.0026877,6,0.0
+TurboFNO_1D_E,64,256,128,64,256,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",58.116794,9.6861323,6,42.6
+TurboFNO_1D_E,64,256,128,64,256,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",46.825636,3.9021363,12,34.3
+TurboFNO_1D_E,64,256,128,64,256,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",18.62682,3.10447,6,13.6
+TurboFNO_1D_E,64,256,128,64,256,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.491342,1.248557,6,5.5
+TurboFNO_1D_E,64,256,128,64,256,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",5.27411,0.0549386,96,3.9
+TurboFNO_1D_E,64,256,128,64,256,ampere_cgemm_32x32,ampere_cgemm_32x32_nn,0.217599,0.0362665,6,0.2
+TurboFNO_1D_E,64,256,128,64,512,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",107.819601,17.9699335,6,44.5
+TurboFNO_1D_E,64,256,128,64,512,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",84.163602,7.0136335,12,34.8
+TurboFNO_1D_E,64,256,128,64,512,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",37.286247,6.2143745,6,15.4
+TurboFNO_1D_E,64,256,128,64,512,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",7.497548,1.2495913,6,3.1
+TurboFNO_1D_E,64,256,128,64,512,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",5.26886,0.054884,96,2.2
+TurboFNO_1D_E,64,256,128,64,512,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,0.09072,0.01512,6,0.0
+TurboFNO_1D_E,64,256,128,64,512,"splitKreduce_kernel<32, 16, int, float2, float2, float2, float2, 1, …","void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float2, float2, float2, float2, (bool)1, …",0.022208,0.0037013000000000002,6,0.0
+TurboFNO_1D_E,64,256,128,128,16,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",21.117195,1.7597663000000001,12,43.9
+TurboFNO_1D_E,64,256,128,128,16,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",15.14031,2.523385,6,31.5
+TurboFNO_1D_E,64,256,128,128,16,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,10.56719,1.7611983,6,22.0
+TurboFNO_1D_E,64,256,128,128,16,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",1.177335,0.1962225,6,2.5
+TurboFNO_1D_E,64,256,128,128,16,ampere_cgemm_32x32,ampere_cgemm_32x32_nn,0.048192,0.008032,6,0.1
+TurboFNO_1D_E,64,256,128,128,32,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",23.457892,1.9548243,12,43.7
+TurboFNO_1D_E,64,256,128,128,32,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",15.120922,2.5201537000000003,6,28.1
+TurboFNO_1D_E,64,256,128,128,32,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,12.767305,2.1278842,6,23.8
+TurboFNO_1D_E,64,256,128,128,32,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",2.334193,0.3890322,6,4.3
+TurboFNO_1D_E,64,256,128,128,32,ampere_cgemm_32x32,ampere_cgemm_32x32_nn,0.059456,0.0099093,6,0.1
+TurboFNO_1D_E,64,256,128,128,64,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",28.131772,2.3443142999999997,12,39.6
+TurboFNO_1D_E,64,256,128,128,64,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,22.976034,3.829339,6,32.4
+TurboFNO_1D_E,64,256,128,128,64,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",15.124985,2.5208307999999997,6,21.3
+TurboFNO_1D_E,64,256,128,128,64,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",4.649569,0.7749282,6,6.6
+TurboFNO_1D_E,64,256,128,128,64,ampere_cgemm_32x32,ampere_cgemm_32x32_nn,0.079551,0.0132585,6,0.1
+TurboFNO_1D_E,64,256,128,128,128,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",67.044917,5.5870764,12,48.2
+TurboFNO_1D_E,64,256,128,128,128,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",37.478366,3.1231972000000003,12,26.9
+TurboFNO_1D_E,64,256,128,128,128,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",15.084761,2.5141267999999997,6,10.8
+TurboFNO_1D_E,64,256,128,128,128,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",10.196658,0.1062152,96,7.3
+TurboFNO_1D_E,64,256,128,128,128,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",9.327583,1.5545972,6,6.7
+TurboFNO_1D_E,64,256,128,128,128,void scal_kernel(cublasTransposePa…,"void scal_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTransposePa…",0.016736,0.0027893,6,0.0
+TurboFNO_1D_E,64,256,128,128,256,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",116.475041,19.4125068,6,53.7
+TurboFNO_1D_E,64,256,128,128,256,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",56.145216,4.678768,12,25.9
+TurboFNO_1D_E,64,256,128,128,256,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",18.651007,3.1085012,6,8.6
+TurboFNO_1D_E,64,256,128,128,256,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",15.049112,2.5081852999999996,6,6.9
+TurboFNO_1D_E,64,256,128,128,256,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",10.170305,0.1059407,96,4.7
+TurboFNO_1D_E,64,256,128,128,256,ampere_cgemm_32x32,ampere_cgemm_32x32_nn,0.219647,0.0366078,6,0.1
+TurboFNO_1D_E,64,256,128,128,512,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",215.868032,35.9780053,6,58.0
+TurboFNO_1D_E,64,256,128,128,512,"void vector_fft, 2, 32, (paddin…","void vector_fft<(unsigned int)128, EPT<(unsigned int)8>, (unsigned int)2, (unsigned int)32, (paddin…",93.507396,7.792283,12,25.1
+TurboFNO_1D_E,64,256,128,128,512,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",37.290946,6.2151577,6,10.0
+TurboFNO_1D_E,64,256,128,128,512,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",15.041594,2.5069323,6,4.0
+TurboFNO_1D_E,64,256,128,128,512,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",10.160732,0.105841,96,2.7
+TurboFNO_1D_E,64,256,128,128,512,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,0.08736,0.01456,6,0.0
+TurboFNO_1D_E,64,256,128,128,512,"splitKreduce_kernel<32, 16, int, float2, float2, float2, float2, 1, …","void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, float2, float2, float2, float2, (bool)1, …",0.022432,0.0037386999999999997,6,0.0
+TurboFNO_1D_E,64,256,256,64,16,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",23.485374,1.9571145,12,53.9
+TurboFNO_1D_E,64,256,256,64,16,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",13.246852,2.2078087,6,30.4
+TurboFNO_1D_E,64,256,256,64,16,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,5.654714,0.4712262,12,13.0
+TurboFNO_1D_E,64,256,256,64,16,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",1.180311,0.1967185,6,2.7
+TurboFNO_1D_E,64,256,256,64,32,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",28.181564,2.3484637000000004,12,55.8
+TurboFNO_1D_E,64,256,256,64,32,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",13.290688,2.2151147,6,26.3
+TurboFNO_1D_E,64,256,256,64,32,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,6.618739,1.1031232,6,13.1
+TurboFNO_1D_E,64,256,256,64,32,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",2.3452,0.3908667,6,4.6
+TurboFNO_1D_E,64,256,256,64,32,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,0.058816,0.009802700000000001,6,0.1
+TurboFNO_1D_E,64,256,256,64,64,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",37.540255,3.1283546,12,55.9
+TurboFNO_1D_E,64,256,256,64,64,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",13.236997,2.2061662,6,19.7
+TurboFNO_1D_E,64,256,256,64,64,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,11.572432,1.9287387,6,17.2
+TurboFNO_1D_E,64,256,256,64,64,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",4.6656,0.7776,6,7.0
+TurboFNO_1D_E,64,256,256,64,64,ampere_cgemm_32x64,ampere_cgemm_32x64_nn,0.082082,0.0136803,6,0.1
+TurboFNO_1D_E,64,256,256,64,128,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",56.272454,4.6893712,12,47.8
+TurboFNO_1D_E,64,256,256,64,128,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",33.529277,2.7941064,12,28.5
+TurboFNO_1D_E,64,256,256,64,128,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",13.281543,2.2135905,6,11.3
+TurboFNO_1D_E,64,256,256,64,128,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",9.310529,1.5517548,6,7.9
+TurboFNO_1D_E,64,256,256,64,128,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",5.25837,0.054774699999999996,96,4.5
+TurboFNO_1D_E,64,256,256,64,128,void scal_kernel(cublasTransposePa…,"void scal_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTransposePa…",0.016062,0.002677,6,0.0
+TurboFNO_1D_E,64,256,256,64,256,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",93.758697,7.8132247999999995,12,49.5
+TurboFNO_1D_E,64,256,256,64,256,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",58.111767,9.6852945,6,30.7
+TurboFNO_1D_E,64,256,256,64,256,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",18.614114,3.1023522999999997,6,9.8
+TurboFNO_1D_E,64,256,256,64,256,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",13.279078,2.2131797,6,7.0
+TurboFNO_1D_E,64,256,256,64,256,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",5.265825,0.0548523,96,2.8
+TurboFNO_1D_E,64,256,256,64,256,ampere_cgemm_32x32,ampere_cgemm_32x32_nn,0.218047,0.0363412,6,0.1
+TurboFNO_1D_E,64,256,256,128,16,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",42.226363,3.5188636,12,52.4
+TurboFNO_1D_E,64,256,256,128,16,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",26.609959,4.4349932,6,33.0
+TurboFNO_1D_E,64,256,256,128,16,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,10.593526,1.7655877,6,13.1
+TurboFNO_1D_E,64,256,256,128,16,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",1.180184,0.1966973,6,1.5
+TurboFNO_1D_E,64,256,256,128,16,ampere_cgemm_32x32,ampere_cgemm_32x32_nn,0.049216,0.0082027,6,0.1
+TurboFNO_1D_E,64,256,256,128,32,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",46.912701,3.9093918,12,52.9
+TurboFNO_1D_E,64,256,256,128,32,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",26.617289,4.4362148,6,30.0
+TurboFNO_1D_E,64,256,256,128,32,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,12.768905,2.1281508,6,14.4
+TurboFNO_1D_E,64,256,256,128,32,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",2.344882,0.3908137,6,2.6
+TurboFNO_1D_E,64,256,256,128,32,ampere_cgemm_32x32,ampere_cgemm_32x32_nn,0.059646,0.009941,6,0.1
+TurboFNO_1D_E,64,256,256,128,64,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",56.275535,4.6896279000000005,12,50.9
+TurboFNO_1D_E,64,256,256,128,64,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",26.6096,4.4349333,6,24.1
+TurboFNO_1D_E,64,256,256,128,64,ampere_cgemm_64x32,ampere_cgemm_64x32_nn,22.981212,3.830202,6,20.8
+TurboFNO_1D_E,64,256,256,128,64,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",4.666205,0.7777008000000001,6,4.2
+TurboFNO_1D_E,64,256,256,128,64,ampere_cgemm_32x32,ampere_cgemm_32x32_nn,0.080224,0.013370700000000001,6,0.1
+TurboFNO_1D_E,64,256,256,128,128,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",75.007633,6.2506360999999995,12,39.9
+TurboFNO_1D_E,64,256,256,128,128,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",66.961351,5.5801126,12,35.6
+TurboFNO_1D_E,64,256,256,128,128,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",26.662662,4.443777,6,14.2
+TurboFNO_1D_E,64,256,256,128,128,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",10.194806,0.1061959,96,5.4
+TurboFNO_1D_E,64,256,256,128,128,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",9.302783,1.5504638,6,4.9
+TurboFNO_1D_E,64,256,256,128,128,void scal_kernel(cublasTransposePa…,"void scal_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTransposePa…",0.016672,0.0027787,6,0.0
+TurboFNO_1D_E,64,256,256,128,256,"void cgemm_largek<0, 0, 0, 0, 4, 4, 4, 3, 3, …","void cgemm_largek<(bool)0, (bool)0, (bool)0, (bool)0, (int)4, (int)4, (int)4, (int)3, (int)3, (int)…",116.007773,19.3346288,6,40.8
+TurboFNO_1D_E,64,256,256,128,256,"void vector_fft, 1, 32, (paddi…","void vector_fft<(unsigned int)256, EPT<(unsigned int)16>, (unsigned int)1, (unsigned int)32, (paddi…",112.492824,9.374402,12,39.6
+TurboFNO_1D_E,64,256,256,128,256,direct_copy_colmajor,"direct_copy_colmajor_float4_zero_padding(const float2 *, float2 *, int, int, int)",26.672296,4.445382700000001,6,9.4
+TurboFNO_1D_E,64,256,256,128,256,direct_copy_colmajor,"direct_copy_colmajor_float4_truncation(const float2 *, float2 *, int, int, int)",18.598559,3.0997597999999997,6,6.5
+TurboFNO_1D_E,64,256,256,128,256,void scal_64addr_kernel(cublasTran…,"void scal_64addr_kernel<float2, float2, (int)1, (bool)0, (int)6, (int)4, (int)4, (int)4>(cublasTran…",10.21017,0.10635589999999999,96,3.6
+TurboFNO_1D_E,64,256,256,128,256,ampere_cgemm_32x32,ampere_cgemm_32x32_nn,0.213887,0.0356478,6,0.1
