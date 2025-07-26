@@ -169,8 +169,7 @@ int main(int argc, char** argv){
       // dim3 gridDim((M + THREADBLOCK_M - 1) / THREADBLOCK_M, (N + THREADBLOCK_N - 1) / THREADBLOCK_N, 1);
       dim3 gridDim((N + THREADBLOCK_N - 1) / THREADBLOCK_N, (M + THREADBLOCK_M - 1) / THREADBLOCK_M, 1);
       dim3 blockDim((THREADBLOCK_M * THREADBLOCK_N / (THREAD_M * THREAD_N)), 1, 1); 
-      // int shmem_size = sizeof(DataT) * (THREADBLOCK_M + THREADBLOCK_N + DY) * THREADBLOCK_K ;  
-      int shmem_size = sizeof(DataT) * (DY * THREADBLOCK_K + THREADBLOCK_M * THREADBLOCK_N);  
+      int shmem_size = sizeof(DataT) * (THREADBLOCK_M + THREADBLOCK_N + DY) * THREADBLOCK_K ;  
       dim3 gridDim_fft_dimx((DY * K * bs + threadblock_bs_1 - 1) / threadblock_bs_1, 1, 1);
       dim3 gridDim_ifft_dimx((DY * N * bs + threadblock_bs_1 - 1) / threadblock_bs_1, 1, 1);
       long long int num_blocks = (DY * K * bs + threadblock_bs_1 - 1) / threadblock_bs_1;
@@ -216,7 +215,7 @@ int main(int argc, char** argv){
         cudaEventCreate(&fft_end);
       cudaEventRecord(fft_begin);
       for (int i = 0; i < ntest; ++i){
-        fft_stride[int(log2f(DX)) - 7]<<<gridDim_fft_dimx, blockDim_fft_dimx, shmem_size_fft_dimx>>>(dFFT_input + (i + 1) / 2, dFFT_output, threadblock_bs_1, DY, DY * K * bs, dimX);
+        fft_stride[int(log2f(DX)) - 7]<<<gridDim_fft_dimx, blockDim_fft_dimx, shmem_size_fft_dimx>>>(dFFT_input , dFFT_output, threadblock_bs_1, DY, DY * K * bs, dimX);
         
         fused_fft_cgemm_ifft[int(log2f(DY)) - 7]<<<gridDim, blockDim, shmem_size>>>(M, N, K, dFFT_output, dB, dC, diFFT_output, alpha, beta);
         

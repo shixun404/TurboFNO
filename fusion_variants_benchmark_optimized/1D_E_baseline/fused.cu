@@ -224,7 +224,7 @@ int main(int argc, char** argv){
 
       cudaEventRecord(fft_begin);
       for (int i = 0; i < ntest; ++i){
-        cufftExecC2C(plan, reinterpret_cast<cufftComplex*>(dFFT_input + (i + 1) / 2), 
+        cufftExecC2C(plan, reinterpret_cast<cufftComplex*>(dFFT_input ), 
         reinterpret_cast<cufftComplex*>(dFFT_output), 
         CUFFT_FORWARD);
         cudaDeviceSynchronize();

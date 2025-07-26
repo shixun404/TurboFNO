@@ -6,7 +6,7 @@
 // #include "fft_radix_2_logN_9_upload_0_fused.cuh"
 // #include "fft_radix_2_logN_10_upload_0_fused.cuh"
 
-__global__ void fused_fft_cgemm_ifft_7(int M, int N, int K, float2 *FFT_input, float2 *B, float2 *C, float2 *FFT_output, float2 alpha, float2 beta){
+__global__ __launch_bounds__(THREAD_NUM) void fused_fft_cgemm_ifft_7(int M, int N, int K, float2 *FFT_input, float2 *B, float2 *C, float2 *FFT_output, float2 alpha, float2 beta){
     float2 *shared_mem_float2 = (float2*)shared_mem;
     float2 * gC = (float2*)C;
     float2 * gFFT_input = (float2*)FFT_input;
@@ -15,8 +15,7 @@ __global__ void fused_fft_cgemm_ifft_7(int M, int N, int K, float2 *FFT_input, f
 
     float2* sA = shared_mem_float2;
     float2* sB = shared_mem_float2 + THREADBLOCK_M * THREADBLOCK_K;
-    // float2* sFFT = shared_mem_float2 + THREADBLOCK_M * THREADBLOCK_K + THREADBLOCK_N * THREADBLOCK_K;
-    float2* sFFT = shared_mem_float2 + THREADBLOCK_M * THREADBLOCK_N;
+    float2* sFFT = shared_mem_float2 + THREADBLOCK_M * THREADBLOCK_K + THREADBLOCK_N * THREADBLOCK_K;
 
     float2 c[THREAD_M * THREAD_N];
     float2 c_load[THREAD_M * THREAD_N];

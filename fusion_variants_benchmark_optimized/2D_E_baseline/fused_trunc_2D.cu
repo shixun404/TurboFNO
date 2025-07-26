@@ -143,7 +143,9 @@ int main(int argc, char** argv){
       generate_random_vector((float*)B, B_size * 2);
       // fill_vector((float*)FFT_input, 0, FFT_input_size * 2);
       // fill_vector((float*)B, 0, B_size * 2);
-      fill_vector((float*)C, 0, C_size * 2);
+      // fill_vector((float*)C, 0, C_size * 2);
+      memset(C, 0, C_size * 2);
+      
       // FFT_input[0] = {1, 1};
       // B[0] = {1, 1};
       CUDA_RT_CALL(cudaMemcpy(dFFT_input, FFT_input, sizeof(DataT) * FFT_input_size, cudaMemcpyHostToDevice));      
@@ -255,7 +257,7 @@ int main(int argc, char** argv){
 
       cudaEventRecord(fft_begin);
       for (int i = 0; i < ntest; ++i){
-        cufftExecC2C(plan, reinterpret_cast<cufftComplex*>(dFFT_input + (i + 1) / 2), 
+        cufftExecC2C(plan, reinterpret_cast<cufftComplex*>(dFFT_input ), 
         reinterpret_cast<cufftComplex*>(dFFT_output), 
         CUFFT_FORWARD);
         cudaDeviceSynchronize();

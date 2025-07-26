@@ -155,7 +155,7 @@ int main(int argc, char** argv){
         cudaEventCreate(&fft_end);
       cudaEventRecord(fft_begin);
       for (int i = 0; i < ntest; ++i){
-        fused_fft_cgemm_ifft[int(log2f(DY)) - 7]<<<gridDim, blockDim, shmem_size>>>(M, N, K, dFFT_input + (i + 1) / 2, dB, dC, diFFT_output, alpha, beta);
+        fused_fft_cgemm_ifft[int(log2f(DY)) - 7]<<<gridDim, blockDim, shmem_size>>>(M, N, K, dFFT_input, dB, dC, diFFT_output, alpha, beta);
         cudaDeviceSynchronize();
       }
       cudaEventRecord(fft_end);

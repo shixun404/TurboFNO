@@ -236,7 +236,7 @@ int main(int argc, char** argv){
         cudaEventCreate(&fft_end);
       cudaEventRecord(fft_begin);
       for (int i = 0; i < ntest; ++i){
-        fft_stride[int(log2f(DX)) - 7]<<<gridDim_fft_dimx, blockDim_fft_dimx, shmem_size_fft_dimx>>>(dFFT_input + (i + 1) / 2, dFFT_output, threadblock_bs_1, DY, DY * K * bs, dimX);
+        fft_stride[int(log2f(DX)) - 7]<<<gridDim_fft_dimx, blockDim_fft_dimx, shmem_size_fft_dimx>>>(dFFT_input , dFFT_output, threadblock_bs_1, DY, DY * K * bs, dimX);
         cudaDeviceSynchronize();
         fused_fft_cgemm[logFFT_len]<<<gridDim, blockDim, shmem_size>>>(M, N, K, dFFT_output, dB, dC, alpha, beta);
         cudaDeviceSynchronize();

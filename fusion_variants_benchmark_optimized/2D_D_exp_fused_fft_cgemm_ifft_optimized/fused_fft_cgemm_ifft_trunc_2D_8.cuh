@@ -1,19 +1,21 @@
 #include <stdio.h>
 #include <mma.h>
-// #include "fft_radix_2_logN_7_upload_0_fused.cuh"
 #include "fft_radix_2_logN_8_upload_0_fused.cuh"
+#include "fft_radix_2_logN_8_upload_0_fused_output.cuh"
+// #include "fft_radix_2_logN_8_upload_0_fused.cuh"
 // #include "fft_radix_2_logN_9_upload_0_fused.cuh"
 // #include "fft_radix_2_logN_10_upload_0_fused.cuh"
 
-__global__ __launch_bounds__(THREAD_NUM) void fused_fft_cgemm_8(int M, int N, int K, float2 *FFT_input, float2 *B, float2 *C, float2 alpha, float2 beta){
+__global__ __launch_bounds__(THREAD_NUM) void fused_fft_cgemm_ifft_8(int M, int N, int K, float2 *FFT_input, float2 *B, float2 *C, float2 *FFT_output, float2 alpha, float2 beta){
     float2 *shared_mem_float2 = (float2*)shared_mem;
     float2 * gC = (float2*)C;
     float2 * gFFT_input = (float2*)FFT_input;
+    float2 * gFFT_output = (float2*)FFT_output;
     float2 * gB = (float2*)B;
 
     float2* sA = shared_mem_float2;
     float2* sB = shared_mem_float2 + THREADBLOCK_M * THREADBLOCK_K;
-    float2* sFFT = shared_mem_float2 + THREADBLOCK_M * THREADBLOCK_K + THREADBLOCK_N * THREADBLOCK_K;
+    float2* sFFT = shared_mem_float2 + THREADBLOCK_M * THREADBLOCK_N ;
 
     float2 c[THREAD_M * THREAD_N];
     float2 c_load[THREAD_M * THREAD_N];
@@ -33,7 +35,7 @@ __global__ __launch_bounds__(THREAD_NUM) void fused_fft_cgemm_8(int M, int N, in
         tmp_B[i] = gB[(TID + i * blockDim.x) % THREADBLOCK_K
         + (BID_X * THREADBLOCK_N + (TID + i * blockDim.x) / THREADBLOCK_K) * K];
     }
-        fft_8_fused(gFFT_input + BID_Y * 256, shared_mem_float2, sFFT, M * 4);
+    fft_8_fused(gFFT_input + BID_Y * 256, shared_mem_float2, sFFT, M * 4);
 
     #pragma unroll
     for(int i = 0; i < LOAD_PER_THREAD_B; i++){
@@ -97,9 +99,8 @@ __global__ __launch_bounds__(THREAD_NUM) void fused_fft_cgemm_8(int M, int N, in
             }
         }
 
-
         __syncthreads();
-        // if(threadIdx.x < THREADBLOCK_K * 256 / 8){
+        // if(threadIdx.x < THREADBLOCK_K * 128 / 8){
             fft_8_fused(gFFT_input + BID_Y * 256 + (k + THREADBLOCK_K) * M * 4, shared_mem_float2, sFFT, M * 4); 
         // }
         // Store prefeteched global data to shared
@@ -108,6 +109,7 @@ __global__ __launch_bounds__(THREAD_NUM) void fused_fft_cgemm_8(int M, int N, in
         for(int i = 0; i < LOAD_PER_THREAD_B; i++){
             shared_mem_float2[THREADBLOCK_M * THREADBLOCK_K + (TID + i * blockDim.x) / THREADBLOCK_K + (((TID + i * blockDim.x) % THREADBLOCK_K)) * THREADBLOCK_N] = ((float2*)tmp_B)[i];
         }
+        
         __syncthreads();
         
         // Prefetech from shared memory
@@ -167,10 +169,6 @@ __global__ __launch_bounds__(THREAD_NUM) void fused_fft_cgemm_8(int M, int N, in
             
             c[i * THREAD_N + j].x = tmp.x;
             c[i * THREAD_N + j].y = tmp.y;
-            gC[BID_Y * THREADBLOCK_M + (WID / WARP_NUM_COL) * WARP_M + ((TID % 32) /  THREAD_NUM_COL) * THREAD_M + i
-                        + (BID_X * THREADBLOCK_N + (WID % WARP_NUM_COL) * WARP_N + ((TID % 32) % THREAD_NUM_COL) * THREAD_N + j) * M] = c[i * THREAD_N + j];
-
-
 
             c_load[(i + 1) * THREAD_N + j].x = tmp.z;
             c_load[(i + 1) * THREAD_N + j].y = tmp.w;
@@ -179,9 +177,46 @@ __global__ __launch_bounds__(THREAD_NUM) void fused_fft_cgemm_8(int M, int N, in
             
             c[(i + 1) * THREAD_N + j].x = tmp.z;
             c[(i + 1) * THREAD_N + j].y = tmp.w;
-            gC[BID_Y * THREADBLOCK_M + (WID / WARP_NUM_COL) * WARP_M + ((TID % 32) /  THREAD_NUM_COL) * THREAD_M + i + 1
-                + (BID_X * THREADBLOCK_N + (WID % WARP_NUM_COL) * WARP_N + ((TID % 32) % THREAD_NUM_COL) * THREAD_N + j) * M] = c[(i + 1) * THREAD_N + j];
         }
+    }
+
+
+    #pragma unroll
+    for(int tid_start = 0; tid_start < THREADBLOCK_N; tid_start += THREADBLOCK_K){
+        int threadblock_C_col = (WID % WARP_NUM_COL) * WARP_N + ((TID % 32) %  THREAD_NUM_COL) * THREAD_N;
+        __syncthreads();
+        if(tid_start <= threadblock_C_col && threadblock_C_col < tid_start + THREADBLOCK_K) {
+            #pragma unroll
+            for(int j = 0; j < THREAD_N; j++){
+                // TID/4 shoule change if THREAD_M change
+                #pragma unroll
+                for(int i = 0; i < THREAD_M; i++){
+                    sFFT[(WID / WARP_NUM_COL) * WARP_M + ((TID % 32) /  THREAD_NUM_COL) * THREAD_M + (i + (TID / 4)) % THREAD_M
+                    + (threadblock_C_col + j - tid_start) * 256] = c[((i + (TID / 4)) % THREAD_M) * THREAD_N + j];
+                }
+            }
+        }
+        __syncthreads();
+        
+    }
+
+    int threadblock_C_col = (WID % WARP_NUM_COL) * WARP_N + ((TID % 32) % THREAD_NUM_COL) * THREAD_N;
+    
+    __syncthreads();
+    #pragma unroll
+    for(int j = 0; j < THREAD_N; j++){
+        // TID/4 shoule change if THREAD_M change
+        #pragma unroll
+        for(int i = 0; i < THREAD_M; i++){
+            shared_mem_float2[(WID / WARP_NUM_COL) * WARP_M + ((TID % 32) /  THREAD_NUM_COL) * THREAD_M + (i + (TID / 4)) % THREAD_M
+            + (threadblock_C_col + j) * THREADBLOCK_M] = c[((i + (TID / 4)) % THREAD_M) * THREAD_N + j];
+        }
+    }
+
+    __syncthreads();
+    #pragma unroll
+    for(int tid_start = 0; tid_start < THREADBLOCK_N; tid_start += THREADBLOCK_K){
+        fft_8_fused_output(shared_mem_float2 + tid_start * THREADBLOCK_M, gFFT_output + BID_Y * 256 + (BID_X * THREADBLOCK_N + tid_start) * M * 4, sFFT, M * 4);
     }
 
 
