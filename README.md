@@ -215,3 +215,9 @@ If you use TurboFNO in your work, please cite:
   year={2025}
 }
 ```
+
+---
+
+## 📄 License
+
+TurboFNO is licensed under the [Apache License 2.0](LICENSE).
