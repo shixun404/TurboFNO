@@ -52,8 +52,22 @@ TurboFNO/
 
 4. **Build all kernel fusion variants (1D and 2D)**:
 
+   On NVIDIA GPUs (CUDA, cuFFT, cuBLAS):
+
    ```bash
    bash install.sh
+   ```
+
+   On AMD GPUs (ROCm/HIP, hipFFT, hipBLAS), set `USE_HIP=1`. The same `.cu` sources compile as HIP through the `hip_compat` shim headers, so no source changes are needed:
+
+   ```bash
+   USE_HIP=1 bash install.sh
+   ```
+
+   The target GPU is auto-detected from the build host. To build for a different AMD GPU, set `CMAKE_HIP_ARCHITECTURES`, for example:
+
+   ```bash
+   USE_HIP=1 CMAKE_HIP_ARCHITECTURES=gfx1100 bash install.sh
    ```
 
 5. **Temporarily add all compiled binaries to your PATH**:
